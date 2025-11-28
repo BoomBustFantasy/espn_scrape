@@ -1,0 +1,433 @@
+2025-11-17 08:17:24.948 -06:00 [INF] Running NFL Weekly Stats job for 2025 season
+2025-11-17 08:17:25.308 -06:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2025-11-17 08:17:25.309 -06:00 [INF] Quartz Scheduler created
+2025-11-17 08:17:25.310 -06:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2025-11-17 08:17:25.310 -06:00 [INF] RAMJobStore initialized.
+2025-11-17 08:17:25.312 -06:00 [INF] Quartz Scheduler 3.15.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2025-11-17 08:17:25.312 -06:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2025-11-17 08:17:25.313 -06:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2025-11-17 08:17:25.321 -06:00 [INF] Adding 1 jobs, 1 triggers.
+2025-11-17 08:17:25.322 -06:00 [INF] Adding job: DEFAULT.NFLWeeklyJob2025
+2025-11-17 08:17:25.333 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-17 08:17:25.335 -06:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2025-11-17 08:17:25.337 -06:00 [INF] Hosting environment: Production
+2025-11-17 08:17:25.338 -06:00 [INF] Content root path: C:\Users\jackb\source\repos\doink\good_espn_scrape
+2025-11-17 08:17:25.715 -06:00 [INF] Starting NFL Weekly games scraping job
+2025-11-17 08:17:25.716 -06:00 [INF] Using explicit season 2025, weeks 11-11 from job data
+2025-11-17 08:17:25.718 -06:00 [INF] === PROCESSING WEEK 11 ===
+2025-11-17 08:17:25.720 -06:00 [INF] Fetching games for Year: 2025, SeasonType: 2, Week: 11
+2025-11-17 08:17:25.730 -06:00 [INF] Start processing HTTP request GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/types/2/weeks/11/events
+2025-11-17 08:17:25.733 -06:00 [INF] Sending HTTP request GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/types/2/weeks/11/events
+2025-11-17 08:17:26.114 -06:00 [INF] Received HTTP response headers after 378.1471ms - 200
+2025-11-17 08:17:26.122 -06:00 [INF] End processing HTTP request after 398.387ms - 200
+2025-11-17 08:17:26.144 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772819?*
+2025-11-17 08:17:26.145 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772819?*
+2025-11-17 08:17:26.265 -06:00 [INF] Received HTTP response headers after 120.0739ms - 200
+2025-11-17 08:17:26.266 -06:00 [INF] End processing HTTP request after 123.1073ms - 200
+2025-11-17 08:17:26.390 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772945?*
+2025-11-17 08:17:26.391 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772945?*
+2025-11-17 08:17:26.456 -06:00 [INF] Received HTTP response headers after 63.9985ms - 200
+2025-11-17 08:17:26.457 -06:00 [INF] End processing HTTP request after 66.9679ms - 200
+2025-11-17 08:17:26.561 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772631?*
+2025-11-17 08:17:26.562 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772631?*
+2025-11-17 08:17:26.625 -06:00 [INF] Received HTTP response headers after 62.2375ms - 200
+2025-11-17 08:17:26.626 -06:00 [INF] End processing HTTP request after 64.6155ms - 200
+2025-11-17 08:17:26.731 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772882?*
+2025-11-17 08:17:26.732 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772882?*
+2025-11-17 08:17:26.795 -06:00 [INF] Received HTTP response headers after 62.2431ms - 200
+2025-11-17 08:17:26.796 -06:00 [INF] End processing HTTP request after 64.765ms - 200
+2025-11-17 08:17:26.904 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772776?*
+2025-11-17 08:17:26.905 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772776?*
+2025-11-17 08:17:26.966 -06:00 [INF] Received HTTP response headers after 60.2319ms - 200
+2025-11-17 08:17:26.967 -06:00 [INF] End processing HTTP request after 62.72ms - 200
+2025-11-17 08:17:27.077 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772881?*
+2025-11-17 08:17:27.077 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772881?*
+2025-11-17 08:17:27.143 -06:00 [INF] Received HTTP response headers after 65.4612ms - 200
+2025-11-17 08:17:27.144 -06:00 [INF] End processing HTTP request after 67.5833ms - 200
+2025-11-17 08:17:27.246 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772880?*
+2025-11-17 08:17:27.247 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772880?*
+2025-11-17 08:17:27.305 -06:00 [INF] Received HTTP response headers after 57.7006ms - 200
+2025-11-17 08:17:27.306 -06:00 [INF] End processing HTTP request after 59.8599ms - 200
+2025-11-17 08:17:27.418 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772883?*
+2025-11-17 08:17:27.419 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772883?*
+2025-11-17 08:17:27.487 -06:00 [INF] Received HTTP response headers after 67.3542ms - 200
+2025-11-17 08:17:27.488 -06:00 [INF] End processing HTTP request after 69.6426ms - 200
+2025-11-17 08:17:27.604 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772774?*
+2025-11-17 08:17:27.605 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772774?*
+2025-11-17 08:17:27.668 -06:00 [INF] Received HTTP response headers after 62.2785ms - 200
+2025-11-17 08:17:27.669 -06:00 [INF] End processing HTTP request after 64.744ms - 200
+2025-11-17 08:17:27.774 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772775?*
+2025-11-17 08:17:27.775 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772775?*
+2025-11-17 08:17:27.838 -06:00 [INF] Received HTTP response headers after 62.1028ms - 200
+2025-11-17 08:17:27.839 -06:00 [INF] End processing HTTP request after 64.4503ms - 200
+2025-11-17 08:17:27.944 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772884?*
+2025-11-17 08:17:27.945 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772884?*
+2025-11-17 08:17:28.007 -06:00 [INF] Received HTTP response headers after 61.718ms - 200
+2025-11-17 08:17:28.008 -06:00 [INF] End processing HTTP request after 63.9688ms - 200
+2025-11-17 08:17:28.115 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772885?*
+2025-11-17 08:17:28.116 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772885?*
+2025-11-17 08:17:28.175 -06:00 [INF] Received HTTP response headers after 58.3683ms - 200
+2025-11-17 08:17:28.176 -06:00 [INF] End processing HTTP request after 61.3433ms - 200
+2025-11-17 08:17:28.287 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772777?*
+2025-11-17 08:17:28.287 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772777?*
+2025-11-17 08:17:28.348 -06:00 [INF] Received HTTP response headers after 59.765ms - 200
+2025-11-17 08:17:28.349 -06:00 [INF] End processing HTTP request after 62.6614ms - 200
+2025-11-17 08:17:28.458 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772778?*
+2025-11-17 08:17:28.459 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772778?*
+2025-11-17 08:17:28.516 -06:00 [INF] Received HTTP response headers after 56.7231ms - 200
+2025-11-17 08:17:28.517 -06:00 [INF] End processing HTTP request after 58.7966ms - 200
+2025-11-17 08:17:28.630 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772928?*
+2025-11-17 08:17:28.631 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772928?*
+2025-11-17 08:17:28.688 -06:00 [INF] Received HTTP response headers after 56.7627ms - 200
+2025-11-17 08:17:28.689 -06:00 [INF] End processing HTTP request after 59.0201ms - 200
+2025-11-17 08:17:28.804 -06:00 [INF] Successfully fetched 15 games
+2025-11-17 08:17:28.805 -06:00 [INF] Found 15 games for NFL 2025 Week 11
+2025-11-17 08:17:28.809 -06:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/13?lang=en&region=us
+2025-11-17 08:17:28.809 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/13?*
+2025-11-17 08:17:28.810 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/13?*
+2025-11-17 08:17:28.869 -06:00 [INF] Received HTTP response headers after 58.0405ms - 200
+2025-11-17 08:17:28.869 -06:00 [INF] End processing HTTP request after 60.1196ms - 200
+2025-11-17 08:17:28.880 -06:00 [INF] Successfully fetched team from URL
+2025-11-17 08:17:28.881 -06:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/6?lang=en&region=us
+2025-11-17 08:17:28.882 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/6?*
+2025-11-17 08:17:28.883 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/6?*
+2025-11-17 08:17:28.942 -06:00 [INF] Received HTTP response headers after 58.454ms - 200
+2025-11-17 08:17:28.943 -06:00 [INF] End processing HTTP request after 61.0008ms - 200
+2025-11-17 08:17:28.943 -06:00 [INF] Successfully fetched team from URL
+2025-11-17 08:17:28.946 -06:00 [INF] NFL Game: Dallas Cowboys @ Las Vegas Raiders - Nov 18, 2025 1:15 AM
+2025-11-17 08:17:28.949 -06:00 [INF] Fetching game summary for game 401772819
+2025-11-17 08:17:28.950 -06:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-11-17 08:17:28.950 -06:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-11-17 08:17:29.030 -06:00 [INF] Received HTTP response headers after 79.4231ms - 200
+2025-11-17 08:17:29.031 -06:00 [INF] End processing HTTP request after 81.4644ms - 200
+2025-11-17 08:17:29.049 -06:00 [INF] Successfully fetched game summary for game 401772819
+2025-11-17 08:17:29.050 -06:00 [WRN] No PlayerStats found in BoxScore for game 401772819
+2025-11-17 08:17:29.050 -06:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/17?lang=en&region=us
+2025-11-17 08:17:29.051 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/17?*
+2025-11-17 08:17:29.052 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/17?*
+2025-11-17 08:17:29.112 -06:00 [INF] Received HTTP response headers after 59.3572ms - 200
+2025-11-17 08:17:29.112 -06:00 [INF] End processing HTTP request after 61.4562ms - 200
+2025-11-17 08:17:29.113 -06:00 [INF] Successfully fetched team from URL
+2025-11-17 08:17:29.114 -06:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/20?lang=en&region=us
+2025-11-17 08:17:29.114 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/20?*
+2025-11-17 08:17:29.115 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/20?*
+2025-11-17 08:17:29.169 -06:00 [INF] Received HTTP response headers after 54.0861ms - 200
+2025-11-17 08:17:29.170 -06:00 [INF] End processing HTTP request after 56.0499ms - 200
+2025-11-17 08:17:29.171 -06:00 [INF] Successfully fetched team from URL
+2025-11-17 08:17:29.171 -06:00 [INF] NFL Game: New York Jets @ New England Patriots - Nov 14, 2025 1:15 AM
+2025-11-17 08:17:29.172 -06:00 [INF] Winner: New England Patriots
+2025-11-17 08:17:29.173 -06:00 [INF] Fetching game summary for game 401772945
+2025-11-17 08:17:29.173 -06:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-11-17 08:17:29.174 -06:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-11-17 08:17:29.245 -06:00 [INF] Received HTTP response headers after 70.9573ms - 200
+2025-11-17 08:17:29.246 -06:00 [INF] End processing HTTP request after 73.1433ms - 200
+2025-11-17 08:17:29.289 -06:00 [INF] Successfully fetched game summary for game 401772945
+2025-11-17 08:17:33.651 -06:00 [INF] 📊 Database Upsert Summary: 8 total records | 0 updated | 8 inserted | 0 failed
+2025-11-17 08:17:37.303 -06:00 [INF] 📊 Database Upsert Summary: 9 total records | 0 updated | 9 inserted | 0 failed
+2025-11-17 08:17:37.304 -06:00 [INF] Game 401772945: 27 players found | 27 matched | 17 records processed
+2025-11-17 08:17:37.305 -06:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/15?lang=en&region=us
+2025-11-17 08:17:37.306 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/15?*
+2025-11-17 08:17:37.306 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/15?*
+2025-11-17 08:17:37.367 -06:00 [INF] Received HTTP response headers after 60.2792ms - 200
+2025-11-17 08:17:37.368 -06:00 [INF] End processing HTTP request after 62.1249ms - 200
+2025-11-17 08:17:37.368 -06:00 [INF] Successfully fetched team from URL
+2025-11-17 08:17:37.369 -06:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/28?lang=en&region=us
+2025-11-17 08:17:37.369 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/28?*
+2025-11-17 08:17:37.370 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/28?*
+2025-11-17 08:17:37.425 -06:00 [INF] Received HTTP response headers after 54.8555ms - 200
+2025-11-17 08:17:37.426 -06:00 [INF] End processing HTTP request after 56.7843ms - 200
+2025-11-17 08:17:37.427 -06:00 [INF] Successfully fetched team from URL
+2025-11-17 08:17:37.427 -06:00 [INF] NFL Game: Washington Commanders @ Miami Dolphins - Nov 16, 2025 2:30 PM
+2025-11-17 08:17:37.428 -06:00 [INF] Winner: Miami Dolphins
+2025-11-17 08:17:37.429 -06:00 [INF] Fetching game summary for game 401772631
+2025-11-17 08:17:37.429 -06:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-11-17 08:17:37.430 -06:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-11-17 08:17:37.470 -06:00 [INF] Received HTTP response headers after 39.3775ms - 200
+2025-11-17 08:17:37.470 -06:00 [INF] End processing HTTP request after 41.2929ms - 200
+2025-11-17 08:17:37.486 -06:00 [INF] Successfully fetched game summary for game 401772631
+2025-11-17 08:17:42.413 -06:00 [INF] 📊 Database Upsert Summary: 12 total records | 0 updated | 12 inserted | 0 failed
+2025-11-17 08:17:46.181 -06:00 [INF] 📊 Database Upsert Summary: 10 total records | 0 updated | 10 inserted | 0 failed
+2025-11-17 08:17:46.182 -06:00 [INF] Game 401772631: 28 players found | 28 matched | 22 records processed
+2025-11-17 08:17:46.183 -06:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/1?lang=en&region=us
+2025-11-17 08:17:46.184 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/1?*
+2025-11-17 08:17:46.184 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/1?*
+2025-11-17 08:17:46.246 -06:00 [INF] Received HTTP response headers after 61.278ms - 200
+2025-11-17 08:17:46.247 -06:00 [INF] End processing HTTP request after 63.3011ms - 200
+2025-11-17 08:17:46.248 -06:00 [INF] Successfully fetched team from URL
+2025-11-17 08:17:46.248 -06:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/29?lang=en&region=us
+2025-11-17 08:17:46.249 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/29?*
+2025-11-17 08:17:46.249 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/29?*
+2025-11-17 08:17:46.304 -06:00 [INF] Received HTTP response headers after 54.5218ms - 200
+2025-11-17 08:17:46.305 -06:00 [INF] End processing HTTP request after 56.5266ms - 200
+2025-11-17 08:17:46.306 -06:00 [INF] Successfully fetched team from URL
+2025-11-17 08:17:46.306 -06:00 [INF] NFL Game: Carolina Panthers @ Atlanta Falcons - Nov 16, 2025 6:00 PM
+2025-11-17 08:17:46.307 -06:00 [INF] Winner: Carolina Panthers
+2025-11-17 08:17:46.308 -06:00 [INF] Fetching game summary for game 401772882
+2025-11-17 08:17:46.308 -06:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-11-17 08:17:46.309 -06:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-11-17 08:17:46.318 -06:00 [INF] Received HTTP response headers after 8.8236ms - 200
+2025-11-17 08:17:46.319 -06:00 [INF] End processing HTTP request after 10.8173ms - 200
+2025-11-17 08:17:46.332 -06:00 [INF] Successfully fetched game summary for game 401772882
+2025-11-17 08:17:51.013 -06:00 [INF] 📊 Database Upsert Summary: 12 total records | 0 updated | 12 inserted | 0 failed
+2025-11-17 08:17:53.104 -06:00 [INF] No existing player found for ESPN player: Ryan Neuzil (ESPN ID: 4036444)
+2025-11-17 08:17:56.189 -06:00 [WRN] ⚠️ Skipped record due to foreign key constraint: ESPN Player ID 4036444 not found in Players table. Game: 401772882
+2025-11-17 08:17:56.254 -06:00 [INF] 📊 Database Upsert Summary: 12 total records | 0 updated | 11 inserted | 1 failed
+2025-11-17 08:17:56.255 -06:00 [INF] Game 401772882: 32 players found | 31 matched | 23 records processed
+2025-11-17 08:17:56.257 -06:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/2?lang=en&region=us
+2025-11-17 08:17:56.257 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/2?*
+2025-11-17 08:17:56.259 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/2?*
+2025-11-17 08:17:56.320 -06:00 [INF] Received HTTP response headers after 59.8971ms - 200
+2025-11-17 08:17:56.321 -06:00 [INF] End processing HTTP request after 63.2279ms - 200
+2025-11-17 08:17:56.322 -06:00 [INF] Successfully fetched team from URL
+2025-11-17 08:17:56.322 -06:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/27?lang=en&region=us
+2025-11-17 08:17:56.323 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/27?*
+2025-11-17 08:17:56.323 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/27?*
+2025-11-17 08:17:56.381 -06:00 [INF] Received HTTP response headers after 57.086ms - 200
+2025-11-17 08:17:56.383 -06:00 [INF] End processing HTTP request after 59.9871ms - 200
+2025-11-17 08:17:56.384 -06:00 [INF] Successfully fetched team from URL
+2025-11-17 08:17:56.384 -06:00 [INF] NFL Game: Tampa Bay Buccaneers @ Buffalo Bills - Nov 16, 2025 6:00 PM
+2025-11-17 08:17:56.385 -06:00 [INF] Winner: Buffalo Bills
+2025-11-17 08:17:56.386 -06:00 [INF] Fetching game summary for game 401772776
+2025-11-17 08:17:56.387 -06:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-11-17 08:17:56.387 -06:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-11-17 08:17:56.407 -06:00 [INF] Received HTTP response headers after 19.1141ms - 200
+2025-11-17 08:17:56.408 -06:00 [INF] End processing HTTP request after 21.4899ms - 200
+2025-11-17 08:17:56.416 -06:00 [INF] Successfully fetched game summary for game 401772776
+2025-11-17 08:18:01.125 -06:00 [INF] 📊 Database Upsert Summary: 11 total records | 0 updated | 11 inserted | 0 failed
+2025-11-17 08:18:06.717 -06:00 [INF] 📊 Database Upsert Summary: 13 total records | 0 updated | 13 inserted | 0 failed
+2025-11-17 08:18:06.719 -06:00 [INF] Game 401772776: 35 players found | 35 matched | 24 records processed
+2025-11-17 08:18:06.720 -06:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/10?lang=en&region=us
+2025-11-17 08:18:06.721 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/10?*
+2025-11-17 08:18:06.722 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/10?*
+2025-11-17 08:18:06.784 -06:00 [INF] Received HTTP response headers after 61.2264ms - 200
+2025-11-17 08:18:06.785 -06:00 [INF] End processing HTTP request after 64.3154ms - 200
+2025-11-17 08:18:06.786 -06:00 [INF] Successfully fetched team from URL
+2025-11-17 08:18:06.786 -06:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/34?lang=en&region=us
+2025-11-17 08:18:06.787 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/34?*
+2025-11-17 08:18:06.788 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/34?*
+2025-11-17 08:18:06.841 -06:00 [INF] Received HTTP response headers after 52.2308ms - 200
+2025-11-17 08:18:06.842 -06:00 [INF] End processing HTTP request after 54.5982ms - 200
+2025-11-17 08:18:06.843 -06:00 [INF] Successfully fetched team from URL
+2025-11-17 08:18:06.843 -06:00 [INF] NFL Game: Houston Texans @ Tennessee Titans - Nov 16, 2025 6:00 PM
+2025-11-17 08:18:06.844 -06:00 [INF] Winner: Houston Texans
+2025-11-17 08:18:06.845 -06:00 [INF] Fetching game summary for game 401772881
+2025-11-17 08:18:06.846 -06:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-11-17 08:18:06.847 -06:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-11-17 08:18:06.864 -06:00 [INF] Received HTTP response headers after 16.4838ms - 200
+2025-11-17 08:18:06.865 -06:00 [INF] End processing HTTP request after 19.5409ms - 200
+2025-11-17 08:18:06.872 -06:00 [INF] Successfully fetched game summary for game 401772881
+2025-11-17 08:18:11.459 -06:00 [INF] 📊 Database Upsert Summary: 11 total records | 0 updated | 11 inserted | 0 failed
+2025-11-17 08:18:16.135 -06:00 [INF] 📊 Database Upsert Summary: 11 total records | 0 updated | 11 inserted | 0 failed
+2025-11-17 08:18:16.136 -06:00 [INF] Game 401772881: 30 players found | 30 matched | 22 records processed
+2025-11-17 08:18:16.137 -06:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/16?lang=en&region=us
+2025-11-17 08:18:16.138 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/16?*
+2025-11-17 08:18:16.139 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/16?*
+2025-11-17 08:18:16.199 -06:00 [INF] Received HTTP response headers after 59.7966ms - 200
+2025-11-17 08:18:16.200 -06:00 [INF] End processing HTTP request after 62.609ms - 200
+2025-11-17 08:18:16.201 -06:00 [INF] Successfully fetched team from URL
+2025-11-17 08:18:16.202 -06:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/3?lang=en&region=us
+2025-11-17 08:18:16.203 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/3?*
+2025-11-17 08:18:16.204 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/3?*
+2025-11-17 08:18:16.257 -06:00 [INF] Received HTTP response headers after 52.8353ms - 200
+2025-11-17 08:18:16.258 -06:00 [INF] End processing HTTP request after 55.4721ms - 200
+2025-11-17 08:18:16.259 -06:00 [INF] Successfully fetched team from URL
+2025-11-17 08:18:16.259 -06:00 [INF] NFL Game: Chicago Bears @ Minnesota Vikings - Nov 16, 2025 6:00 PM
+2025-11-17 08:18:16.260 -06:00 [INF] Winner: Chicago Bears
+2025-11-17 08:18:16.261 -06:00 [INF] Fetching game summary for game 401772880
+2025-11-17 08:18:16.262 -06:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-11-17 08:18:16.263 -06:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-11-17 08:18:16.339 -06:00 [INF] Received HTTP response headers after 74.7342ms - 200
+2025-11-17 08:18:16.340 -06:00 [INF] End processing HTTP request after 77.5826ms - 200
+2025-11-17 08:18:16.346 -06:00 [INF] Successfully fetched game summary for game 401772880
+2025-11-17 08:18:21.450 -06:00 [INF] 📊 Database Upsert Summary: 12 total records | 0 updated | 12 inserted | 0 failed
+2025-11-17 08:18:25.053 -06:00 [INF] 📊 Database Upsert Summary: 9 total records | 0 updated | 9 inserted | 0 failed
+2025-11-17 08:18:25.054 -06:00 [INF] Game 401772880: 29 players found | 29 matched | 21 records processed
+2025-11-17 08:18:25.055 -06:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/19?lang=en&region=us
+2025-11-17 08:18:25.056 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/19?*
+2025-11-17 08:18:25.056 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/19?*
+2025-11-17 08:18:25.117 -06:00 [INF] Received HTTP response headers after 59.5861ms - 200
+2025-11-17 08:18:25.118 -06:00 [INF] End processing HTTP request after 61.8165ms - 200
+2025-11-17 08:18:25.119 -06:00 [INF] Successfully fetched team from URL
+2025-11-17 08:18:25.119 -06:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/9?lang=en&region=us
+2025-11-17 08:18:25.120 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/9?*
+2025-11-17 08:18:25.121 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/9?*
+2025-11-17 08:18:25.174 -06:00 [INF] Received HTTP response headers after 52.7136ms - 200
+2025-11-17 08:18:25.175 -06:00 [INF] End processing HTTP request after 55.0952ms - 200
+2025-11-17 08:18:25.176 -06:00 [INF] Successfully fetched team from URL
+2025-11-17 08:18:25.176 -06:00 [INF] NFL Game: Green Bay Packers @ New York Giants - Nov 16, 2025 6:00 PM
+2025-11-17 08:18:25.177 -06:00 [INF] Winner: Green Bay Packers
+2025-11-17 08:18:25.178 -06:00 [INF] Fetching game summary for game 401772883
+2025-11-17 08:18:25.178 -06:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-11-17 08:18:25.179 -06:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-11-17 08:18:25.203 -06:00 [INF] Received HTTP response headers after 22.9042ms - 200
+2025-11-17 08:18:25.204 -06:00 [INF] End processing HTTP request after 25.5883ms - 200
+2025-11-17 08:18:25.263 -06:00 [INF] Successfully fetched game summary for game 401772883
+2025-11-17 08:18:32.375 -06:00 [INF] 📊 Database Upsert Summary: 17 total records | 0 updated | 17 inserted | 0 failed
+2025-11-17 08:18:35.973 -06:00 [INF] 📊 Database Upsert Summary: 8 total records | 0 updated | 8 inserted | 0 failed
+2025-11-17 08:18:35.975 -06:00 [INF] Game 401772883: 35 players found | 35 matched | 25 records processed
+2025-11-17 08:18:35.976 -06:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/23?lang=en&region=us
+2025-11-17 08:18:35.977 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/23?*
+2025-11-17 08:18:35.977 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/23?*
+2025-11-17 08:18:36.035 -06:00 [INF] Received HTTP response headers after 57.5065ms - 200
+2025-11-17 08:18:36.037 -06:00 [INF] End processing HTTP request after 60.0002ms - 200
+2025-11-17 08:18:36.038 -06:00 [INF] Successfully fetched team from URL
+2025-11-17 08:18:36.038 -06:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/4?lang=en&region=us
+2025-11-17 08:18:36.039 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/4?*
+2025-11-17 08:18:36.040 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/4?*
+2025-11-17 08:18:36.095 -06:00 [INF] Received HTTP response headers after 55.1214ms - 200
+2025-11-17 08:18:36.096 -06:00 [INF] End processing HTTP request after 57.3551ms - 200
+2025-11-17 08:18:36.097 -06:00 [INF] Successfully fetched team from URL
+2025-11-17 08:18:36.098 -06:00 [INF] NFL Game: Cincinnati Bengals @ Pittsburgh Steelers - Nov 16, 2025 6:00 PM
+2025-11-17 08:18:36.099 -06:00 [INF] Winner: Pittsburgh Steelers
+2025-11-17 08:18:36.099 -06:00 [INF] Fetching game summary for game 401772774
+2025-11-17 08:18:36.100 -06:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-11-17 08:18:36.101 -06:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-11-17 08:18:36.175 -06:00 [INF] Received HTTP response headers after 73.6204ms - 200
+2025-11-17 08:18:36.176 -06:00 [INF] End processing HTTP request after 76.3591ms - 200
+2025-11-17 08:18:36.185 -06:00 [INF] Successfully fetched game summary for game 401772774
+2025-11-17 08:18:39.838 -06:00 [INF] 📊 Database Upsert Summary: 9 total records | 0 updated | 9 inserted | 0 failed
+2025-11-17 08:18:45.749 -06:00 [INF] 📊 Database Upsert Summary: 14 total records | 0 updated | 14 inserted | 0 failed
+2025-11-17 08:18:45.750 -06:00 [INF] Game 401772774: 30 players found | 30 matched | 23 records processed
+2025-11-17 08:18:45.751 -06:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/30?lang=en&region=us
+2025-11-17 08:18:45.752 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/30?*
+2025-11-17 08:18:45.753 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/30?*
+2025-11-17 08:18:45.814 -06:00 [INF] Received HTTP response headers after 59.893ms - 200
+2025-11-17 08:18:45.814 -06:00 [INF] End processing HTTP request after 62.4033ms - 200
+2025-11-17 08:18:45.815 -06:00 [INF] Successfully fetched team from URL
+2025-11-17 08:18:45.816 -06:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/24?lang=en&region=us
+2025-11-17 08:18:45.817 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/24?*
+2025-11-17 08:18:45.817 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/24?*
+2025-11-17 08:18:45.872 -06:00 [INF] Received HTTP response headers after 53.9255ms - 200
+2025-11-17 08:18:45.873 -06:00 [INF] End processing HTTP request after 56.4614ms - 200
+2025-11-17 08:18:45.874 -06:00 [INF] Successfully fetched team from URL
+2025-11-17 08:18:45.874 -06:00 [INF] NFL Game: Los Angeles Chargers @ Jacksonville Jaguars - Nov 16, 2025 6:00 PM
+2025-11-17 08:18:45.875 -06:00 [INF] Winner: Jacksonville Jaguars
+2025-11-17 08:18:45.876 -06:00 [INF] Fetching game summary for game 401772775
+2025-11-17 08:18:45.876 -06:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-11-17 08:18:45.877 -06:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-11-17 08:18:45.943 -06:00 [INF] Received HTTP response headers after 64.663ms - 200
+2025-11-17 08:18:45.943 -06:00 [INF] End processing HTTP request after 67.0639ms - 200
+2025-11-17 08:18:45.985 -06:00 [INF] Successfully fetched game summary for game 401772775
+2025-11-17 08:18:50.990 -06:00 [INF] 📊 Database Upsert Summary: 12 total records | 0 updated | 12 inserted | 0 failed
+2025-11-17 08:18:55.523 -06:00 [INF] 📊 Database Upsert Summary: 12 total records | 0 updated | 12 inserted | 0 failed
+2025-11-17 08:18:55.524 -06:00 [INF] Game 401772775: 31 players found | 31 matched | 24 records processed
+2025-11-17 08:18:55.525 -06:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/14?lang=en&region=us
+2025-11-17 08:18:55.526 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/14?*
+2025-11-17 08:18:55.527 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/14?*
+2025-11-17 08:18:55.585 -06:00 [INF] Received HTTP response headers after 58.0321ms - 200
+2025-11-17 08:18:55.586 -06:00 [INF] End processing HTTP request after 60.575ms - 200
+2025-11-17 08:18:55.587 -06:00 [INF] Successfully fetched team from URL
+2025-11-17 08:18:55.588 -06:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/26?lang=en&region=us
+2025-11-17 08:18:55.589 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/26?*
+2025-11-17 08:18:55.590 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/26?*
+2025-11-17 08:18:55.644 -06:00 [INF] Received HTTP response headers after 53.8275ms - 200
+2025-11-17 08:18:55.645 -06:00 [INF] End processing HTTP request after 56.6341ms - 200
+2025-11-17 08:18:55.646 -06:00 [INF] Successfully fetched team from URL
+2025-11-17 08:18:55.647 -06:00 [INF] NFL Game: Seattle Seahawks @ Los Angeles Rams - Nov 16, 2025 9:05 PM
+2025-11-17 08:18:55.648 -06:00 [INF] Winner: Los Angeles Rams
+2025-11-17 08:18:55.648 -06:00 [INF] Fetching game summary for game 401772884
+2025-11-17 08:18:55.649 -06:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-11-17 08:18:55.650 -06:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-11-17 08:18:55.733 -06:00 [INF] Received HTTP response headers after 82.6703ms - 200
+2025-11-17 08:18:55.734 -06:00 [INF] End processing HTTP request after 85.1611ms - 200
+2025-11-17 08:18:55.750 -06:00 [INF] Successfully fetched game summary for game 401772884
+2025-11-17 08:19:00.260 -06:00 [INF] 📊 Database Upsert Summary: 10 total records | 0 updated | 10 inserted | 0 failed
+2025-11-17 08:19:05.095 -06:00 [INF] 📊 Database Upsert Summary: 12 total records | 0 updated | 12 inserted | 0 failed
+2025-11-17 08:19:05.096 -06:00 [INF] Game 401772884: 33 players found | 33 matched | 22 records processed
+2025-11-17 08:19:05.097 -06:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/22?lang=en&region=us
+2025-11-17 08:19:05.098 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/22?*
+2025-11-17 08:19:05.099 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/22?*
+2025-11-17 08:19:05.158 -06:00 [INF] Received HTTP response headers after 58.7848ms - 200
+2025-11-17 08:19:05.159 -06:00 [INF] End processing HTTP request after 60.986ms - 200
+2025-11-17 08:19:05.160 -06:00 [INF] Successfully fetched team from URL
+2025-11-17 08:19:05.160 -06:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/25?lang=en&region=us
+2025-11-17 08:19:05.161 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/25?*
+2025-11-17 08:19:05.162 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/25?*
+2025-11-17 08:19:05.217 -06:00 [INF] Received HTTP response headers after 54.1875ms - 200
+2025-11-17 08:19:05.218 -06:00 [INF] End processing HTTP request after 56.6422ms - 200
+2025-11-17 08:19:05.219 -06:00 [INF] Successfully fetched team from URL
+2025-11-17 08:19:05.220 -06:00 [INF] NFL Game: San Francisco 49ers @ Arizona Cardinals - Nov 16, 2025 9:05 PM
+2025-11-17 08:19:05.221 -06:00 [INF] Winner: San Francisco 49ers
+2025-11-17 08:19:05.221 -06:00 [INF] Fetching game summary for game 401772885
+2025-11-17 08:19:05.222 -06:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-11-17 08:19:05.223 -06:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-11-17 08:19:05.300 -06:00 [INF] Received HTTP response headers after 77.1379ms - 200
+2025-11-17 08:19:05.301 -06:00 [INF] End processing HTTP request after 79.4971ms - 200
+2025-11-17 08:19:05.308 -06:00 [INF] Successfully fetched game summary for game 401772885
+2025-11-17 08:19:10.133 -06:00 [INF] 📊 Database Upsert Summary: 12 total records | 0 updated | 12 inserted | 0 failed
+2025-11-17 08:19:14.353 -06:00 [INF] 📊 Database Upsert Summary: 10 total records | 0 updated | 10 inserted | 0 failed
+2025-11-17 08:19:14.354 -06:00 [INF] Game 401772885: 30 players found | 30 matched | 22 records processed
+2025-11-17 08:19:14.355 -06:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/5?lang=en&region=us
+2025-11-17 08:19:14.356 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/5?*
+2025-11-17 08:19:14.356 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/5?*
+2025-11-17 08:19:14.417 -06:00 [INF] Received HTTP response headers after 59.6584ms - 200
+2025-11-17 08:19:14.418 -06:00 [INF] End processing HTTP request after 61.951ms - 200
+2025-11-17 08:19:14.419 -06:00 [INF] Successfully fetched team from URL
+2025-11-17 08:19:14.419 -06:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/33?lang=en&region=us
+2025-11-17 08:19:14.420 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/33?*
+2025-11-17 08:19:14.421 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/33?*
+2025-11-17 08:19:14.477 -06:00 [INF] Received HTTP response headers after 55.5647ms - 200
+2025-11-17 08:19:14.478 -06:00 [INF] End processing HTTP request after 58.0827ms - 200
+2025-11-17 08:19:14.479 -06:00 [INF] Successfully fetched team from URL
+2025-11-17 08:19:14.479 -06:00 [INF] NFL Game: Baltimore Ravens @ Cleveland Browns - Nov 16, 2025 9:25 PM
+2025-11-17 08:19:14.480 -06:00 [INF] Winner: Baltimore Ravens
+2025-11-17 08:19:14.481 -06:00 [INF] Fetching game summary for game 401772777
+2025-11-17 08:19:14.481 -06:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-11-17 08:19:14.482 -06:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-11-17 08:19:14.500 -06:00 [INF] Received HTTP response headers after 17.004ms - 200
+2025-11-17 08:19:14.501 -06:00 [INF] End processing HTTP request after 19.4693ms - 200
+2025-11-17 08:19:14.508 -06:00 [INF] Successfully fetched game summary for game 401772777
+2025-11-17 08:19:19.256 -06:00 [INF] 📊 Database Upsert Summary: 12 total records | 0 updated | 12 inserted | 0 failed
+2025-11-17 08:19:21.512 -06:00 [INF] No existing player found for ESPN player: Wyatt Teller (ESPN ID: 3045474)
+2025-11-17 08:19:25.229 -06:00 [WRN] ⚠️ Skipped record due to foreign key constraint: ESPN Player ID 3045474 not found in Players table. Game: 401772777
+2025-11-17 08:19:26.012 -06:00 [INF] 📊 Database Upsert Summary: 16 total records | 0 updated | 15 inserted | 1 failed
+2025-11-17 08:19:26.013 -06:00 [INF] Game 401772777: 39 players found | 38 matched | 27 records processed
+2025-11-17 08:19:26.014 -06:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/7?lang=en&region=us
+2025-11-17 08:19:26.015 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/7?*
+2025-11-17 08:19:26.016 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/7?*
+2025-11-17 08:19:26.076 -06:00 [INF] Received HTTP response headers after 59.6538ms - 200
+2025-11-17 08:19:26.077 -06:00 [INF] End processing HTTP request after 61.9954ms - 200
+2025-11-17 08:19:26.078 -06:00 [INF] Successfully fetched team from URL
+2025-11-17 08:19:26.078 -06:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/12?lang=en&region=us
+2025-11-17 08:19:26.079 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/12?*
+2025-11-17 08:19:26.080 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/12?*
+2025-11-17 08:19:26.134 -06:00 [INF] Received HTTP response headers after 53.2897ms - 200
+2025-11-17 08:19:26.135 -06:00 [INF] End processing HTTP request after 55.6795ms - 200
+2025-11-17 08:19:26.136 -06:00 [INF] Successfully fetched team from URL
+2025-11-17 08:19:26.136 -06:00 [INF] NFL Game: Kansas City Chiefs @ Denver Broncos - Nov 16, 2025 9:25 PM
+2025-11-17 08:19:26.137 -06:00 [INF] Winner: Denver Broncos
+2025-11-17 08:19:26.138 -06:00 [INF] Fetching game summary for game 401772778
+2025-11-17 08:19:26.138 -06:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-11-17 08:19:26.139 -06:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-11-17 08:19:26.162 -06:00 [INF] Received HTTP response headers after 21.8083ms - 200
+2025-11-17 08:19:26.163 -06:00 [INF] End processing HTTP request after 24.5266ms - 200
+2025-11-17 08:19:26.171 -06:00 [INF] Successfully fetched game summary for game 401772778
+2025-11-17 08:19:30.545 -06:00 [INF] 📊 Database Upsert Summary: 11 total records | 0 updated | 11 inserted | 0 failed
+2025-11-17 08:19:35.668 -06:00 [INF] 📊 Database Upsert Summary: 12 total records | 0 updated | 12 inserted | 0 failed
+2025-11-17 08:19:35.669 -06:00 [INF] Game 401772778: 31 players found | 31 matched | 23 records processed
+2025-11-17 08:19:35.670 -06:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/21?lang=en&region=us
+2025-11-17 08:19:35.671 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/21?*
+2025-11-17 08:19:35.671 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/21?*
+2025-11-17 08:19:35.865 -06:00 [INF] Received HTTP response headers after 192.496ms - 200
+2025-11-17 08:19:35.866 -06:00 [INF] End processing HTTP request after 195.1617ms - 200
+2025-11-17 08:19:35.867 -06:00 [INF] Successfully fetched team from URL
+2025-11-17 08:19:35.867 -06:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/8?lang=en&region=us
+2025-11-17 08:19:35.868 -06:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/8?*
+2025-11-17 08:19:35.869 -06:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/8?*
+2025-11-17 08:19:35.925 -06:00 [INF] Received HTTP response headers after 55.6841ms - 200
+2025-11-17 08:19:35.926 -06:00 [INF] End processing HTTP request after 58.275ms - 200
+2025-11-17 08:19:35.927 -06:00 [INF] Successfully fetched team from URL
+2025-11-17 08:19:35.927 -06:00 [INF] NFL Game: Detroit Lions @ Philadelphia Eagles - Nov 17, 2025 1:20 AM
+2025-11-17 08:19:35.928 -06:00 [INF] Winner: Philadelphia Eagles
+2025-11-17 08:19:35.929 -06:00 [INF] Fetching game summary for game 401772928
+2025-11-17 08:19:35.929 -06:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-11-17 08:19:35.930 -06:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-11-17 08:19:36.017 -06:00 [INF] Received HTTP response headers after 85.9058ms - 200
+2025-11-17 08:19:36.018 -06:00 [INF] End processing HTTP request after 88.9213ms - 200
+2025-11-17 08:19:36.069 -06:00 [INF] Successfully fetched game summary for game 401772928
+2025-11-17 08:19:39.791 -06:00 [INF] 📊 Database Upsert Summary: 8 total records | 0 updated | 8 inserted | 0 failed
+2025-11-17 08:19:44.110 -06:00 [INF] 📊 Database Upsert Summary: 10 total records | 0 updated | 10 inserted | 0 failed
+2025-11-17 08:19:44.111 -06:00 [INF] Game 401772928: 26 players found | 26 matched | 18 records processed
+2025-11-17 08:19:44.112 -06:00 [INF] === COMPLETED WEEK 11 ===
+2025-11-17 08:19:44.628 -06:00 [INF] 🏆 NFL WEEKLY JOB SUMMARY: 15 games processed | 436 players found | 434 matched to DB | 313 records processed
+2025-11-17 08:19:44.629 -06:00 [INF] Completed NFL Weekly games scraping job

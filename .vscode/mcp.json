@@ -1,0 +1,11 @@
+{
+  "servers": {
+    "supabase": {
+      "url": "https://mcp.supabase.com/mcp"
+    },
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/"
+    }
+  }
+}

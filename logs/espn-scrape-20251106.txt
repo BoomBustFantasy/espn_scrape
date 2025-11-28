@@ -1,0 +1,992 @@
+2025-11-06 08:14:30.852 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/full/4040966.png
+System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.IO.IOException: Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host..
+ ---> System.Net.Sockets.SocketException (10054): An existing connection was forcibly closed by the remote host.
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:31.147 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4040966.png
+2025-11-06 08:14:31.151 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4040966.png
+2025-11-06 08:14:31.164 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4040966.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:31.278 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4040966.png
+2025-11-06 08:14:31.279 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4040966.png
+2025-11-06 08:14:31.281 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4040966.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:31.387 -06:00 [WRN] ❌ No headshot images could be processed for Trevon Diggs
+2025-11-06 08:14:31.388 -06:00 [WRN] ❌ Failed to download any headshot sizes for Trevon Diggs
+2025-11-06 08:14:31.588 -06:00 [INF] 🔍 Processing multi-size headshots for Kaiir Elam (ESPN ID: 4567399)
+2025-11-06 08:14:31.589 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4567399.png
+2025-11-06 08:14:31.591 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4567399.png
+2025-11-06 08:14:31.599 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/full/4567399.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:31.713 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4567399.png
+2025-11-06 08:14:31.719 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4567399.png
+2025-11-06 08:14:31.728 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4567399.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:31.836 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4567399.png
+2025-11-06 08:14:31.837 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4567399.png
+2025-11-06 08:14:31.845 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4567399.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:31.960 -06:00 [WRN] ❌ No headshot images could be processed for Kaiir Elam
+2025-11-06 08:14:31.961 -06:00 [WRN] ❌ Failed to download any headshot sizes for Kaiir Elam
+2025-11-06 08:14:32.176 -06:00 [INF] 🔍 Processing multi-size headshots for Donovan Ezeiruaku (ESPN ID: 4683848)
+2025-11-06 08:14:32.177 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4683848.png
+2025-11-06 08:14:32.178 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4683848.png
+2025-11-06 08:14:32.188 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/full/4683848.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:32.301 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4683848.png
+2025-11-06 08:14:32.302 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4683848.png
+2025-11-06 08:14:32.311 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4683848.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:32.425 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4683848.png
+2025-11-06 08:14:32.426 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4683848.png
+2025-11-06 08:14:32.433 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4683848.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:32.555 -06:00 [WRN] ❌ No headshot images could be processed for Donovan Ezeiruaku
+2025-11-06 08:14:32.562 -06:00 [WRN] ❌ Failed to download any headshot sizes for Donovan Ezeiruaku
+2025-11-06 08:14:32.768 -06:00 [INF] 🔍 Processing multi-size headshots for Rivaldo Fairweather (ESPN ID: 4605858)
+2025-11-06 08:14:32.771 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4605858.png
+2025-11-06 08:14:32.775 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4605858.png
+2025-11-06 08:14:32.808 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/full/4605858.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:32.923 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4605858.png
+2025-11-06 08:14:32.925 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4605858.png
+2025-11-06 08:14:32.932 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4605858.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:33.048 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4605858.png
+2025-11-06 08:14:33.050 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4605858.png
+2025-11-06 08:14:33.057 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4605858.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:33.171 -06:00 [WRN] ❌ No headshot images could be processed for Rivaldo Fairweather
+2025-11-06 08:14:33.172 -06:00 [WRN] ❌ Failed to download any headshot sizes for Rivaldo Fairweather
+2025-11-06 08:14:33.374 -06:00 [INF] 🔍 Processing multi-size headshots for Princeton Fant (ESPN ID: 4242442)
+2025-11-06 08:14:33.375 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4242442.png
+2025-11-06 08:14:33.376 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4242442.png
+2025-11-06 08:14:33.377 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/full/4242442.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:33.497 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4242442.png
+2025-11-06 08:14:33.498 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4242442.png
+2025-11-06 08:14:33.500 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4242442.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:33.605 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4242442.png
+2025-11-06 08:14:33.606 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4242442.png
+2025-11-06 08:14:33.608 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4242442.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:33.714 -06:00 [WRN] ❌ No headshot images could be processed for Princeton Fant
+2025-11-06 08:14:33.715 -06:00 [WRN] ❌ Failed to download any headshot sizes for Princeton Fant
+2025-11-06 08:14:33.930 -06:00 [INF] 🔍 Processing multi-size headshots for Jake Ferguson (ESPN ID: 4242355)
+2025-11-06 08:14:33.931 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4242355.png
+2025-11-06 08:14:33.932 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4242355.png
+2025-11-06 08:14:33.934 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/full/4242355.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:34.060 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4242355.png
+2025-11-06 08:14:34.084 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4242355.png
+2025-11-06 08:14:34.088 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4242355.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:34.210 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4242355.png
+2025-11-06 08:14:34.221 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4242355.png
+2025-11-06 08:14:34.249 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4242355.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:34.363 -06:00 [WRN] ❌ No headshot images could be processed for Jake Ferguson
+2025-11-06 08:14:34.364 -06:00 [WRN] ❌ Failed to download any headshot sizes for Jake Ferguson
+2025-11-06 08:14:34.567 -06:00 [INF] 🔍 Processing multi-size headshots for Ryan Flournoy (ESPN ID: 5083754)
+2025-11-06 08:14:34.568 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/5083754.png
+2025-11-06 08:14:34.569 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/5083754.png
+2025-11-06 08:14:34.571 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/full/5083754.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:34.677 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/5083754.png
+2025-11-06 08:14:34.680 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/5083754.png
+2025-11-06 08:14:34.759 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/5083754.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:35.312 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/5083754.png
+2025-11-06 08:14:35.349 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/5083754.png
+2025-11-06 08:14:35.354 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/5083754.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:35.480 -06:00 [WRN] ❌ No headshot images could be processed for Ryan Flournoy
+2025-11-06 08:14:35.501 -06:00 [WRN] ❌ Failed to download any headshot sizes for Ryan Flournoy
+2025-11-06 08:14:35.755 -06:00 [INF] 🔍 Processing multi-size headshots for Dante Fowler Jr. (ESPN ID: 2980100)
+2025-11-06 08:14:35.757 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/2980100.png
+2025-11-06 08:14:35.758 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/2980100.png
+2025-11-06 08:14:35.764 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/full/2980100.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:35.875 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/2980100.png
+2025-11-06 08:14:35.876 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/2980100.png
+2025-11-06 08:14:35.878 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/2980100.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:35.997 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/2980100.png
+2025-11-06 08:14:35.998 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/2980100.png
+2025-11-06 08:14:36.006 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/2980100.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:36.119 -06:00 [WRN] ❌ No headshot images could be processed for Dante Fowler Jr.
+2025-11-06 08:14:36.130 -06:00 [WRN] ❌ Failed to download any headshot sizes for Dante Fowler Jr.
+2025-11-06 08:14:36.349 -06:00 [INF] 🔍 Processing multi-size headshots for Wesley French (ESPN ID: 3916746)
+2025-11-06 08:14:36.351 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/3916746.png
+2025-11-06 08:14:36.353 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/3916746.png
+2025-11-06 08:14:36.356 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/full/3916746.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:36.486 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/3916746.png
+2025-11-06 08:14:36.489 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/3916746.png
+2025-11-06 08:14:36.491 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/3916746.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:36.608 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3916746.png
+2025-11-06 08:14:36.610 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3916746.png
+2025-11-06 08:14:36.612 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3916746.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:36.718 -06:00 [WRN] ❌ No headshot images could be processed for Wesley French
+2025-11-06 08:14:36.720 -06:00 [WRN] ❌ Failed to download any headshot sizes for Wesley French
+2025-11-06 08:14:36.929 -06:00 [INF] 🔍 Processing multi-size headshots for C.J. Goodwin (ESPN ID: 17474)
+2025-11-06 08:14:36.930 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/17474.png
+2025-11-06 08:14:36.931 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/17474.png
+2025-11-06 08:14:36.933 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/full/17474.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:37.051 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/17474.png
+2025-11-06 08:14:37.052 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/17474.png
+2025-11-06 08:14:37.054 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/17474.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:37.172 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/17474.png
+2025-11-06 08:14:37.173 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/17474.png
+2025-11-06 08:14:37.175 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/17474.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:37.293 -06:00 [WRN] ❌ No headshot images could be processed for C.J. Goodwin
+2025-11-06 08:14:37.294 -06:00 [WRN] ❌ Failed to download any headshot sizes for C.J. Goodwin
+2025-11-06 08:14:37.507 -06:00 [INF] 🔍 Processing multi-size headshots for Will Grier (ESPN ID: 3115252)
+2025-11-06 08:14:37.510 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/3115252.png
+2025-11-06 08:14:37.511 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/3115252.png
+2025-11-06 08:14:37.514 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/full/3115252.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:37.628 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/3115252.png
+2025-11-06 08:14:37.630 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/3115252.png
+2025-11-06 08:14:37.632 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/3115252.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:37.749 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3115252.png
+2025-11-06 08:14:37.752 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3115252.png
+2025-11-06 08:14:37.754 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3115252.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:37.870 -06:00 [WRN] ❌ No headshot images could be processed for Will Grier
+2025-11-06 08:14:37.871 -06:00 [WRN] ❌ Failed to download any headshot sizes for Will Grier
+2025-11-06 08:14:38.084 -06:00 [INF] 🔍 Processing multi-size headshots for Tyler Guyton (ESPN ID: 4609048)
+2025-11-06 08:14:38.153 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4609048.png
+2025-11-06 08:14:38.157 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4609048.png
+2025-11-06 08:14:38.161 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/full/4609048.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:38.298 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4609048.png
+2025-11-06 08:14:38.309 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4609048.png
+2025-11-06 08:14:38.343 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4609048.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:38.464 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4609048.png
+2025-11-06 08:14:38.465 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4609048.png
+2025-11-06 08:14:38.466 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4609048.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:38.587 -06:00 [WRN] ❌ No headshot images could be processed for Tyler Guyton
+2025-11-06 08:14:38.620 -06:00 [WRN] ❌ Failed to download any headshot sizes for Tyler Guyton
+2025-11-06 08:14:38.829 -06:00 [INF] 🔍 Processing multi-size headshots for Brock Hoffman (ESPN ID: 4241087)
+2025-11-06 08:14:38.831 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4241087.png
+2025-11-06 08:14:38.832 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4241087.png
+2025-11-06 08:14:38.835 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/full/4241087.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:38.952 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4241087.png
+2025-11-06 08:14:38.953 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4241087.png
+2025-11-06 08:14:38.955 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4241087.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:39.061 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4241087.png
+2025-11-06 08:14:39.062 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4241087.png
+2025-11-06 08:14:39.064 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4241087.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:39.182 -06:00 [WRN] ❌ No headshot images could be processed for Brock Hoffman
+2025-11-06 08:14:39.184 -06:00 [WRN] ❌ Failed to download any headshot sizes for Brock Hoffman
+2025-11-06 08:14:39.394 -06:00 [INF] 🔍 Processing multi-size headshots for Traeshon Holden (ESPN ID: 4429172)
+2025-11-06 08:14:39.395 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4429172.png
+2025-11-06 08:14:39.396 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4429172.png
+2025-11-06 08:14:39.398 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/full/4429172.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:39.516 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4429172.png
+2025-11-06 08:14:39.517 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4429172.png
+2025-11-06 08:14:39.518 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4429172.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:39.622 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4429172.png
+2025-11-06 08:14:39.623 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4429172.png
+2025-11-06 08:14:39.625 -06:00 [ERR] Error downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4429172.png
+System.Net.Http.HttpRequestException: No such host is known. (a.espncdn.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ESPNScrape.Jobs.NFLPlayerHeadshotJob.DownloadImage(String imageUrl) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Jobs\NFLPlayerHeadshotJob.cs:line 221
+2025-11-06 08:14:39.744 -06:00 [WRN] ❌ No headshot images could be processed for Traeshon Holden
+2025-11-06 08:14:39.745 -06:00 [WRN] ❌ Failed to download any headshot sizes for Traeshon Holden
+2025-11-06 08:14:39.957 -06:00 [INF] 🔍 Processing multi-size headshots for Malik Hooker (ESPN ID: 3121415)
+2025-11-06 08:14:39.958 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/3121415.png
+2025-11-06 08:14:39.959 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/3121415.png
+2025-11-06 08:14:40.037 -06:00 [INF] Received HTTP response headers after 77.4151ms - 200
+2025-11-06 08:14:40.038 -06:00 [INF] End processing HTTP request after 80.2609ms - 200
+2025-11-06 08:14:40.185 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/3121415.png
+2025-11-06 08:14:40.186 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/3121415.png
+2025-11-06 08:14:40.246 -06:00 [INF] Received HTTP response headers after 58.9922ms - 404
+2025-11-06 08:14:40.247 -06:00 [INF] End processing HTTP request after 62.2784ms - 404
+2025-11-06 08:14:40.248 -06:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/3121415.png
+2025-11-06 08:14:40.351 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3121415.png
+2025-11-06 08:14:40.353 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3121415.png
+2025-11-06 08:14:40.409 -06:00 [INF] Received HTTP response headers after 55.9143ms - 404
+2025-11-06 08:14:40.410 -06:00 [INF] End processing HTTP request after 59.0515ms - 404
+2025-11-06 08:14:40.411 -06:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3121415.png
+2025-11-06 08:14:40.517 -06:00 [INF] 🎨 Found 1 sizes from ESPN for Malik Hooker, creating missing sizes from full
+2025-11-06 08:14:42.066 -06:00 [INF] ✅ Processed 3 headshot sizes for Malik Hooker (1 from ESPN, 2 generated)
+2025-11-06 08:14:42.474 -06:00 [INF] ✅ Successfully processed multi-size headshots for Malik Hooker - Sizes: [full (237283 bytes), profile (39206 bytes), thumbnail (6871 bytes)]
+2025-11-06 08:14:42.678 -06:00 [INF] 🔍 Processing multi-size headshots for James Houston (ESPN ID: 4240608)
+2025-11-06 08:14:42.679 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4240608.png
+2025-11-06 08:14:42.680 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4240608.png
+2025-11-06 08:14:42.711 -06:00 [INF] Received HTTP response headers after 30.3198ms - 200
+2025-11-06 08:14:42.712 -06:00 [INF] End processing HTTP request after 33.072ms - 200
+2025-11-06 08:14:42.831 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4240608.png
+2025-11-06 08:14:42.832 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4240608.png
+2025-11-06 08:14:42.928 -06:00 [INF] Received HTTP response headers after 94.7462ms - 404
+2025-11-06 08:14:42.929 -06:00 [INF] End processing HTTP request after 98.0425ms - 404
+2025-11-06 08:14:42.930 -06:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4240608.png
+2025-11-06 08:14:43.044 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4240608.png
+2025-11-06 08:14:43.046 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4240608.png
+2025-11-06 08:14:43.143 -06:00 [INF] Received HTTP response headers after 96.2785ms - 404
+2025-11-06 08:14:43.144 -06:00 [INF] End processing HTTP request after 99.3472ms - 404
+2025-11-06 08:14:43.145 -06:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4240608.png
+2025-11-06 08:14:43.256 -06:00 [INF] 🎨 Found 1 sizes from ESPN for James Houston, creating missing sizes from full
+2025-11-06 08:14:44.225 -06:00 [INF] ✅ Processed 3 headshot sizes for James Houston (1 from ESPN, 2 generated)
+2025-11-06 08:14:44.462 -06:00 [INF] ✅ Successfully processed multi-size headshots for James Houston - Sizes: [full (317916 bytes), profile (81909 bytes), thumbnail (46361 bytes)]
+2025-11-06 08:14:44.666 -06:00 [INF] 🔍 Processing multi-size headshots for Shemar James (ESPN ID: 4685400)
+2025-11-06 08:14:44.667 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4685400.png
+2025-11-06 08:14:44.668 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4685400.png
+2025-11-06 08:14:44.681 -06:00 [INF] Received HTTP response headers after 12.1127ms - 200
+2025-11-06 08:14:44.682 -06:00 [INF] End processing HTTP request after 14.8177ms - 200
+2025-11-06 08:14:44.803 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4685400.png
+2025-11-06 08:14:44.803 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4685400.png
+2025-11-06 08:14:44.896 -06:00 [INF] Received HTTP response headers after 91.6354ms - 404
+2025-11-06 08:14:44.897 -06:00 [INF] End processing HTTP request after 94.6399ms - 404
+2025-11-06 08:14:44.898 -06:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4685400.png
+2025-11-06 08:14:45.013 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4685400.png
+2025-11-06 08:14:45.014 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4685400.png
+2025-11-06 08:14:45.121 -06:00 [INF] Received HTTP response headers after 106.0788ms - 404
+2025-11-06 08:14:45.122 -06:00 [INF] End processing HTTP request after 109.2921ms - 404
+2025-11-06 08:14:45.123 -06:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4685400.png
+2025-11-06 08:14:45.228 -06:00 [INF] 🎨 Found 1 sizes from ESPN for Shemar James, creating missing sizes from full
+2025-11-06 08:14:46.046 -06:00 [INF] ✅ Processed 3 headshot sizes for Shemar James (1 from ESPN, 2 generated)
+2025-11-06 08:14:46.289 -06:00 [INF] ✅ Successfully processed multi-size headshots for Shemar James - Sizes: [full (223956 bytes), profile (33623 bytes), thumbnail (6394 bytes)]
+2025-11-06 08:14:46.497 -06:00 [INF] 🔍 Processing multi-size headshots for Rob Jones (ESPN ID: 4570495)
+2025-11-06 08:14:46.499 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4570495.png
+2025-11-06 08:14:46.500 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4570495.png
+2025-11-06 08:14:46.592 -06:00 [INF] Received HTTP response headers after 91.4917ms - 200
+2025-11-06 08:14:46.593 -06:00 [INF] End processing HTTP request after 94.6245ms - 200
+2025-11-06 08:14:46.741 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4570495.png
+2025-11-06 08:14:46.742 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4570495.png
+2025-11-06 08:14:46.866 -06:00 [INF] Received HTTP response headers after 122.1228ms - 404
+2025-11-06 08:14:46.867 -06:00 [INF] End processing HTTP request after 125.7334ms - 404
+2025-11-06 08:14:46.868 -06:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4570495.png
+2025-11-06 08:14:46.969 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4570495.png
+2025-11-06 08:14:46.970 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4570495.png
+2025-11-06 08:14:47.162 -06:00 [INF] Received HTTP response headers after 191.0005ms - 404
+2025-11-06 08:14:47.163 -06:00 [INF] End processing HTTP request after 194.1462ms - 404
+2025-11-06 08:14:47.164 -06:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4570495.png
+2025-11-06 08:14:47.273 -06:00 [INF] 🎨 Found 1 sizes from ESPN for Rob Jones, creating missing sizes from full
+2025-11-06 08:14:48.171 -06:00 [INF] ✅ Processed 3 headshot sizes for Rob Jones (1 from ESPN, 2 generated)
+2025-11-06 08:14:48.393 -06:00 [INF] ✅ Successfully processed multi-size headshots for Rob Jones - Sizes: [full (216197 bytes), profile (31100 bytes), thumbnail (5937 bytes)]
+2025-11-06 08:14:48.603 -06:00 [INF] 🔍 Processing multi-size headshots for Trevor Keegan (ESPN ID: 4427140)
+2025-11-06 08:14:48.604 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4427140.png
+2025-11-06 08:14:48.605 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4427140.png
+2025-11-06 08:14:48.663 -06:00 [INF] Received HTTP response headers after 56.2712ms - 200
+2025-11-06 08:14:48.664 -06:00 [INF] End processing HTTP request after 59.56ms - 200
+2025-11-06 08:14:48.770 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4427140.png
+2025-11-06 08:14:48.771 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4427140.png
+2025-11-06 08:14:48.868 -06:00 [INF] Received HTTP response headers after 96.456ms - 404
+2025-11-06 08:14:48.869 -06:00 [INF] End processing HTTP request after 99.6781ms - 404
+2025-11-06 08:14:48.870 -06:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4427140.png
+2025-11-06 08:14:48.980 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4427140.png
+2025-11-06 08:14:48.981 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4427140.png
+2025-11-06 08:14:49.097 -06:00 [INF] Received HTTP response headers after 114.6985ms - 404
+2025-11-06 08:14:49.098 -06:00 [INF] End processing HTTP request after 117.9336ms - 404
+2025-11-06 08:14:49.099 -06:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4427140.png
+2025-11-06 08:14:49.206 -06:00 [INF] 🎨 Found 1 sizes from ESPN for Trevor Keegan, creating missing sizes from full
+2025-11-06 08:14:50.030 -06:00 [INF] ✅ Processed 3 headshot sizes for Trevor Keegan (1 from ESPN, 2 generated)
+2025-11-06 08:14:50.139 -06:00 [WRN] ⚠️ Downloaded headshots for Trevor Keegan but failed to update database
+2025-11-06 08:14:50.345 -06:00 [INF] 🔍 Processing multi-size headshots for Marshawn Kneeland (ESPN ID: 4429996)
+2025-11-06 08:14:50.346 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4429996.png
+2025-11-06 08:14:50.347 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4429996.png
+2025-11-06 08:14:50.427 -06:00 [INF] Received HTTP response headers after 79.1794ms - 200
+2025-11-06 08:14:50.428 -06:00 [INF] End processing HTTP request after 81.9334ms - 200
+2025-11-06 08:14:50.544 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4429996.png
+2025-11-06 08:14:50.545 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4429996.png
+2025-11-06 08:14:50.639 -06:00 [INF] Received HTTP response headers after 92.9956ms - 404
+2025-11-06 08:14:50.640 -06:00 [INF] End processing HTTP request after 96.6544ms - 404
+2025-11-06 08:14:50.642 -06:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4429996.png
+2025-11-06 08:14:50.757 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4429996.png
+2025-11-06 08:14:50.758 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4429996.png
+2025-11-06 08:14:50.855 -06:00 [INF] Received HTTP response headers after 95.5478ms - 404
+2025-11-06 08:14:50.856 -06:00 [INF] End processing HTTP request after 98.2796ms - 404
+2025-11-06 08:14:50.857 -06:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4429996.png
+2025-11-06 08:14:50.969 -06:00 [INF] 🎨 Found 1 sizes from ESPN for Marshawn Kneeland, creating missing sizes from full
+2025-11-06 08:14:51.777 -06:00 [INF] ✅ Processed 3 headshot sizes for Marshawn Kneeland (1 from ESPN, 2 generated)
+2025-11-06 08:14:52.012 -06:00 [INF] ✅ Successfully processed multi-size headshots for Marshawn Kneeland - Sizes: [full (244271 bytes), profile (36144 bytes), thumbnail (6690 bytes)]
+2025-11-06 08:14:52.225 -06:00 [INF] 🔍 Processing multi-size headshots for CeeDee Lamb (ESPN ID: 4241389)
+2025-11-06 08:14:52.226 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4241389.png
+2025-11-06 08:14:52.227 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4241389.png
+2025-11-06 08:14:52.240 -06:00 [INF] Received HTTP response headers after 12.9902ms - 200
+2025-11-06 08:14:52.241 -06:00 [INF] End processing HTTP request after 15.5998ms - 200
+2025-11-06 08:14:52.346 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4241389.png
+2025-11-06 08:14:52.347 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4241389.png
+2025-11-06 08:14:52.432 -06:00 [INF] Received HTTP response headers after 83.9891ms - 404
+2025-11-06 08:14:52.433 -06:00 [INF] End processing HTTP request after 87.0281ms - 404
+2025-11-06 08:14:52.435 -06:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4241389.png
+2025-11-06 08:14:52.542 -06:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4241389.png
+2025-11-06 08:14:52.543 -06:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4241389.png
+2025-11-06 08:14:52.652 -06:00 [INF] Received HTTP response headers after 107.6667ms - 404
+2025-11-06 08:14:52.653 -06:00 [INF] End processing HTTP request after 110.728ms - 404
+2025-11-06 08:14:52.654 -06:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4241389.png
+2025-11-06 08:14:52.769 -06:00 [INF] 🎨 Found 1 sizes from ESPN for CeeDee Lamb, creating missing sizes from full

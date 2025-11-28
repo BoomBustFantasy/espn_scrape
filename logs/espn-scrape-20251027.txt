@@ -1,0 +1,1844 @@
+2025-10-27 00:00:09.540 -05:00 [INF] Starting ESPNScrape application
+2025-10-27 00:00:09.710 -05:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2025-10-27 00:00:09.712 -05:00 [INF] Quartz Scheduler created
+2025-10-27 00:00:09.712 -05:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2025-10-27 00:00:09.713 -05:00 [INF] RAMJobStore initialized.
+2025-10-27 00:00:09.714 -05:00 [INF] Quartz Scheduler 3.15.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2025-10-27 00:00:09.714 -05:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2025-10-27 00:00:09.715 -05:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2025-10-27 00:00:09.723 -05:00 [INF] Adding 1 jobs, 1 triggers.
+2025-10-27 00:00:09.724 -05:00 [INF] Adding job: DEFAULT.NFLWeeklyJob
+2025-10-27 00:00:09.733 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-27 00:00:09.735 -05:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2025-10-27 00:00:09.737 -05:00 [INF] Hosting environment: Production
+2025-10-27 00:00:09.738 -05:00 [INF] Content root path: C:\Users\jackb\source\repos\doink\good_espn_scrape
+2025-10-27 00:00:09.766 -05:00 [INF] Starting NFL Weekly games scraping job
+2025-10-27 00:00:09.770 -05:00 [INF] Estimated current week based on date (2025-10-27): 9
+2025-10-27 00:00:09.773 -05:00 [INF] Fetching games for Year: 2025, SeasonType: 2, Week: 8
+2025-10-27 00:00:09.783 -05:00 [INF] Start processing HTTP request GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/types/2/weeks/8/events
+2025-10-27 00:00:09.786 -05:00 [INF] Sending HTTP request GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/types/2/weeks/8/events
+2025-10-27 00:00:10.131 -05:00 [INF] Received HTTP response headers after 343.4853ms - 200
+2025-10-27 00:00:10.140 -05:00 [INF] End processing HTTP request after 362.7958ms - 200
+2025-10-27 00:00:10.162 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772817?*
+2025-10-27 00:00:10.163 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772817?*
+2025-10-27 00:00:10.314 -05:00 [INF] Received HTTP response headers after 150.7472ms - 200
+2025-10-27 00:00:10.315 -05:00 [INF] End processing HTTP request after 154.1294ms - 200
+2025-10-27 00:00:10.449 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772942?*
+2025-10-27 00:00:10.450 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772942?*
+2025-10-27 00:00:10.512 -05:00 [INF] Received HTTP response headers after 60.9749ms - 200
+2025-10-27 00:00:10.512 -05:00 [INF] End processing HTTP request after 63.4406ms - 200
+2025-10-27 00:00:10.622 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772760?*
+2025-10-27 00:00:10.623 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772760?*
+2025-10-27 00:00:10.685 -05:00 [INF] Received HTTP response headers after 61.2736ms - 200
+2025-10-27 00:00:10.687 -05:00 [INF] End processing HTTP request after 64.0481ms - 200
+2025-10-27 00:00:10.790 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772758?*
+2025-10-27 00:00:10.791 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772758?*
+2025-10-27 00:00:10.852 -05:00 [INF] Received HTTP response headers after 60.3564ms - 200
+2025-10-27 00:00:10.853 -05:00 [INF] End processing HTTP request after 62.939ms - 200
+2025-10-27 00:00:10.958 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772868?*
+2025-10-27 00:00:10.959 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772868?*
+2025-10-27 00:00:11.019 -05:00 [INF] Received HTTP response headers after 60.0349ms - 200
+2025-10-27 00:00:11.020 -05:00 [INF] End processing HTTP request after 62.7149ms - 200
+2025-10-27 00:00:11.129 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772867?*
+2025-10-27 00:00:11.130 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772867?*
+2025-10-27 00:00:11.188 -05:00 [INF] Received HTTP response headers after 57.7094ms - 200
+2025-10-27 00:00:11.189 -05:00 [INF] End processing HTTP request after 60.3365ms - 200
+2025-10-27 00:00:11.298 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772865?*
+2025-10-27 00:00:11.299 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772865?*
+2025-10-27 00:00:11.360 -05:00 [INF] Received HTTP response headers after 59.8746ms - 200
+2025-10-27 00:00:11.361 -05:00 [INF] End processing HTTP request after 62.6033ms - 200
+2025-10-27 00:00:11.469 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772759?*
+2025-10-27 00:00:11.470 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772759?*
+2025-10-27 00:00:11.526 -05:00 [INF] Received HTTP response headers after 54.5309ms - 200
+2025-10-27 00:00:11.527 -05:00 [INF] End processing HTTP request after 57.4791ms - 200
+2025-10-27 00:00:11.641 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772866?*
+2025-10-27 00:00:11.642 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772866?*
+2025-10-27 00:00:11.702 -05:00 [INF] Received HTTP response headers after 59.5339ms - 200
+2025-10-27 00:00:11.703 -05:00 [INF] End processing HTTP request after 62.2491ms - 200
+2025-10-27 00:00:11.814 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772869?*
+2025-10-27 00:00:11.815 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772869?*
+2025-10-27 00:00:11.876 -05:00 [INF] Received HTTP response headers after 60.4895ms - 200
+2025-10-27 00:00:11.877 -05:00 [INF] End processing HTTP request after 63.9085ms - 200
+2025-10-27 00:00:11.985 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772762?*
+2025-10-27 00:00:11.986 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772762?*
+2025-10-27 00:00:12.044 -05:00 [INF] Received HTTP response headers after 57.4187ms - 200
+2025-10-27 00:00:12.045 -05:00 [INF] End processing HTTP request after 59.9221ms - 200
+2025-10-27 00:00:12.157 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772761?*
+2025-10-27 00:00:12.158 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772761?*
+2025-10-27 00:00:12.220 -05:00 [INF] Received HTTP response headers after 60.7999ms - 200
+2025-10-27 00:00:12.221 -05:00 [INF] End processing HTTP request after 63.1986ms - 200
+2025-10-27 00:00:12.327 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772925?*
+2025-10-27 00:00:12.328 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772925?*
+2025-10-27 00:00:12.387 -05:00 [INF] Received HTTP response headers after 58.051ms - 200
+2025-10-27 00:00:12.387 -05:00 [INF] End processing HTTP request after 60.471ms - 200
+2025-10-27 00:00:12.497 -05:00 [INF] Successfully fetched 13 games
+2025-10-27 00:00:12.498 -05:00 [INF] Week 8 has 13 games - added to processing list
+2025-10-27 00:00:12.605 -05:00 [INF] Fetching games for Year: 2025, SeasonType: 2, Week: 9
+2025-10-27 00:00:12.606 -05:00 [INF] Start processing HTTP request GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/types/2/weeks/9/events
+2025-10-27 00:00:12.606 -05:00 [INF] Sending HTTP request GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/types/2/weeks/9/events
+2025-10-27 00:00:12.666 -05:00 [INF] Received HTTP response headers after 58.8503ms - 200
+2025-10-27 00:00:12.667 -05:00 [INF] End processing HTTP request after 60.9611ms - 200
+2025-10-27 00:00:12.668 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772943?*
+2025-10-27 00:00:12.668 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772943?*
+2025-10-27 00:00:12.724 -05:00 [INF] Received HTTP response headers after 55.2577ms - 200
+2025-10-27 00:00:12.725 -05:00 [INF] End processing HTTP request after 57.2654ms - 200
+2025-10-27 00:00:12.838 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772765?*
+2025-10-27 00:00:12.839 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772765?*
+2025-10-27 00:00:12.900 -05:00 [INF] Received HTTP response headers after 59.7502ms - 200
+2025-10-27 00:00:12.901 -05:00 [INF] End processing HTTP request after 63.0494ms - 200
+2025-10-27 00:00:13.008 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772871?*
+2025-10-27 00:00:13.009 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772871?*
+2025-10-27 00:00:13.064 -05:00 [INF] Received HTTP response headers after 54.548ms - 200
+2025-10-27 00:00:13.065 -05:00 [INF] End processing HTTP request after 57.0159ms - 200
+2025-10-27 00:00:13.180 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772872?*
+2025-10-27 00:00:13.182 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772872?*
+2025-10-27 00:00:13.241 -05:00 [INF] Received HTTP response headers after 58.8673ms - 200
+2025-10-27 00:00:13.242 -05:00 [INF] End processing HTTP request after 61.7121ms - 200
+2025-10-27 00:00:13.351 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772764?*
+2025-10-27 00:00:13.352 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772764?*
+2025-10-27 00:00:13.412 -05:00 [INF] Received HTTP response headers after 59.1712ms - 200
+2025-10-27 00:00:13.413 -05:00 [INF] End processing HTTP request after 62.1084ms - 200
+2025-10-27 00:00:13.520 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772763?*
+2025-10-27 00:00:13.521 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772763?*
+2025-10-27 00:00:13.583 -05:00 [INF] Received HTTP response headers after 61.8362ms - 200
+2025-10-27 00:00:13.584 -05:00 [INF] End processing HTTP request after 64.2159ms - 200
+2025-10-27 00:00:13.690 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772767?*
+2025-10-27 00:00:13.691 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772767?*
+2025-10-27 00:00:13.752 -05:00 [INF] Received HTTP response headers after 60.206ms - 200
+2025-10-27 00:00:13.753 -05:00 [INF] End processing HTTP request after 63.1025ms - 200
+2025-10-27 00:00:13.861 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772766?*
+2025-10-27 00:00:13.862 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772766?*
+2025-10-27 00:00:13.921 -05:00 [INF] Received HTTP response headers after 58.4708ms - 200
+2025-10-27 00:00:13.922 -05:00 [INF] End processing HTTP request after 60.8756ms - 200
+2025-10-27 00:00:14.031 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772870?*
+2025-10-27 00:00:14.032 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772870?*
+2025-10-27 00:00:14.094 -05:00 [INF] Received HTTP response headers after 60.8864ms - 200
+2025-10-27 00:00:14.095 -05:00 [INF] End processing HTTP request after 63.656ms - 200
+2025-10-27 00:00:14.202 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772873?*
+2025-10-27 00:00:14.203 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772873?*
+2025-10-27 00:00:14.262 -05:00 [INF] Received HTTP response headers after 58.4012ms - 200
+2025-10-27 00:00:14.263 -05:00 [INF] End processing HTTP request after 60.9055ms - 200
+2025-10-27 00:00:14.374 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772874?*
+2025-10-27 00:00:14.375 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772874?*
+2025-10-27 00:00:14.437 -05:00 [INF] Received HTTP response headers after 61.3457ms - 200
+2025-10-27 00:00:14.438 -05:00 [INF] End processing HTTP request after 63.81ms - 200
+2025-10-27 00:00:14.544 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772768?*
+2025-10-27 00:00:14.545 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772768?*
+2025-10-27 00:00:14.601 -05:00 [INF] Received HTTP response headers after 55.2668ms - 200
+2025-10-27 00:00:14.602 -05:00 [INF] End processing HTTP request after 57.7527ms - 200
+2025-10-27 00:00:14.715 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772926?*
+2025-10-27 00:00:14.716 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772926?*
+2025-10-27 00:00:14.775 -05:00 [INF] Received HTTP response headers after 57.9675ms - 200
+2025-10-27 00:00:14.776 -05:00 [INF] End processing HTTP request after 60.489ms - 200
+2025-10-27 00:00:14.886 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772818?*
+2025-10-27 00:00:14.888 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772818?*
+2025-10-27 00:00:14.948 -05:00 [INF] Received HTTP response headers after 59.7948ms - 200
+2025-10-27 00:00:14.949 -05:00 [INF] End processing HTTP request after 62.6828ms - 200
+2025-10-27 00:00:15.056 -05:00 [INF] Successfully fetched 14 games
+2025-10-27 00:00:15.057 -05:00 [INF] Week 9 has 14 games - added to processing list
+2025-10-27 00:00:15.167 -05:00 [INF] Determined current season: 2025, checking weeks: [8, 9]
+2025-10-27 00:00:15.168 -05:00 [INF] === PROCESSING WEEK 8 ===
+2025-10-27 00:00:15.168 -05:00 [INF] Fetching games for Year: 2025, SeasonType: 2, Week: 8
+2025-10-27 00:00:15.169 -05:00 [INF] Start processing HTTP request GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/types/2/weeks/8/events
+2025-10-27 00:00:15.169 -05:00 [INF] Sending HTTP request GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/types/2/weeks/8/events
+2025-10-27 00:00:15.234 -05:00 [INF] Received HTTP response headers after 63.5571ms - 200
+2025-10-27 00:00:15.235 -05:00 [INF] End processing HTTP request after 65.8339ms - 200
+2025-10-27 00:00:15.236 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772817?*
+2025-10-27 00:00:15.236 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772817?*
+2025-10-27 00:00:15.296 -05:00 [INF] Received HTTP response headers after 58.3978ms - 200
+2025-10-27 00:00:15.296 -05:00 [INF] End processing HTTP request after 60.7573ms - 200
+2025-10-27 00:00:15.411 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772942?*
+2025-10-27 00:00:15.412 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772942?*
+2025-10-27 00:00:15.473 -05:00 [INF] Received HTTP response headers after 60.4109ms - 200
+2025-10-27 00:00:15.474 -05:00 [INF] End processing HTTP request after 62.9124ms - 200
+2025-10-27 00:00:15.582 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772760?*
+2025-10-27 00:00:15.583 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772760?*
+2025-10-27 00:00:15.644 -05:00 [INF] Received HTTP response headers after 59.6408ms - 200
+2025-10-27 00:00:15.645 -05:00 [INF] End processing HTTP request after 62.5994ms - 200
+2025-10-27 00:00:15.753 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772758?*
+2025-10-27 00:00:15.754 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772758?*
+2025-10-27 00:00:15.814 -05:00 [INF] Received HTTP response headers after 58.6801ms - 200
+2025-10-27 00:00:15.815 -05:00 [INF] End processing HTTP request after 61.2591ms - 200
+2025-10-27 00:00:15.924 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772868?*
+2025-10-27 00:00:15.925 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772868?*
+2025-10-27 00:00:15.984 -05:00 [INF] Received HTTP response headers after 58.5665ms - 200
+2025-10-27 00:00:15.985 -05:00 [INF] End processing HTTP request after 60.9608ms - 200
+2025-10-27 00:00:16.095 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772867?*
+2025-10-27 00:00:16.097 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772867?*
+2025-10-27 00:00:16.155 -05:00 [INF] Received HTTP response headers after 57.8566ms - 200
+2025-10-27 00:00:16.156 -05:00 [INF] End processing HTTP request after 60.6536ms - 200
+2025-10-27 00:00:16.266 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772865?*
+2025-10-27 00:00:16.267 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772865?*
+2025-10-27 00:00:16.329 -05:00 [INF] Received HTTP response headers after 61.0298ms - 200
+2025-10-27 00:00:16.330 -05:00 [INF] End processing HTTP request after 63.5312ms - 200
+2025-10-27 00:00:16.435 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772759?*
+2025-10-27 00:00:16.436 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772759?*
+2025-10-27 00:00:16.493 -05:00 [INF] Received HTTP response headers after 55.5175ms - 200
+2025-10-27 00:00:16.494 -05:00 [INF] End processing HTTP request after 58.361ms - 200
+2025-10-27 00:00:16.604 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772866?*
+2025-10-27 00:00:16.605 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772866?*
+2025-10-27 00:00:16.664 -05:00 [INF] Received HTTP response headers after 58.4369ms - 200
+2025-10-27 00:00:16.665 -05:00 [INF] End processing HTTP request after 61.176ms - 200
+2025-10-27 00:00:16.774 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772869?*
+2025-10-27 00:00:16.776 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772869?*
+2025-10-27 00:00:16.837 -05:00 [INF] Received HTTP response headers after 60.2824ms - 200
+2025-10-27 00:00:16.838 -05:00 [INF] End processing HTTP request after 63.5262ms - 200
+2025-10-27 00:00:16.945 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772762?*
+2025-10-27 00:00:16.946 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772762?*
+2025-10-27 00:00:17.007 -05:00 [INF] Received HTTP response headers after 60.5443ms - 200
+2025-10-27 00:00:17.008 -05:00 [INF] End processing HTTP request after 62.9859ms - 200
+2025-10-27 00:00:17.115 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772761?*
+2025-10-27 00:00:17.116 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772761?*
+2025-10-27 00:00:17.175 -05:00 [INF] Received HTTP response headers after 58.34ms - 200
+2025-10-27 00:00:17.175 -05:00 [INF] End processing HTTP request after 60.7951ms - 200
+2025-10-27 00:00:17.285 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772925?*
+2025-10-27 00:00:17.286 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772925?*
+2025-10-27 00:00:17.347 -05:00 [INF] Received HTTP response headers after 60.1489ms - 200
+2025-10-27 00:00:17.348 -05:00 [INF] End processing HTTP request after 62.7825ms - 200
+2025-10-27 00:00:17.455 -05:00 [INF] Successfully fetched 13 games
+2025-10-27 00:00:17.455 -05:00 [INF] Found 13 games for NFL 2025 Week 8
+2025-10-27 00:00:17.460 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/12?lang=en&region=us
+2025-10-27 00:00:17.461 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/12?*
+2025-10-27 00:00:17.462 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/12?*
+2025-10-27 00:00:17.522 -05:00 [INF] Received HTTP response headers after 60.3258ms - 200
+2025-10-27 00:00:17.523 -05:00 [INF] End processing HTTP request after 62.6144ms - 200
+2025-10-27 00:00:17.534 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:00:17.535 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/28?lang=en&region=us
+2025-10-27 00:00:17.536 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/28?*
+2025-10-27 00:00:17.537 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/28?*
+2025-10-27 00:00:17.598 -05:00 [INF] Received HTTP response headers after 60.5756ms - 200
+2025-10-27 00:00:17.599 -05:00 [INF] End processing HTTP request after 62.7938ms - 200
+2025-10-27 00:00:17.599 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:00:17.600 -05:00 [INF] NFL Game: Washington Commanders @ Kansas City Chiefs - Oct 28, 2025 12:15 AM
+2025-10-27 00:00:17.602 -05:00 [INF] === PROCESSING GAME 401772817 (Washington Commanders @ Kansas City Chiefs) ===
+2025-10-27 00:00:17.604 -05:00 [INF] Fetching game summary for game 401772817
+2025-10-27 00:00:17.604 -05:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:00:17.605 -05:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:00:17.743 -05:00 [INF] Received HTTP response headers after 137.5564ms - 200
+2025-10-27 00:00:17.744 -05:00 [INF] End processing HTTP request after 140.2385ms - 200
+2025-10-27 00:00:17.772 -05:00 [INF] Successfully fetched game summary for game 401772817
+2025-10-27 00:00:17.773 -05:00 [WRN] No PlayerStats found in BoxScore for game 401772817
+2025-10-27 00:00:17.774 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/24?lang=en&region=us
+2025-10-27 00:00:17.774 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/24?*
+2025-10-27 00:00:17.775 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/24?*
+2025-10-27 00:00:17.837 -05:00 [INF] Received HTTP response headers after 61.1556ms - 200
+2025-10-27 00:00:17.837 -05:00 [INF] End processing HTTP request after 63.2873ms - 200
+2025-10-27 00:00:17.838 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:00:17.839 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/16?lang=en&region=us
+2025-10-27 00:00:17.839 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/16?*
+2025-10-27 00:00:17.840 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/16?*
+2025-10-27 00:00:17.894 -05:00 [INF] Received HTTP response headers after 53.8876ms - 200
+2025-10-27 00:00:17.895 -05:00 [INF] End processing HTTP request after 56.0002ms - 200
+2025-10-27 00:00:17.896 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:00:17.897 -05:00 [INF] NFL Game: Minnesota Vikings @ Los Angeles Chargers - Oct 24, 2025 12:15 AM
+2025-10-27 00:00:17.897 -05:00 [INF] Winner: Los Angeles Chargers
+2025-10-27 00:00:17.898 -05:00 [INF] === PROCESSING GAME 401772942 (Minnesota Vikings @ Los Angeles Chargers) ===
+2025-10-27 00:00:17.899 -05:00 [INF] Fetching game summary for game 401772942
+2025-10-27 00:00:17.899 -05:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:00:17.900 -05:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:00:17.920 -05:00 [INF] Received HTTP response headers after 19.8278ms - 200
+2025-10-27 00:00:17.921 -05:00 [INF] End processing HTTP request after 21.7065ms - 200
+2025-10-27 00:00:17.968 -05:00 [INF] Successfully fetched game summary for game 401772942
+2025-10-27 00:00:17.968 -05:00 [INF] Found 2 teams in BoxScore.Players
+2025-10-27 00:00:17.969 -05:00 [INF] === TEAM: Minnesota Vikings (Display Order: 1) ===
+2025-10-27 00:00:17.970 -05:00 [INF] Found 10 stat categories for Minnesota Vikings
+2025-10-27 00:00:17.971 -05:00 [INF] --- passing (Minnesota Passing) ---
+2025-10-27 00:00:17.972 -05:00 [INF] Keys: [completions/passingAttempts, passingYards, yardsPerPassAttempt, passingTouchdowns, interceptions, sacks-sackYardsLost, adjQBR, QBRating]
+2025-10-27 00:00:17.972 -05:00 [INF] Labels: [C/ATT, YDS, AVG, TD, INT, SACKS, QBR, RTG]
+2025-10-27 00:00:18.280 -05:00 [INF]     Stats: C/ATT: 15/27 | YDS: 144 | AVG: 5.3 | TD: 1 | INT: 1 | SACKS: 5-27 | QBR: 27.3 | RTG: 67.5
+2025-10-27 00:00:18.392 -05:00 [INF]     Stats: C/ATT: 3/4 | YDS: 13 | AVG: 3.3 | TD: 0 | INT: 0 | SACKS: 0-0 | QBR: 67.9 | RTG: 78.1
+2025-10-27 00:00:18.393 -05:00 [INF]   TEAM TOTALS: C/ATT: 18/31 | YDS: 130 | AVG: 5.1 | TD: 1 | INT: 1 | SACKS: 5-27 | QBR: -- | RTG: 68.9
+2025-10-27 00:00:18.393 -05:00 [INF] --- rushing (Minnesota Rushing) ---
+2025-10-27 00:00:18.394 -05:00 [INF] Keys: [rushingAttempts, rushingYards, yardsPerRushAttempt, rushingTouchdowns, longRushing]
+2025-10-27 00:00:18.395 -05:00 [INF] Labels: [CAR, YDS, AVG, TD, LONG]
+2025-10-27 00:00:18.511 -05:00 [INF]     Stats: CAR: 2 | YDS: 16 | AVG: 8.0 | TD: 0 | LONG: 10
+2025-10-27 00:00:18.646 -05:00 [INF]     Stats: CAR: 5 | YDS: 15 | AVG: 3.0 | TD: 0 | LONG: 5
+2025-10-27 00:00:18.750 -05:00 [INF]     Stats: CAR: 4 | YDS: 3 | AVG: 0.8 | TD: 0 | LONG: 4
+2025-10-27 00:00:18.751 -05:00 [INF]   TEAM TOTALS: CAR: 11 | YDS: 34 | AVG: 3.1 | TD: 0 | LONG: 10
+2025-10-27 00:00:18.752 -05:00 [INF] --- receiving (Minnesota Receiving) ---
+2025-10-27 00:00:18.753 -05:00 [INF] Keys: [receptions, receivingYards, yardsPerReception, receivingTouchdowns, longReception, receivingTargets]
+2025-10-27 00:00:18.754 -05:00 [INF] Labels: [REC, YDS, AVG, TD, LONG, TGTS]
+2025-10-27 00:00:18.872 -05:00 [INF]     Stats: REC: 7 | YDS: 74 | AVG: 10.6 | TD: 0 | LONG: 17 | TGTS: 11
+2025-10-27 00:00:18.990 -05:00 [INF]     Stats: REC: 3 | YDS: 26 | AVG: 8.7 | TD: 1 | LONG: 15 | TGTS: 4
+2025-10-27 00:00:19.100 -05:00 [INF]     Stats: REC: 2 | YDS: 26 | AVG: 13.0 | TD: 0 | LONG: 14 | TGTS: 3
+2025-10-27 00:00:19.200 -05:00 [INF]     Stats: REC: 2 | YDS: 15 | AVG: 7.5 | TD: 0 | LONG: 13 | TGTS: 4
+2025-10-27 00:00:19.307 -05:00 [INF]     Stats: REC: 2 | YDS: 8 | AVG: 4.0 | TD: 0 | LONG: 5 | TGTS: 2
+2025-10-27 00:00:19.414 -05:00 [INF]     Stats: REC: 1 | YDS: 5 | AVG: 5.0 | TD: 0 | LONG: 5 | TGTS: 2
+2025-10-27 00:00:19.517 -05:00 [INF]     Stats: REC: 1 | YDS: 3 | AVG: 3.0 | TD: 0 | LONG: 3 | TGTS: 1
+2025-10-27 00:00:19.621 -05:00 [INF]     Stats: REC: 0 | YDS: 0 | AVG: 0.0 | TD: 0 | LONG: 0 | TGTS: 2
+2025-10-27 00:00:19.711 -05:00 [INF]     Stats: REC: 0 | YDS: 0 | AVG: 0.0 | TD: 0 | LONG: 0 | TGTS: 1
+2025-10-27 00:00:19.712 -05:00 [INF]   TEAM TOTALS: REC: 18 | YDS: 157 | AVG: 8.7 | TD: 1 | LONG: 17 | TGTS: 30
+2025-10-27 00:00:19.712 -05:00 [INF] --- fumbles (Minnesota Fumbles) ---
+2025-10-27 00:00:19.713 -05:00 [INF] Keys: [fumbles, fumblesLost, fumblesRecovered]
+2025-10-27 00:00:19.714 -05:00 [INF] Labels: [FUM, LOST, REC]
+2025-10-27 00:00:19.808 -05:00 [INF]     Stats: FUM: 1 | LOST: 0 | REC: 1
+2025-10-27 00:00:19.809 -05:00 [INF]   TEAM TOTALS: FUM: 1 | LOST: 0 | REC: 1
+2025-10-27 00:00:19.810 -05:00 [INF] --- interceptions (Minnesota Interceptions) ---
+2025-10-27 00:00:19.811 -05:00 [INF] Keys: [interceptions, interceptionYards, interceptionTouchdowns]
+2025-10-27 00:00:19.812 -05:00 [INF] Labels: [INT, YDS, TD]
+2025-10-27 00:00:19.911 -05:00 [INF]     Stats: INT: 1 | YDS: 0 | TD: 0
+2025-10-27 00:00:19.912 -05:00 [INF]   TEAM TOTALS: INT: 1 | YDS: 0 | TD: 0
+2025-10-27 00:00:22.890 -05:00 [INF] 📊 Database Upsert Summary: 12 total records | 12 updated | 0 inserted | 0 failed
+2025-10-27 00:00:22.893 -05:00 [INF]   ✓ Upserted 12 combined player stat records for Minnesota Vikings
+2025-10-27 00:00:22.894 -05:00 [INF] === TEAM: Los Angeles Chargers (Display Order: 2) ===
+2025-10-27 00:00:22.895 -05:00 [INF] Found 10 stat categories for Los Angeles Chargers
+2025-10-27 00:00:22.896 -05:00 [INF] --- passing (Los Angeles Passing) ---
+2025-10-27 00:00:22.897 -05:00 [INF] Keys: [completions/passingAttempts, passingYards, yardsPerPassAttempt, passingTouchdowns, interceptions, sacks-sackYardsLost, adjQBR, QBRating]
+2025-10-27 00:00:22.898 -05:00 [INF] Labels: [C/ATT, YDS, AVG, TD, INT, SACKS, QBR, RTG]
+2025-10-27 00:00:22.991 -05:00 [INF]     Stats: C/ATT: 18/25 | YDS: 227 | AVG: 9.1 | TD: 3 | INT: 1 | SACKS: 2-15 | QBR: 96.2 | RTG: 122.8
+2025-10-27 00:00:22.992 -05:00 [INF]   TEAM TOTALS: C/ATT: 18/25 | YDS: 212 | AVG: 9.1 | TD: 3 | INT: 1 | SACKS: 2-15 | QBR: -- | RTG: 122.8
+2025-10-27 00:00:22.992 -05:00 [INF] --- rushing (Los Angeles Rushing) ---
+2025-10-27 00:00:22.993 -05:00 [INF] Keys: [rushingAttempts, rushingYards, yardsPerRushAttempt, rushingTouchdowns, longRushing]
+2025-10-27 00:00:22.994 -05:00 [INF] Labels: [CAR, YDS, AVG, TD, LONG]
+2025-10-27 00:00:23.091 -05:00 [INF]     Stats: CAR: 23 | YDS: 117 | AVG: 5.1 | TD: 1 | LONG: 21
+2025-10-27 00:00:23.194 -05:00 [INF]     Stats: CAR: 7 | YDS: 62 | AVG: 8.9 | TD: 0 | LONG: 18
+2025-10-27 00:00:23.527 -05:00 [INF] No existing player found for ESPN player: Jaret Patterson (ESPN ID: 4362452)
+2025-10-27 00:00:23.527 -05:00 [INF]     Stats: CAR: 11 | YDS: 30 | AVG: 2.7 | TD: 0 | LONG: 7
+2025-10-27 00:00:23.620 -05:00 [INF]     Stats: CAR: 2 | YDS: -2 | AVG: -1.0 | TD: 0 | LONG: 1
+2025-10-27 00:00:23.621 -05:00 [INF]   TEAM TOTALS: CAR: 43 | YDS: 207 | AVG: 4.8 | TD: 1 | LONG: 21
+2025-10-27 00:00:23.622 -05:00 [INF] --- receiving (Los Angeles Receiving) ---
+2025-10-27 00:00:23.623 -05:00 [INF] Keys: [receptions, receivingYards, yardsPerReception, receivingTouchdowns, longReception, receivingTargets]
+2025-10-27 00:00:23.624 -05:00 [INF] Labels: [REC, YDS, AVG, TD, LONG, TGTS]
+2025-10-27 00:00:23.716 -05:00 [INF]     Stats: REC: 6 | YDS: 88 | AVG: 14.7 | TD: 1 | LONG: 27 | TGTS: 10
+2025-10-27 00:00:23.814 -05:00 [INF]     Stats: REC: 5 | YDS: 77 | AVG: 15.4 | TD: 1 | LONG: 40 | TGTS: 5
+2025-10-27 00:00:23.925 -05:00 [INF]     Stats: REC: 4 | YDS: 44 | AVG: 11.0 | TD: 0 | LONG: 17 | TGTS: 5
+2025-10-27 00:00:24.017 -05:00 [INF]     Stats: REC: 1 | YDS: 10 | AVG: 10.0 | TD: 0 | LONG: 10 | TGTS: 2
+2025-10-27 00:00:24.113 -05:00 [INF]     Stats: REC: 2 | YDS: 8 | AVG: 4.0 | TD: 1 | LONG: 6 | TGTS: 2
+2025-10-27 00:00:24.113 -05:00 [INF]   TEAM TOTALS: REC: 18 | YDS: 227 | AVG: 12.6 | TD: 3 | LONG: 40 | TGTS: 24
+2025-10-27 00:00:24.114 -05:00 [INF] --- fumbles (Los Angeles Fumbles) ---
+2025-10-27 00:00:24.116 -05:00 [INF] Keys: [fumbles, fumblesLost, fumblesRecovered]
+2025-10-27 00:00:24.117 -05:00 [INF] Labels: [FUM, LOST, REC]
+2025-10-27 00:00:24.118 -05:00 [INF]   No athletes found for fumbles
+2025-10-27 00:00:24.119 -05:00 [INF] --- interceptions (Los Angeles Interceptions) ---
+2025-10-27 00:00:24.120 -05:00 [INF] Keys: [interceptions, interceptionYards, interceptionTouchdowns]
+2025-10-27 00:00:24.120 -05:00 [INF] Labels: [INT, YDS, TD]
+2025-10-27 00:00:24.223 -05:00 [INF]     Stats: INT: 1 | YDS: 15 | TD: 0
+2025-10-27 00:00:24.224 -05:00 [INF]   TEAM TOTALS: INT: 1 | YDS: 15 | TD: 0
+2025-10-27 00:00:24.932 -05:00 [WRN] ⚠️ Skipped record due to foreign key constraint: ESPN Player ID 4362452 not found in Players table. Game: 401772942
+2025-10-27 00:00:26.509 -05:00 [INF] 📊 Database Upsert Summary: 9 total records | 8 updated | 0 inserted | 1 failed
+2025-10-27 00:00:26.511 -05:00 [INF]   ✓ Upserted 8 combined player stat records for Los Angeles Chargers
+2025-10-27 00:00:26.511 -05:00 [INF] 🏈 GAME SUMMARY - 401772942: 27 players found | 26 matched to DB | 20 records processed
+2025-10-27 00:00:26.513 -05:00 [INF] === END PLAYER STATS for Game 401772942 ===
+2025-10-27 00:00:26.513 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/1?lang=en&region=us
+2025-10-27 00:00:26.514 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/1?*
+2025-10-27 00:00:26.515 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/1?*
+2025-10-27 00:00:26.575 -05:00 [INF] Received HTTP response headers after 59.0151ms - 200
+2025-10-27 00:00:26.576 -05:00 [INF] End processing HTTP request after 61.7871ms - 200
+2025-10-27 00:00:26.577 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:00:26.577 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/15?lang=en&region=us
+2025-10-27 00:00:26.578 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/15?*
+2025-10-27 00:00:26.579 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/15?*
+2025-10-27 00:00:26.631 -05:00 [INF] Received HTTP response headers after 51.9882ms - 200
+2025-10-27 00:00:26.632 -05:00 [INF] End processing HTTP request after 54.3154ms - 200
+2025-10-27 00:00:26.633 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:00:26.633 -05:00 [INF] NFL Game: Miami Dolphins @ Atlanta Falcons - Oct 26, 2025 5:00 PM
+2025-10-27 00:00:26.635 -05:00 [INF] Winner: Miami Dolphins
+2025-10-27 00:00:26.635 -05:00 [INF] === PROCESSING GAME 401772760 (Miami Dolphins @ Atlanta Falcons) ===
+2025-10-27 00:00:26.636 -05:00 [INF] Fetching game summary for game 401772760
+2025-10-27 00:00:26.637 -05:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:00:26.638 -05:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:00:26.711 -05:00 [INF] Received HTTP response headers after 72.1566ms - 200
+2025-10-27 00:00:26.712 -05:00 [INF] End processing HTTP request after 74.7893ms - 200
+2025-10-27 00:00:26.762 -05:00 [INF] Successfully fetched game summary for game 401772760
+2025-10-27 00:00:26.763 -05:00 [INF] Found 2 teams in BoxScore.Players
+2025-10-27 00:00:26.764 -05:00 [INF] === TEAM: Miami Dolphins (Display Order: 1) ===
+2025-10-27 00:00:26.765 -05:00 [INF] Found 10 stat categories for Miami Dolphins
+2025-10-27 00:00:26.765 -05:00 [INF] --- passing (Miami Passing) ---
+2025-10-27 00:00:26.766 -05:00 [INF] Keys: [completions/passingAttempts, passingYards, yardsPerPassAttempt, passingTouchdowns, interceptions, sacks-sackYardsLost, adjQBR, QBRating]
+2025-10-27 00:00:26.767 -05:00 [INF] Labels: [C/ATT, YDS, AVG, TD, INT, SACKS, QBR, RTG]
+2025-10-27 00:00:26.872 -05:00 [INF]     Stats: C/ATT: 20/26 | YDS: 205 | AVG: 7.9 | TD: 4 | INT: 0 | SACKS: 1-8 | QBR: 65.6 | RTG: 138.6
+2025-10-27 00:00:26.965 -05:00 [INF]     Stats: C/ATT: 1/1 | YDS: 0 | AVG: 0.0 | TD: 0 | INT: 0 | SACKS: 0-0 | QBR: 53.6 | RTG: 79.2
+2025-10-27 00:00:26.966 -05:00 [INF]   TEAM TOTALS: C/ATT: 21/27 | YDS: 197 | AVG: 7.6 | TD: 4 | INT: 0 | SACKS: 1-8 | QBR: -- | RTG: 137.9
+2025-10-27 00:00:26.967 -05:00 [INF] --- rushing (Miami Rushing) ---
+2025-10-27 00:00:26.968 -05:00 [INF] Keys: [rushingAttempts, rushingYards, yardsPerRushAttempt, rushingTouchdowns, longRushing]
+2025-10-27 00:00:26.968 -05:00 [INF] Labels: [CAR, YDS, AVG, TD, LONG]
+2025-10-27 00:00:27.070 -05:00 [INF]     Stats: CAR: 18 | YDS: 67 | AVG: 3.7 | TD: 0 | LONG: 12
+2025-10-27 00:00:27.158 -05:00 [INF]     Stats: CAR: 10 | YDS: 46 | AVG: 4.6 | TD: 0 | LONG: 13
+2025-10-27 00:00:27.498 -05:00 [INF] No existing player found for ESPN player: Jaylen Wright (ESPN ID: 4682745)
+2025-10-27 00:00:27.499 -05:00 [INF]     Stats: CAR: 9 | YDS: 28 | AVG: 3.1 | TD: 0 | LONG: 7
+2025-10-27 00:00:27.499 -05:00 [INF]   TEAM TOTALS: CAR: 37 | YDS: 141 | AVG: 3.8 | TD: 0 | LONG: 13
+2025-10-27 00:00:27.500 -05:00 [INF] --- receiving (Miami Receiving) ---
+2025-10-27 00:00:27.501 -05:00 [INF] Keys: [receptions, receivingYards, yardsPerReception, receivingTouchdowns, longReception, receivingTargets]
+2025-10-27 00:00:27.502 -05:00 [INF] Labels: [REC, YDS, AVG, TD, LONG, TGTS]
+2025-10-27 00:00:27.598 -05:00 [INF]     Stats: REC: 5 | YDS: 99 | AVG: 19.8 | TD: 1 | LONG: 43 | TGTS: 6
+2025-10-27 00:00:27.691 -05:00 [INF]     Stats: REC: 4 | YDS: 36 | AVG: 9.0 | TD: 1 | LONG: 17 | TGTS: 5
+2025-10-27 00:00:27.792 -05:00 [INF]     Stats: REC: 5 | YDS: 24 | AVG: 4.8 | TD: 1 | LONG: 10 | TGTS: 7
+2025-10-27 00:00:27.883 -05:00 [INF]     Stats: REC: 1 | YDS: 20 | AVG: 20.0 | TD: 1 | LONG: 20 | TGTS: 1
+2025-10-27 00:00:27.991 -05:00 [INF]     Stats: REC: 1 | YDS: 18 | AVG: 18.0 | TD: 0 | LONG: 18 | TGTS: 3
+2025-10-27 00:00:28.089 -05:00 [INF]     Stats: REC: 2 | YDS: 6 | AVG: 3.0 | TD: 0 | LONG: 5 | TGTS: 2
+2025-10-27 00:00:28.388 -05:00 [INF] No existing player found for ESPN player: Cedrick Wilson Jr. (ESPN ID: 4036335)
+2025-10-27 00:00:28.389 -05:00 [INF]     Stats: REC: 1 | YDS: 2 | AVG: 2.0 | TD: 0 | LONG: 2 | TGTS: 1
+2025-10-27 00:00:28.483 -05:00 [INF]     Stats: REC: 1 | YDS: 0 | AVG: 0.0 | TD: 0 | LONG: 0 | TGTS: 1
+2025-10-27 00:00:28.832 -05:00 [INF] No existing player found for ESPN player: Jaylen Wright (ESPN ID: 4682745)
+2025-10-27 00:00:28.833 -05:00 [INF]     Stats: REC: 1 | YDS: 0 | AVG: 0.0 | TD: 0 | LONG: 0 | TGTS: 1
+2025-10-27 00:00:28.833 -05:00 [INF]   TEAM TOTALS: REC: 21 | YDS: 205 | AVG: 9.8 | TD: 4 | LONG: 43 | TGTS: 27
+2025-10-27 00:00:28.834 -05:00 [INF] --- fumbles (Miami Fumbles) ---
+2025-10-27 00:00:28.835 -05:00 [INF] Keys: [fumbles, fumblesLost, fumblesRecovered]
+2025-10-27 00:00:28.836 -05:00 [INF] Labels: [FUM, LOST, REC]
+2025-10-27 00:00:28.936 -05:00 [INF]     Stats: FUM: 0 | LOST: 0 | REC: 1
+2025-10-27 00:00:28.937 -05:00 [INF]   TEAM TOTALS: FUM: 0 | LOST: 0 | REC: 1
+2025-10-27 00:00:28.938 -05:00 [INF] --- interceptions (Miami Interceptions) ---
+2025-10-27 00:00:28.939 -05:00 [INF] Keys: [interceptions, interceptionYards, interceptionTouchdowns]
+2025-10-27 00:00:28.939 -05:00 [INF] Labels: [INT, YDS, TD]
+2025-10-27 00:00:28.940 -05:00 [INF]   No athletes found for interceptions
+2025-10-27 00:00:30.126 -05:00 [WRN] ⚠️ Skipped record due to foreign key constraint: ESPN Player ID 4682745 not found in Players table. Game: 401772760
+2025-10-27 00:00:31.373 -05:00 [WRN] ⚠️ Skipped record due to foreign key constraint: ESPN Player ID 4036335 not found in Players table. Game: 401772760
+2025-10-27 00:00:31.924 -05:00 [INF] 📊 Database Upsert Summary: 12 total records | 0 updated | 10 inserted | 2 failed
+2025-10-27 00:00:31.926 -05:00 [INF]   ✓ Upserted 10 combined player stat records for Miami Dolphins
+2025-10-27 00:00:31.927 -05:00 [INF] === TEAM: Atlanta Falcons (Display Order: 2) ===
+2025-10-27 00:00:31.928 -05:00 [INF] Found 10 stat categories for Atlanta Falcons
+2025-10-27 00:00:31.929 -05:00 [INF] --- passing (Atlanta Passing) ---
+2025-10-27 00:00:31.930 -05:00 [INF] Keys: [completions/passingAttempts, passingYards, yardsPerPassAttempt, passingTouchdowns, interceptions, sacks-sackYardsLost, adjQBR, QBRating]
+2025-10-27 00:00:31.931 -05:00 [INF] Labels: [C/ATT, YDS, AVG, TD, INT, SACKS, QBR, RTG]
+2025-10-27 00:00:32.017 -05:00 [INF]     Stats: C/ATT: 21/31 | YDS: 173 | AVG: 5.6 | TD: 0 | INT: 0 | SACKS: 1-5 | QBR: 35.5 | RTG: 81.8
+2025-10-27 00:00:32.018 -05:00 [INF]   TEAM TOTALS: C/ATT: 21/31 | YDS: 168 | AVG: 5.6 | TD: 0 | INT: 0 | SACKS: 1-5 | QBR: -- | RTG: 81.8
+2025-10-27 00:00:32.019 -05:00 [INF] --- rushing (Atlanta Rushing) ---
+2025-10-27 00:00:32.019 -05:00 [INF] Keys: [rushingAttempts, rushingYards, yardsPerRushAttempt, rushingTouchdowns, longRushing]
+2025-10-27 00:00:32.020 -05:00 [INF] Labels: [CAR, YDS, AVG, TD, LONG]
+2025-10-27 00:00:32.115 -05:00 [INF]     Stats: CAR: 9 | YDS: 25 | AVG: 2.8 | TD: 0 | LONG: 7
+2025-10-27 00:00:32.211 -05:00 [INF]     Stats: CAR: 2 | YDS: 14 | AVG: 7.0 | TD: 0 | LONG: 12
+2025-10-27 00:00:32.305 -05:00 [INF]     Stats: CAR: 4 | YDS: 4 | AVG: 1.0 | TD: 1 | LONG: 6
+2025-10-27 00:00:32.397 -05:00 [INF]     Stats: CAR: 2 | YDS: 2 | AVG: 1.0 | TD: 0 | LONG: 3
+2025-10-27 00:00:32.398 -05:00 [INF]   TEAM TOTALS: CAR: 17 | YDS: 45 | AVG: 2.6 | TD: 1 | LONG: 12
+2025-10-27 00:00:32.399 -05:00 [INF] --- receiving (Atlanta Receiving) ---
+2025-10-27 00:00:32.399 -05:00 [INF] Keys: [receptions, receivingYards, yardsPerReception, receivingTouchdowns, longReception, receivingTargets]
+2025-10-27 00:00:32.400 -05:00 [INF] Labels: [REC, YDS, AVG, TD, LONG, TGTS]
+2025-10-27 00:00:32.493 -05:00 [INF]     Stats: REC: 9 | YDS: 59 | AVG: 6.6 | TD: 0 | LONG: 24 | TGTS: 9
+2025-10-27 00:00:32.584 -05:00 [INF]     Stats: REC: 3 | YDS: 31 | AVG: 10.3 | TD: 0 | LONG: 16 | TGTS: 8
+2025-10-27 00:00:32.678 -05:00 [INF]     Stats: REC: 1 | YDS: 25 | AVG: 25.0 | TD: 0 | LONG: 25 | TGTS: 1
+2025-10-27 00:00:32.776 -05:00 [INF]     Stats: REC: 3 | YDS: 23 | AVG: 7.7 | TD: 0 | LONG: 17 | TGTS: 3
+2025-10-27 00:00:32.865 -05:00 [INF]     Stats: REC: 2 | YDS: 14 | AVG: 7.0 | TD: 0 | LONG: 12 | TGTS: 3
+2025-10-27 00:00:32.961 -05:00 [INF]     Stats: REC: 1 | YDS: 11 | AVG: 11.0 | TD: 0 | LONG: 11 | TGTS: 4
+2025-10-27 00:00:33.068 -05:00 [INF]     Stats: REC: 2 | YDS: 10 | AVG: 5.0 | TD: 0 | LONG: 6 | TGTS: 2
+2025-10-27 00:00:33.069 -05:00 [INF]   TEAM TOTALS: REC: 21 | YDS: 173 | AVG: 8.2 | TD: 0 | LONG: 25 | TGTS: 30
+2025-10-27 00:00:33.069 -05:00 [INF] --- fumbles (Atlanta Fumbles) ---
+2025-10-27 00:00:33.070 -05:00 [INF] Keys: [fumbles, fumblesLost, fumblesRecovered]
+2025-10-27 00:00:33.071 -05:00 [INF] Labels: [FUM, LOST, REC]
+2025-10-27 00:00:33.163 -05:00 [INF]     Stats: FUM: 1 | LOST: 1 | REC: 0
+2025-10-27 00:00:33.164 -05:00 [INF]   TEAM TOTALS: FUM: 1 | LOST: 1 | REC: 0
+2025-10-27 00:00:33.165 -05:00 [INF] --- interceptions (Atlanta Interceptions) ---
+2025-10-27 00:00:33.166 -05:00 [INF] Keys: [interceptions, interceptionYards, interceptionTouchdowns]
+2025-10-27 00:00:33.166 -05:00 [INF] Labels: [INT, YDS, TD]
+2025-10-27 00:00:33.167 -05:00 [INF]   No athletes found for interceptions
+2025-10-27 00:00:35.412 -05:00 [INF] 📊 Database Upsert Summary: 9 total records | 0 updated | 9 inserted | 0 failed
+2025-10-27 00:00:35.414 -05:00 [INF]   ✓ Upserted 9 combined player stat records for Atlanta Falcons
+2025-10-27 00:00:35.414 -05:00 [INF] 🏈 GAME SUMMARY - 401772760: 28 players found | 25 matched to DB | 19 records processed
+2025-10-27 00:00:35.415 -05:00 [INF] === END PLAYER STATS for Game 401772760 ===
+2025-10-27 00:00:35.416 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/4?lang=en&region=us
+2025-10-27 00:00:35.417 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/4?*
+2025-10-27 00:00:35.418 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/4?*
+2025-10-27 00:00:35.477 -05:00 [INF] Received HTTP response headers after 58.1701ms - 200
+2025-10-27 00:00:35.478 -05:00 [INF] End processing HTTP request after 60.7508ms - 200
+2025-10-27 00:00:35.478 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:00:35.479 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/20?lang=en&region=us
+2025-10-27 00:00:35.480 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/20?*
+2025-10-27 00:00:35.480 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/20?*
+2025-10-27 00:00:35.540 -05:00 [INF] Received HTTP response headers after 58.4534ms - 200
+2025-10-27 00:00:35.541 -05:00 [INF] End processing HTTP request after 61.0443ms - 200
+2025-10-27 00:00:35.542 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:00:35.542 -05:00 [INF] NFL Game: New York Jets @ Cincinnati Bengals - Oct 26, 2025 5:00 PM
+2025-10-27 00:00:35.543 -05:00 [INF] Winner: New York Jets
+2025-10-27 00:00:35.544 -05:00 [INF] === PROCESSING GAME 401772758 (New York Jets @ Cincinnati Bengals) ===
+2025-10-27 00:00:35.545 -05:00 [INF] Fetching game summary for game 401772758
+2025-10-27 00:00:35.545 -05:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:00:35.546 -05:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:00:35.619 -05:00 [INF] Received HTTP response headers after 72.2466ms - 200
+2025-10-27 00:00:35.620 -05:00 [INF] End processing HTTP request after 74.89ms - 200
+2025-10-27 00:00:35.635 -05:00 [INF] Successfully fetched game summary for game 401772758
+2025-10-27 00:00:35.636 -05:00 [INF] Found 2 teams in BoxScore.Players
+2025-10-27 00:00:35.637 -05:00 [INF] === TEAM: New York Jets (Display Order: 1) ===
+2025-10-27 00:00:35.638 -05:00 [INF] Found 10 stat categories for New York Jets
+2025-10-27 00:00:35.639 -05:00 [INF] --- passing (New York Passing) ---
+2025-10-27 00:00:35.640 -05:00 [INF] Keys: [completions/passingAttempts, passingYards, yardsPerPassAttempt, passingTouchdowns, interceptions, sacks-sackYardsLost, adjQBR, QBRating]
+2025-10-27 00:00:35.641 -05:00 [INF] Labels: [C/ATT, YDS, AVG, TD, INT, SACKS, QBR, RTG]
+2025-10-27 00:00:35.746 -05:00 [INF]     Stats: C/ATT: 21/32 | YDS: 244 | AVG: 7.6 | TD: 1 | INT: 0 | SACKS: 0-0 | QBR: 67.0 | RTG: 99.0
+2025-10-27 00:00:35.842 -05:00 [INF]     Stats: C/ATT: 1/1 | YDS: 4 | AVG: 4.0 | TD: 1 | INT: 0 | SACKS: 0-0 | QBR: 100.0 | RTG: 122.9
+2025-10-27 00:00:35.843 -05:00 [INF]   TEAM TOTALS: C/ATT: 22/33 | YDS: 248 | AVG: 7.5 | TD: 2 | INT: 0 | SACKS: 0-0 | QBR: -- | RTG: 109.2
+2025-10-27 00:00:35.843 -05:00 [INF] --- rushing (New York Rushing) ---
+2025-10-27 00:00:35.844 -05:00 [INF] Keys: [rushingAttempts, rushingYards, yardsPerRushAttempt, rushingTouchdowns, longRushing]
+2025-10-27 00:00:35.845 -05:00 [INF] Labels: [CAR, YDS, AVG, TD, LONG]
+2025-10-27 00:00:35.936 -05:00 [INF]     Stats: CAR: 18 | YDS: 133 | AVG: 7.4 | TD: 2 | LONG: 35
+2025-10-27 00:00:36.030 -05:00 [INF]     Stats: CAR: 7 | YDS: 65 | AVG: 9.3 | TD: 0 | LONG: 50
+2025-10-27 00:00:36.130 -05:00 [INF]     Stats: CAR: 11 | YDS: 31 | AVG: 2.8 | TD: 0 | LONG: 7
+2025-10-27 00:00:36.219 -05:00 [INF]     Stats: CAR: 1 | YDS: 25 | AVG: 25.0 | TD: 0 | LONG: 25
+2025-10-27 00:00:36.220 -05:00 [INF]   TEAM TOTALS: CAR: 37 | YDS: 254 | AVG: 6.9 | TD: 2 | LONG: 50
+2025-10-27 00:00:36.220 -05:00 [INF] --- receiving (New York Receiving) ---
+2025-10-27 00:00:36.221 -05:00 [INF] Keys: [receptions, receivingYards, yardsPerReception, receivingTouchdowns, longReception, receivingTargets]
+2025-10-27 00:00:36.222 -05:00 [INF] Labels: [REC, YDS, AVG, TD, LONG, TGTS]
+2025-10-27 00:00:36.315 -05:00 [INF]     Stats: REC: 3 | YDS: 64 | AVG: 21.3 | TD: 1 | LONG: 34 | TGTS: 5
+2025-10-27 00:00:36.410 -05:00 [INF]     Stats: REC: 5 | YDS: 44 | AVG: 8.8 | TD: 0 | LONG: 26 | TGTS: 5
+2025-10-27 00:00:36.499 -05:00 [INF]     Stats: REC: 5 | YDS: 34 | AVG: 6.8 | TD: 1 | LONG: 15 | TGTS: 8
+2025-10-27 00:00:36.590 -05:00 [INF]     Stats: REC: 3 | YDS: 31 | AVG: 10.3 | TD: 0 | LONG: 15 | TGTS: 4
+2025-10-27 00:00:36.685 -05:00 [INF]     Stats: REC: 1 | YDS: 24 | AVG: 24.0 | TD: 0 | LONG: 24 | TGTS: 1
+2025-10-27 00:00:36.776 -05:00 [INF]     Stats: REC: 1 | YDS: 23 | AVG: 23.0 | TD: 0 | LONG: 23 | TGTS: 1
+2025-10-27 00:00:36.877 -05:00 [INF]     Stats: REC: 2 | YDS: 14 | AVG: 7.0 | TD: 0 | LONG: 11 | TGTS: 3
+2025-10-27 00:00:36.982 -05:00 [INF]     Stats: REC: 1 | YDS: 9 | AVG: 9.0 | TD: 0 | LONG: 9 | TGTS: 1
+2025-10-27 00:00:37.072 -05:00 [INF]     Stats: REC: 1 | YDS: 5 | AVG: 5.0 | TD: 0 | LONG: 5 | TGTS: 2
+2025-10-27 00:00:37.073 -05:00 [INF]   TEAM TOTALS: REC: 22 | YDS: 248 | AVG: 11.3 | TD: 2 | LONG: 34 | TGTS: 30
+2025-10-27 00:00:37.074 -05:00 [INF] --- fumbles (New York Fumbles) ---
+2025-10-27 00:00:37.075 -05:00 [INF] Keys: [fumbles, fumblesLost, fumblesRecovered]
+2025-10-27 00:00:37.076 -05:00 [INF] Labels: [FUM, LOST, REC]
+2025-10-27 00:00:37.076 -05:00 [INF]   No athletes found for fumbles
+2025-10-27 00:00:37.077 -05:00 [INF] --- interceptions (New York Interceptions) ---
+2025-10-27 00:00:37.078 -05:00 [INF] Keys: [interceptions, interceptionYards, interceptionTouchdowns]
+2025-10-27 00:00:37.079 -05:00 [INF] Labels: [INT, YDS, TD]
+2025-10-27 00:00:37.079 -05:00 [INF]   No athletes found for interceptions
+2025-10-27 00:00:39.563 -05:00 [INF] 📊 Database Upsert Summary: 10 total records | 0 updated | 10 inserted | 0 failed
+2025-10-27 00:00:39.564 -05:00 [INF]   ✓ Upserted 10 combined player stat records for New York Jets
+2025-10-27 00:00:39.565 -05:00 [INF] === TEAM: Cincinnati Bengals (Display Order: 2) ===
+2025-10-27 00:00:39.566 -05:00 [INF] Found 10 stat categories for Cincinnati Bengals
+2025-10-27 00:00:39.567 -05:00 [INF] --- passing (Cincinnati Passing) ---
+2025-10-27 00:00:39.568 -05:00 [INF] Keys: [completions/passingAttempts, passingYards, yardsPerPassAttempt, passingTouchdowns, interceptions, sacks-sackYardsLost, adjQBR, QBRating]
+2025-10-27 00:00:39.569 -05:00 [INF] Labels: [C/ATT, YDS, AVG, TD, INT, SACKS, QBR, RTG]
+2025-10-27 00:00:39.665 -05:00 [INF]     Stats: C/ATT: 21/34 | YDS: 223 | AVG: 6.6 | TD: 2 | INT: 0 | SACKS: 1-6 | QBR: 47.4 | RTG: 100.5
+2025-10-27 00:00:39.666 -05:00 [INF]   TEAM TOTALS: C/ATT: 21/34 | YDS: 217 | AVG: 6.6 | TD: 2 | INT: 0 | SACKS: 1-6 | QBR: -- | RTG: 100.5
+2025-10-27 00:00:39.667 -05:00 [INF] --- rushing (Cincinnati Rushing) ---
+2025-10-27 00:00:39.668 -05:00 [INF] Keys: [rushingAttempts, rushingYards, yardsPerRushAttempt, rushingTouchdowns, longRushing]
+2025-10-27 00:00:39.668 -05:00 [INF] Labels: [CAR, YDS, AVG, TD, LONG]
+2025-10-27 00:00:39.771 -05:00 [INF]     Stats: CAR: 9 | YDS: 94 | AVG: 10.4 | TD: 1 | LONG: 32
+2025-10-27 00:00:39.864 -05:00 [INF]     Stats: CAR: 12 | YDS: 73 | AVG: 6.1 | TD: 1 | LONG: 22
+2025-10-27 00:00:39.965 -05:00 [INF]     Stats: CAR: 2 | YDS: 14 | AVG: 7.0 | TD: 1 | LONG: 13
+2025-10-27 00:00:39.966 -05:00 [INF]   TEAM TOTALS: CAR: 23 | YDS: 181 | AVG: 7.9 | TD: 3 | LONG: 32
+2025-10-27 00:00:39.966 -05:00 [INF] --- receiving (Cincinnati Receiving) ---
+2025-10-27 00:00:39.967 -05:00 [INF] Keys: [receptions, receivingYards, yardsPerReception, receivingTouchdowns, longReception, receivingTargets]
+2025-10-27 00:00:39.968 -05:00 [INF] Labels: [REC, YDS, AVG, TD, LONG, TGTS]
+2025-10-27 00:00:40.064 -05:00 [INF]     Stats: REC: 12 | YDS: 91 | AVG: 7.6 | TD: 0 | LONG: 17 | TGTS: 19
+2025-10-27 00:00:40.169 -05:00 [INF]     Stats: REC: 1 | YDS: 44 | AVG: 44.0 | TD: 1 | LONG: 44 | TGTS: 2
+2025-10-27 00:00:40.259 -05:00 [INF]     Stats: REC: 3 | YDS: 41 | AVG: 13.7 | TD: 0 | LONG: 16 | TGTS: 3
+2025-10-27 00:00:40.357 -05:00 [INF]     Stats: REC: 3 | YDS: 32 | AVG: 10.7 | TD: 1 | LONG: 19 | TGTS: 3
+2025-10-27 00:00:40.452 -05:00 [INF]     Stats: REC: 1 | YDS: 9 | AVG: 9.0 | TD: 0 | LONG: 9 | TGTS: 2
+2025-10-27 00:00:40.544 -05:00 [INF]     Stats: REC: 1 | YDS: 6 | AVG: 6.0 | TD: 0 | LONG: 6 | TGTS: 1
+2025-10-27 00:00:40.638 -05:00 [INF]     Stats: REC: 0 | YDS: 0 | AVG: 0.0 | TD: 0 | LONG: 0 | TGTS: 3
+2025-10-27 00:00:40.639 -05:00 [INF]   TEAM TOTALS: REC: 21 | YDS: 223 | AVG: 10.6 | TD: 2 | LONG: 44 | TGTS: 33
+2025-10-27 00:00:40.640 -05:00 [INF] --- fumbles (Cincinnati Fumbles) ---
+2025-10-27 00:00:40.641 -05:00 [INF] Keys: [fumbles, fumblesLost, fumblesRecovered]
+2025-10-27 00:00:40.642 -05:00 [INF] Labels: [FUM, LOST, REC]
+2025-10-27 00:00:40.642 -05:00 [INF]   No athletes found for fumbles
+2025-10-27 00:00:40.643 -05:00 [INF] --- interceptions (Cincinnati Interceptions) ---
+2025-10-27 00:00:40.644 -05:00 [INF] Keys: [interceptions, interceptionYards, interceptionTouchdowns]
+2025-10-27 00:00:40.645 -05:00 [INF] Labels: [INT, YDS, TD]
+2025-10-27 00:00:40.646 -05:00 [INF]   No athletes found for interceptions
+2025-10-27 00:00:42.589 -05:00 [INF] 📊 Database Upsert Summary: 8 total records | 0 updated | 8 inserted | 0 failed
+2025-10-27 00:00:42.591 -05:00 [INF]   ✓ Upserted 8 combined player stat records for Cincinnati Bengals
+2025-10-27 00:00:42.591 -05:00 [INF] 🏈 GAME SUMMARY - 401772758: 26 players found | 26 matched to DB | 18 records processed
+2025-10-27 00:00:42.593 -05:00 [INF] === END PLAYER STATS for Game 401772758 ===
+2025-10-27 00:00:42.593 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/17?lang=en&region=us
+2025-10-27 00:00:42.594 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/17?*
+2025-10-27 00:00:42.595 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/17?*
+2025-10-27 00:00:42.654 -05:00 [INF] Received HTTP response headers after 58.5557ms - 200
+2025-10-27 00:00:42.655 -05:00 [INF] End processing HTTP request after 61.2952ms - 200
+2025-10-27 00:00:42.656 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:00:42.657 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/5?lang=en&region=us
+2025-10-27 00:00:42.657 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/5?*
+2025-10-27 00:00:42.658 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/5?*
+2025-10-27 00:00:42.712 -05:00 [INF] Received HTTP response headers after 52.8722ms - 200
+2025-10-27 00:00:42.713 -05:00 [INF] End processing HTTP request after 55.2334ms - 200
+2025-10-27 00:00:42.713 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:00:42.714 -05:00 [INF] NFL Game: Cleveland Browns @ New England Patriots - Oct 26, 2025 5:00 PM
+2025-10-27 00:00:42.715 -05:00 [INF] Winner: New England Patriots
+2025-10-27 00:00:42.716 -05:00 [INF] === PROCESSING GAME 401772868 (Cleveland Browns @ New England Patriots) ===
+2025-10-27 00:00:42.717 -05:00 [INF] Fetching game summary for game 401772868
+2025-10-27 00:00:42.718 -05:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:00:42.718 -05:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:00:42.736 -05:00 [INF] Received HTTP response headers after 16.6485ms - 200
+2025-10-27 00:00:42.737 -05:00 [INF] End processing HTTP request after 19.3269ms - 200
+2025-10-27 00:00:42.741 -05:00 [INF] Successfully fetched game summary for game 401772868
+2025-10-27 00:00:42.742 -05:00 [INF] Found 2 teams in BoxScore.Players
+2025-10-27 00:00:42.742 -05:00 [INF] === TEAM: Cleveland Browns (Display Order: 1) ===
+2025-10-27 00:00:42.744 -05:00 [INF] Found 10 stat categories for Cleveland Browns
+2025-10-27 00:00:42.745 -05:00 [INF] --- passing (Cleveland Passing) ---
+2025-10-27 00:00:42.746 -05:00 [INF] Keys: [completions/passingAttempts, passingYards, yardsPerPassAttempt, passingTouchdowns, interceptions, sacks-sackYardsLost, adjQBR, QBRating]
+2025-10-27 00:00:42.747 -05:00 [INF] Labels: [C/ATT, YDS, AVG, TD, INT, SACKS, QBR, RTG]
+2025-10-27 00:00:42.846 -05:00 [INF]     Stats: C/ATT: 21/35 | YDS: 156 | AVG: 4.5 | TD: 2 | INT: 2 | SACKS: 1-11 | QBR: 18.8 | RTG: 65.9
+2025-10-27 00:00:42.846 -05:00 [INF]   TEAM TOTALS: C/ATT: 21/35 | YDS: 145 | AVG: 4.5 | TD: 2 | INT: 2 | SACKS: 1-11 | QBR: -- | RTG: 65.9
+2025-10-27 00:00:42.847 -05:00 [INF] --- rushing (Cleveland Rushing) ---
+2025-10-27 00:00:42.848 -05:00 [INF] Keys: [rushingAttempts, rushingYards, yardsPerRushAttempt, rushingTouchdowns, longRushing]
+2025-10-27 00:00:42.849 -05:00 [INF] Labels: [CAR, YDS, AVG, TD, LONG]
+2025-10-27 00:00:42.942 -05:00 [INF]     Stats: CAR: 1 | YDS: 31 | AVG: 31.0 | TD: 0 | LONG: 31
+2025-10-27 00:00:43.042 -05:00 [INF]     Stats: CAR: 9 | YDS: 19 | AVG: 2.1 | TD: 0 | LONG: 6
+2025-10-27 00:00:43.134 -05:00 [INF]     Stats: CAR: 1 | YDS: 13 | AVG: 13.0 | TD: 0 | LONG: 13
+2025-10-27 00:00:43.228 -05:00 [INF]     Stats: CAR: 1 | YDS: 3 | AVG: 3.0 | TD: 0 | LONG: 3
+2025-10-27 00:00:43.325 -05:00 [INF]     Stats: CAR: 1 | YDS: 2 | AVG: 2.0 | TD: 0 | LONG: 2
+2025-10-27 00:00:43.423 -05:00 [INF]     Stats: CAR: 3 | YDS: 0 | AVG: 0.0 | TD: 0 | LONG: 1
+2025-10-27 00:00:43.423 -05:00 [INF]   TEAM TOTALS: CAR: 16 | YDS: 68 | AVG: 4.3 | TD: 0 | LONG: 31
+2025-10-27 00:00:43.424 -05:00 [INF] --- receiving (Cleveland Receiving) ---
+2025-10-27 00:00:43.425 -05:00 [INF] Keys: [receptions, receivingYards, yardsPerReception, receivingTouchdowns, longReception, receivingTargets]
+2025-10-27 00:00:43.426 -05:00 [INF] Labels: [REC, YDS, AVG, TD, LONG, TGTS]
+2025-10-27 00:00:43.515 -05:00 [INF]     Stats: REC: 6 | YDS: 62 | AVG: 10.3 | TD: 1 | LONG: 19 | TGTS: 8
+2025-10-27 00:00:43.613 -05:00 [INF]     Stats: REC: 4 | YDS: 37 | AVG: 9.3 | TD: 1 | LONG: 20 | TGTS: 5
+2025-10-27 00:00:43.716 -05:00 [INF]     Stats: REC: 2 | YDS: 31 | AVG: 15.5 | TD: 0 | LONG: 21 | TGTS: 3
+2025-10-27 00:00:43.810 -05:00 [INF]     Stats: REC: 5 | YDS: 29 | AVG: 5.8 | TD: 0 | LONG: 11 | TGTS: 6
+2025-10-27 00:00:43.904 -05:00 [INF]     Stats: REC: 0 | YDS: 0 | AVG: 0.0 | TD: 0 | LONG: 0 | TGTS: 2
+2025-10-27 00:00:43.995 -05:00 [INF]     Stats: REC: 0 | YDS: 0 | AVG: 0.0 | TD: 0 | LONG: 0 | TGTS: 4
+2025-10-27 00:00:44.086 -05:00 [INF]     Stats: REC: 1 | YDS: -1 | AVG: -1.0 | TD: 0 | LONG: -1 | TGTS: 2
+2025-10-27 00:00:44.181 -05:00 [INF]     Stats: REC: 3 | YDS: -2 | AVG: -0.7 | TD: 0 | LONG: 2 | TGTS: 3
+2025-10-27 00:00:44.182 -05:00 [INF]   TEAM TOTALS: REC: 21 | YDS: 156 | AVG: 7.4 | TD: 2 | LONG: 21 | TGTS: 33
+2025-10-27 00:00:44.183 -05:00 [INF] --- fumbles (Cleveland Fumbles) ---
+2025-10-27 00:00:44.184 -05:00 [INF] Keys: [fumbles, fumblesLost, fumblesRecovered]
+2025-10-27 00:00:44.184 -05:00 [INF] Labels: [FUM, LOST, REC]
+2025-10-27 00:00:44.286 -05:00 [INF]     Stats: FUM: 0 | LOST: 0 | REC: 1
+2025-10-27 00:00:44.287 -05:00 [INF]   TEAM TOTALS: FUM: 0 | LOST: 0 | REC: 1
+2025-10-27 00:00:44.287 -05:00 [INF] --- interceptions (Cleveland Interceptions) ---
+2025-10-27 00:00:44.288 -05:00 [INF] Keys: [interceptions, interceptionYards, interceptionTouchdowns]
+2025-10-27 00:00:44.289 -05:00 [INF] Labels: [INT, YDS, TD]
+2025-10-27 00:00:44.391 -05:00 [INF]     Stats: INT: 1 | YDS: 7 | TD: 0
+2025-10-27 00:00:44.392 -05:00 [INF]   TEAM TOTALS: INT: 1 | YDS: 7 | TD: 0
+2025-10-27 00:00:47.569 -05:00 [INF] 📊 Database Upsert Summary: 13 total records | 0 updated | 13 inserted | 0 failed
+2025-10-27 00:00:47.570 -05:00 [INF]   ✓ Upserted 13 combined player stat records for Cleveland Browns
+2025-10-27 00:00:47.571 -05:00 [INF] === TEAM: New England Patriots (Display Order: 2) ===
+2025-10-27 00:00:47.572 -05:00 [INF] Found 10 stat categories for New England Patriots
+2025-10-27 00:00:47.573 -05:00 [INF] --- passing (New England Passing) ---
+2025-10-27 00:00:47.573 -05:00 [INF] Keys: [completions/passingAttempts, passingYards, yardsPerPassAttempt, passingTouchdowns, interceptions, sacks-sackYardsLost, adjQBR, QBRating]
+2025-10-27 00:00:47.574 -05:00 [INF] Labels: [C/ATT, YDS, AVG, TD, INT, SACKS, QBR, RTG]
+2025-10-27 00:00:47.662 -05:00 [INF]     Stats: C/ATT: 18/24 | YDS: 282 | AVG: 11.8 | TD: 3 | INT: 1 | SACKS: 6-37 | QBR: 67.4 | RTG: 135.8
+2025-10-27 00:00:47.663 -05:00 [INF]   TEAM TOTALS: C/ATT: 18/24 | YDS: 245 | AVG: 11.8 | TD: 3 | INT: 1 | SACKS: 6-37 | QBR: -- | RTG: 135.8
+2025-10-27 00:00:47.664 -05:00 [INF] --- rushing (New England Rushing) ---
+2025-10-27 00:00:47.665 -05:00 [INF] Keys: [rushingAttempts, rushingYards, yardsPerRushAttempt, rushingTouchdowns, longRushing]
+2025-10-27 00:00:47.666 -05:00 [INF] Labels: [CAR, YDS, AVG, TD, LONG]
+2025-10-27 00:00:47.758 -05:00 [INF]     Stats: CAR: 10 | YDS: 75 | AVG: 7.5 | TD: 0 | LONG: 27
+2025-10-27 00:00:47.854 -05:00 [INF]     Stats: CAR: 7 | YDS: 50 | AVG: 7.1 | TD: 0 | LONG: 28
+2025-10-27 00:00:47.945 -05:00 [INF]     Stats: CAR: 14 | YDS: 34 | AVG: 2.4 | TD: 0 | LONG: 9
+2025-10-27 00:00:48.224 -05:00 [INF] No existing player found for ESPN player: Terrell Jennings (ESPN ID: 4427600)
+2025-10-27 00:00:48.225 -05:00 [INF]     Stats: CAR: 2 | YDS: 15 | AVG: 7.5 | TD: 0 | LONG: 11
+2025-10-27 00:00:48.326 -05:00 [INF]     Stats: CAR: 2 | YDS: 3 | AVG: 1.5 | TD: 0 | LONG: 8
+2025-10-27 00:00:48.327 -05:00 [INF]   TEAM TOTALS: CAR: 35 | YDS: 177 | AVG: 5.1 | TD: 0 | LONG: 28
+2025-10-27 00:00:48.327 -05:00 [INF] --- receiving (New England Receiving) ---
+2025-10-27 00:00:48.328 -05:00 [INF] Keys: [receptions, receivingYards, yardsPerReception, receivingTouchdowns, longReception, receivingTargets]
+2025-10-27 00:00:48.329 -05:00 [INF] Labels: [REC, YDS, AVG, TD, LONG, TGTS]
+2025-10-27 00:00:48.418 -05:00 [INF]     Stats: REC: 7 | YDS: 89 | AVG: 12.7 | TD: 0 | LONG: 21 | TGTS: 7
+2025-10-27 00:00:48.509 -05:00 [INF]     Stats: REC: 3 | YDS: 75 | AVG: 25.0 | TD: 1 | LONG: 39 | TGTS: 5
+2025-10-27 00:00:48.609 -05:00 [INF]     Stats: REC: 1 | YDS: 44 | AVG: 44.0 | TD: 0 | LONG: 44 | TGTS: 1
+2025-10-27 00:00:48.705 -05:00 [INF]     Stats: REC: 2 | YDS: 38 | AVG: 19.0 | TD: 0 | LONG: 31 | TGTS: 2
+2025-10-27 00:00:48.796 -05:00 [INF]     Stats: REC: 1 | YDS: 15 | AVG: 15.0 | TD: 0 | LONG: 15 | TGTS: 2
+2025-10-27 00:00:48.887 -05:00 [INF]     Stats: REC: 3 | YDS: 14 | AVG: 4.7 | TD: 1 | LONG: 8 | TGTS: 5
+2025-10-27 00:00:49.042 -05:00 [INF]     Stats: REC: 1 | YDS: 7 | AVG: 7.0 | TD: 1 | LONG: 7 | TGTS: 1
+2025-10-27 00:00:49.042 -05:00 [INF]   TEAM TOTALS: REC: 18 | YDS: 282 | AVG: 15.7 | TD: 3 | LONG: 44 | TGTS: 23
+2025-10-27 00:00:49.043 -05:00 [INF] --- fumbles (New England Fumbles) ---
+2025-10-27 00:00:49.044 -05:00 [INF] Keys: [fumbles, fumblesLost, fumblesRecovered]
+2025-10-27 00:00:49.044 -05:00 [INF] Labels: [FUM, LOST, REC]
+2025-10-27 00:00:49.131 -05:00 [INF]     Stats: FUM: 1 | LOST: 1 | REC: 0
+2025-10-27 00:00:49.223 -05:00 [INF]     Stats: FUM: 1 | LOST: 0 | REC: 0
+2025-10-27 00:00:49.500 -05:00 [INF] No existing player found for ESPN player: Jared Wilson (ESPN ID: 4599198)
+2025-10-27 00:00:49.501 -05:00 [INF]     Stats: FUM: 0 | LOST: 0 | REC: 1
+2025-10-27 00:00:49.502 -05:00 [INF]   TEAM TOTALS: FUM: 2 | LOST: 1 | REC: 1
+2025-10-27 00:00:49.503 -05:00 [INF] --- interceptions (New England Interceptions) ---
+2025-10-27 00:00:49.504 -05:00 [INF] Keys: [interceptions, interceptionYards, interceptionTouchdowns]
+2025-10-27 00:00:49.505 -05:00 [INF] Labels: [INT, YDS, TD]
+2025-10-27 00:00:49.611 -05:00 [INF]     Stats: INT: 1 | YDS: 33 | TD: 0
+2025-10-27 00:00:49.708 -05:00 [INF]     Stats: INT: 1 | YDS: 0 | TD: 0
+2025-10-27 00:00:49.709 -05:00 [INF]   TEAM TOTALS: INT: 2 | YDS: 33 | TD: 0
+2025-10-27 00:00:50.621 -05:00 [WRN] ⚠️ Skipped record due to foreign key constraint: ESPN Player ID 4427600 not found in Players table. Game: 401772868
+2025-10-27 00:00:52.381 -05:00 [WRN] ⚠️ Skipped record due to foreign key constraint: ESPN Player ID 4599198 not found in Players table. Game: 401772868
+2025-10-27 00:00:52.938 -05:00 [INF] 📊 Database Upsert Summary: 13 total records | 0 updated | 11 inserted | 2 failed
+2025-10-27 00:00:52.939 -05:00 [INF]   ✓ Upserted 11 combined player stat records for New England Patriots
+2025-10-27 00:00:52.940 -05:00 [INF] 🏈 GAME SUMMARY - 401772868: 35 players found | 33 matched to DB | 24 records processed
+2025-10-27 00:00:52.941 -05:00 [INF] === END PLAYER STATS for Game 401772868 ===
+2025-10-27 00:00:52.942 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/21?lang=en&region=us
+2025-10-27 00:00:52.942 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/21?*
+2025-10-27 00:00:52.943 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/21?*
+2025-10-27 00:00:53.003 -05:00 [INF] Received HTTP response headers after 58.9936ms - 200
+2025-10-27 00:00:53.004 -05:00 [INF] End processing HTTP request after 61.7233ms - 200
+2025-10-27 00:00:53.005 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:00:53.005 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/19?lang=en&region=us
+2025-10-27 00:00:53.006 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/19?*
+2025-10-27 00:00:53.007 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/19?*
+2025-10-27 00:00:53.061 -05:00 [INF] Received HTTP response headers after 52.7203ms - 200
+2025-10-27 00:00:53.062 -05:00 [INF] End processing HTTP request after 55.6793ms - 200
+2025-10-27 00:00:53.063 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:00:53.063 -05:00 [INF] NFL Game: New York Giants @ Philadelphia Eagles - Oct 26, 2025 5:00 PM
+2025-10-27 00:00:53.064 -05:00 [INF] Winner: Philadelphia Eagles
+2025-10-27 00:00:53.065 -05:00 [INF] === PROCESSING GAME 401772867 (New York Giants @ Philadelphia Eagles) ===
+2025-10-27 00:00:53.066 -05:00 [INF] Fetching game summary for game 401772867
+2025-10-27 00:00:53.067 -05:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:00:53.067 -05:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:00:53.088 -05:00 [INF] Received HTTP response headers after 19.9414ms - 200
+2025-10-27 00:00:53.089 -05:00 [INF] End processing HTTP request after 22.6629ms - 200
+2025-10-27 00:00:53.096 -05:00 [INF] Successfully fetched game summary for game 401772867
+2025-10-27 00:00:53.097 -05:00 [INF] Found 2 teams in BoxScore.Players
+2025-10-27 00:00:53.097 -05:00 [INF] === TEAM: New York Giants (Display Order: 1) ===
+2025-10-27 00:00:53.098 -05:00 [INF] Found 10 stat categories for New York Giants
+2025-10-27 00:00:53.099 -05:00 [INF] --- passing (New York Passing) ---
+2025-10-27 00:00:53.100 -05:00 [INF] Keys: [completions/passingAttempts, passingYards, yardsPerPassAttempt, passingTouchdowns, interceptions, sacks-sackYardsLost, adjQBR, QBRating]
+2025-10-27 00:00:53.101 -05:00 [INF] Labels: [C/ATT, YDS, AVG, TD, INT, SACKS, QBR, RTG]
+2025-10-27 00:00:53.188 -05:00 [INF]     Stats: C/ATT: 14/24 | YDS: 193 | AVG: 8.0 | TD: 1 | INT: 0 | SACKS: 5-15 | QBR: 55.0 | RTG: 98.1
+2025-10-27 00:00:53.189 -05:00 [INF]   TEAM TOTALS: C/ATT: 14/24 | YDS: 178 | AVG: 8.0 | TD: 1 | INT: 0 | SACKS: 5-15 | QBR: -- | RTG: 98.1
+2025-10-27 00:00:53.190 -05:00 [INF] --- rushing (New York Rushing) ---
+2025-10-27 00:00:53.190 -05:00 [INF] Keys: [rushingAttempts, rushingYards, yardsPerRushAttempt, rushingTouchdowns, longRushing]
+2025-10-27 00:00:53.191 -05:00 [INF] Labels: [CAR, YDS, AVG, TD, LONG]
+2025-10-27 00:00:53.283 -05:00 [INF]     Stats: CAR: 10 | YDS: 39 | AVG: 3.9 | TD: 0 | LONG: 6
+2025-10-27 00:00:53.384 -05:00 [INF]     Stats: CAR: 6 | YDS: 17 | AVG: 2.8 | TD: 1 | LONG: 8
+2025-10-27 00:00:53.478 -05:00 [INF]     Stats: CAR: 3 | YDS: 12 | AVG: 4.0 | TD: 0 | LONG: 5
+2025-10-27 00:00:53.570 -05:00 [INF]     Stats: CAR: 2 | YDS: 0 | AVG: 0.0 | TD: 0 | LONG: 3
+2025-10-27 00:00:53.571 -05:00 [INF]   TEAM TOTALS: CAR: 21 | YDS: 68 | AVG: 3.2 | TD: 1 | LONG: 8
+2025-10-27 00:00:53.571 -05:00 [INF] --- receiving (New York Receiving) ---
+2025-10-27 00:00:53.572 -05:00 [INF] Keys: [receptions, receivingYards, yardsPerReception, receivingTouchdowns, longReception, receivingTargets]
+2025-10-27 00:00:53.573 -05:00 [INF] Labels: [REC, YDS, AVG, TD, LONG, TGTS]
+2025-10-27 00:00:53.663 -05:00 [INF]     Stats: REC: 3 | YDS: 48 | AVG: 16.0 | TD: 0 | LONG: 34 | TGTS: 4
+2025-10-27 00:00:53.760 -05:00 [INF]     Stats: REC: 1 | YDS: 28 | AVG: 28.0 | TD: 0 | LONG: 28 | TGTS: 1
+2025-10-27 00:00:53.854 -05:00 [INF]     Stats: REC: 2 | YDS: 26 | AVG: 13.0 | TD: 0 | LONG: 19 | TGTS: 5
+2025-10-27 00:00:53.950 -05:00 [INF]     Stats: REC: 1 | YDS: 21 | AVG: 21.0 | TD: 0 | LONG: 21 | TGTS: 1
+2025-10-27 00:00:54.053 -05:00 [INF]     Stats: REC: 3 | YDS: 20 | AVG: 6.7 | TD: 0 | LONG: 12 | TGTS: 4
+2025-10-27 00:00:54.154 -05:00 [INF]     Stats: REC: 1 | YDS: 18 | AVG: 18.0 | TD: 1 | LONG: 18 | TGTS: 2
+2025-10-27 00:00:54.256 -05:00 [INF]     Stats: REC: 1 | YDS: 18 | AVG: 18.0 | TD: 0 | LONG: 18 | TGTS: 2
+2025-10-27 00:00:54.355 -05:00 [INF]     Stats: REC: 2 | YDS: 14 | AVG: 7.0 | TD: 0 | LONG: 9 | TGTS: 3
+2025-10-27 00:00:54.356 -05:00 [INF]   TEAM TOTALS: REC: 14 | YDS: 193 | AVG: 13.8 | TD: 1 | LONG: 34 | TGTS: 22
+2025-10-27 00:00:54.357 -05:00 [INF] --- fumbles (New York Fumbles) ---
+2025-10-27 00:00:54.358 -05:00 [INF] Keys: [fumbles, fumblesLost, fumblesRecovered]
+2025-10-27 00:00:54.359 -05:00 [INF] Labels: [FUM, LOST, REC]
+2025-10-27 00:00:54.359 -05:00 [INF]   No athletes found for fumbles
+2025-10-27 00:00:54.360 -05:00 [INF] --- interceptions (New York Interceptions) ---
+2025-10-27 00:00:54.362 -05:00 [INF] Keys: [interceptions, interceptionYards, interceptionTouchdowns]
+2025-10-27 00:00:54.363 -05:00 [INF] Labels: [INT, YDS, TD]
+2025-10-27 00:00:54.363 -05:00 [INF]   No athletes found for interceptions
+2025-10-27 00:00:56.628 -05:00 [INF] 📊 Database Upsert Summary: 9 total records | 0 updated | 9 inserted | 0 failed
+2025-10-27 00:00:56.629 -05:00 [INF]   ✓ Upserted 9 combined player stat records for New York Giants
+2025-10-27 00:00:56.630 -05:00 [INF] === TEAM: Philadelphia Eagles (Display Order: 2) ===
+2025-10-27 00:00:56.630 -05:00 [INF] Found 10 stat categories for Philadelphia Eagles
+2025-10-27 00:00:56.631 -05:00 [INF] --- passing (Philadelphia Passing) ---
+2025-10-27 00:00:56.632 -05:00 [INF] Keys: [completions/passingAttempts, passingYards, yardsPerPassAttempt, passingTouchdowns, interceptions, sacks-sackYardsLost, adjQBR, QBRating]
+2025-10-27 00:00:56.633 -05:00 [INF] Labels: [C/ATT, YDS, AVG, TD, INT, SACKS, QBR, RTG]
+2025-10-27 00:00:56.721 -05:00 [INF]     Stats: C/ATT: 15/20 | YDS: 179 | AVG: 9.0 | TD: 4 | INT: 0 | SACKS: 4-28 | QBR: 67.2 | RTG: 141.5
+2025-10-27 00:00:56.721 -05:00 [INF]   TEAM TOTALS: C/ATT: 15/20 | YDS: 151 | AVG: 9.0 | TD: 4 | INT: 0 | SACKS: 4-28 | QBR: -- | RTG: 141.5
+2025-10-27 00:00:56.722 -05:00 [INF] --- rushing (Philadelphia Rushing) ---
+2025-10-27 00:00:56.723 -05:00 [INF] Keys: [rushingAttempts, rushingYards, yardsPerRushAttempt, rushingTouchdowns, longRushing]
+2025-10-27 00:00:56.724 -05:00 [INF] Labels: [CAR, YDS, AVG, TD, LONG]
+2025-10-27 00:00:56.816 -05:00 [INF]     Stats: CAR: 14 | YDS: 150 | AVG: 10.7 | TD: 1 | LONG: 65
+2025-10-27 00:00:56.910 -05:00 [INF]     Stats: CAR: 9 | YDS: 104 | AVG: 11.6 | TD: 0 | LONG: 29
+2025-10-27 00:00:57.002 -05:00 [INF]     Stats: CAR: 4 | YDS: 22 | AVG: 5.5 | TD: 0 | LONG: 8
+2025-10-27 00:00:57.103 -05:00 [INF]     Stats: CAR: 3 | YDS: 2 | AVG: 0.7 | TD: 0 | LONG: 3
+2025-10-27 00:00:57.377 -05:00 [INF] No existing player found for ESPN player: Tanner McKee (ESPN ID: 4685201)
+2025-10-27 00:00:57.378 -05:00 [INF]     Stats: CAR: 3 | YDS: -2 | AVG: -0.7 | TD: 0 | LONG: 0
+2025-10-27 00:00:57.379 -05:00 [INF]   TEAM TOTALS: CAR: 33 | YDS: 276 | AVG: 8.4 | TD: 1 | LONG: 65
+2025-10-27 00:00:57.379 -05:00 [INF] --- receiving (Philadelphia Receiving) ---
+2025-10-27 00:00:57.380 -05:00 [INF] Keys: [receptions, receivingYards, yardsPerReception, receivingTouchdowns, longReception, receivingTargets]
+2025-10-27 00:00:57.381 -05:00 [INF] Labels: [REC, YDS, AVG, TD, LONG, TGTS]
+2025-10-27 00:00:57.477 -05:00 [INF]     Stats: REC: 6 | YDS: 84 | AVG: 14.0 | TD: 0 | LONG: 26 | TGTS: 9
+2025-10-27 00:00:57.575 -05:00 [INF]     Stats: REC: 1 | YDS: 40 | AVG: 40.0 | TD: 1 | LONG: 40 | TGTS: 2
+2025-10-27 00:00:57.663 -05:00 [INF]     Stats: REC: 3 | YDS: 28 | AVG: 9.3 | TD: 2 | LONG: 17 | TGTS: 3
+2025-10-27 00:00:57.757 -05:00 [INF]     Stats: REC: 4 | YDS: 24 | AVG: 6.0 | TD: 1 | LONG: 12 | TGTS: 5
+2025-10-27 00:00:57.859 -05:00 [INF]     Stats: REC: 1 | YDS: 3 | AVG: 3.0 | TD: 0 | LONG: 3 | TGTS: 1
+2025-10-27 00:00:57.860 -05:00 [INF]   TEAM TOTALS: REC: 15 | YDS: 179 | AVG: 11.9 | TD: 4 | LONG: 40 | TGTS: 20
+2025-10-27 00:00:57.860 -05:00 [INF] --- fumbles (Philadelphia Fumbles) ---
+2025-10-27 00:00:57.861 -05:00 [INF] Keys: [fumbles, fumblesLost, fumblesRecovered]
+2025-10-27 00:00:57.862 -05:00 [INF] Labels: [FUM, LOST, REC]
+2025-10-27 00:00:57.863 -05:00 [INF]   No athletes found for fumbles
+2025-10-27 00:00:57.864 -05:00 [INF] --- interceptions (Philadelphia Interceptions) ---
+2025-10-27 00:00:57.865 -05:00 [INF] Keys: [interceptions, interceptionYards, interceptionTouchdowns]
+2025-10-27 00:00:57.865 -05:00 [INF] Labels: [INT, YDS, TD]
+2025-10-27 00:00:57.866 -05:00 [INF]   No athletes found for interceptions
+2025-10-27 00:00:59.067 -05:00 [WRN] ⚠️ Skipped record due to foreign key constraint: ESPN Player ID 4685201 not found in Players table. Game: 401772867
+2025-10-27 00:01:00.144 -05:00 [INF] 📊 Database Upsert Summary: 9 total records | 0 updated | 8 inserted | 1 failed
+2025-10-27 00:01:00.145 -05:00 [INF]   ✓ Upserted 8 combined player stat records for Philadelphia Eagles
+2025-10-27 00:01:00.146 -05:00 [INF] 🏈 GAME SUMMARY - 401772867: 24 players found | 23 matched to DB | 17 records processed
+2025-10-27 00:01:00.147 -05:00 [INF] === END PLAYER STATS for Game 401772867 ===
+2025-10-27 00:01:00.148 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/29?lang=en&region=us
+2025-10-27 00:01:00.149 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/29?*
+2025-10-27 00:01:00.150 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/29?*
+2025-10-27 00:01:00.219 -05:00 [INF] Received HTTP response headers after 68.6835ms - 200
+2025-10-27 00:01:00.220 -05:00 [INF] End processing HTTP request after 71.708ms - 200
+2025-10-27 00:01:00.222 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:01:00.222 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/2?lang=en&region=us
+2025-10-27 00:01:00.223 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/2?*
+2025-10-27 00:01:00.224 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/2?*
+2025-10-27 00:01:00.290 -05:00 [INF] Received HTTP response headers after 65.0758ms - 200
+2025-10-27 00:01:00.291 -05:00 [INF] End processing HTTP request after 67.6719ms - 200
+2025-10-27 00:01:00.292 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:01:00.292 -05:00 [INF] NFL Game: Buffalo Bills @ Carolina Panthers - Oct 26, 2025 5:00 PM
+2025-10-27 00:01:00.293 -05:00 [INF] Winner: Buffalo Bills
+2025-10-27 00:01:00.294 -05:00 [INF] === PROCESSING GAME 401772865 (Buffalo Bills @ Carolina Panthers) ===
+2025-10-27 00:01:00.295 -05:00 [INF] Fetching game summary for game 401772865
+2025-10-27 00:01:00.296 -05:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:01:00.297 -05:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:01:00.321 -05:00 [INF] Received HTTP response headers after 22.7464ms - 200
+2025-10-27 00:01:00.322 -05:00 [INF] End processing HTTP request after 25.4278ms - 200
+2025-10-27 00:01:00.329 -05:00 [INF] Successfully fetched game summary for game 401772865
+2025-10-27 00:01:00.330 -05:00 [INF] Found 2 teams in BoxScore.Players
+2025-10-27 00:01:00.330 -05:00 [INF] === TEAM: Buffalo Bills (Display Order: 1) ===
+2025-10-27 00:01:00.331 -05:00 [INF] Found 10 stat categories for Buffalo Bills
+2025-10-27 00:01:00.332 -05:00 [INF] --- passing (Buffalo Passing) ---
+2025-10-27 00:01:00.333 -05:00 [INF] Keys: [completions/passingAttempts, passingYards, yardsPerPassAttempt, passingTouchdowns, interceptions, sacks-sackYardsLost, adjQBR, QBRating]
+2025-10-27 00:01:00.334 -05:00 [INF] Labels: [C/ATT, YDS, AVG, TD, INT, SACKS, QBR, RTG]
+2025-10-27 00:01:00.428 -05:00 [INF]     Stats: C/ATT: 12/19 | YDS: 163 | AVG: 8.6 | TD: 1 | INT: 0 | SACKS: 2-20 | QBR: 46.2 | RTG: 108.0
+2025-10-27 00:01:00.529 -05:00 [INF]     Stats: C/ATT: 2/4 | YDS: 22 | AVG: 5.5 | TD: 0 | INT: 0 | SACKS: 0-0 | QBR: 88.0 | RTG: 66.7
+2025-10-27 00:01:00.530 -05:00 [INF]   TEAM TOTALS: C/ATT: 14/23 | YDS: 165 | AVG: 8.0 | TD: 1 | INT: 0 | SACKS: 2-20 | QBR: -- | RTG: 100.8
+2025-10-27 00:01:00.530 -05:00 [INF] --- rushing (Buffalo Rushing) ---
+2025-10-27 00:01:00.532 -05:00 [INF] Keys: [rushingAttempts, rushingYards, yardsPerRushAttempt, rushingTouchdowns, longRushing]
+2025-10-27 00:01:00.532 -05:00 [INF] Labels: [CAR, YDS, AVG, TD, LONG]
+2025-10-27 00:01:00.621 -05:00 [INF]     Stats: CAR: 19 | YDS: 216 | AVG: 11.4 | TD: 2 | LONG: 64
+2025-10-27 00:01:00.717 -05:00 [INF]     Stats: CAR: 9 | YDS: 16 | AVG: 1.8 | TD: 0 | LONG: 5
+2025-10-27 00:01:00.822 -05:00 [INF]     Stats: CAR: 3 | YDS: 7 | AVG: 2.3 | TD: 2 | LONG: 5
+2025-10-27 00:01:00.914 -05:00 [INF]     Stats: CAR: 4 | YDS: 6 | AVG: 1.5 | TD: 0 | LONG: 4
+2025-10-27 00:01:00.915 -05:00 [INF]   TEAM TOTALS: CAR: 35 | YDS: 245 | AVG: 7.0 | TD: 4 | LONG: 64
+2025-10-27 00:01:00.915 -05:00 [INF] --- receiving (Buffalo Receiving) ---
+2025-10-27 00:01:00.916 -05:00 [INF] Keys: [receptions, receivingYards, yardsPerReception, receivingTouchdowns, longReception, receivingTargets]
+2025-10-27 00:01:00.917 -05:00 [INF] Labels: [REC, YDS, AVG, TD, LONG, TGTS]
+2025-10-27 00:01:01.021 -05:00 [INF]     Stats: REC: 6 | YDS: 88 | AVG: 14.7 | TD: 1 | LONG: 54 | TGTS: 7
+2025-10-27 00:01:01.121 -05:00 [INF]     Stats: REC: 3 | YDS: 30 | AVG: 10.0 | TD: 0 | LONG: 14 | TGTS: 4
+2025-10-27 00:01:01.217 -05:00 [INF]     Stats: REC: 1 | YDS: 23 | AVG: 23.0 | TD: 0 | LONG: 23 | TGTS: 3
+2025-10-27 00:01:01.321 -05:00 [INF]     Stats: REC: 1 | YDS: 15 | AVG: 15.0 | TD: 0 | LONG: 15 | TGTS: 1
+2025-10-27 00:01:01.415 -05:00 [INF]     Stats: REC: 2 | YDS: 15 | AVG: 7.5 | TD: 0 | LONG: 12 | TGTS: 3
+2025-10-27 00:01:01.513 -05:00 [INF]     Stats: REC: 1 | YDS: 14 | AVG: 14.0 | TD: 0 | LONG: 14 | TGTS: 4
+2025-10-27 00:01:01.613 -05:00 [INF]     Stats: REC: 0 | YDS: 0 | AVG: 0.0 | TD: 0 | LONG: 0 | TGTS: 1
+2025-10-27 00:01:01.614 -05:00 [INF]   TEAM TOTALS: REC: 14 | YDS: 185 | AVG: 13.2 | TD: 1 | LONG: 54 | TGTS: 23
+2025-10-27 00:01:01.614 -05:00 [INF] --- fumbles (Buffalo Fumbles) ---
+2025-10-27 00:01:01.615 -05:00 [INF] Keys: [fumbles, fumblesLost, fumblesRecovered]
+2025-10-27 00:01:01.616 -05:00 [INF] Labels: [FUM, LOST, REC]
+2025-10-27 00:01:01.717 -05:00 [INF]     Stats: FUM: 0 | LOST: 0 | REC: 1
+2025-10-27 00:01:01.815 -05:00 [INF]     Stats: FUM: 0 | LOST: 0 | REC: 1
+2025-10-27 00:01:01.815 -05:00 [INF]   TEAM TOTALS: FUM: 0 | LOST: 0 | REC: 2
+2025-10-27 00:01:01.816 -05:00 [INF] --- interceptions (Buffalo Interceptions) ---
+2025-10-27 00:01:01.817 -05:00 [INF] Keys: [interceptions, interceptionYards, interceptionTouchdowns]
+2025-10-27 00:01:01.818 -05:00 [INF] Labels: [INT, YDS, TD]
+2025-10-27 00:01:01.910 -05:00 [INF]     Stats: INT: 1 | YDS: 24 | TD: 0
+2025-10-27 00:01:01.911 -05:00 [INF]   TEAM TOTALS: INT: 1 | YDS: 24 | TD: 0
+2025-10-27 00:01:05.390 -05:00 [INF] 📊 Database Upsert Summary: 14 total records | 0 updated | 14 inserted | 0 failed
+2025-10-27 00:01:05.392 -05:00 [INF]   ✓ Upserted 14 combined player stat records for Buffalo Bills
+2025-10-27 00:01:05.393 -05:00 [INF] === TEAM: Carolina Panthers (Display Order: 2) ===
+2025-10-27 00:01:05.393 -05:00 [INF] Found 10 stat categories for Carolina Panthers
+2025-10-27 00:01:05.394 -05:00 [INF] --- passing (Carolina Passing) ---
+2025-10-27 00:01:05.395 -05:00 [INF] Keys: [completions/passingAttempts, passingYards, yardsPerPassAttempt, passingTouchdowns, interceptions, sacks-sackYardsLost, adjQBR, QBRating]
+2025-10-27 00:01:05.396 -05:00 [INF] Labels: [C/ATT, YDS, AVG, TD, INT, SACKS, QBR, RTG]
+2025-10-27 00:01:05.484 -05:00 [INF]     Stats: C/ATT: 16/24 | YDS: 175 | AVG: 7.3 | TD: 0 | INT: 1 | SACKS: 7-45 | QBR: 4.2 | RTG: 70.7
+2025-10-27 00:01:05.485 -05:00 [INF]   TEAM TOTALS: C/ATT: 16/24 | YDS: 130 | AVG: 7.3 | TD: 0 | INT: 1 | SACKS: 7-45 | QBR: -- | RTG: 70.6
+2025-10-27 00:01:05.486 -05:00 [INF] --- rushing (Carolina Rushing) ---
+2025-10-27 00:01:05.487 -05:00 [INF] Keys: [rushingAttempts, rushingYards, yardsPerRushAttempt, rushingTouchdowns, longRushing]
+2025-10-27 00:01:05.488 -05:00 [INF] Labels: [CAR, YDS, AVG, TD, LONG]
+2025-10-27 00:01:05.584 -05:00 [INF]     Stats: CAR: 8 | YDS: 54 | AVG: 6.8 | TD: 0 | LONG: 24
+2025-10-27 00:01:05.681 -05:00 [INF]     Stats: CAR: 12 | YDS: 34 | AVG: 2.8 | TD: 1 | LONG: 5
+2025-10-27 00:01:05.767 -05:00 [INF]     Stats: CAR: 4 | YDS: 16 | AVG: 4.0 | TD: 0 | LONG: 8
+2025-10-27 00:01:05.867 -05:00 [INF]     Stats: CAR: 2 | YDS: 9 | AVG: 4.5 | TD: 0 | LONG: 7
+2025-10-27 00:01:05.968 -05:00 [INF]     Stats: CAR: 2 | YDS: 1 | AVG: 0.5 | TD: 0 | LONG: 1
+2025-10-27 00:01:05.969 -05:00 [INF]   TEAM TOTALS: CAR: 28 | YDS: 114 | AVG: 4.1 | TD: 1 | LONG: 24
+2025-10-27 00:01:05.970 -05:00 [INF] --- receiving (Carolina Receiving) ---
+2025-10-27 00:01:05.970 -05:00 [INF] Keys: [receptions, receivingYards, yardsPerReception, receivingTouchdowns, longReception, receivingTargets]
+2025-10-27 00:01:05.971 -05:00 [INF] Labels: [REC, YDS, AVG, TD, LONG, TGTS]
+2025-10-27 00:01:06.057 -05:00 [INF]     Stats: REC: 7 | YDS: 99 | AVG: 14.1 | TD: 0 | LONG: 19 | TGTS: 10
+2025-10-27 00:01:06.154 -05:00 [INF]     Stats: REC: 3 | YDS: 36 | AVG: 12.0 | TD: 0 | LONG: 22 | TGTS: 4
+2025-10-27 00:01:06.286 -05:00 [INF]     Stats: REC: 3 | YDS: 19 | AVG: 6.3 | TD: 0 | LONG: 9 | TGTS: 3
+2025-10-27 00:01:06.381 -05:00 [INF]     Stats: REC: 2 | YDS: 17 | AVG: 8.5 | TD: 0 | LONG: 11 | TGTS: 3
+2025-10-27 00:01:06.474 -05:00 [INF]     Stats: REC: 1 | YDS: 4 | AVG: 4.0 | TD: 0 | LONG: 4 | TGTS: 1
+2025-10-27 00:01:06.569 -05:00 [INF]     Stats: REC: 0 | YDS: 0 | AVG: 0.0 | TD: 0 | LONG: 0 | TGTS: 1
+2025-10-27 00:01:06.661 -05:00 [INF]     Stats: REC: 0 | YDS: 0 | AVG: 0.0 | TD: 0 | LONG: 0 | TGTS: 1
+2025-10-27 00:01:06.662 -05:00 [INF]   TEAM TOTALS: REC: 16 | YDS: 175 | AVG: 10.9 | TD: 0 | LONG: 22 | TGTS: 23
+2025-10-27 00:01:06.662 -05:00 [INF] --- fumbles (Carolina Fumbles) ---
+2025-10-27 00:01:06.663 -05:00 [INF] Keys: [fumbles, fumblesLost, fumblesRecovered]
+2025-10-27 00:01:06.664 -05:00 [INF] Labels: [FUM, LOST, REC]
+2025-10-27 00:01:06.760 -05:00 [INF]     Stats: FUM: 2 | LOST: 2 | REC: 1
+2025-10-27 00:01:06.848 -05:00 [INF]     Stats: FUM: 1 | LOST: 0 | REC: 0
+2025-10-27 00:01:06.849 -05:00 [INF]   TEAM TOTALS: FUM: 3 | LOST: 2 | REC: 1
+2025-10-27 00:01:06.850 -05:00 [INF] --- interceptions (Carolina Interceptions) ---
+2025-10-27 00:01:06.850 -05:00 [INF] Keys: [interceptions, interceptionYards, interceptionTouchdowns]
+2025-10-27 00:01:06.851 -05:00 [INF] Labels: [INT, YDS, TD]
+2025-10-27 00:01:06.852 -05:00 [INF]   No athletes found for interceptions
+2025-10-27 00:01:09.590 -05:00 [INF] 📊 Database Upsert Summary: 11 total records | 0 updated | 11 inserted | 0 failed
+2025-10-27 00:01:09.591 -05:00 [INF]   ✓ Upserted 11 combined player stat records for Carolina Panthers
+2025-10-27 00:01:09.592 -05:00 [INF] 🏈 GAME SUMMARY - 401772865: 31 players found | 31 matched to DB | 25 records processed
+2025-10-27 00:01:09.593 -05:00 [INF] === END PLAYER STATS for Game 401772865 ===
+2025-10-27 00:01:09.594 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/33?lang=en&region=us
+2025-10-27 00:01:09.594 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/33?*
+2025-10-27 00:01:09.595 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/33?*
+2025-10-27 00:01:09.657 -05:00 [INF] Received HTTP response headers after 60.8741ms - 200
+2025-10-27 00:01:09.658 -05:00 [INF] End processing HTTP request after 63.334ms - 200
+2025-10-27 00:01:09.659 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:01:09.659 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/3?lang=en&region=us
+2025-10-27 00:01:09.660 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/3?*
+2025-10-27 00:01:09.660 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/3?*
+2025-10-27 00:01:09.715 -05:00 [INF] Received HTTP response headers after 53.3765ms - 200
+2025-10-27 00:01:09.716 -05:00 [INF] End processing HTTP request after 56.208ms - 200
+2025-10-27 00:01:09.717 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:01:09.718 -05:00 [INF] NFL Game: Chicago Bears @ Baltimore Ravens - Oct 26, 2025 5:00 PM
+2025-10-27 00:01:09.718 -05:00 [INF] Winner: Baltimore Ravens
+2025-10-27 00:01:09.719 -05:00 [INF] === PROCESSING GAME 401772759 (Chicago Bears @ Baltimore Ravens) ===
+2025-10-27 00:01:09.720 -05:00 [INF] Fetching game summary for game 401772759
+2025-10-27 00:01:09.721 -05:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:01:09.721 -05:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:01:09.739 -05:00 [INF] Received HTTP response headers after 16.7847ms - 200
+2025-10-27 00:01:09.740 -05:00 [INF] End processing HTTP request after 19.1473ms - 200
+2025-10-27 00:01:09.746 -05:00 [INF] Successfully fetched game summary for game 401772759
+2025-10-27 00:01:09.747 -05:00 [INF] Found 2 teams in BoxScore.Players
+2025-10-27 00:01:09.748 -05:00 [INF] === TEAM: Chicago Bears (Display Order: 1) ===
+2025-10-27 00:01:09.749 -05:00 [INF] Found 10 stat categories for Chicago Bears
+2025-10-27 00:01:09.749 -05:00 [INF] --- passing (Chicago Passing) ---
+2025-10-27 00:01:09.750 -05:00 [INF] Keys: [completions/passingAttempts, passingYards, yardsPerPassAttempt, passingTouchdowns, interceptions, sacks-sackYardsLost, adjQBR, QBRating]
+2025-10-27 00:01:09.751 -05:00 [INF] Labels: [C/ATT, YDS, AVG, TD, INT, SACKS, QBR, RTG]
+2025-10-27 00:01:09.843 -05:00 [INF]     Stats: C/ATT: 25/38 | YDS: 285 | AVG: 7.5 | TD: 0 | INT: 1 | SACKS: 1-9 | QBR: 62.5 | RTG: 77.2
+2025-10-27 00:01:09.844 -05:00 [INF]   TEAM TOTALS: C/ATT: 25/38 | YDS: 276 | AVG: 7.5 | TD: 0 | INT: 1 | SACKS: 1-9 | QBR: -- | RTG: 77.2
+2025-10-27 00:01:09.844 -05:00 [INF] --- rushing (Chicago Rushing) ---
+2025-10-27 00:01:09.845 -05:00 [INF] Keys: [rushingAttempts, rushingYards, yardsPerRushAttempt, rushingTouchdowns, longRushing]
+2025-10-27 00:01:09.846 -05:00 [INF] Labels: [CAR, YDS, AVG, TD, LONG]
+2025-10-27 00:01:09.943 -05:00 [INF]     Stats: CAR: 11 | YDS: 45 | AVG: 4.1 | TD: 1 | LONG: 13
+2025-10-27 00:01:10.041 -05:00 [INF]     Stats: CAR: 3 | YDS: 24 | AVG: 8.0 | TD: 0 | LONG: 22
+2025-10-27 00:01:10.146 -05:00 [INF]     Stats: CAR: 7 | YDS: 24 | AVG: 3.4 | TD: 0 | LONG: 15
+2025-10-27 00:01:10.241 -05:00 [INF]     Stats: CAR: 2 | YDS: 3 | AVG: 1.5 | TD: 0 | LONG: 3
+2025-10-27 00:01:10.241 -05:00 [INF]   TEAM TOTALS: CAR: 23 | YDS: 96 | AVG: 4.2 | TD: 1 | LONG: 22
+2025-10-27 00:01:10.242 -05:00 [INF] --- receiving (Chicago Receiving) ---
+2025-10-27 00:01:10.243 -05:00 [INF] Keys: [receptions, receivingYards, yardsPerReception, receivingTouchdowns, longReception, receivingTargets]
+2025-10-27 00:01:10.243 -05:00 [INF] Labels: [REC, YDS, AVG, TD, LONG, TGTS]
+2025-10-27 00:01:10.344 -05:00 [INF]     Stats: REC: 7 | YDS: 114 | AVG: 16.3 | TD: 0 | LONG: 27 | TGTS: 10
+2025-10-27 00:01:10.438 -05:00 [INF]     Stats: REC: 4 | YDS: 73 | AVG: 18.3 | TD: 0 | LONG: 42 | TGTS: 7
+2025-10-27 00:01:10.535 -05:00 [INF]     Stats: REC: 3 | YDS: 38 | AVG: 12.7 | TD: 0 | LONG: 18 | TGTS: 5
+2025-10-27 00:01:10.627 -05:00 [INF]     Stats: REC: 7 | YDS: 33 | AVG: 4.7 | TD: 0 | LONG: 6 | TGTS: 7
+2025-10-27 00:01:10.725 -05:00 [INF]     Stats: REC: 2 | YDS: 26 | AVG: 13.0 | TD: 0 | LONG: 25 | TGTS: 2
+2025-10-27 00:01:10.823 -05:00 [INF]     Stats: REC: 1 | YDS: 2 | AVG: 2.0 | TD: 0 | LONG: 2 | TGTS: 3
+2025-10-27 00:01:10.928 -05:00 [INF]     Stats: REC: 1 | YDS: -1 | AVG: -1.0 | TD: 0 | LONG: -1 | TGTS: 1
+2025-10-27 00:01:10.928 -05:00 [INF]   TEAM TOTALS: REC: 25 | YDS: 285 | AVG: 11.4 | TD: 0 | LONG: 42 | TGTS: 35
+2025-10-27 00:01:10.929 -05:00 [INF] --- fumbles (Chicago Fumbles) ---
+2025-10-27 00:01:10.930 -05:00 [INF] Keys: [fumbles, fumblesLost, fumblesRecovered]
+2025-10-27 00:01:10.930 -05:00 [INF] Labels: [FUM, LOST, REC]
+2025-10-27 00:01:11.031 -05:00 [INF]     Stats: FUM: 1 | LOST: 0 | REC: 0
+2025-10-27 00:01:11.153 -05:00 [INF]     Stats: FUM: 0 | LOST: 0 | REC: 1
+2025-10-27 00:01:11.154 -05:00 [INF]   TEAM TOTALS: FUM: 1 | LOST: 0 | REC: 1
+2025-10-27 00:01:11.155 -05:00 [INF] --- interceptions (Chicago Interceptions) ---
+2025-10-27 00:01:11.156 -05:00 [INF] Keys: [interceptions, interceptionYards, interceptionTouchdowns]
+2025-10-27 00:01:11.156 -05:00 [INF] Labels: [INT, YDS, TD]
+2025-10-27 00:01:11.157 -05:00 [INF]   No athletes found for interceptions
+2025-10-27 00:01:13.945 -05:00 [INF] 📊 Database Upsert Summary: 11 total records | 0 updated | 11 inserted | 0 failed
+2025-10-27 00:01:13.946 -05:00 [INF]   ✓ Upserted 11 combined player stat records for Chicago Bears
+2025-10-27 00:01:13.947 -05:00 [INF] === TEAM: Baltimore Ravens (Display Order: 2) ===
+2025-10-27 00:01:13.947 -05:00 [INF] Found 10 stat categories for Baltimore Ravens
+2025-10-27 00:01:13.949 -05:00 [INF] --- passing (Baltimore Passing) ---
+2025-10-27 00:01:13.949 -05:00 [INF] Keys: [completions/passingAttempts, passingYards, yardsPerPassAttempt, passingTouchdowns, interceptions, sacks-sackYardsLost, adjQBR, QBRating]
+2025-10-27 00:01:13.950 -05:00 [INF] Labels: [C/ATT, YDS, AVG, TD, INT, SACKS, QBR, RTG]
+2025-10-27 00:01:14.050 -05:00 [INF]     Stats: C/ATT: 17/22 | YDS: 186 | AVG: 8.5 | TD: 1 | INT: 0 | SACKS: 2-8 | QBR: 90.1 | RTG: 116.9
+2025-10-27 00:01:14.051 -05:00 [INF]   TEAM TOTALS: C/ATT: 17/22 | YDS: 178 | AVG: 8.5 | TD: 1 | INT: 0 | SACKS: 2-8 | QBR: -- | RTG: 116.9
+2025-10-27 00:01:14.052 -05:00 [INF] --- rushing (Baltimore Rushing) ---
+2025-10-27 00:01:14.053 -05:00 [INF] Keys: [rushingAttempts, rushingYards, yardsPerRushAttempt, rushingTouchdowns, longRushing]
+2025-10-27 00:01:14.054 -05:00 [INF] Labels: [CAR, YDS, AVG, TD, LONG]
+2025-10-27 00:01:14.154 -05:00 [INF]     Stats: CAR: 21 | YDS: 71 | AVG: 3.4 | TD: 2 | LONG: 10
+2025-10-27 00:01:14.259 -05:00 [INF]     Stats: CAR: 8 | YDS: 53 | AVG: 6.6 | TD: 0 | LONG: 29
+2025-10-27 00:01:14.356 -05:00 [INF]     Stats: CAR: 4 | YDS: 43 | AVG: 10.8 | TD: 0 | LONG: 25
+2025-10-27 00:01:14.457 -05:00 [INF]     Stats: CAR: 1 | YDS: 8 | AVG: 8.0 | TD: 0 | LONG: 8
+2025-10-27 00:01:14.560 -05:00 [INF]     Stats: CAR: 1 | YDS: 2 | AVG: 2.0 | TD: 0 | LONG: 2
+2025-10-27 00:01:14.561 -05:00 [INF]   TEAM TOTALS: CAR: 35 | YDS: 177 | AVG: 5.1 | TD: 2 | LONG: 29
+2025-10-27 00:01:14.561 -05:00 [INF] --- receiving (Baltimore Receiving) ---
+2025-10-27 00:01:14.562 -05:00 [INF] Keys: [receptions, receivingYards, yardsPerReception, receivingTouchdowns, longReception, receivingTargets]
+2025-10-27 00:01:14.562 -05:00 [INF] Labels: [REC, YDS, AVG, TD, LONG, TGTS]
+2025-10-27 00:01:14.659 -05:00 [INF]     Stats: REC: 7 | YDS: 63 | AVG: 9.0 | TD: 0 | LONG: 20 | TGTS: 9
+2025-10-27 00:01:14.765 -05:00 [INF]     Stats: REC: 2 | YDS: 51 | AVG: 25.5 | TD: 0 | LONG: 36 | TGTS: 4
+2025-10-27 00:01:14.868 -05:00 [INF]     Stats: REC: 3 | YDS: 34 | AVG: 11.3 | TD: 0 | LONG: 24 | TGTS: 3
+2025-10-27 00:01:14.968 -05:00 [INF]     Stats: REC: 1 | YDS: 14 | AVG: 14.0 | TD: 0 | LONG: 14 | TGTS: 1
+2025-10-27 00:01:15.071 -05:00 [INF]     Stats: REC: 1 | YDS: 10 | AVG: 10.0 | TD: 1 | LONG: 10 | TGTS: 1
+2025-10-27 00:01:15.172 -05:00 [INF]     Stats: REC: 2 | YDS: 8 | AVG: 4.0 | TD: 0 | LONG: 5 | TGTS: 2
+2025-10-27 00:01:15.266 -05:00 [INF]     Stats: REC: 1 | YDS: 6 | AVG: 6.0 | TD: 0 | LONG: 6 | TGTS: 1
+2025-10-27 00:01:15.369 -05:00 [INF]     Stats: REC: 0 | YDS: 0 | AVG: 0.0 | TD: 0 | LONG: 0 | TGTS: 1
+2025-10-27 00:01:15.370 -05:00 [INF]   TEAM TOTALS: REC: 17 | YDS: 186 | AVG: 10.9 | TD: 1 | LONG: 36 | TGTS: 22
+2025-10-27 00:01:15.370 -05:00 [INF] --- fumbles (Baltimore Fumbles) ---
+2025-10-27 00:01:15.371 -05:00 [INF] Keys: [fumbles, fumblesLost, fumblesRecovered]
+2025-10-27 00:01:15.372 -05:00 [INF] Labels: [FUM, LOST, REC]
+2025-10-27 00:01:15.466 -05:00 [INF]     Stats: FUM: 1 | LOST: 0 | REC: 0
+2025-10-27 00:01:15.466 -05:00 [INF]   TEAM TOTALS: FUM: 1 | LOST: 0 | REC: 0
+2025-10-27 00:01:15.467 -05:00 [INF] --- interceptions (Baltimore Interceptions) ---
+2025-10-27 00:01:15.468 -05:00 [INF] Keys: [interceptions, interceptionYards, interceptionTouchdowns]
+2025-10-27 00:01:15.469 -05:00 [INF] Labels: [INT, YDS, TD]
+2025-10-27 00:01:15.573 -05:00 [INF]     Stats: INT: 1 | YDS: 9 | TD: 0
+2025-10-27 00:01:15.574 -05:00 [INF]   TEAM TOTALS: INT: 1 | YDS: 9 | TD: 0
+2025-10-27 00:01:18.725 -05:00 [INF] 📊 Database Upsert Summary: 12 total records | 0 updated | 12 inserted | 0 failed
+2025-10-27 00:01:18.727 -05:00 [INF]   ✓ Upserted 12 combined player stat records for Baltimore Ravens
+2025-10-27 00:01:18.727 -05:00 [INF] 🏈 GAME SUMMARY - 401772759: 30 players found | 30 matched to DB | 23 records processed
+2025-10-27 00:01:18.728 -05:00 [INF] === END PLAYER STATS for Game 401772759 ===
+2025-10-27 00:01:18.729 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/34?lang=en&region=us
+2025-10-27 00:01:18.730 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/34?*
+2025-10-27 00:01:18.731 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/34?*
+2025-10-27 00:01:18.791 -05:00 [INF] Received HTTP response headers after 59.7592ms - 200
+2025-10-27 00:01:18.792 -05:00 [INF] End processing HTTP request after 62.3116ms - 200
+2025-10-27 00:01:18.794 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:01:18.794 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/25?lang=en&region=us
+2025-10-27 00:01:18.795 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/25?*
+2025-10-27 00:01:18.795 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/25?*
+2025-10-27 00:01:18.848 -05:00 [INF] Received HTTP response headers after 52.6678ms - 200
+2025-10-27 00:01:18.849 -05:00 [INF] End processing HTTP request after 54.5469ms - 200
+2025-10-27 00:01:18.850 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:01:18.850 -05:00 [INF] NFL Game: San Francisco 49ers @ Houston Texans - Oct 26, 2025 5:00 PM
+2025-10-27 00:01:18.851 -05:00 [INF] Winner: Houston Texans
+2025-10-27 00:01:18.852 -05:00 [INF] === PROCESSING GAME 401772866 (San Francisco 49ers @ Houston Texans) ===
+2025-10-27 00:01:18.852 -05:00 [INF] Fetching game summary for game 401772866
+2025-10-27 00:01:18.853 -05:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:01:18.854 -05:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:01:18.875 -05:00 [INF] Received HTTP response headers after 20.6286ms - 200
+2025-10-27 00:01:18.875 -05:00 [INF] End processing HTTP request after 22.6943ms - 200
+2025-10-27 00:01:18.880 -05:00 [INF] Successfully fetched game summary for game 401772866
+2025-10-27 00:01:18.881 -05:00 [INF] Found 2 teams in BoxScore.Players
+2025-10-27 00:01:18.882 -05:00 [INF] === TEAM: San Francisco 49ers (Display Order: 1) ===
+2025-10-27 00:01:18.883 -05:00 [INF] Found 10 stat categories for San Francisco 49ers
+2025-10-27 00:01:18.883 -05:00 [INF] --- passing (San Francisco Passing) ---
+2025-10-27 00:01:18.884 -05:00 [INF] Keys: [completions/passingAttempts, passingYards, yardsPerPassAttempt, passingTouchdowns, interceptions, sacks-sackYardsLost, adjQBR, QBRating]
+2025-10-27 00:01:18.885 -05:00 [INF] Labels: [C/ATT, YDS, AVG, TD, INT, SACKS, QBR, RTG]
+2025-10-27 00:01:18.978 -05:00 [INF]     Stats: C/ATT: 19/32 | YDS: 193 | AVG: 6.0 | TD: 2 | INT: 1 | SACKS: 2-18 | QBR: 74.0 | RTG: 84.5
+2025-10-27 00:01:18.978 -05:00 [INF]   TEAM TOTALS: C/ATT: 19/32 | YDS: 175 | AVG: 6.0 | TD: 2 | INT: 1 | SACKS: 2-18 | QBR: -- | RTG: 84.5
+2025-10-27 00:01:18.979 -05:00 [INF] --- rushing (San Francisco Rushing) ---
+2025-10-27 00:01:18.980 -05:00 [INF] Keys: [rushingAttempts, rushingYards, yardsPerRushAttempt, rushingTouchdowns, longRushing]
+2025-10-27 00:01:18.980 -05:00 [INF] Labels: [CAR, YDS, AVG, TD, LONG]
+2025-10-27 00:01:19.078 -05:00 [INF]     Stats: CAR: 8 | YDS: 25 | AVG: 3.1 | TD: 0 | LONG: 9
+2025-10-27 00:01:19.198 -05:00 [INF]     Stats: CAR: 2 | YDS: 23 | AVG: 11.5 | TD: 0 | LONG: 13
+2025-10-27 00:01:19.199 -05:00 [INF]   TEAM TOTALS: CAR: 10 | YDS: 48 | AVG: 4.8 | TD: 0 | LONG: 13
+2025-10-27 00:01:19.199 -05:00 [INF] --- receiving (San Francisco Receiving) ---
+2025-10-27 00:01:19.200 -05:00 [INF] Keys: [receptions, receivingYards, yardsPerReception, receivingTouchdowns, longReception, receivingTargets]
+2025-10-27 00:01:19.201 -05:00 [INF] Labels: [REC, YDS, AVG, TD, LONG, TGTS]
+2025-10-27 00:01:19.301 -05:00 [INF]     Stats: REC: 4 | YDS: 45 | AVG: 11.3 | TD: 0 | LONG: 25 | TGTS: 7
+2025-10-27 00:01:19.398 -05:00 [INF]     Stats: REC: 3 | YDS: 44 | AVG: 14.7 | TD: 0 | LONG: 18 | TGTS: 4
+2025-10-27 00:01:19.494 -05:00 [INF]     Stats: REC: 4 | YDS: 43 | AVG: 10.8 | TD: 1 | LONG: 17 | TGTS: 5
+2025-10-27 00:01:19.597 -05:00 [INF]     Stats: REC: 3 | YDS: 43 | AVG: 14.3 | TD: 0 | LONG: 27 | TGTS: 6
+2025-10-27 00:01:19.883 -05:00 [INF] No existing player found for ESPN player: Jordan Watkins (ESPN ID: 4431466)
+2025-10-27 00:01:19.884 -05:00 [INF]     Stats: REC: 1 | YDS: 7 | AVG: 7.0 | TD: 0 | LONG: 7 | TGTS: 2
+2025-10-27 00:01:19.986 -05:00 [INF]     Stats: REC: 2 | YDS: 5 | AVG: 2.5 | TD: 0 | LONG: 6 | TGTS: 3
+2025-10-27 00:01:20.080 -05:00 [INF]     Stats: REC: 1 | YDS: 4 | AVG: 4.0 | TD: 0 | LONG: 4 | TGTS: 2
+2025-10-27 00:01:20.175 -05:00 [INF]     Stats: REC: 1 | YDS: 2 | AVG: 2.0 | TD: 1 | LONG: 2 | TGTS: 1
+2025-10-27 00:01:20.283 -05:00 [INF]     Stats: REC: 0 | YDS: 0 | AVG: 0.0 | TD: 0 | LONG: 0 | TGTS: 1
+2025-10-27 00:01:20.284 -05:00 [INF]   TEAM TOTALS: REC: 19 | YDS: 193 | AVG: 10.2 | TD: 2 | LONG: 27 | TGTS: 31
+2025-10-27 00:01:20.284 -05:00 [INF] --- fumbles (San Francisco Fumbles) ---
+2025-10-27 00:01:20.285 -05:00 [INF] Keys: [fumbles, fumblesLost, fumblesRecovered]
+2025-10-27 00:01:20.286 -05:00 [INF] Labels: [FUM, LOST, REC]
+2025-10-27 00:01:20.381 -05:00 [INF]     Stats: FUM: 1 | LOST: 0 | REC: 0
+2025-10-27 00:01:20.479 -05:00 [INF]     Stats: FUM: 0 | LOST: 0 | REC: 1
+2025-10-27 00:01:20.479 -05:00 [INF]   TEAM TOTALS: FUM: 1 | LOST: 0 | REC: 1
+2025-10-27 00:01:20.480 -05:00 [INF] --- interceptions (San Francisco Interceptions) ---
+2025-10-27 00:01:20.481 -05:00 [INF] Keys: [interceptions, interceptionYards, interceptionTouchdowns]
+2025-10-27 00:01:20.482 -05:00 [INF] Labels: [INT, YDS, TD]
+2025-10-27 00:01:20.581 -05:00 [INF]     Stats: INT: 1 | YDS: 26 | TD: 0
+2025-10-27 00:01:20.582 -05:00 [INF]   TEAM TOTALS: INT: 1 | YDS: 26 | TD: 0
+2025-10-27 00:01:22.044 -05:00 [WRN] ⚠️ Skipped record due to foreign key constraint: ESPN Player ID 4431466 not found in Players table. Game: 401772866
+2025-10-27 00:01:23.643 -05:00 [INF] 📊 Database Upsert Summary: 12 total records | 0 updated | 11 inserted | 1 failed
+2025-10-27 00:01:23.644 -05:00 [INF]   ✓ Upserted 11 combined player stat records for San Francisco 49ers
+2025-10-27 00:01:23.645 -05:00 [INF] === TEAM: Houston Texans (Display Order: 2) ===
+2025-10-27 00:01:23.645 -05:00 [INF] Found 10 stat categories for Houston Texans
+2025-10-27 00:01:23.646 -05:00 [INF] --- passing (Houston Passing) ---
+2025-10-27 00:01:23.646 -05:00 [INF] Keys: [completions/passingAttempts, passingYards, yardsPerPassAttempt, passingTouchdowns, interceptions, sacks-sackYardsLost, adjQBR, QBRating]
+2025-10-27 00:01:23.647 -05:00 [INF] Labels: [C/ATT, YDS, AVG, TD, INT, SACKS, QBR, RTG]
+2025-10-27 00:01:23.739 -05:00 [INF]     Stats: C/ATT: 30/39 | YDS: 318 | AVG: 8.2 | TD: 2 | INT: 1 | SACKS: 0-0 | QBR: 88.3 | RTG: 106.6
+2025-10-27 00:01:23.739 -05:00 [INF]   TEAM TOTALS: C/ATT: 30/39 | YDS: 318 | AVG: 8.2 | TD: 2 | INT: 1 | SACKS: 0-0 | QBR: -- | RTG: 106.6
+2025-10-27 00:01:23.740 -05:00 [INF] --- rushing (Houston Rushing) ---
+2025-10-27 00:01:23.740 -05:00 [INF] Keys: [rushingAttempts, rushingYards, yardsPerRushAttempt, rushingTouchdowns, longRushing]
+2025-10-27 00:01:23.741 -05:00 [INF] Labels: [CAR, YDS, AVG, TD, LONG]
+2025-10-27 00:01:23.834 -05:00 [INF]     Stats: CAR: 11 | YDS: 62 | AVG: 5.6 | TD: 0 | LONG: 23
+2025-10-27 00:01:23.934 -05:00 [INF]     Stats: CAR: 17 | YDS: 56 | AVG: 3.3 | TD: 0 | LONG: 9
+2025-10-27 00:01:24.029 -05:00 [INF]     Stats: CAR: 7 | YDS: 30 | AVG: 4.3 | TD: 0 | LONG: 13
+2025-10-27 00:01:24.127 -05:00 [INF]     Stats: CAR: 1 | YDS: 9 | AVG: 9.0 | TD: 0 | LONG: 9
+2025-10-27 00:01:24.128 -05:00 [INF]   TEAM TOTALS: CAR: 36 | YDS: 157 | AVG: 4.4 | TD: 0 | LONG: 23
+2025-10-27 00:01:24.128 -05:00 [INF] --- receiving (Houston Receiving) ---
+2025-10-27 00:01:24.129 -05:00 [INF] Keys: [receptions, receivingYards, yardsPerReception, receivingTouchdowns, longReception, receivingTargets]
+2025-10-27 00:01:24.129 -05:00 [INF] Labels: [REC, YDS, AVG, TD, LONG, TGTS]
+2025-10-27 00:01:24.228 -05:00 [INF]     Stats: REC: 5 | YDS: 69 | AVG: 13.8 | TD: 1 | LONG: 30 | TGTS: 6
+2025-10-27 00:01:24.323 -05:00 [INF]     Stats: REC: 5 | YDS: 63 | AVG: 12.6 | TD: 0 | LONG: 44 | TGTS: 6
+2025-10-27 00:01:24.426 -05:00 [INF]     Stats: REC: 4 | YDS: 49 | AVG: 12.3 | TD: 0 | LONG: 50 | TGTS: 4
+2025-10-27 00:01:24.532 -05:00 [INF]     Stats: REC: 5 | YDS: 38 | AVG: 7.6 | TD: 0 | LONG: 14 | TGTS: 5
+2025-10-27 00:01:24.629 -05:00 [INF]     Stats: REC: 4 | YDS: 34 | AVG: 8.5 | TD: 1 | LONG: 12 | TGTS: 8
+2025-10-27 00:01:24.724 -05:00 [INF]     Stats: REC: 2 | YDS: 24 | AVG: 12.0 | TD: 0 | LONG: 17 | TGTS: 3
+2025-10-27 00:01:25.012 -05:00 [INF] No existing player found for ESPN player: Jared Wayne (ESPN ID: 4430681)
+2025-10-27 00:01:25.013 -05:00 [INF]     Stats: REC: 2 | YDS: 20 | AVG: 10.0 | TD: 0 | LONG: 17 | TGTS: 2
+2025-10-27 00:01:25.107 -05:00 [INF]     Stats: REC: 2 | YDS: 13 | AVG: 6.5 | TD: 0 | LONG: 8 | TGTS: 2
+2025-10-27 00:01:25.206 -05:00 [INF]     Stats: REC: 1 | YDS: 8 | AVG: 8.0 | TD: 0 | LONG: 8 | TGTS: 1
+2025-10-27 00:01:25.308 -05:00 [INF]     Stats: REC: 0 | YDS: 0 | AVG: 0.0 | TD: 0 | LONG: 0 | TGTS: 1
+2025-10-27 00:01:25.310 -05:00 [INF]   TEAM TOTALS: REC: 30 | YDS: 318 | AVG: 10.6 | TD: 2 | LONG: 50 | TGTS: 38
+2025-10-27 00:01:25.311 -05:00 [INF] --- fumbles (Houston Fumbles) ---
+2025-10-27 00:01:25.312 -05:00 [INF] Keys: [fumbles, fumblesLost, fumblesRecovered]
+2025-10-27 00:01:25.313 -05:00 [INF] Labels: [FUM, LOST, REC]
+2025-10-27 00:01:25.314 -05:00 [INF]   No athletes found for fumbles
+2025-10-27 00:01:25.316 -05:00 [INF] --- interceptions (Houston Interceptions) ---
+2025-10-27 00:01:25.318 -05:00 [INF] Keys: [interceptions, interceptionYards, interceptionTouchdowns]
+2025-10-27 00:01:25.319 -05:00 [INF] Labels: [INT, YDS, TD]
+2025-10-27 00:01:25.416 -05:00 [INF]     Stats: INT: 1 | YDS: 0 | TD: 0
+2025-10-27 00:01:25.416 -05:00 [INF]   TEAM TOTALS: INT: 1 | YDS: 0 | TD: 0
+2025-10-27 00:01:27.985 -05:00 [WRN] ⚠️ Skipped record due to foreign key constraint: ESPN Player ID 4430681 not found in Players table. Game: 401772866
+2025-10-27 00:01:28.561 -05:00 [INF] 📊 Database Upsert Summary: 12 total records | 0 updated | 11 inserted | 1 failed
+2025-10-27 00:01:28.562 -05:00 [INF]   ✓ Upserted 11 combined player stat records for Houston Texans
+2025-10-27 00:01:28.562 -05:00 [INF] 🏈 GAME SUMMARY - 401772866: 31 players found | 29 matched to DB | 22 records processed
+2025-10-27 00:01:28.564 -05:00 [INF] === END PLAYER STATS for Game 401772866 ===
+2025-10-27 00:01:28.564 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/18?lang=en&region=us
+2025-10-27 00:01:28.565 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/18?*
+2025-10-27 00:01:28.566 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/18?*
+2025-10-27 00:01:28.628 -05:00 [INF] Received HTTP response headers after 61.7891ms - 200
+2025-10-27 00:01:28.629 -05:00 [INF] End processing HTTP request after 64.1373ms - 200
+2025-10-27 00:01:28.630 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:01:28.631 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/27?lang=en&region=us
+2025-10-27 00:01:28.632 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/27?*
+2025-10-27 00:01:28.633 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/27?*
+2025-10-27 00:01:28.690 -05:00 [INF] Received HTTP response headers after 57.0732ms - 200
+2025-10-27 00:01:28.691 -05:00 [INF] End processing HTTP request after 59.5516ms - 200
+2025-10-27 00:01:28.692 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:01:28.693 -05:00 [INF] NFL Game: Tampa Bay Buccaneers @ New Orleans Saints - Oct 26, 2025 8:05 PM
+2025-10-27 00:01:28.694 -05:00 [INF] Winner: Tampa Bay Buccaneers
+2025-10-27 00:01:28.695 -05:00 [INF] === PROCESSING GAME 401772869 (Tampa Bay Buccaneers @ New Orleans Saints) ===
+2025-10-27 00:01:28.696 -05:00 [INF] Fetching game summary for game 401772869
+2025-10-27 00:01:28.697 -05:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:01:28.697 -05:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:01:28.716 -05:00 [INF] Received HTTP response headers after 18.153ms - 200
+2025-10-27 00:01:28.717 -05:00 [INF] End processing HTTP request after 20.397ms - 200
+2025-10-27 00:01:28.722 -05:00 [INF] Successfully fetched game summary for game 401772869
+2025-10-27 00:01:28.723 -05:00 [INF] Found 2 teams in BoxScore.Players
+2025-10-27 00:01:28.723 -05:00 [INF] === TEAM: Tampa Bay Buccaneers (Display Order: 1) ===
+2025-10-27 00:01:28.724 -05:00 [INF] Found 10 stat categories for Tampa Bay Buccaneers
+2025-10-27 00:01:28.725 -05:00 [INF] --- passing (Tampa Bay Passing) ---
+2025-10-27 00:01:28.726 -05:00 [INF] Keys: [completions/passingAttempts, passingYards, yardsPerPassAttempt, passingTouchdowns, interceptions, sacks-sackYardsLost, adjQBR, QBRating]
+2025-10-27 00:01:28.726 -05:00 [INF] Labels: [C/ATT, YDS, AVG, TD, INT, SACKS, QBR, RTG]
+2025-10-27 00:01:28.832 -05:00 [INF]     Stats: C/ATT: 15/24 | YDS: 152 | AVG: 6.3 | TD: 0 | INT: 0 | SACKS: 3-28 | QBR: 38.5 | RTG: 80.6
+2025-10-27 00:01:28.833 -05:00 [INF]   TEAM TOTALS: C/ATT: 15/24 | YDS: 124 | AVG: 6.3 | TD: 0 | INT: 0 | SACKS: 3-28 | QBR: -- | RTG: 80.6
+2025-10-27 00:01:28.834 -05:00 [INF] --- rushing (Tampa Bay Rushing) ---
+2025-10-27 00:01:28.834 -05:00 [INF] Keys: [rushingAttempts, rushingYards, yardsPerRushAttempt, rushingTouchdowns, longRushing]
+2025-10-27 00:01:28.835 -05:00 [INF] Labels: [CAR, YDS, AVG, TD, LONG]
+2025-10-27 00:01:28.931 -05:00 [INF]     Stats: CAR: 12 | YDS: 42 | AVG: 3.5 | TD: 1 | LONG: 15
+2025-10-27 00:01:29.032 -05:00 [INF]     Stats: CAR: 13 | YDS: 35 | AVG: 2.7 | TD: 0 | LONG: 9
+2025-10-27 00:01:29.138 -05:00 [INF]     Stats: CAR: 4 | YDS: 11 | AVG: 2.8 | TD: 0 | LONG: 4
+2025-10-27 00:01:29.138 -05:00 [INF]   TEAM TOTALS: CAR: 29 | YDS: 88 | AVG: 3.0 | TD: 1 | LONG: 15
+2025-10-27 00:01:29.139 -05:00 [INF] --- receiving (Tampa Bay Receiving) ---
+2025-10-27 00:01:29.140 -05:00 [INF] Keys: [receptions, receivingYards, yardsPerReception, receivingTouchdowns, longReception, receivingTargets]
+2025-10-27 00:01:29.141 -05:00 [INF] Labels: [REC, YDS, AVG, TD, LONG, TGTS]
+2025-10-27 00:01:29.243 -05:00 [INF]     Stats: REC: 5 | YDS: 43 | AVG: 8.6 | TD: 0 | LONG: 16 | TGTS: 6
+2025-10-27 00:01:29.341 -05:00 [INF]     Stats: REC: 4 | YDS: 40 | AVG: 10.0 | TD: 0 | LONG: 21 | TGTS: 5
+2025-10-27 00:01:29.441 -05:00 [INF]     Stats: REC: 3 | YDS: 35 | AVG: 11.7 | TD: 0 | LONG: 24 | TGTS: 9
+2025-10-27 00:01:29.537 -05:00 [INF]     Stats: REC: 2 | YDS: 26 | AVG: 13.0 | TD: 0 | LONG: 17 | TGTS: 2
+2025-10-27 00:01:29.636 -05:00 [INF]     Stats: REC: 1 | YDS: 8 | AVG: 8.0 | TD: 0 | LONG: 8 | TGTS: 2
+2025-10-27 00:01:29.636 -05:00 [INF]   TEAM TOTALS: REC: 15 | YDS: 152 | AVG: 10.1 | TD: 0 | LONG: 24 | TGTS: 24
+2025-10-27 00:01:29.637 -05:00 [INF] --- fumbles (Tampa Bay Fumbles) ---
+2025-10-27 00:01:29.638 -05:00 [INF] Keys: [fumbles, fumblesLost, fumblesRecovered]
+2025-10-27 00:01:29.639 -05:00 [INF] Labels: [FUM, LOST, REC]
+2025-10-27 00:01:29.751 -05:00 [INF]     Stats: FUM: 1 | LOST: 1 | REC: 0
+2025-10-27 00:01:29.845 -05:00 [INF]     Stats: FUM: 1 | LOST: 0 | REC: 0
+2025-10-27 00:01:29.948 -05:00 [INF]     Stats: FUM: 0 | LOST: 0 | REC: 1
+2025-10-27 00:01:30.051 -05:00 [INF]     Stats: FUM: 0 | LOST: 0 | REC: 1
+2025-10-27 00:01:30.051 -05:00 [INF]   TEAM TOTALS: FUM: 2 | LOST: 1 | REC: 2
+2025-10-27 00:01:30.052 -05:00 [INF] --- interceptions (Tampa Bay Interceptions) ---
+2025-10-27 00:01:30.053 -05:00 [INF] Keys: [interceptions, interceptionYards, interceptionTouchdowns]
+2025-10-27 00:01:30.053 -05:00 [INF] Labels: [INT, YDS, TD]
+2025-10-27 00:01:30.149 -05:00 [INF]     Stats: INT: 1 | YDS: 3 | TD: 1
+2025-10-27 00:01:30.244 -05:00 [INF]     Stats: INT: 1 | YDS: 0 | TD: 0
+2025-10-27 00:01:30.245 -05:00 [INF]   TEAM TOTALS: INT: 2 | YDS: 3 | TD: 1
+2025-10-27 00:01:33.057 -05:00 [INF] 📊 Database Upsert Summary: 11 total records | 0 updated | 11 inserted | 0 failed
+2025-10-27 00:01:33.058 -05:00 [INF]   ✓ Upserted 11 combined player stat records for Tampa Bay Buccaneers
+2025-10-27 00:01:33.059 -05:00 [INF] === TEAM: New Orleans Saints (Display Order: 2) ===
+2025-10-27 00:01:33.059 -05:00 [INF] Found 10 stat categories for New Orleans Saints
+2025-10-27 00:01:33.060 -05:00 [INF] --- passing (New Orleans Passing) ---
+2025-10-27 00:01:33.061 -05:00 [INF] Keys: [completions/passingAttempts, passingYards, yardsPerPassAttempt, passingTouchdowns, interceptions, sacks-sackYardsLost, adjQBR, QBRating]
+2025-10-27 00:01:33.062 -05:00 [INF] Labels: [C/ATT, YDS, AVG, TD, INT, SACKS, QBR, RTG]
+2025-10-27 00:01:33.169 -05:00 [INF]     Stats: C/ATT: 15/21 | YDS: 136 | AVG: 6.5 | TD: 0 | INT: 1 | SACKS: 3-19 | QBR: 14.3 | RTG: 68.8
+2025-10-27 00:01:33.266 -05:00 [INF]     Stats: C/ATT: 17/30 | YDS: 128 | AVG: 4.3 | TD: 0 | INT: 1 | SACKS: 2-18 | QBR: 7.7 | RTG: 53.2
+2025-10-27 00:01:33.267 -05:00 [INF]   TEAM TOTALS: C/ATT: 32/51 | YDS: 227 | AVG: 5.2 | TD: 0 | INT: 2 | SACKS: 5-37 | QBR: -- | RTG: 59.6
+2025-10-27 00:01:33.267 -05:00 [INF] --- rushing (New Orleans Rushing) ---
+2025-10-27 00:01:33.268 -05:00 [INF] Keys: [rushingAttempts, rushingYards, yardsPerRushAttempt, rushingTouchdowns, longRushing]
+2025-10-27 00:01:33.269 -05:00 [INF] Labels: [CAR, YDS, AVG, TD, LONG]
+2025-10-27 00:01:33.368 -05:00 [INF]     Stats: CAR: 6 | YDS: 21 | AVG: 3.5 | TD: 0 | LONG: 5
+2025-10-27 00:01:33.462 -05:00 [INF]     Stats: CAR: 3 | YDS: 12 | AVG: 4.0 | TD: 0 | LONG: 6
+2025-10-27 00:01:33.561 -05:00 [INF]     Stats: CAR: 3 | YDS: 12 | AVG: 4.0 | TD: 0 | LONG: 7
+2025-10-27 00:01:33.665 -05:00 [INF]     Stats: CAR: 2 | YDS: 6 | AVG: 3.0 | TD: 0 | LONG: 3
+2025-10-27 00:01:33.764 -05:00 [INF]     Stats: CAR: 1 | YDS: -3 | AVG: -3.0 | TD: 0 | LONG: -3
+2025-10-27 00:01:33.765 -05:00 [INF]   TEAM TOTALS: CAR: 15 | YDS: 48 | AVG: 3.2 | TD: 0 | LONG: 7
+2025-10-27 00:01:33.766 -05:00 [INF] --- receiving (New Orleans Receiving) ---
+2025-10-27 00:01:33.767 -05:00 [INF] Keys: [receptions, receivingYards, yardsPerReception, receivingTouchdowns, longReception, receivingTargets]
+2025-10-27 00:01:33.767 -05:00 [INF] Labels: [REC, YDS, AVG, TD, LONG, TGTS]
+2025-10-27 00:01:33.865 -05:00 [INF]     Stats: REC: 9 | YDS: 75 | AVG: 8.3 | TD: 0 | LONG: 10 | TGTS: 12
+2025-10-27 00:01:33.963 -05:00 [INF]     Stats: REC: 8 | YDS: 63 | AVG: 7.9 | TD: 0 | LONG: 28 | TGTS: 12
+2025-10-27 00:01:34.057 -05:00 [INF]     Stats: REC: 5 | YDS: 53 | AVG: 10.6 | TD: 0 | LONG: 16 | TGTS: 8
+2025-10-27 00:01:34.159 -05:00 [INF]     Stats: REC: 2 | YDS: 24 | AVG: 12.0 | TD: 0 | LONG: 15 | TGTS: 2
+2025-10-27 00:01:34.262 -05:00 [INF]     Stats: REC: 3 | YDS: 22 | AVG: 7.3 | TD: 0 | LONG: 11 | TGTS: 4
+2025-10-27 00:01:34.358 -05:00 [INF]     Stats: REC: 3 | YDS: 11 | AVG: 3.7 | TD: 0 | LONG: 8 | TGTS: 3
+2025-10-27 00:01:34.462 -05:00 [INF]     Stats: REC: 1 | YDS: 10 | AVG: 10.0 | TD: 0 | LONG: 10 | TGTS: 5
+2025-10-27 00:01:34.565 -05:00 [INF]     Stats: REC: 1 | YDS: 6 | AVG: 6.0 | TD: 0 | LONG: 6 | TGTS: 1
+2025-10-27 00:01:34.659 -05:00 [INF]     Stats: REC: 0 | YDS: 0 | AVG: 0.0 | TD: 0 | LONG: 0 | TGTS: 1
+2025-10-27 00:01:34.762 -05:00 [INF]     Stats: REC: 0 | YDS: 0 | AVG: 0.0 | TD: 0 | LONG: 0 | TGTS: 1
+2025-10-27 00:01:34.869 -05:00 [INF]     Stats: REC: 0 | YDS: 0 | AVG: 0.0 | TD: 0 | LONG: 0 | TGTS: 1
+2025-10-27 00:01:34.870 -05:00 [INF]   TEAM TOTALS: REC: 32 | YDS: 264 | AVG: 8.3 | TD: 0 | LONG: 28 | TGTS: 50
+2025-10-27 00:01:34.871 -05:00 [INF] --- fumbles (New Orleans Fumbles) ---
+2025-10-27 00:01:34.871 -05:00 [INF] Keys: [fumbles, fumblesLost, fumblesRecovered]
+2025-10-27 00:01:34.872 -05:00 [INF] Labels: [FUM, LOST, REC]
+2025-10-27 00:01:34.965 -05:00 [INF]     Stats: FUM: 1 | LOST: 1 | REC: 0
+2025-10-27 00:01:35.063 -05:00 [INF]     Stats: FUM: 1 | LOST: 1 | REC: 0
+2025-10-27 00:01:35.168 -05:00 [INF]     Stats: FUM: 0 | LOST: 0 | REC: 1
+2025-10-27 00:01:35.169 -05:00 [INF]   TEAM TOTALS: FUM: 2 | LOST: 2 | REC: 1
+2025-10-27 00:01:35.170 -05:00 [INF] --- interceptions (New Orleans Interceptions) ---
+2025-10-27 00:01:35.171 -05:00 [INF] Keys: [interceptions, interceptionYards, interceptionTouchdowns]
+2025-10-27 00:01:35.171 -05:00 [INF] Labels: [INT, YDS, TD]
+2025-10-27 00:01:35.172 -05:00 [INF]   No athletes found for interceptions
+2025-10-27 00:01:38.764 -05:00 [INF] 📊 Database Upsert Summary: 14 total records | 0 updated | 14 inserted | 0 failed
+2025-10-27 00:01:38.765 -05:00 [INF]   ✓ Upserted 14 combined player stat records for New Orleans Saints
+2025-10-27 00:01:38.766 -05:00 [INF] 🏈 GAME SUMMARY - 401772869: 36 players found | 36 matched to DB | 25 records processed
+2025-10-27 00:01:38.767 -05:00 [INF] === END PLAYER STATS for Game 401772869 ===
+2025-10-27 00:01:38.768 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/7?lang=en&region=us
+2025-10-27 00:01:38.769 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/7?*
+2025-10-27 00:01:38.769 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/7?*
+2025-10-27 00:01:38.831 -05:00 [INF] Received HTTP response headers after 60.6024ms - 200
+2025-10-27 00:01:38.832 -05:00 [INF] End processing HTTP request after 63.1054ms - 200
+2025-10-27 00:01:38.832 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:01:38.833 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/6?lang=en&region=us
+2025-10-27 00:01:38.834 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/6?*
+2025-10-27 00:01:38.834 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/6?*
+2025-10-27 00:01:38.890 -05:00 [INF] Received HTTP response headers after 55.1976ms - 200
+2025-10-27 00:01:38.891 -05:00 [INF] End processing HTTP request after 57.5363ms - 200
+2025-10-27 00:01:38.892 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:01:38.893 -05:00 [INF] NFL Game: Dallas Cowboys @ Denver Broncos - Oct 26, 2025 8:25 PM
+2025-10-27 00:01:38.894 -05:00 [INF] Winner: Denver Broncos
+2025-10-27 00:01:38.894 -05:00 [INF] === PROCESSING GAME 401772762 (Dallas Cowboys @ Denver Broncos) ===
+2025-10-27 00:01:38.895 -05:00 [INF] Fetching game summary for game 401772762
+2025-10-27 00:01:38.896 -05:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:01:38.897 -05:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:01:38.916 -05:00 [INF] Received HTTP response headers after 18.0423ms - 200
+2025-10-27 00:01:38.916 -05:00 [INF] End processing HTTP request after 20.242ms - 200
+2025-10-27 00:01:38.922 -05:00 [INF] Successfully fetched game summary for game 401772762
+2025-10-27 00:01:38.922 -05:00 [INF] Found 2 teams in BoxScore.Players
+2025-10-27 00:01:38.923 -05:00 [INF] === TEAM: Dallas Cowboys (Display Order: 1) ===
+2025-10-27 00:01:38.924 -05:00 [INF] Found 10 stat categories for Dallas Cowboys
+2025-10-27 00:01:38.925 -05:00 [INF] --- passing (Dallas Passing) ---
+2025-10-27 00:01:38.925 -05:00 [INF] Keys: [completions/passingAttempts, passingYards, yardsPerPassAttempt, passingTouchdowns, interceptions, sacks-sackYardsLost, adjQBR, QBRating]
+2025-10-27 00:01:38.926 -05:00 [INF] Labels: [C/ATT, YDS, AVG, TD, INT, SACKS, QBR, RTG]
+2025-10-27 00:01:39.016 -05:00 [INF]     Stats: C/ATT: 19/31 | YDS: 188 | AVG: 6.1 | TD: 0 | INT: 2 | SACKS: 2-15 | QBR: 65.2 | RTG: 51.5
+2025-10-27 00:01:39.119 -05:00 [INF]     Stats: C/ATT: 3/4 | YDS: 58 | AVG: 14.5 | TD: 1 | INT: 0 | SACKS: 0-0 | QBR: 99.8 | RTG: 156.2
+2025-10-27 00:01:39.120 -05:00 [INF]   TEAM TOTALS: C/ATT: 22/35 | YDS: 231 | AVG: 7.0 | TD: 1 | INT: 2 | SACKS: 2-15 | QBR: -- | RTG: 69.5
+2025-10-27 00:01:39.120 -05:00 [INF] --- rushing (Dallas Rushing) ---
+2025-10-27 00:01:39.122 -05:00 [INF] Keys: [rushingAttempts, rushingYards, yardsPerRushAttempt, rushingTouchdowns, longRushing]
+2025-10-27 00:01:39.123 -05:00 [INF] Labels: [CAR, YDS, AVG, TD, LONG]
+2025-10-27 00:01:39.215 -05:00 [INF]     Stats: CAR: 13 | YDS: 41 | AVG: 3.2 | TD: 2 | LONG: 9
+2025-10-27 00:01:39.316 -05:00 [INF]     Stats: CAR: 6 | YDS: 31 | AVG: 5.2 | TD: 0 | LONG: 9
+2025-10-27 00:01:39.413 -05:00 [INF]     Stats: CAR: 8 | YDS: 29 | AVG: 3.6 | TD: 0 | LONG: 14
+2025-10-27 00:01:39.507 -05:00 [INF]     Stats: CAR: 2 | YDS: 3 | AVG: 1.5 | TD: 0 | LONG: 2
+2025-10-27 00:01:39.611 -05:00 [INF]     Stats: CAR: 1 | YDS: 2 | AVG: 2.0 | TD: 0 | LONG: 2
+2025-10-27 00:01:39.711 -05:00 [INF]     Stats: CAR: 1 | YDS: 2 | AVG: 2.0 | TD: 0 | LONG: 2
+2025-10-27 00:01:39.712 -05:00 [INF]   TEAM TOTALS: CAR: 31 | YDS: 108 | AVG: 3.5 | TD: 2 | LONG: 14
+2025-10-27 00:01:39.713 -05:00 [INF] --- receiving (Dallas Receiving) ---
+2025-10-27 00:01:39.714 -05:00 [INF] Keys: [receptions, receivingYards, yardsPerReception, receivingTouchdowns, longReception, receivingTargets]
+2025-10-27 00:01:39.714 -05:00 [INF] Labels: [REC, YDS, AVG, TD, LONG, TGTS]
+2025-10-27 00:01:39.807 -05:00 [INF]     Stats: REC: 7 | YDS: 78 | AVG: 11.1 | TD: 0 | LONG: 17 | TGTS: 9
+2025-10-27 00:01:39.904 -05:00 [INF]     Stats: REC: 7 | YDS: 74 | AVG: 10.6 | TD: 0 | LONG: 29 | TGTS: 10
+2025-10-27 00:01:40.000 -05:00 [INF]     Stats: REC: 2 | YDS: 47 | AVG: 23.5 | TD: 1 | LONG: 35 | TGTS: 2
+2025-10-27 00:01:40.101 -05:00 [INF]     Stats: REC: 2 | YDS: 25 | AVG: 12.5 | TD: 0 | LONG: 14 | TGTS: 3
+2025-10-27 00:01:40.198 -05:00 [INF]     Stats: REC: 1 | YDS: 9 | AVG: 9.0 | TD: 0 | LONG: 9 | TGTS: 1
+2025-10-27 00:01:40.300 -05:00 [INF]     Stats: REC: 1 | YDS: 8 | AVG: 8.0 | TD: 0 | LONG: 8 | TGTS: 2
+2025-10-27 00:01:40.397 -05:00 [INF]     Stats: REC: 1 | YDS: 7 | AVG: 7.0 | TD: 0 | LONG: 7 | TGTS: 2
+2025-10-27 00:01:40.499 -05:00 [INF]     Stats: REC: 0 | YDS: 0 | AVG: 0.0 | TD: 0 | LONG: 0 | TGTS: 1
+2025-10-27 00:01:40.596 -05:00 [INF]     Stats: REC: 1 | YDS: -2 | AVG: -2.0 | TD: 0 | LONG: -2 | TGTS: 5
+2025-10-27 00:01:40.596 -05:00 [INF]   TEAM TOTALS: REC: 22 | YDS: 246 | AVG: 11.2 | TD: 1 | LONG: 35 | TGTS: 35
+2025-10-27 00:01:40.597 -05:00 [INF] --- fumbles (Dallas Fumbles) ---
+2025-10-27 00:01:40.598 -05:00 [INF] Keys: [fumbles, fumblesLost, fumblesRecovered]
+2025-10-27 00:01:40.598 -05:00 [INF] Labels: [FUM, LOST, REC]
+2025-10-27 00:01:40.706 -05:00 [INF]     Stats: FUM: 1 | LOST: 0 | REC: 0
+2025-10-27 00:01:40.805 -05:00 [INF]     Stats: FUM: 0 | LOST: 0 | REC: 1
+2025-10-27 00:01:40.806 -05:00 [INF]   TEAM TOTALS: FUM: 1 | LOST: 0 | REC: 1
+2025-10-27 00:01:40.807 -05:00 [INF] --- interceptions (Dallas Interceptions) ---
+2025-10-27 00:01:40.807 -05:00 [INF] Keys: [interceptions, interceptionYards, interceptionTouchdowns]
+2025-10-27 00:01:40.808 -05:00 [INF] Labels: [INT, YDS, TD]
+2025-10-27 00:01:40.917 -05:00 [INF]     Stats: INT: 1 | YDS: 7 | TD: 0
+2025-10-27 00:01:40.918 -05:00 [INF]   TEAM TOTALS: INT: 1 | YDS: 7 | TD: 0
+2025-10-27 00:01:45.008 -05:00 [INF] 📊 Database Upsert Summary: 16 total records | 0 updated | 16 inserted | 0 failed
+2025-10-27 00:01:45.009 -05:00 [INF]   ✓ Upserted 16 combined player stat records for Dallas Cowboys
+2025-10-27 00:01:45.010 -05:00 [INF] === TEAM: Denver Broncos (Display Order: 2) ===
+2025-10-27 00:01:45.010 -05:00 [INF] Found 10 stat categories for Denver Broncos
+2025-10-27 00:01:45.011 -05:00 [INF] --- passing (Denver Passing) ---
+2025-10-27 00:01:45.012 -05:00 [INF] Keys: [completions/passingAttempts, passingYards, yardsPerPassAttempt, passingTouchdowns, interceptions, sacks-sackYardsLost, adjQBR, QBRating]
+2025-10-27 00:01:45.013 -05:00 [INF] Labels: [C/ATT, YDS, AVG, TD, INT, SACKS, QBR, RTG]
+2025-10-27 00:01:45.111 -05:00 [INF]     Stats: C/ATT: 19/29 | YDS: 247 | AVG: 8.5 | TD: 4 | INT: 1 | SACKS: 0-0 | QBR: 82.8 | RTG: 117.4
+2025-10-27 00:01:45.112 -05:00 [INF]   TEAM TOTALS: C/ATT: 19/29 | YDS: 247 | AVG: 8.5 | TD: 4 | INT: 1 | SACKS: 0-0 | QBR: -- | RTG: 117.4
+2025-10-27 00:01:45.113 -05:00 [INF] --- rushing (Denver Rushing) ---
+2025-10-27 00:01:45.114 -05:00 [INF] Keys: [rushingAttempts, rushingYards, yardsPerRushAttempt, rushingTouchdowns, longRushing]
+2025-10-27 00:01:45.114 -05:00 [INF] Labels: [CAR, YDS, AVG, TD, LONG]
+2025-10-27 00:01:45.209 -05:00 [INF]     Stats: CAR: 15 | YDS: 111 | AVG: 7.4 | TD: 0 | LONG: 25
+2025-10-27 00:01:45.319 -05:00 [INF]     Stats: CAR: 7 | YDS: 46 | AVG: 6.6 | TD: 2 | LONG: 40
+2025-10-27 00:01:45.428 -05:00 [INF]     Stats: CAR: 3 | YDS: 18 | AVG: 6.0 | TD: 0 | LONG: 9
+2025-10-27 00:01:45.526 -05:00 [INF]     Stats: CAR: 1 | YDS: 6 | AVG: 6.0 | TD: 0 | LONG: 6
+2025-10-27 00:01:45.808 -05:00 [INF] No existing player found for ESPN player: Jarrett Stidham (ESPN ID: 3892775)
+2025-10-27 00:01:45.809 -05:00 [INF]     Stats: CAR: 1 | YDS: -1 | AVG: -1.0 | TD: 0 | LONG: -1
+2025-10-27 00:01:45.912 -05:00 [INF]     Stats: CAR: 1 | YDS: -1 | AVG: -1.0 | TD: 0 | LONG: -1
+2025-10-27 00:01:45.912 -05:00 [INF]   TEAM TOTALS: CAR: 28 | YDS: 179 | AVG: 6.4 | TD: 2 | LONG: 40
+2025-10-27 00:01:45.913 -05:00 [INF] --- receiving (Denver Receiving) ---
+2025-10-27 00:01:45.914 -05:00 [INF] Keys: [receptions, receivingYards, yardsPerReception, receivingTouchdowns, longReception, receivingTargets]
+2025-10-27 00:01:45.914 -05:00 [INF] Labels: [REC, YDS, AVG, TD, LONG, TGTS]
+2025-10-27 00:01:46.006 -05:00 [INF]     Stats: REC: 6 | YDS: 89 | AVG: 14.8 | TD: 2 | LONG: 26 | TGTS: 8
+2025-10-27 00:01:46.106 -05:00 [INF]     Stats: REC: 4 | YDS: 67 | AVG: 16.8 | TD: 0 | LONG: 39 | TGTS: 6
+2025-10-27 00:01:46.207 -05:00 [INF]     Stats: REC: 2 | YDS: 40 | AVG: 20.0 | TD: 1 | LONG: 24 | TGTS: 4
+2025-10-27 00:01:46.305 -05:00 [INF]     Stats: REC: 4 | YDS: 36 | AVG: 9.0 | TD: 0 | LONG: 11 | TGTS: 4
+2025-10-27 00:01:46.422 -05:00 [INF]     Stats: REC: 2 | YDS: 10 | AVG: 5.0 | TD: 0 | LONG: 6 | TGTS: 2
+2025-10-27 00:01:46.516 -05:00 [INF]     Stats: REC: 1 | YDS: 5 | AVG: 5.0 | TD: 1 | LONG: 5 | TGTS: 1
+2025-10-27 00:01:46.619 -05:00 [INF]     Stats: REC: 0 | YDS: 0 | AVG: 0.0 | TD: 0 | LONG: 0 | TGTS: 1
+2025-10-27 00:01:46.727 -05:00 [INF]     Stats: REC: 0 | YDS: 0 | AVG: 0.0 | TD: 0 | LONG: 0 | TGTS: 1
+2025-10-27 00:01:46.728 -05:00 [INF]   TEAM TOTALS: REC: 19 | YDS: 247 | AVG: 13.0 | TD: 4 | LONG: 39 | TGTS: 27
+2025-10-27 00:01:46.728 -05:00 [INF] --- fumbles (Denver Fumbles) ---
+2025-10-27 00:01:46.729 -05:00 [INF] Keys: [fumbles, fumblesLost, fumblesRecovered]
+2025-10-27 00:01:46.730 -05:00 [INF] Labels: [FUM, LOST, REC]
+2025-10-27 00:01:46.731 -05:00 [INF]   No athletes found for fumbles
+2025-10-27 00:01:46.731 -05:00 [INF] --- interceptions (Denver Interceptions) ---
+2025-10-27 00:01:46.732 -05:00 [INF] Keys: [interceptions, interceptionYards, interceptionTouchdowns]
+2025-10-27 00:01:46.733 -05:00 [INF] Labels: [INT, YDS, TD]
+2025-10-27 00:01:46.827 -05:00 [INF]     Stats: INT: 1 | YDS: 36 | TD: 0
+2025-10-27 00:01:46.932 -05:00 [INF]     Stats: INT: 1 | YDS: 0 | TD: 0
+2025-10-27 00:01:46.933 -05:00 [INF]   TEAM TOTALS: INT: 2 | YDS: 36 | TD: 0
+2025-10-27 00:01:48.470 -05:00 [WRN] ⚠️ Skipped record due to foreign key constraint: ESPN Player ID 3892775 not found in Players table. Game: 401772762
+2025-10-27 00:01:50.302 -05:00 [INF] 📊 Database Upsert Summary: 13 total records | 0 updated | 12 inserted | 1 failed
+2025-10-27 00:01:50.303 -05:00 [INF]   ✓ Upserted 12 combined player stat records for Denver Broncos
+2025-10-27 00:01:50.304 -05:00 [INF] 🏈 GAME SUMMARY - 401772762: 37 players found | 36 matched to DB | 28 records processed
+2025-10-27 00:01:50.305 -05:00 [INF] === END PLAYER STATS for Game 401772762 ===
+2025-10-27 00:01:50.306 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/11?lang=en&region=us
+2025-10-27 00:01:50.306 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/11?*
+2025-10-27 00:01:50.307 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/11?*
+2025-10-27 00:01:50.365 -05:00 [INF] Received HTTP response headers after 57.0385ms - 200
+2025-10-27 00:01:50.366 -05:00 [INF] End processing HTTP request after 59.5157ms - 200
+2025-10-27 00:01:50.367 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:01:50.367 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/10?lang=en&region=us
+2025-10-27 00:01:50.368 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/10?*
+2025-10-27 00:01:50.368 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/10?*
+2025-10-27 00:01:50.423 -05:00 [INF] Received HTTP response headers after 54.1577ms - 200
+2025-10-27 00:01:50.424 -05:00 [INF] End processing HTTP request after 56.5227ms - 200
+2025-10-27 00:01:50.425 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:01:50.426 -05:00 [INF] NFL Game: Tennessee Titans @ Indianapolis Colts - Oct 26, 2025 8:25 PM
+2025-10-27 00:01:50.427 -05:00 [INF] Winner: Indianapolis Colts
+2025-10-27 00:01:50.427 -05:00 [INF] === PROCESSING GAME 401772761 (Tennessee Titans @ Indianapolis Colts) ===
+2025-10-27 00:01:50.428 -05:00 [INF] Fetching game summary for game 401772761
+2025-10-27 00:01:50.429 -05:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:01:50.430 -05:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:01:50.442 -05:00 [INF] Received HTTP response headers after 12.1192ms - 200
+2025-10-27 00:01:50.443 -05:00 [INF] End processing HTTP request after 14.247ms - 200
+2025-10-27 00:01:50.448 -05:00 [INF] Successfully fetched game summary for game 401772761
+2025-10-27 00:01:50.449 -05:00 [INF] Found 2 teams in BoxScore.Players
+2025-10-27 00:01:50.450 -05:00 [INF] === TEAM: Tennessee Titans (Display Order: 1) ===
+2025-10-27 00:01:50.451 -05:00 [INF] Found 10 stat categories for Tennessee Titans
+2025-10-27 00:01:50.451 -05:00 [INF] --- passing (Tennessee Passing) ---
+2025-10-27 00:01:50.452 -05:00 [INF] Keys: [completions/passingAttempts, passingYards, yardsPerPassAttempt, passingTouchdowns, interceptions, sacks-sackYardsLost, adjQBR, QBRating]
+2025-10-27 00:01:50.453 -05:00 [INF] Labels: [C/ATT, YDS, AVG, TD, INT, SACKS, QBR, RTG]
+2025-10-27 00:01:50.546 -05:00 [INF]     Stats: C/ATT: 22/38 | YDS: 259 | AVG: 6.8 | TD: 1 | INT: 1 | SACKS: 4-31 | QBR: 40.5 | RTG: 76.5
+2025-10-27 00:01:50.546 -05:00 [INF]   TEAM TOTALS: C/ATT: 22/38 | YDS: 228 | AVG: 6.8 | TD: 1 | INT: 1 | SACKS: 4-31 | QBR: -- | RTG: 76.5
+2025-10-27 00:01:50.547 -05:00 [INF] --- rushing (Tennessee Rushing) ---
+2025-10-27 00:01:50.548 -05:00 [INF] Keys: [rushingAttempts, rushingYards, yardsPerRushAttempt, rushingTouchdowns, longRushing]
+2025-10-27 00:01:50.548 -05:00 [INF] Labels: [CAR, YDS, AVG, TD, LONG]
+2025-10-27 00:01:50.644 -05:00 [INF]     Stats: CAR: 9 | YDS: 59 | AVG: 6.6 | TD: 1 | LONG: 41
+2025-10-27 00:01:50.743 -05:00 [INF]     Stats: CAR: 11 | YDS: 44 | AVG: 4.0 | TD: 0 | LONG: 11
+2025-10-27 00:01:50.843 -05:00 [INF]     Stats: CAR: 2 | YDS: 5 | AVG: 2.5 | TD: 0 | LONG: 5
+2025-10-27 00:01:50.942 -05:00 [INF]     Stats: CAR: 2 | YDS: 4 | AVG: 2.0 | TD: 0 | LONG: 7
+2025-10-27 00:01:51.039 -05:00 [INF]     Stats: CAR: 1 | YDS: 1 | AVG: 1.0 | TD: 0 | LONG: 1
+2025-10-27 00:01:51.040 -05:00 [INF]   TEAM TOTALS: CAR: 25 | YDS: 113 | AVG: 4.5 | TD: 1 | LONG: 41
+2025-10-27 00:01:51.041 -05:00 [INF] --- receiving (Tennessee Receiving) ---
+2025-10-27 00:01:51.042 -05:00 [INF] Keys: [receptions, receivingYards, yardsPerReception, receivingTouchdowns, longReception, receivingTargets]
+2025-10-27 00:01:51.042 -05:00 [INF] Labels: [REC, YDS, AVG, TD, LONG, TGTS]
+2025-10-27 00:01:51.142 -05:00 [INF]     Stats: REC: 7 | YDS: 93 | AVG: 13.3 | TD: 0 | LONG: 21 | TGTS: 8
+2025-10-27 00:01:51.239 -05:00 [INF]     Stats: REC: 4 | YDS: 53 | AVG: 13.3 | TD: 0 | LONG: 23 | TGTS: 5
+2025-10-27 00:01:51.334 -05:00 [INF]     Stats: REC: 4 | YDS: 52 | AVG: 13.0 | TD: 0 | LONG: 26 | TGTS: 8
+2025-10-27 00:01:51.429 -05:00 [INF]     Stats: REC: 2 | YDS: 23 | AVG: 11.5 | TD: 1 | LONG: 22 | TGTS: 3
+2025-10-27 00:01:51.525 -05:00 [INF]     Stats: REC: 3 | YDS: 23 | AVG: 7.7 | TD: 0 | LONG: 17 | TGTS: 3
+2025-10-27 00:01:51.627 -05:00 [INF]     Stats: REC: 1 | YDS: 9 | AVG: 9.0 | TD: 0 | LONG: 9 | TGTS: 2
+2025-10-27 00:01:51.729 -05:00 [INF]     Stats: REC: 1 | YDS: 6 | AVG: 6.0 | TD: 0 | LONG: 6 | TGTS: 8
+2025-10-27 00:01:51.730 -05:00 [INF]   TEAM TOTALS: REC: 22 | YDS: 259 | AVG: 11.8 | TD: 1 | LONG: 26 | TGTS: 37
+2025-10-27 00:01:51.730 -05:00 [INF] --- fumbles (Tennessee Fumbles) ---
+2025-10-27 00:01:51.731 -05:00 [INF] Keys: [fumbles, fumblesLost, fumblesRecovered]
+2025-10-27 00:01:51.732 -05:00 [INF] Labels: [FUM, LOST, REC]
+2025-10-27 00:01:51.732 -05:00 [INF]   No athletes found for fumbles
+2025-10-27 00:01:51.733 -05:00 [INF] --- interceptions (Tennessee Interceptions) ---
+2025-10-27 00:01:51.734 -05:00 [INF] Keys: [interceptions, interceptionYards, interceptionTouchdowns]
+2025-10-27 00:01:51.735 -05:00 [INF] Labels: [INT, YDS, TD]
+2025-10-27 00:01:51.736 -05:00 [INF]   No athletes found for interceptions
+2025-10-27 00:01:54.054 -05:00 [INF] 📊 Database Upsert Summary: 9 total records | 0 updated | 9 inserted | 0 failed
+2025-10-27 00:01:54.056 -05:00 [INF]   ✓ Upserted 9 combined player stat records for Tennessee Titans
+2025-10-27 00:01:54.056 -05:00 [INF] === TEAM: Indianapolis Colts (Display Order: 2) ===
+2025-10-27 00:01:54.057 -05:00 [INF] Found 10 stat categories for Indianapolis Colts
+2025-10-27 00:01:54.058 -05:00 [INF] --- passing (Indianapolis Passing) ---
+2025-10-27 00:01:54.059 -05:00 [INF] Keys: [completions/passingAttempts, passingYards, yardsPerPassAttempt, passingTouchdowns, interceptions, sacks-sackYardsLost, adjQBR, QBRating]
+2025-10-27 00:01:54.059 -05:00 [INF] Labels: [C/ATT, YDS, AVG, TD, INT, SACKS, QBR, RTG]
+2025-10-27 00:01:54.159 -05:00 [INF]     Stats: C/ATT: 21/29 | YDS: 272 | AVG: 9.4 | TD: 3 | INT: 0 | SACKS: 3-16 | QBR: 67.4 | RTG: 136.0
+2025-10-27 00:01:54.459 -05:00 [INF] No existing player found for ESPN player: Riley Leonard (ESPN ID: 4683423)
+2025-10-27 00:01:54.460 -05:00 [INF]     Stats: C/ATT: 0/2 | YDS: 0 | AVG: 0.0 | TD: 0 | INT: 0 | SACKS: 0-0 | QBR: 0.9 | RTG: 39.6
+2025-10-27 00:01:54.460 -05:00 [INF]   TEAM TOTALS: C/ATT: 21/31 | YDS: 256 | AVG: 8.8 | TD: 3 | INT: 0 | SACKS: 3-16 | QBR: -- | RTG: 127.4
+2025-10-27 00:01:54.461 -05:00 [INF] --- rushing (Indianapolis Rushing) ---
+2025-10-27 00:01:54.462 -05:00 [INF] Keys: [rushingAttempts, rushingYards, yardsPerRushAttempt, rushingTouchdowns, longRushing]
+2025-10-27 00:01:54.462 -05:00 [INF] Labels: [CAR, YDS, AVG, TD, LONG]
+2025-10-27 00:01:54.564 -05:00 [INF]     Stats: CAR: 12 | YDS: 153 | AVG: 12.8 | TD: 2 | LONG: 80
+2025-10-27 00:01:54.664 -05:00 [INF]     Stats: CAR: 2 | YDS: 5 | AVG: 2.5 | TD: 0 | LONG: 3
+2025-10-27 00:01:54.770 -05:00 [INF]     Stats: CAR: 1 | YDS: 3 | AVG: 3.0 | TD: 0 | LONG: 3
+2025-10-27 00:01:54.869 -05:00 [INF]     Stats: CAR: 2 | YDS: 2 | AVG: 1.0 | TD: 0 | LONG: 2
+2025-10-27 00:01:55.157 -05:00 [INF] No existing player found for ESPN player: Riley Leonard (ESPN ID: 4683423)
+2025-10-27 00:01:55.160 -05:00 [INF]     Stats: CAR: 1 | YDS: 1 | AVG: 1.0 | TD: 0 | LONG: 1
+2025-10-27 00:01:55.160 -05:00 [INF]   TEAM TOTALS: CAR: 18 | YDS: 164 | AVG: 9.1 | TD: 2 | LONG: 80
+2025-10-27 00:01:55.161 -05:00 [INF] --- receiving (Indianapolis Receiving) ---
+2025-10-27 00:01:55.162 -05:00 [INF] Keys: [receptions, receivingYards, yardsPerReception, receivingTouchdowns, longReception, receivingTargets]
+2025-10-27 00:01:55.162 -05:00 [INF] Labels: [REC, YDS, AVG, TD, LONG, TGTS]
+2025-10-27 00:01:55.266 -05:00 [INF]     Stats: REC: 8 | YDS: 95 | AVG: 11.9 | TD: 1 | LONG: 21 | TGTS: 9
+2025-10-27 00:01:55.362 -05:00 [INF]     Stats: REC: 2 | YDS: 69 | AVG: 34.5 | TD: 0 | LONG: 50 | TGTS: 5
+2025-10-27 00:01:55.467 -05:00 [INF]     Stats: REC: 4 | YDS: 53 | AVG: 13.3 | TD: 0 | LONG: 20 | TGTS: 5
+2025-10-27 00:01:55.568 -05:00 [INF]     Stats: REC: 3 | YDS: 39 | AVG: 13.0 | TD: 1 | LONG: 18 | TGTS: 3
+2025-10-27 00:01:55.670 -05:00 [INF]     Stats: REC: 2 | YDS: 21 | AVG: 10.5 | TD: 1 | LONG: 19 | TGTS: 2
+2025-10-27 00:01:55.769 -05:00 [INF]     Stats: REC: 1 | YDS: 3 | AVG: 3.0 | TD: 0 | LONG: 3 | TGTS: 1
+2025-10-27 00:01:55.871 -05:00 [INF]     Stats: REC: 0 | YDS: 0 | AVG: 0.0 | TD: 0 | LONG: 0 | TGTS: 1
+2025-10-27 00:01:55.965 -05:00 [INF]     Stats: REC: 0 | YDS: 0 | AVG: 0.0 | TD: 0 | LONG: 0 | TGTS: 1
+2025-10-27 00:01:56.065 -05:00 [INF]     Stats: REC: 1 | YDS: -8 | AVG: -8.0 | TD: 0 | LONG: -8 | TGTS: 1
+2025-10-27 00:01:56.066 -05:00 [INF]   TEAM TOTALS: REC: 21 | YDS: 272 | AVG: 13.0 | TD: 3 | LONG: 50 | TGTS: 28
+2025-10-27 00:01:56.067 -05:00 [INF] --- fumbles (Indianapolis Fumbles) ---
+2025-10-27 00:01:56.067 -05:00 [INF] Keys: [fumbles, fumblesLost, fumblesRecovered]
+2025-10-27 00:01:56.068 -05:00 [INF] Labels: [FUM, LOST, REC]
+2025-10-27 00:01:56.069 -05:00 [INF]   No athletes found for fumbles
+2025-10-27 00:01:56.070 -05:00 [INF] --- interceptions (Indianapolis Interceptions) ---
+2025-10-27 00:01:56.070 -05:00 [INF] Keys: [interceptions, interceptionYards, interceptionTouchdowns]
+2025-10-27 00:01:56.071 -05:00 [INF] Labels: [INT, YDS, TD]
+2025-10-27 00:01:56.165 -05:00 [INF]     Stats: INT: 1 | YDS: 0 | TD: 0
+2025-10-27 00:01:56.166 -05:00 [INF]   TEAM TOTALS: INT: 1 | YDS: 0 | TD: 0
+2025-10-27 00:01:56.607 -05:00 [WRN] ⚠️ Skipped record due to foreign key constraint: ESPN Player ID 4683423 not found in Players table. Game: 401772761
+2025-10-27 00:01:59.474 -05:00 [INF] 📊 Database Upsert Summary: 13 total records | 0 updated | 12 inserted | 1 failed
+2025-10-27 00:01:59.476 -05:00 [INF]   ✓ Upserted 12 combined player stat records for Indianapolis Colts
+2025-10-27 00:01:59.477 -05:00 [INF] 🏈 GAME SUMMARY - 401772761: 30 players found | 28 matched to DB | 21 records processed
+2025-10-27 00:01:59.478 -05:00 [INF] === END PLAYER STATS for Game 401772761 ===
+2025-10-27 00:01:59.479 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/23?lang=en&region=us
+2025-10-27 00:01:59.480 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/23?*
+2025-10-27 00:01:59.481 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/23?*
+2025-10-27 00:01:59.539 -05:00 [INF] Received HTTP response headers after 58.0606ms - 200
+2025-10-27 00:01:59.540 -05:00 [INF] End processing HTTP request after 60.8257ms - 200
+2025-10-27 00:01:59.541 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:01:59.542 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/9?lang=en&region=us
+2025-10-27 00:01:59.543 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/9?*
+2025-10-27 00:01:59.543 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/9?*
+2025-10-27 00:01:59.603 -05:00 [INF] Received HTTP response headers after 58.4524ms - 200
+2025-10-27 00:01:59.604 -05:00 [INF] End processing HTTP request after 60.9019ms - 200
+2025-10-27 00:01:59.604 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:01:59.605 -05:00 [INF] NFL Game: Green Bay Packers @ Pittsburgh Steelers - Oct 27, 2025 12:20 AM
+2025-10-27 00:01:59.606 -05:00 [INF] Winner: Green Bay Packers
+2025-10-27 00:01:59.607 -05:00 [INF] === PROCESSING GAME 401772925 (Green Bay Packers @ Pittsburgh Steelers) ===
+2025-10-27 00:01:59.608 -05:00 [INF] Fetching game summary for game 401772925
+2025-10-27 00:01:59.609 -05:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:01:59.610 -05:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:01:59.679 -05:00 [INF] Received HTTP response headers after 69.1156ms - 200
+2025-10-27 00:01:59.680 -05:00 [INF] End processing HTTP request after 71.4487ms - 200
+2025-10-27 00:01:59.693 -05:00 [INF] Successfully fetched game summary for game 401772925
+2025-10-27 00:01:59.694 -05:00 [INF] Found 2 teams in BoxScore.Players
+2025-10-27 00:01:59.695 -05:00 [INF] === TEAM: Green Bay Packers (Display Order: 1) ===
+2025-10-27 00:01:59.696 -05:00 [INF] Found 10 stat categories for Green Bay Packers
+2025-10-27 00:01:59.697 -05:00 [INF] --- passing (Green Bay Passing) ---
+2025-10-27 00:01:59.698 -05:00 [INF] Keys: [completions/passingAttempts, passingYards, yardsPerPassAttempt, passingTouchdowns, interceptions, sacks-sackYardsLost, adjQBR, QBRating]
+2025-10-27 00:01:59.699 -05:00 [INF] Labels: [C/ATT, YDS, AVG, TD, INT, SACKS, QBR, RTG]
+2025-10-27 00:01:59.805 -05:00 [INF]     Stats: C/ATT: 29/37 | YDS: 360 | AVG: 9.7 | TD: 3 | INT: 0 | SACKS: 0-0 | QBR: 89.1 | RTG: 134.2
+2025-10-27 00:01:59.805 -05:00 [INF]   TEAM TOTALS: C/ATT: 29/37 | YDS: 360 | AVG: 9.7 | TD: 3 | INT: 0 | SACKS: 0-0 | QBR: -- | RTG: 134.2
+2025-10-27 00:01:59.806 -05:00 [INF] --- rushing (Green Bay Rushing) ---
+2025-10-27 00:01:59.807 -05:00 [INF] Keys: [rushingAttempts, rushingYards, yardsPerRushAttempt, rushingTouchdowns, longRushing]
+2025-10-27 00:01:59.808 -05:00 [INF] Labels: [CAR, YDS, AVG, TD, LONG]
+2025-10-27 00:01:59.900 -05:00 [INF]     Stats: CAR: 11 | YDS: 61 | AVG: 5.5 | TD: 0 | LONG: 15
+2025-10-27 00:02:00.000 -05:00 [INF]     Stats: CAR: 13 | YDS: 33 | AVG: 2.5 | TD: 1 | LONG: 6
+2025-10-27 00:02:00.102 -05:00 [INF]     Stats: CAR: 1 | YDS: 1 | AVG: 1.0 | TD: 0 | LONG: 1
+2025-10-27 00:02:00.204 -05:00 [INF]     Stats: CAR: 1 | YDS: -1 | AVG: -1.0 | TD: 0 | LONG: -1
+2025-10-27 00:02:00.204 -05:00 [INF]   TEAM TOTALS: CAR: 26 | YDS: 94 | AVG: 3.6 | TD: 1 | LONG: 15
+2025-10-27 00:02:00.205 -05:00 [INF] --- receiving (Green Bay Receiving) ---
+2025-10-27 00:02:00.206 -05:00 [INF] Keys: [receptions, receivingYards, yardsPerReception, receivingTouchdowns, longReception, receivingTargets]
+2025-10-27 00:02:00.206 -05:00 [INF] Labels: [REC, YDS, AVG, TD, LONG, TGTS]
+2025-10-27 00:02:00.306 -05:00 [INF]     Stats: REC: 7 | YDS: 143 | AVG: 20.4 | TD: 2 | LONG: 59 | TGTS: 9
+2025-10-27 00:02:00.698 -05:00 [ERR] Error updating ESPN player ID for player 8875
+Supabase.Postgrest.Exceptions.PostgrestException: {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'Position' column of 'Players' in the schema cache"}
+   at Supabase.Postgrest.Helpers.MakeRequest(ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, CancellationToken cancellationToken)
+   at Supabase.Postgrest.Helpers.MakeRequest[T](ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, Func`1 getHeaders, CancellationToken cancellationToken)
+   at ESPNScrape.Services.SupabaseService.UpdatePlayerEspnIdAsync(Int64 playerId, String espnPlayerId) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Services\SupabaseService.cs:line 362
+2025-10-27 00:02:00.714 -05:00 [WRN] Failed to update ESPN ID for player Christian Watson (ID: 8875), but returning player anyway
+2025-10-27 00:02:00.715 -05:00 [INF]     Stats: REC: 4 | YDS: 85 | AVG: 21.3 | TD: 0 | LONG: 33 | TGTS: 4
+2025-10-27 00:02:00.806 -05:00 [INF]     Stats: REC: 3 | YDS: 44 | AVG: 14.7 | TD: 0 | LONG: 24 | TGTS: 6
+2025-10-27 00:02:00.895 -05:00 [INF]     Stats: REC: 3 | YDS: 29 | AVG: 9.7 | TD: 0 | LONG: 13 | TGTS: 3
+2025-10-27 00:02:01.001 -05:00 [INF]     Stats: REC: 3 | YDS: 26 | AVG: 8.7 | TD: 0 | LONG: 14 | TGTS: 4
+2025-10-27 00:02:01.099 -05:00 [INF]     Stats: REC: 3 | YDS: 12 | AVG: 4.0 | TD: 0 | LONG: 8 | TGTS: 3
+2025-10-27 00:02:01.191 -05:00 [INF]     Stats: REC: 1 | YDS: 8 | AVG: 8.0 | TD: 1 | LONG: 8 | TGTS: 1
+2025-10-27 00:02:01.286 -05:00 [INF]     Stats: REC: 1 | YDS: 5 | AVG: 5.0 | TD: 0 | LONG: 5 | TGTS: 1
+2025-10-27 00:02:01.400 -05:00 [INF]     Stats: REC: 1 | YDS: 4 | AVG: 4.0 | TD: 0 | LONG: 4 | TGTS: 1
+2025-10-27 00:02:01.501 -05:00 [INF]     Stats: REC: 3 | YDS: 4 | AVG: 1.3 | TD: 0 | LONG: 4 | TGTS: 3
+2025-10-27 00:02:01.503 -05:00 [INF]   TEAM TOTALS: REC: 29 | YDS: 360 | AVG: 12.4 | TD: 3 | LONG: 59 | TGTS: 35
+2025-10-27 00:02:01.503 -05:00 [INF] --- fumbles (Green Bay Fumbles) ---
+2025-10-27 00:02:01.504 -05:00 [INF] Keys: [fumbles, fumblesLost, fumblesRecovered]
+2025-10-27 00:02:01.505 -05:00 [INF] Labels: [FUM, LOST, REC]
+2025-10-27 00:02:01.600 -05:00 [INF]     Stats: FUM: 1 | LOST: 0 | REC: 0
+2025-10-27 00:02:01.704 -05:00 [INF]     Stats: FUM: 1 | LOST: 0 | REC: 0
+2025-10-27 00:02:01.797 -05:00 [INF]     Stats: FUM: 0 | LOST: 0 | REC: 1
+2025-10-27 00:02:01.891 -05:00 [INF]     Stats: FUM: 0 | LOST: 0 | REC: 1
+2025-10-27 00:02:01.892 -05:00 [INF]   TEAM TOTALS: FUM: 2 | LOST: 0 | REC: 2
+2025-10-27 00:02:01.893 -05:00 [INF] --- interceptions (Green Bay Interceptions) ---
+2025-10-27 00:02:01.894 -05:00 [INF] Keys: [interceptions, interceptionYards, interceptionTouchdowns]
+2025-10-27 00:02:01.895 -05:00 [INF] Labels: [INT, YDS, TD]
+2025-10-27 00:02:01.895 -05:00 [INF]   No athletes found for interceptions
+2025-10-27 00:02:03.327 -05:00 [WRN] ⚠️ Skipped record due to foreign key constraint: ESPN Player ID 4248528 not found in Players table. Game: 401772925
+2025-10-27 00:02:05.369 -05:00 [INF] 📊 Database Upsert Summary: 14 total records | 0 updated | 13 inserted | 1 failed
+2025-10-27 00:02:05.370 -05:00 [INF]   ✓ Upserted 13 combined player stat records for Green Bay Packers
+2025-10-27 00:02:05.371 -05:00 [INF] === TEAM: Pittsburgh Steelers (Display Order: 2) ===
+2025-10-27 00:02:05.372 -05:00 [INF] Found 10 stat categories for Pittsburgh Steelers
+2025-10-27 00:02:05.373 -05:00 [INF] --- passing (Pittsburgh Passing) ---
+2025-10-27 00:02:05.374 -05:00 [INF] Keys: [completions/passingAttempts, passingYards, yardsPerPassAttempt, passingTouchdowns, interceptions, sacks-sackYardsLost, adjQBR, QBRating]
+2025-10-27 00:02:05.375 -05:00 [INF] Labels: [C/ATT, YDS, AVG, TD, INT, SACKS, QBR, RTG]
+2025-10-27 00:02:05.468 -05:00 [INF]     Stats: C/ATT: 24/36 | YDS: 219 | AVG: 6.1 | TD: 2 | INT: 0 | SACKS: 3-17 | QBR: 38.7 | RTG: 101.5
+2025-10-27 00:02:05.469 -05:00 [INF]   TEAM TOTALS: C/ATT: 24/36 | YDS: 202 | AVG: 6.1 | TD: 2 | INT: 0 | SACKS: 3-17 | QBR: -- | RTG: 101.5
+2025-10-27 00:02:05.469 -05:00 [INF] --- rushing (Pittsburgh Rushing) ---
+2025-10-27 00:02:05.470 -05:00 [INF] Keys: [rushingAttempts, rushingYards, yardsPerRushAttempt, rushingTouchdowns, longRushing]
+2025-10-27 00:02:05.471 -05:00 [INF] Labels: [CAR, YDS, AVG, TD, LONG]
+2025-10-27 00:02:05.570 -05:00 [INF]     Stats: CAR: 13 | YDS: 62 | AVG: 4.8 | TD: 0 | LONG: 17
+2025-10-27 00:02:05.680 -05:00 [INF]     Stats: CAR: 5 | YDS: 31 | AVG: 6.2 | TD: 0 | LONG: 14
+2025-10-27 00:02:05.680 -05:00 [INF]   TEAM TOTALS: CAR: 18 | YDS: 93 | AVG: 5.2 | TD: 0 | LONG: 17
+2025-10-27 00:02:05.681 -05:00 [INF] --- receiving (Pittsburgh Receiving) ---
+2025-10-27 00:02:05.682 -05:00 [INF] Keys: [receptions, receivingYards, yardsPerReception, receivingTouchdowns, longReception, receivingTargets]
+2025-10-27 00:02:05.682 -05:00 [INF] Labels: [REC, YDS, AVG, TD, LONG, TGTS]
+2025-10-27 00:02:05.774 -05:00 [INF]     Stats: REC: 4 | YDS: 74 | AVG: 18.5 | TD: 1 | LONG: 45 | TGTS: 5
+2025-10-27 00:02:05.863 -05:00 [INF]     Stats: REC: 5 | YDS: 55 | AVG: 11.0 | TD: 1 | LONG: 24 | TGTS: 7
+2025-10-27 00:02:05.963 -05:00 [INF]     Stats: REC: 4 | YDS: 28 | AVG: 7.0 | TD: 0 | LONG: 13 | TGTS: 6
+2025-10-27 00:02:06.051 -05:00 [INF]     Stats: REC: 2 | YDS: 17 | AVG: 8.5 | TD: 0 | LONG: 10 | TGTS: 3
+2025-10-27 00:02:06.153 -05:00 [INF]     Stats: REC: 1 | YDS: 13 | AVG: 13.0 | TD: 0 | LONG: 13 | TGTS: 1
+2025-10-27 00:02:06.249 -05:00 [INF]     Stats: REC: 3 | YDS: 13 | AVG: 4.3 | TD: 0 | LONG: 6 | TGTS: 4
+2025-10-27 00:02:06.381 -05:00 [INF]     Stats: REC: 2 | YDS: 11 | AVG: 5.5 | TD: 0 | LONG: 11 | TGTS: 3
+2025-10-27 00:02:06.657 -05:00 [INF] No existing player found for ESPN player: Spencer Anderson (ESPN ID: 4372056)
+2025-10-27 00:02:06.659 -05:00 [INF]     Stats: REC: 1 | YDS: 4 | AVG: 4.0 | TD: 0 | LONG: 4 | TGTS: 1
+2025-10-27 00:02:06.748 -05:00 [INF]     Stats: REC: 2 | YDS: 4 | AVG: 2.0 | TD: 0 | LONG: 3 | TGTS: 2
+2025-10-27 00:02:06.748 -05:00 [INF]   TEAM TOTALS: REC: 24 | YDS: 219 | AVG: 9.1 | TD: 2 | LONG: 45 | TGTS: 32
+2025-10-27 00:02:06.749 -05:00 [INF] --- fumbles (Pittsburgh Fumbles) ---
+2025-10-27 00:02:06.750 -05:00 [INF] Keys: [fumbles, fumblesLost, fumblesRecovered]
+2025-10-27 00:02:06.750 -05:00 [INF] Labels: [FUM, LOST, REC]
+2025-10-27 00:02:06.842 -05:00 [INF]     Stats: FUM: 1 | LOST: 1 | REC: 0
+2025-10-27 00:02:06.843 -05:00 [INF]   TEAM TOTALS: FUM: 1 | LOST: 1 | REC: 0
+2025-10-27 00:02:06.843 -05:00 [INF] --- interceptions (Pittsburgh Interceptions) ---
+2025-10-27 00:02:06.844 -05:00 [INF] Keys: [interceptions, interceptionYards, interceptionTouchdowns]
+2025-10-27 00:02:06.845 -05:00 [INF] Labels: [INT, YDS, TD]
+2025-10-27 00:02:06.846 -05:00 [INF]   No athletes found for interceptions
+2025-10-27 00:02:09.296 -05:00 [WRN] ⚠️ Skipped record due to foreign key constraint: ESPN Player ID 4372056 not found in Players table. Game: 401772925
+2025-10-27 00:02:09.350 -05:00 [INF] 📊 Database Upsert Summary: 10 total records | 0 updated | 9 inserted | 1 failed
+2025-10-27 00:02:09.352 -05:00 [INF]   ✓ Upserted 9 combined player stat records for Pittsburgh Steelers
+2025-10-27 00:02:09.352 -05:00 [INF] 🏈 GAME SUMMARY - 401772925: 32 players found | 31 matched to DB | 22 records processed
+2025-10-27 00:02:09.354 -05:00 [INF] === END PLAYER STATS for Game 401772925 ===
+2025-10-27 00:02:09.354 -05:00 [INF] === COMPLETED WEEK 8 ===
+2025-10-27 00:02:09.860 -05:00 [INF] === PROCESSING WEEK 9 ===
+2025-10-27 00:02:09.861 -05:00 [INF] Fetching games for Year: 2025, SeasonType: 2, Week: 9
+2025-10-27 00:02:09.862 -05:00 [INF] Start processing HTTP request GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/types/2/weeks/9/events
+2025-10-27 00:02:09.863 -05:00 [INF] Sending HTTP request GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/types/2/weeks/9/events
+2025-10-27 00:02:10.168 -05:00 [INF] Received HTTP response headers after 304.6184ms - 200
+2025-10-27 00:02:10.169 -05:00 [INF] End processing HTTP request after 307.0128ms - 200
+2025-10-27 00:02:10.170 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772943?*
+2025-10-27 00:02:10.171 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772943?*
+2025-10-27 00:02:10.226 -05:00 [INF] Received HTTP response headers after 54.5155ms - 200
+2025-10-27 00:02:10.227 -05:00 [INF] End processing HTTP request after 56.7894ms - 200
+2025-10-27 00:02:10.341 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772765?*
+2025-10-27 00:02:10.342 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772765?*
+2025-10-27 00:02:10.464 -05:00 [INF] Received HTTP response headers after 120.6531ms - 200
+2025-10-27 00:02:10.465 -05:00 [INF] End processing HTTP request after 123.6819ms - 200
+2025-10-27 00:02:10.573 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772871?*
+2025-10-27 00:02:10.573 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772871?*
+2025-10-27 00:02:10.636 -05:00 [INF] Received HTTP response headers after 62.0562ms - 200
+2025-10-27 00:02:10.637 -05:00 [INF] End processing HTTP request after 64.7348ms - 200
+2025-10-27 00:02:10.743 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772872?*
+2025-10-27 00:02:10.744 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772872?*
+2025-10-27 00:02:10.803 -05:00 [INF] Received HTTP response headers after 57.6007ms - 200
+2025-10-27 00:02:10.803 -05:00 [INF] End processing HTTP request after 60.1499ms - 200
+2025-10-27 00:02:10.913 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772764?*
+2025-10-27 00:02:10.914 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772764?*
+2025-10-27 00:02:10.973 -05:00 [INF] Received HTTP response headers after 57.6319ms - 200
+2025-10-27 00:02:10.974 -05:00 [INF] End processing HTTP request after 60.2387ms - 200
+2025-10-27 00:02:11.082 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772763?*
+2025-10-27 00:02:11.083 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772763?*
+2025-10-27 00:02:11.143 -05:00 [INF] Received HTTP response headers after 59.2289ms - 200
+2025-10-27 00:02:11.144 -05:00 [INF] End processing HTTP request after 61.9646ms - 200
+2025-10-27 00:02:11.252 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772767?*
+2025-10-27 00:02:11.253 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772767?*
+2025-10-27 00:02:11.306 -05:00 [INF] Received HTTP response headers after 51.8556ms - 200
+2025-10-27 00:02:11.307 -05:00 [INF] End processing HTTP request after 54.5177ms - 200
+2025-10-27 00:02:11.420 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772766?*
+2025-10-27 00:02:11.421 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772766?*
+2025-10-27 00:02:11.474 -05:00 [INF] Received HTTP response headers after 52.2786ms - 200
+2025-10-27 00:02:11.475 -05:00 [INF] End processing HTTP request after 54.9109ms - 200
+2025-10-27 00:02:11.590 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772870?*
+2025-10-27 00:02:11.590 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772870?*
+2025-10-27 00:02:11.650 -05:00 [INF] Received HTTP response headers after 58.3803ms - 200
+2025-10-27 00:02:11.651 -05:00 [INF] End processing HTTP request after 61.0101ms - 200
+2025-10-27 00:02:11.759 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772873?*
+2025-10-27 00:02:11.760 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772873?*
+2025-10-27 00:02:11.821 -05:00 [INF] Received HTTP response headers after 60.1342ms - 200
+2025-10-27 00:02:11.822 -05:00 [INF] End processing HTTP request after 62.6167ms - 200
+2025-10-27 00:02:11.929 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772874?*
+2025-10-27 00:02:11.930 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772874?*
+2025-10-27 00:02:11.992 -05:00 [INF] Received HTTP response headers after 60.775ms - 200
+2025-10-27 00:02:11.993 -05:00 [INF] End processing HTTP request after 63.6682ms - 200
+2025-10-27 00:02:12.100 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772768?*
+2025-10-27 00:02:12.101 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772768?*
+2025-10-27 00:02:12.163 -05:00 [INF] Received HTTP response headers after 61.4531ms - 200
+2025-10-27 00:02:12.164 -05:00 [INF] End processing HTTP request after 63.9033ms - 200
+2025-10-27 00:02:12.272 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772926?*
+2025-10-27 00:02:12.272 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772926?*
+2025-10-27 00:02:12.333 -05:00 [INF] Received HTTP response headers after 59.549ms - 200
+2025-10-27 00:02:12.334 -05:00 [INF] End processing HTTP request after 61.9785ms - 200
+2025-10-27 00:02:12.441 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772818?*
+2025-10-27 00:02:12.442 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772818?*
+2025-10-27 00:02:12.503 -05:00 [INF] Received HTTP response headers after 59.8709ms - 200
+2025-10-27 00:02:12.503 -05:00 [INF] End processing HTTP request after 62.3383ms - 200
+2025-10-27 00:02:12.613 -05:00 [INF] Successfully fetched 14 games
+2025-10-27 00:02:12.614 -05:00 [INF] Found 14 games for NFL 2025 Week 9
+2025-10-27 00:02:12.615 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/15?lang=en&region=us
+2025-10-27 00:02:12.616 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/15?*
+2025-10-27 00:02:12.616 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/15?*
+2025-10-27 00:02:12.674 -05:00 [INF] Received HTTP response headers after 56.9623ms - 200
+2025-10-27 00:02:12.675 -05:00 [INF] End processing HTTP request after 59.4835ms - 200
+2025-10-27 00:02:12.676 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:02:12.677 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/33?lang=en&region=us
+2025-10-27 00:02:12.677 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/33?*
+2025-10-27 00:02:12.678 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/33?*
+2025-10-27 00:02:12.733 -05:00 [INF] Received HTTP response headers after 54.5717ms - 200
+2025-10-27 00:02:12.734 -05:00 [INF] End processing HTTP request after 56.9125ms - 200
+2025-10-27 00:02:12.735 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:02:12.736 -05:00 [INF] NFL Game: Baltimore Ravens @ Miami Dolphins - Oct 31, 2025 12:15 AM
+2025-10-27 00:02:12.737 -05:00 [INF] === PROCESSING GAME 401772943 (Baltimore Ravens @ Miami Dolphins) ===
+2025-10-27 00:02:12.738 -05:00 [INF] Fetching game summary for game 401772943
+2025-10-27 00:02:12.738 -05:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:02:12.739 -05:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:02:12.859 -05:00 [INF] Received HTTP response headers after 118.7638ms - 200
+2025-10-27 00:02:12.860 -05:00 [INF] End processing HTTP request after 121.5841ms - 200
+2025-10-27 00:02:12.861 -05:00 [INF] Successfully fetched game summary for game 401772943
+2025-10-27 00:02:12.862 -05:00 [WRN] No PlayerStats found in BoxScore for game 401772943
+2025-10-27 00:02:12.862 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/4?lang=en&region=us
+2025-10-27 00:02:12.863 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/4?*
+2025-10-27 00:02:12.864 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/4?*
+2025-10-27 00:02:12.926 -05:00 [INF] Received HTTP response headers after 60.9603ms - 200
+2025-10-27 00:02:12.926 -05:00 [INF] End processing HTTP request after 63.4755ms - 200
+2025-10-27 00:02:12.927 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:02:12.928 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/3?lang=en&region=us
+2025-10-27 00:02:12.928 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/3?*
+2025-10-27 00:02:12.929 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/3?*
+2025-10-27 00:02:12.986 -05:00 [INF] Received HTTP response headers after 55.939ms - 200
+2025-10-27 00:02:12.987 -05:00 [INF] End processing HTTP request after 58.6419ms - 200
+2025-10-27 00:02:12.988 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:02:12.989 -05:00 [INF] NFL Game: Chicago Bears @ Cincinnati Bengals - Nov 02, 2025 6:00 PM
+2025-10-27 00:02:12.990 -05:00 [INF] === PROCESSING GAME 401772765 (Chicago Bears @ Cincinnati Bengals) ===
+2025-10-27 00:02:12.991 -05:00 [INF] Fetching game summary for game 401772765
+2025-10-27 00:02:12.992 -05:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:02:12.993 -05:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:02:13.064 -05:00 [INF] Received HTTP response headers after 70.7379ms - 200
+2025-10-27 00:02:13.065 -05:00 [INF] End processing HTTP request after 73.2515ms - 200
+2025-10-27 00:02:13.067 -05:00 [INF] Successfully fetched game summary for game 401772765
+2025-10-27 00:02:13.067 -05:00 [WRN] No PlayerStats found in BoxScore for game 401772765
+2025-10-27 00:02:13.068 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/8?lang=en&region=us
+2025-10-27 00:02:13.069 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/8?*
+2025-10-27 00:02:13.069 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/8?*
+2025-10-27 00:02:13.123 -05:00 [INF] Received HTTP response headers after 53.116ms - 200
+2025-10-27 00:02:13.124 -05:00 [INF] End processing HTTP request after 55.723ms - 200
+2025-10-27 00:02:13.125 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:02:13.126 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/16?lang=en&region=us
+2025-10-27 00:02:13.126 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/16?*
+2025-10-27 00:02:13.127 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/16?*
+2025-10-27 00:02:13.187 -05:00 [INF] Received HTTP response headers after 58.9455ms - 200
+2025-10-27 00:02:13.188 -05:00 [INF] End processing HTTP request after 61.3999ms - 200
+2025-10-27 00:02:13.189 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:02:13.189 -05:00 [INF] NFL Game: Minnesota Vikings @ Detroit Lions - Nov 02, 2025 6:00 PM
+2025-10-27 00:02:13.190 -05:00 [INF] === PROCESSING GAME 401772871 (Minnesota Vikings @ Detroit Lions) ===
+2025-10-27 00:02:13.191 -05:00 [INF] Fetching game summary for game 401772871
+2025-10-27 00:02:13.192 -05:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:02:13.193 -05:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:02:13.257 -05:00 [INF] Received HTTP response headers after 63.9059ms - 200
+2025-10-27 00:02:13.258 -05:00 [INF] End processing HTTP request after 66.4014ms - 200
+2025-10-27 00:02:13.259 -05:00 [INF] Successfully fetched game summary for game 401772871
+2025-10-27 00:02:13.260 -05:00 [WRN] No PlayerStats found in BoxScore for game 401772871
+2025-10-27 00:02:13.260 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/9?lang=en&region=us
+2025-10-27 00:02:13.261 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/9?*
+2025-10-27 00:02:13.262 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/9?*
+2025-10-27 00:02:13.318 -05:00 [INF] Received HTTP response headers after 55.346ms - 200
+2025-10-27 00:02:13.319 -05:00 [INF] End processing HTTP request after 57.9014ms - 200
+2025-10-27 00:02:13.320 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:02:13.321 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/29?lang=en&region=us
+2025-10-27 00:02:13.321 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/29?*
+2025-10-27 00:02:13.322 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/29?*
+2025-10-27 00:02:13.377 -05:00 [INF] Received HTTP response headers after 54.0616ms - 200
+2025-10-27 00:02:13.378 -05:00 [INF] End processing HTTP request after 56.6073ms - 200
+2025-10-27 00:02:13.379 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:02:13.380 -05:00 [INF] NFL Game: Carolina Panthers @ Green Bay Packers - Nov 02, 2025 6:00 PM
+2025-10-27 00:02:13.380 -05:00 [INF] === PROCESSING GAME 401772872 (Carolina Panthers @ Green Bay Packers) ===
+2025-10-27 00:02:13.381 -05:00 [INF] Fetching game summary for game 401772872
+2025-10-27 00:02:13.382 -05:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:02:13.383 -05:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:02:13.445 -05:00 [INF] Received HTTP response headers after 61.9453ms - 200
+2025-10-27 00:02:13.446 -05:00 [INF] End processing HTTP request after 64.3014ms - 200
+2025-10-27 00:02:13.448 -05:00 [INF] Successfully fetched game summary for game 401772872
+2025-10-27 00:02:13.448 -05:00 [WRN] No PlayerStats found in BoxScore for game 401772872
+2025-10-27 00:02:13.449 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/10?lang=en&region=us
+2025-10-27 00:02:13.450 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/10?*
+2025-10-27 00:02:13.450 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/10?*
+2025-10-27 00:02:13.513 -05:00 [INF] Received HTTP response headers after 61.8168ms - 200
+2025-10-27 00:02:13.514 -05:00 [INF] End processing HTTP request after 64.3165ms - 200
+2025-10-27 00:02:13.515 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:02:13.515 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/24?lang=en&region=us
+2025-10-27 00:02:13.516 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/24?*
+2025-10-27 00:02:13.517 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/24?*
+2025-10-27 00:02:13.570 -05:00 [INF] Received HTTP response headers after 53.2018ms - 200
+2025-10-27 00:02:13.571 -05:00 [INF] End processing HTTP request after 55.5688ms - 200
+2025-10-27 00:02:13.572 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:02:13.573 -05:00 [INF] NFL Game: Los Angeles Chargers @ Tennessee Titans - Nov 02, 2025 6:00 PM
+2025-10-27 00:02:13.574 -05:00 [INF] === PROCESSING GAME 401772764 (Los Angeles Chargers @ Tennessee Titans) ===
+2025-10-27 00:02:13.575 -05:00 [INF] Fetching game summary for game 401772764
+2025-10-27 00:02:13.575 -05:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:02:13.576 -05:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:02:13.807 -05:00 [INF] Received HTTP response headers after 229.9748ms - 200
+2025-10-27 00:02:13.808 -05:00 [INF] End processing HTTP request after 232.4803ms - 200
+2025-10-27 00:02:13.856 -05:00 [INF] Successfully fetched game summary for game 401772764
+2025-10-27 00:02:13.856 -05:00 [WRN] No PlayerStats found in BoxScore for game 401772764
+2025-10-27 00:02:13.857 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/17?lang=en&region=us
+2025-10-27 00:02:13.858 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/17?*
+2025-10-27 00:02:13.858 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/17?*
+2025-10-27 00:02:13.925 -05:00 [INF] Received HTTP response headers after 65.8841ms - 200
+2025-10-27 00:02:13.926 -05:00 [INF] End processing HTTP request after 68.2022ms - 200
+2025-10-27 00:02:13.927 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:02:13.927 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/1?lang=en&region=us
+2025-10-27 00:02:13.928 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/1?*
+2025-10-27 00:02:13.928 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/1?*
+2025-10-27 00:02:13.983 -05:00 [INF] Received HTTP response headers after 53.497ms - 200
+2025-10-27 00:02:13.984 -05:00 [INF] End processing HTTP request after 56.0166ms - 200
+2025-10-27 00:02:13.984 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:02:13.985 -05:00 [INF] NFL Game: Atlanta Falcons @ New England Patriots - Nov 02, 2025 6:00 PM
+2025-10-27 00:02:13.986 -05:00 [INF] === PROCESSING GAME 401772763 (Atlanta Falcons @ New England Patriots) ===
+2025-10-27 00:02:13.987 -05:00 [INF] Fetching game summary for game 401772763
+2025-10-27 00:02:13.988 -05:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:02:13.988 -05:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:02:14.053 -05:00 [INF] Received HTTP response headers after 63.7659ms - 200
+2025-10-27 00:02:14.054 -05:00 [INF] End processing HTTP request after 66.2301ms - 200
+2025-10-27 00:02:14.055 -05:00 [INF] Successfully fetched game summary for game 401772763
+2025-10-27 00:02:14.056 -05:00 [WRN] No PlayerStats found in BoxScore for game 401772763
+2025-10-27 00:02:14.056 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/19?lang=en&region=us
+2025-10-27 00:02:14.057 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/19?*
+2025-10-27 00:02:14.058 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/19?*
+2025-10-27 00:02:14.120 -05:00 [INF] Received HTTP response headers after 61.2499ms - 200
+2025-10-27 00:02:14.121 -05:00 [INF] End processing HTTP request after 63.6327ms - 200
+2025-10-27 00:02:14.122 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:02:14.122 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/25?lang=en&region=us
+2025-10-27 00:02:14.123 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/25?*
+2025-10-27 00:02:14.124 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/25?*
+2025-10-27 00:02:14.178 -05:00 [INF] Received HTTP response headers after 53.5421ms - 200
+2025-10-27 00:02:14.179 -05:00 [INF] End processing HTTP request after 55.9384ms - 200
+2025-10-27 00:02:14.180 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:02:14.180 -05:00 [INF] NFL Game: San Francisco 49ers @ New York Giants - Nov 02, 2025 6:00 PM
+2025-10-27 00:02:14.182 -05:00 [INF] === PROCESSING GAME 401772767 (San Francisco 49ers @ New York Giants) ===
+2025-10-27 00:02:14.182 -05:00 [INF] Fetching game summary for game 401772767
+2025-10-27 00:02:14.183 -05:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:02:14.184 -05:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:02:14.252 -05:00 [INF] Received HTTP response headers after 67.3572ms - 200
+2025-10-27 00:02:14.253 -05:00 [INF] End processing HTTP request after 69.6709ms - 200
+2025-10-27 00:02:14.311 -05:00 [INF] Successfully fetched game summary for game 401772767
+2025-10-27 00:02:14.312 -05:00 [WRN] No PlayerStats found in BoxScore for game 401772767
+2025-10-27 00:02:14.313 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/23?lang=en&region=us
+2025-10-27 00:02:14.314 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/23?*
+2025-10-27 00:02:14.314 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/23?*
+2025-10-27 00:02:14.371 -05:00 [INF] Received HTTP response headers after 55.7196ms - 200
+2025-10-27 00:02:14.372 -05:00 [INF] End processing HTTP request after 58.1036ms - 200
+2025-10-27 00:02:14.373 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:02:14.373 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/11?lang=en&region=us
+2025-10-27 00:02:14.374 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/11?*
+2025-10-27 00:02:14.375 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/11?*
+2025-10-27 00:02:14.430 -05:00 [INF] Received HTTP response headers after 54.8306ms - 200
+2025-10-27 00:02:14.431 -05:00 [INF] End processing HTTP request after 57.2429ms - 200
+2025-10-27 00:02:14.432 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:02:14.432 -05:00 [INF] NFL Game: Indianapolis Colts @ Pittsburgh Steelers - Nov 02, 2025 6:00 PM
+2025-10-27 00:02:14.433 -05:00 [INF] === PROCESSING GAME 401772766 (Indianapolis Colts @ Pittsburgh Steelers) ===
+2025-10-27 00:02:14.434 -05:00 [INF] Fetching game summary for game 401772766
+2025-10-27 00:02:14.435 -05:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:02:14.436 -05:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:02:14.663 -05:00 [INF] Received HTTP response headers after 226.3964ms - 200
+2025-10-27 00:02:14.664 -05:00 [INF] End processing HTTP request after 228.7599ms - 200
+2025-10-27 00:02:14.709 -05:00 [INF] Successfully fetched game summary for game 401772766
+2025-10-27 00:02:14.710 -05:00 [WRN] No PlayerStats found in BoxScore for game 401772766
+2025-10-27 00:02:14.711 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/34?lang=en&region=us
+2025-10-27 00:02:14.712 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/34?*
+2025-10-27 00:02:14.713 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/34?*
+2025-10-27 00:02:14.769 -05:00 [INF] Received HTTP response headers after 55.5358ms - 200
+2025-10-27 00:02:14.770 -05:00 [INF] End processing HTTP request after 58.1409ms - 200
+2025-10-27 00:02:14.771 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:02:14.771 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/7?lang=en&region=us
+2025-10-27 00:02:14.772 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/7?*
+2025-10-27 00:02:14.773 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/7?*
+2025-10-27 00:02:14.840 -05:00 [INF] Received HTTP response headers after 66.2981ms - 200
+2025-10-27 00:02:14.841 -05:00 [INF] End processing HTTP request after 68.9077ms - 200
+2025-10-27 00:02:14.842 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:02:14.842 -05:00 [INF] NFL Game: Denver Broncos @ Houston Texans - Nov 02, 2025 6:00 PM
+2025-10-27 00:02:14.843 -05:00 [INF] === PROCESSING GAME 401772870 (Denver Broncos @ Houston Texans) ===
+2025-10-27 00:02:14.844 -05:00 [INF] Fetching game summary for game 401772870
+2025-10-27 00:02:14.845 -05:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:02:14.845 -05:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:02:14.926 -05:00 [INF] Received HTTP response headers after 79.9481ms - 200
+2025-10-27 00:02:14.927 -05:00 [INF] End processing HTTP request after 82.2427ms - 200
+2025-10-27 00:02:14.928 -05:00 [INF] Successfully fetched game summary for game 401772870
+2025-10-27 00:02:14.929 -05:00 [WRN] No PlayerStats found in BoxScore for game 401772870
+2025-10-27 00:02:14.930 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/13?lang=en&region=us
+2025-10-27 00:02:14.930 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/13?*
+2025-10-27 00:02:14.931 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/13?*
+2025-10-27 00:02:14.993 -05:00 [INF] Received HTTP response headers after 60.5927ms - 200
+2025-10-27 00:02:14.994 -05:00 [INF] End processing HTTP request after 63.2904ms - 200
+2025-10-27 00:02:14.994 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:02:14.995 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/30?lang=en&region=us
+2025-10-27 00:02:14.996 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/30?*
+2025-10-27 00:02:14.996 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/30?*
+2025-10-27 00:02:15.053 -05:00 [INF] Received HTTP response headers after 55.3879ms - 200
+2025-10-27 00:02:15.054 -05:00 [INF] End processing HTTP request after 57.8632ms - 200
+2025-10-27 00:02:15.054 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:02:15.055 -05:00 [INF] NFL Game: Jacksonville Jaguars @ Las Vegas Raiders - Nov 02, 2025 9:05 PM
+2025-10-27 00:02:15.056 -05:00 [INF] === PROCESSING GAME 401772873 (Jacksonville Jaguars @ Las Vegas Raiders) ===
+2025-10-27 00:02:15.057 -05:00 [INF] Fetching game summary for game 401772873
+2025-10-27 00:02:15.058 -05:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:02:15.058 -05:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:02:15.131 -05:00 [INF] Received HTTP response headers after 71.3948ms - 200
+2025-10-27 00:02:15.132 -05:00 [INF] End processing HTTP request after 73.9022ms - 200
+2025-10-27 00:02:15.133 -05:00 [INF] Successfully fetched game summary for game 401772873
+2025-10-27 00:02:15.133 -05:00 [WRN] No PlayerStats found in BoxScore for game 401772873
+2025-10-27 00:02:15.134 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/14?lang=en&region=us
+2025-10-27 00:02:15.135 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/14?*
+2025-10-27 00:02:15.135 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/14?*
+2025-10-27 00:02:15.196 -05:00 [INF] Received HTTP response headers after 59.8091ms - 200
+2025-10-27 00:02:15.197 -05:00 [INF] End processing HTTP request after 62.1426ms - 200
+2025-10-27 00:02:15.198 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:02:15.198 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/18?lang=en&region=us
+2025-10-27 00:02:15.199 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/18?*
+2025-10-27 00:02:15.200 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/18?*
+2025-10-27 00:02:15.253 -05:00 [INF] Received HTTP response headers after 52.9056ms - 200
+2025-10-27 00:02:15.254 -05:00 [INF] End processing HTTP request after 55.2581ms - 200
+2025-10-27 00:02:15.255 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:02:15.255 -05:00 [INF] NFL Game: New Orleans Saints @ Los Angeles Rams - Nov 02, 2025 9:05 PM
+2025-10-27 00:02:15.256 -05:00 [INF] === PROCESSING GAME 401772874 (New Orleans Saints @ Los Angeles Rams) ===
+2025-10-27 00:02:15.258 -05:00 [INF] Fetching game summary for game 401772874
+2025-10-27 00:02:15.258 -05:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:02:15.259 -05:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:02:15.325 -05:00 [INF] Received HTTP response headers after 64.9002ms - 200
+2025-10-27 00:02:15.326 -05:00 [INF] End processing HTTP request after 67.4238ms - 200
+2025-10-27 00:02:15.327 -05:00 [INF] Successfully fetched game summary for game 401772874
+2025-10-27 00:02:15.328 -05:00 [WRN] No PlayerStats found in BoxScore for game 401772874
+2025-10-27 00:02:15.328 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/2?lang=en&region=us
+2025-10-27 00:02:15.329 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/2?*
+2025-10-27 00:02:15.330 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/2?*
+2025-10-27 00:02:15.393 -05:00 [INF] Received HTTP response headers after 62.344ms - 200
+2025-10-27 00:02:15.394 -05:00 [INF] End processing HTTP request after 64.8505ms - 200
+2025-10-27 00:02:15.394 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:02:15.395 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/12?lang=en&region=us
+2025-10-27 00:02:15.396 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/12?*
+2025-10-27 00:02:15.397 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/12?*
+2025-10-27 00:02:15.452 -05:00 [INF] Received HTTP response headers after 54.2223ms - 200
+2025-10-27 00:02:15.452 -05:00 [INF] End processing HTTP request after 56.7148ms - 200
+2025-10-27 00:02:15.453 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:02:15.454 -05:00 [INF] NFL Game: Kansas City Chiefs @ Buffalo Bills - Nov 02, 2025 9:25 PM
+2025-10-27 00:02:15.455 -05:00 [INF] === PROCESSING GAME 401772768 (Kansas City Chiefs @ Buffalo Bills) ===
+2025-10-27 00:02:15.455 -05:00 [INF] Fetching game summary for game 401772768
+2025-10-27 00:02:15.456 -05:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:02:15.457 -05:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:02:15.724 -05:00 [INF] Received HTTP response headers after 266.918ms - 200
+2025-10-27 00:02:15.726 -05:00 [INF] End processing HTTP request after 269.5449ms - 200
+2025-10-27 00:02:15.727 -05:00 [INF] Successfully fetched game summary for game 401772768
+2025-10-27 00:02:15.727 -05:00 [WRN] No PlayerStats found in BoxScore for game 401772768
+2025-10-27 00:02:15.728 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/28?lang=en&region=us
+2025-10-27 00:02:15.728 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/28?*
+2025-10-27 00:02:15.729 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/28?*
+2025-10-27 00:02:15.783 -05:00 [INF] Received HTTP response headers after 53.1647ms - 200
+2025-10-27 00:02:15.784 -05:00 [INF] End processing HTTP request after 55.598ms - 200
+2025-10-27 00:02:15.785 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:02:15.785 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/26?lang=en&region=us
+2025-10-27 00:02:15.786 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/26?*
+2025-10-27 00:02:15.787 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/26?*
+2025-10-27 00:02:15.843 -05:00 [INF] Received HTTP response headers after 55.5137ms - 200
+2025-10-27 00:02:15.844 -05:00 [INF] End processing HTTP request after 58.0488ms - 200
+2025-10-27 00:02:15.845 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:02:15.845 -05:00 [INF] NFL Game: Seattle Seahawks @ Washington Commanders - Nov 03, 2025 1:20 AM
+2025-10-27 00:02:15.846 -05:00 [INF] === PROCESSING GAME 401772926 (Seattle Seahawks @ Washington Commanders) ===
+2025-10-27 00:02:15.847 -05:00 [INF] Fetching game summary for game 401772926
+2025-10-27 00:02:15.848 -05:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:02:15.849 -05:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:02:15.913 -05:00 [INF] Received HTTP response headers after 63.6076ms - 200
+2025-10-27 00:02:15.914 -05:00 [INF] End processing HTTP request after 66.054ms - 200
+2025-10-27 00:02:15.915 -05:00 [INF] Successfully fetched game summary for game 401772926
+2025-10-27 00:02:15.916 -05:00 [WRN] No PlayerStats found in BoxScore for game 401772926
+2025-10-27 00:02:15.916 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/6?lang=en&region=us
+2025-10-27 00:02:15.917 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/6?*
+2025-10-27 00:02:15.917 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/6?*
+2025-10-27 00:02:15.974 -05:00 [INF] Received HTTP response headers after 55.543ms - 200
+2025-10-27 00:02:15.975 -05:00 [INF] End processing HTTP request after 57.8791ms - 200
+2025-10-27 00:02:15.976 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:02:15.976 -05:00 [INF] Fetching team from URL: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/22?lang=en&region=us
+2025-10-27 00:02:15.977 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/22?*
+2025-10-27 00:02:15.977 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/22?*
+2025-10-27 00:02:16.032 -05:00 [INF] Received HTTP response headers after 53.502ms - 200
+2025-10-27 00:02:16.032 -05:00 [INF] End processing HTTP request after 55.7318ms - 200
+2025-10-27 00:02:16.033 -05:00 [INF] Successfully fetched team from URL
+2025-10-27 00:02:16.034 -05:00 [INF] NFL Game: Arizona Cardinals @ Dallas Cowboys - Nov 04, 2025 1:15 AM
+2025-10-27 00:02:16.035 -05:00 [INF] === PROCESSING GAME 401772818 (Arizona Cardinals @ Dallas Cowboys) ===
+2025-10-27 00:02:16.036 -05:00 [INF] Fetching game summary for game 401772818
+2025-10-27 00:02:16.036 -05:00 [INF] Start processing HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:02:16.037 -05:00 [INF] Sending HTTP request GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?*
+2025-10-27 00:02:16.102 -05:00 [INF] Received HTTP response headers after 64.4982ms - 200
+2025-10-27 00:02:16.103 -05:00 [INF] End processing HTTP request after 66.8079ms - 200
+2025-10-27 00:02:16.153 -05:00 [INF] Successfully fetched game summary for game 401772818
+2025-10-27 00:02:16.154 -05:00 [WRN] No PlayerStats found in BoxScore for game 401772818
+2025-10-27 00:02:16.156 -05:00 [INF] === COMPLETED WEEK 9 ===
+2025-10-27 00:02:16.671 -05:00 [INF] 🏆 NFL WEEKLY JOB SUMMARY: 27 games processed | 367 players found | 354 matched to DB | 264 records processed
+2025-10-27 00:02:16.673 -05:00 [INF] Completed NFL Weekly games scraping job

@@ -1,0 +1,916 @@
+2025-10-30 10:21:12.605 -05:00 [INF] Starting NFL Player Headshot job
+2025-10-30 10:21:12.769 -05:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2025-10-30 10:21:12.771 -05:00 [INF] Quartz Scheduler created
+2025-10-30 10:21:12.772 -05:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2025-10-30 10:21:12.773 -05:00 [INF] RAMJobStore initialized.
+2025-10-30 10:21:12.774 -05:00 [INF] Quartz Scheduler 3.15.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2025-10-30 10:21:12.775 -05:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2025-10-30 10:21:12.776 -05:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2025-10-30 10:21:12.784 -05:00 [INF] Adding 1 jobs, 1 triggers.
+2025-10-30 10:21:12.786 -05:00 [INF] Adding job: DEFAULT.NFLPlayerHeadshotJob
+2025-10-30 10:21:12.795 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-30 10:21:12.797 -05:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2025-10-30 10:21:12.799 -05:00 [INF] Hosting environment: Production
+2025-10-30 10:21:12.801 -05:00 [INF] Content root path: C:\Users\jackb\source\repos\doink\good_espn_scrape
+2025-10-30 10:21:12.827 -05:00 [INF] 🖼️ Starting NFL Player Headshot scraping job
+2025-10-30 10:21:12.828 -05:00 [INF] Processing headshots for NFL 2025 season
+2025-10-30 10:21:12.831 -05:00 [INF] Fetching NFL teams for season 2025
+2025-10-30 10:21:12.841 -05:00 [INF] Start processing HTTP request GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams
+2025-10-30 10:21:12.844 -05:00 [INF] Sending HTTP request GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams
+2025-10-30 10:21:13.233 -05:00 [INF] Received HTTP response headers after 386.7196ms - 200
+2025-10-30 10:21:13.241 -05:00 [INF] End processing HTTP request after 406.5069ms - 200
+2025-10-30 10:21:13.268 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/22?*
+2025-10-30 10:21:13.269 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/22?*
+2025-10-30 10:21:13.391 -05:00 [INF] Received HTTP response headers after 121.1722ms - 200
+2025-10-30 10:21:13.392 -05:00 [INF] End processing HTTP request after 124.8232ms - 200
+2025-10-30 10:21:13.522 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/1?*
+2025-10-30 10:21:13.523 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/1?*
+2025-10-30 10:21:13.583 -05:00 [INF] Received HTTP response headers after 59.6595ms - 200
+2025-10-30 10:21:13.584 -05:00 [INF] End processing HTTP request after 62.4121ms - 200
+2025-10-30 10:21:13.692 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/33?*
+2025-10-30 10:21:13.693 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/33?*
+2025-10-30 10:21:13.747 -05:00 [INF] Received HTTP response headers after 52.911ms - 200
+2025-10-30 10:21:13.748 -05:00 [INF] End processing HTTP request after 55.8609ms - 200
+2025-10-30 10:21:13.865 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/2?*
+2025-10-30 10:21:13.866 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/2?*
+2025-10-30 10:21:13.928 -05:00 [INF] Received HTTP response headers after 61.3629ms - 200
+2025-10-30 10:21:13.928 -05:00 [INF] End processing HTTP request after 63.7529ms - 200
+2025-10-30 10:21:14.036 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/29?*
+2025-10-30 10:21:14.037 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/29?*
+2025-10-30 10:21:14.098 -05:00 [INF] Received HTTP response headers after 59.6957ms - 200
+2025-10-30 10:21:14.099 -05:00 [INF] End processing HTTP request after 62.5688ms - 200
+2025-10-30 10:21:14.207 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/3?*
+2025-10-30 10:21:14.208 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/3?*
+2025-10-30 10:21:14.267 -05:00 [INF] Received HTTP response headers after 57.9035ms - 200
+2025-10-30 10:21:14.267 -05:00 [INF] End processing HTTP request after 60.3241ms - 200
+2025-10-30 10:21:14.378 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/4?*
+2025-10-30 10:21:14.379 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/4?*
+2025-10-30 10:21:14.438 -05:00 [INF] Received HTTP response headers after 58.5353ms - 200
+2025-10-30 10:21:14.439 -05:00 [INF] End processing HTTP request after 61.1928ms - 200
+2025-10-30 10:21:14.549 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/5?*
+2025-10-30 10:21:14.550 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/5?*
+2025-10-30 10:21:14.605 -05:00 [INF] Received HTTP response headers after 54.0345ms - 200
+2025-10-30 10:21:14.606 -05:00 [INF] End processing HTTP request after 56.9549ms - 200
+2025-10-30 10:21:14.721 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/6?*
+2025-10-30 10:21:14.722 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/6?*
+2025-10-30 10:21:14.782 -05:00 [INF] Received HTTP response headers after 59.4051ms - 200
+2025-10-30 10:21:14.783 -05:00 [INF] End processing HTTP request after 61.7655ms - 200
+2025-10-30 10:21:14.893 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/7?*
+2025-10-30 10:21:14.895 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/7?*
+2025-10-30 10:21:14.953 -05:00 [INF] Received HTTP response headers after 56.8212ms - 200
+2025-10-30 10:21:14.954 -05:00 [INF] End processing HTTP request after 60.8618ms - 200
+2025-10-30 10:21:15.064 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/8?*
+2025-10-30 10:21:15.064 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/8?*
+2025-10-30 10:21:15.126 -05:00 [INF] Received HTTP response headers after 60.4838ms - 200
+2025-10-30 10:21:15.127 -05:00 [INF] End processing HTTP request after 63.0606ms - 200
+2025-10-30 10:21:15.232 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/9?*
+2025-10-30 10:21:15.233 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/9?*
+2025-10-30 10:21:15.292 -05:00 [INF] Received HTTP response headers after 57.8623ms - 200
+2025-10-30 10:21:15.292 -05:00 [INF] End processing HTTP request after 60.4372ms - 200
+2025-10-30 10:21:15.402 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/34?*
+2025-10-30 10:21:15.403 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/34?*
+2025-10-30 10:21:15.461 -05:00 [INF] Received HTTP response headers after 57.5357ms - 200
+2025-10-30 10:21:15.462 -05:00 [INF] End processing HTTP request after 59.769ms - 200
+2025-10-30 10:21:15.572 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/11?*
+2025-10-30 10:21:15.573 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/11?*
+2025-10-30 10:21:15.632 -05:00 [INF] Received HTTP response headers after 59.1279ms - 200
+2025-10-30 10:21:15.634 -05:00 [INF] End processing HTTP request after 61.6308ms - 200
+2025-10-30 10:21:15.741 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/30?*
+2025-10-30 10:21:15.741 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/30?*
+2025-10-30 10:21:15.800 -05:00 [INF] Received HTTP response headers after 58.0214ms - 200
+2025-10-30 10:21:15.801 -05:00 [INF] End processing HTTP request after 60.442ms - 200
+2025-10-30 10:21:15.913 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/12?*
+2025-10-30 10:21:15.913 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/12?*
+2025-10-30 10:21:15.974 -05:00 [INF] Received HTTP response headers after 60.0418ms - 200
+2025-10-30 10:21:15.975 -05:00 [INF] End processing HTTP request after 62.3108ms - 200
+2025-10-30 10:21:16.085 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/24?*
+2025-10-30 10:21:16.086 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/24?*
+2025-10-30 10:21:16.143 -05:00 [INF] Received HTTP response headers after 56.9313ms - 200
+2025-10-30 10:21:16.144 -05:00 [INF] End processing HTTP request after 59.5051ms - 200
+2025-10-30 10:21:16.255 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/14?*
+2025-10-30 10:21:16.256 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/14?*
+2025-10-30 10:21:16.311 -05:00 [INF] Received HTTP response headers after 54.6015ms - 200
+2025-10-30 10:21:16.312 -05:00 [INF] End processing HTTP request after 56.9661ms - 200
+2025-10-30 10:21:16.425 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/13?*
+2025-10-30 10:21:16.426 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/13?*
+2025-10-30 10:21:16.482 -05:00 [INF] Received HTTP response headers after 55.6248ms - 200
+2025-10-30 10:21:16.483 -05:00 [INF] End processing HTTP request after 58.1683ms - 200
+2025-10-30 10:21:16.595 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/15?*
+2025-10-30 10:21:16.596 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/15?*
+2025-10-30 10:21:16.663 -05:00 [INF] Received HTTP response headers after 66.6486ms - 200
+2025-10-30 10:21:16.664 -05:00 [INF] End processing HTTP request after 68.6915ms - 200
+2025-10-30 10:21:16.765 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/16?*
+2025-10-30 10:21:16.766 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/16?*
+2025-10-30 10:21:16.827 -05:00 [INF] Received HTTP response headers after 60.2029ms - 200
+2025-10-30 10:21:16.828 -05:00 [INF] End processing HTTP request after 63.1397ms - 200
+2025-10-30 10:21:16.936 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/17?*
+2025-10-30 10:21:16.936 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/17?*
+2025-10-30 10:21:16.996 -05:00 [INF] Received HTTP response headers after 58.7428ms - 200
+2025-10-30 10:21:16.997 -05:00 [INF] End processing HTTP request after 60.9563ms - 200
+2025-10-30 10:21:17.107 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/18?*
+2025-10-30 10:21:17.107 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/18?*
+2025-10-30 10:21:17.166 -05:00 [INF] Received HTTP response headers after 58.3394ms - 200
+2025-10-30 10:21:17.167 -05:00 [INF] End processing HTTP request after 60.5925ms - 200
+2025-10-30 10:21:17.278 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/19?*
+2025-10-30 10:21:17.279 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/19?*
+2025-10-30 10:21:17.339 -05:00 [INF] Received HTTP response headers after 60.1536ms - 200
+2025-10-30 10:21:17.340 -05:00 [INF] End processing HTTP request after 62.5485ms - 200
+2025-10-30 10:21:17.447 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/20?*
+2025-10-30 10:21:17.448 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/20?*
+2025-10-30 10:21:17.509 -05:00 [INF] Received HTTP response headers after 60.5519ms - 200
+2025-10-30 10:21:17.510 -05:00 [INF] End processing HTTP request after 63.2618ms - 200
+2025-10-30 10:21:17.616 -05:00 [INF] Successfully fetched 25 teams for season 2025
+2025-10-30 10:21:17.617 -05:00 [INF] Found 25 NFL teams for season 2025
+2025-10-30 10:21:17.618 -05:00 [INF] === PROCESSING TEAM: Arizona Cardinals (ID: 22) ===
+2025-10-30 10:21:17.620 -05:00 [INF] Fetching roster for team 22, year 2025
+2025-10-30 10:21:17.620 -05:00 [INF] Start processing HTTP request GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/22/athletes
+2025-10-30 10:21:17.621 -05:00 [INF] Sending HTTP request GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/22/athletes
+2025-10-30 10:21:17.678 -05:00 [INF] Received HTTP response headers after 56.0747ms - 200
+2025-10-30 10:21:17.679 -05:00 [INF] End processing HTTP request after 58.5391ms - 200
+2025-10-30 10:21:17.680 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/5084939?*
+2025-10-30 10:21:17.681 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/5084939?*
+2025-10-30 10:21:17.740 -05:00 [INF] Received HTTP response headers after 58.8735ms - 200
+2025-10-30 10:21:17.741 -05:00 [INF] End processing HTTP request after 61.0818ms - 200
+2025-10-30 10:21:17.864 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4360475?*
+2025-10-30 10:21:17.865 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4360475?*
+2025-10-30 10:21:17.920 -05:00 [INF] Received HTTP response headers after 54.8579ms - 200
+2025-10-30 10:21:17.921 -05:00 [INF] End processing HTTP request after 56.8689ms - 200
+2025-10-30 10:21:18.035 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/3886809?*
+2025-10-30 10:21:18.036 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/3886809?*
+2025-10-30 10:21:18.097 -05:00 [INF] Received HTTP response headers after 60.2716ms - 200
+2025-10-30 10:21:18.098 -05:00 [INF] End processing HTTP request after 63.0102ms - 200
+2025-10-30 10:21:18.207 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/3127287?*
+2025-10-30 10:21:18.207 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/3127287?*
+2025-10-30 10:21:18.267 -05:00 [INF] Received HTTP response headers after 59.4958ms - 200
+2025-10-30 10:21:18.268 -05:00 [INF] End processing HTTP request after 61.8259ms - 200
+2025-10-30 10:21:18.378 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4426646?*
+2025-10-30 10:21:18.379 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4426646?*
+2025-10-30 10:21:18.437 -05:00 [INF] Received HTTP response headers after 56.9417ms - 200
+2025-10-30 10:21:18.437 -05:00 [INF] End processing HTTP request after 59.2798ms - 200
+2025-10-30 10:21:18.548 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/15035?*
+2025-10-30 10:21:18.549 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/15035?*
+2025-10-30 10:21:18.610 -05:00 [INF] Received HTTP response headers after 60.2744ms - 200
+2025-10-30 10:21:18.611 -05:00 [INF] End processing HTTP request after 62.5867ms - 200
+2025-10-30 10:21:18.721 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4429275?*
+2025-10-30 10:21:18.722 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4429275?*
+2025-10-30 10:21:18.784 -05:00 [INF] Received HTTP response headers after 61.2984ms - 200
+2025-10-30 10:21:18.785 -05:00 [INF] End processing HTTP request after 63.9591ms - 200
+2025-10-30 10:21:18.891 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4240824?*
+2025-10-30 10:21:18.891 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4240824?*
+2025-10-30 10:21:18.952 -05:00 [INF] Received HTTP response headers after 59.4395ms - 200
+2025-10-30 10:21:18.953 -05:00 [INF] End processing HTTP request after 62.0919ms - 200
+2025-10-30 10:21:19.061 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/15241?*
+2025-10-30 10:21:19.062 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/15241?*
+2025-10-30 10:21:19.116 -05:00 [INF] Received HTTP response headers after 53.2168ms - 200
+2025-10-30 10:21:19.117 -05:00 [INF] End processing HTTP request after 55.5727ms - 200
+2025-10-30 10:21:19.232 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/2578570?*
+2025-10-30 10:21:19.233 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/2578570?*
+2025-10-30 10:21:19.291 -05:00 [INF] Received HTTP response headers after 57.3419ms - 200
+2025-10-30 10:21:19.292 -05:00 [INF] End processing HTTP request after 59.8428ms - 200
+2025-10-30 10:21:19.403 -05:00 [INF] Successfully fetched 10 players for team 22
+2025-10-30 10:21:19.404 -05:00 [INF] Found 10 players on Arizona Cardinals roster
+2025-10-30 10:21:19.406 -05:00 [INF] 🔍 Processing multi-size headshots for Isaiah Adams (ESPN ID: 5084939)
+2025-10-30 10:21:19.764 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/5084939.png
+2025-10-30 10:21:19.765 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/5084939.png
+2025-10-30 10:21:19.837 -05:00 [INF] Received HTTP response headers after 70.7581ms - 200
+2025-10-30 10:21:19.838 -05:00 [INF] End processing HTTP request after 73.4015ms - 200
+2025-10-30 10:21:20.569 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/5084939.png
+2025-10-30 10:21:20.570 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/5084939.png
+2025-10-30 10:21:20.648 -05:00 [INF] Received HTTP response headers after 77.619ms - 404
+2025-10-30 10:21:20.649 -05:00 [INF] End processing HTTP request after 80.2158ms - 404
+2025-10-30 10:21:20.650 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/5084939.png
+2025-10-30 10:21:20.754 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/5084939.png
+2025-10-30 10:21:20.755 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/5084939.png
+2025-10-30 10:21:20.807 -05:00 [INF] Received HTTP response headers after 50.7048ms - 404
+2025-10-30 10:21:20.808 -05:00 [INF] End processing HTTP request after 53.4196ms - 404
+2025-10-30 10:21:20.808 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/5084939.png
+2025-10-30 10:21:21.216 -05:00 [ERR] Error updating player 13508
+Supabase.Postgrest.Exceptions.PostgrestException: {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'Position' column of 'Players' in the schema cache"}
+   at Supabase.Postgrest.Helpers.MakeRequest(ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, CancellationToken cancellationToken)
+   at Supabase.Postgrest.Helpers.MakeRequest[T](ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, Func`1 getHeaders, CancellationToken cancellationToken)
+   at ESPNScrape.Services.SupabaseService.UpdatePlayerAsync(Player player) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Services\SupabaseService.cs:line 425
+2025-10-30 10:21:21.231 -05:00 [ERR] ❌ Failed to update multi-size headshot info for player Isaiah Adams in database
+2025-10-30 10:21:21.232 -05:00 [WRN] ⚠️ Downloaded headshots for Isaiah Adams but failed to update database
+2025-10-30 10:21:21.438 -05:00 [INF] 🔍 Processing multi-size headshots for Chigozie Anusiem (ESPN ID: 4360475)
+2025-10-30 10:21:21.555 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4360475.png
+2025-10-30 10:21:21.555 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4360475.png
+2025-10-30 10:21:21.567 -05:00 [INF] Received HTTP response headers after 11.0807ms - 200
+2025-10-30 10:21:21.568 -05:00 [INF] End processing HTTP request after 13.2792ms - 200
+2025-10-30 10:21:21.981 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4360475.png
+2025-10-30 10:21:21.982 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4360475.png
+2025-10-30 10:21:22.067 -05:00 [INF] Received HTTP response headers after 84.6992ms - 404
+2025-10-30 10:21:22.068 -05:00 [INF] End processing HTTP request after 87.4451ms - 404
+2025-10-30 10:21:22.069 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4360475.png
+2025-10-30 10:21:22.182 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4360475.png
+2025-10-30 10:21:22.182 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4360475.png
+2025-10-30 10:21:22.251 -05:00 [INF] Received HTTP response headers after 68.2602ms - 404
+2025-10-30 10:21:22.252 -05:00 [INF] End processing HTTP request after 70.628ms - 404
+2025-10-30 10:21:22.253 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4360475.png
+2025-10-30 10:21:22.614 -05:00 [ERR] Error updating player 13509
+Supabase.Postgrest.Exceptions.PostgrestException: {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'Position' column of 'Players' in the schema cache"}
+   at Supabase.Postgrest.Helpers.MakeRequest(ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, CancellationToken cancellationToken)
+   at Supabase.Postgrest.Helpers.MakeRequest[T](ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, Func`1 getHeaders, CancellationToken cancellationToken)
+   at ESPNScrape.Services.SupabaseService.UpdatePlayerAsync(Player player) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Services\SupabaseService.cs:line 425
+2025-10-30 10:21:22.615 -05:00 [ERR] ❌ Failed to update multi-size headshot info for player Chigozie Anusiem in database
+2025-10-30 10:21:22.616 -05:00 [WRN] ⚠️ Downloaded headshots for Chigozie Anusiem but failed to update database
+2025-10-30 10:21:22.822 -05:00 [INF] 🔍 Processing multi-size headshots for Andre Baccellia (ESPN ID: 3886809)
+2025-10-30 10:21:22.947 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/3886809.png
+2025-10-30 10:21:22.948 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/3886809.png
+2025-10-30 10:21:22.965 -05:00 [INF] Received HTTP response headers after 15.4513ms - 200
+2025-10-30 10:21:22.966 -05:00 [INF] End processing HTTP request after 18.5368ms - 200
+2025-10-30 10:21:23.426 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/3886809.png
+2025-10-30 10:21:23.426 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/3886809.png
+2025-10-30 10:21:23.473 -05:00 [INF] Received HTTP response headers after 46.0701ms - 404
+2025-10-30 10:21:23.474 -05:00 [INF] End processing HTTP request after 48.5457ms - 404
+2025-10-30 10:21:23.475 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/3886809.png
+2025-10-30 10:21:23.580 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3886809.png
+2025-10-30 10:21:23.581 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3886809.png
+2025-10-30 10:21:23.631 -05:00 [INF] Received HTTP response headers after 49.1214ms - 404
+2025-10-30 10:21:23.632 -05:00 [INF] End processing HTTP request after 51.5867ms - 404
+2025-10-30 10:21:23.632 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3886809.png
+2025-10-30 10:21:23.982 -05:00 [ERR] Error updating player 10681
+Supabase.Postgrest.Exceptions.PostgrestException: {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'Position' column of 'Players' in the schema cache"}
+   at Supabase.Postgrest.Helpers.MakeRequest(ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, CancellationToken cancellationToken)
+   at Supabase.Postgrest.Helpers.MakeRequest[T](ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, Func`1 getHeaders, CancellationToken cancellationToken)
+   at ESPNScrape.Services.SupabaseService.UpdatePlayerAsync(Player player) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Services\SupabaseService.cs:line 425
+2025-10-30 10:21:23.984 -05:00 [ERR] ❌ Failed to update multi-size headshot info for player Andre Baccellia in database
+2025-10-30 10:21:23.984 -05:00 [WRN] ⚠️ Downloaded headshots for Andre Baccellia but failed to update database
+2025-10-30 10:21:24.188 -05:00 [INF] 🔍 Processing multi-size headshots for Budda Baker (ESPN ID: 3127287)
+2025-10-30 10:21:24.332 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/3127287.png
+2025-10-30 10:21:24.332 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/3127287.png
+2025-10-30 10:21:24.341 -05:00 [INF] Received HTTP response headers after 7.6617ms - 200
+2025-10-30 10:21:24.342 -05:00 [INF] End processing HTTP request after 10.0661ms - 200
+2025-10-30 10:21:24.778 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/3127287.png
+2025-10-30 10:21:24.778 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/3127287.png
+2025-10-30 10:21:24.829 -05:00 [INF] Received HTTP response headers after 50.0153ms - 404
+2025-10-30 10:21:24.830 -05:00 [INF] End processing HTTP request after 52.232ms - 404
+2025-10-30 10:21:24.831 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/3127287.png
+2025-10-30 10:21:24.933 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3127287.png
+2025-10-30 10:21:24.934 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3127287.png
+2025-10-30 10:21:24.997 -05:00 [INF] Received HTTP response headers after 62.4302ms - 404
+2025-10-30 10:21:24.998 -05:00 [INF] End processing HTTP request after 64.7777ms - 404
+2025-10-30 10:21:24.998 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3127287.png
+2025-10-30 10:21:25.358 -05:00 [ERR] Error updating player 13511
+Supabase.Postgrest.Exceptions.PostgrestException: {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'Position' column of 'Players' in the schema cache"}
+   at Supabase.Postgrest.Helpers.MakeRequest(ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, CancellationToken cancellationToken)
+   at Supabase.Postgrest.Helpers.MakeRequest[T](ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, Func`1 getHeaders, CancellationToken cancellationToken)
+   at ESPNScrape.Services.SupabaseService.UpdatePlayerAsync(Player player) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Services\SupabaseService.cs:line 425
+2025-10-30 10:21:25.360 -05:00 [ERR] ❌ Failed to update multi-size headshot info for player Budda Baker in database
+2025-10-30 10:21:25.360 -05:00 [WRN] ⚠️ Downloaded headshots for Budda Baker but failed to update database
+2025-10-30 10:21:25.568 -05:00 [INF] 🔍 Processing multi-size headshots for Jared Bartlett (ESPN ID: 4426646)
+2025-10-30 10:21:25.717 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4426646.png
+2025-10-30 10:21:25.718 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4426646.png
+2025-10-30 10:21:25.735 -05:00 [INF] Received HTTP response headers after 16.6107ms - 200
+2025-10-30 10:21:25.736 -05:00 [INF] End processing HTTP request after 18.9673ms - 200
+2025-10-30 10:21:26.175 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4426646.png
+2025-10-30 10:21:26.176 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4426646.png
+2025-10-30 10:21:26.260 -05:00 [INF] Received HTTP response headers after 82.5593ms - 404
+2025-10-30 10:21:26.260 -05:00 [INF] End processing HTTP request after 84.8105ms - 404
+2025-10-30 10:21:26.261 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4426646.png
+2025-10-30 10:21:26.363 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4426646.png
+2025-10-30 10:21:26.364 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4426646.png
+2025-10-30 10:21:26.455 -05:00 [INF] Received HTTP response headers after 90.6577ms - 404
+2025-10-30 10:21:26.456 -05:00 [INF] End processing HTTP request after 92.7596ms - 404
+2025-10-30 10:21:26.457 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4426646.png
+2025-10-30 10:21:26.804 -05:00 [ERR] Error updating player 13513
+Supabase.Postgrest.Exceptions.PostgrestException: {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'Position' column of 'Players' in the schema cache"}
+   at Supabase.Postgrest.Helpers.MakeRequest(ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, CancellationToken cancellationToken)
+   at Supabase.Postgrest.Helpers.MakeRequest[T](ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, Func`1 getHeaders, CancellationToken cancellationToken)
+   at ESPNScrape.Services.SupabaseService.UpdatePlayerAsync(Player player) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Services\SupabaseService.cs:line 425
+2025-10-30 10:21:26.805 -05:00 [ERR] ❌ Failed to update multi-size headshot info for player Jared Bartlett in database
+2025-10-30 10:21:26.806 -05:00 [WRN] ⚠️ Downloaded headshots for Jared Bartlett but failed to update database
+2025-10-30 10:21:27.009 -05:00 [INF] 🔍 Processing multi-size headshots for Kelvin Beachum (ESPN ID: 15035)
+2025-10-30 10:21:27.154 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/15035.png
+2025-10-30 10:21:27.155 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/15035.png
+2025-10-30 10:21:27.222 -05:00 [INF] Received HTTP response headers after 66.4822ms - 200
+2025-10-30 10:21:27.222 -05:00 [INF] End processing HTTP request after 68.704ms - 200
+2025-10-30 10:21:27.661 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/15035.png
+2025-10-30 10:21:27.662 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/15035.png
+2025-10-30 10:21:27.752 -05:00 [INF] Received HTTP response headers after 89.165ms - 404
+2025-10-30 10:21:27.752 -05:00 [INF] End processing HTTP request after 91.3324ms - 404
+2025-10-30 10:21:27.753 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/15035.png
+2025-10-30 10:21:27.861 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/15035.png
+2025-10-30 10:21:27.862 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/15035.png
+2025-10-30 10:21:27.948 -05:00 [INF] Received HTTP response headers after 85.4399ms - 404
+2025-10-30 10:21:27.949 -05:00 [INF] End processing HTTP request after 88.1313ms - 404
+2025-10-30 10:21:27.950 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/15035.png
+2025-10-30 10:21:28.316 -05:00 [ERR] Error updating player 13514
+Supabase.Postgrest.Exceptions.PostgrestException: {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'Position' column of 'Players' in the schema cache"}
+   at Supabase.Postgrest.Helpers.MakeRequest(ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, CancellationToken cancellationToken)
+   at Supabase.Postgrest.Helpers.MakeRequest[T](ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, Func`1 getHeaders, CancellationToken cancellationToken)
+   at ESPNScrape.Services.SupabaseService.UpdatePlayerAsync(Player player) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Services\SupabaseService.cs:line 425
+2025-10-30 10:21:28.318 -05:00 [ERR] ❌ Failed to update multi-size headshot info for player Kelvin Beachum in database
+2025-10-30 10:21:28.318 -05:00 [WRN] ⚠️ Downloaded headshots for Kelvin Beachum but failed to update database
+2025-10-30 10:21:28.529 -05:00 [INF] 🔍 Processing multi-size headshots for Trey Benson (ESPN ID: 4429275)
+2025-10-30 10:21:28.647 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4429275.png
+2025-10-30 10:21:28.648 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4429275.png
+2025-10-30 10:21:28.668 -05:00 [INF] Received HTTP response headers after 19.1816ms - 200
+2025-10-30 10:21:28.669 -05:00 [INF] End processing HTTP request after 22.1843ms - 200
+2025-10-30 10:21:29.136 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4429275.png
+2025-10-30 10:21:29.137 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4429275.png
+2025-10-30 10:21:29.238 -05:00 [INF] Received HTTP response headers after 100.2665ms - 404
+2025-10-30 10:21:29.239 -05:00 [INF] End processing HTTP request after 102.6839ms - 404
+2025-10-30 10:21:29.239 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4429275.png
+2025-10-30 10:21:29.353 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4429275.png
+2025-10-30 10:21:29.353 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4429275.png
+2025-10-30 10:21:29.451 -05:00 [INF] Received HTTP response headers after 97.1248ms - 404
+2025-10-30 10:21:29.452 -05:00 [INF] End processing HTTP request after 99.4304ms - 404
+2025-10-30 10:21:29.453 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4429275.png
+2025-10-30 10:21:29.876 -05:00 [ERR] Error updating player 8729
+Supabase.Postgrest.Exceptions.PostgrestException: {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'Position' column of 'Players' in the schema cache"}
+   at Supabase.Postgrest.Helpers.MakeRequest(ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, CancellationToken cancellationToken)
+   at Supabase.Postgrest.Helpers.MakeRequest[T](ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, Func`1 getHeaders, CancellationToken cancellationToken)
+   at ESPNScrape.Services.SupabaseService.UpdatePlayerAsync(Player player) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Services\SupabaseService.cs:line 425
+2025-10-30 10:21:29.878 -05:00 [ERR] ❌ Failed to update multi-size headshot info for player Trey Benson in database
+2025-10-30 10:21:29.879 -05:00 [WRN] ⚠️ Downloaded headshots for Trey Benson but failed to update database
+2025-10-30 10:21:30.081 -05:00 [INF] 🔍 Processing multi-size headshots for Joey Blount (ESPN ID: 4240824)
+2025-10-30 10:21:30.194 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4240824.png
+2025-10-30 10:21:30.195 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4240824.png
+2025-10-30 10:21:30.243 -05:00 [INF] Received HTTP response headers after 48.0365ms - 200
+2025-10-30 10:21:30.244 -05:00 [INF] End processing HTTP request after 50.1711ms - 200
+2025-10-30 10:21:30.732 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4240824.png
+2025-10-30 10:21:30.733 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4240824.png
+2025-10-30 10:21:30.833 -05:00 [INF] Received HTTP response headers after 99.5596ms - 404
+2025-10-30 10:21:30.834 -05:00 [INF] End processing HTTP request after 102.0392ms - 404
+2025-10-30 10:21:30.835 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4240824.png
+2025-10-30 10:21:30.947 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4240824.png
+2025-10-30 10:21:30.948 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4240824.png
+2025-10-30 10:21:31.074 -05:00 [INF] Received HTTP response headers after 125.5436ms - 404
+2025-10-30 10:21:31.075 -05:00 [INF] End processing HTTP request after 128.0143ms - 404
+2025-10-30 10:21:31.076 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4240824.png
+2025-10-30 10:21:31.432 -05:00 [ERR] Error updating player 13515
+Supabase.Postgrest.Exceptions.PostgrestException: {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'Position' column of 'Players' in the schema cache"}
+   at Supabase.Postgrest.Helpers.MakeRequest(ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, CancellationToken cancellationToken)
+   at Supabase.Postgrest.Helpers.MakeRequest[T](ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, Func`1 getHeaders, CancellationToken cancellationToken)
+   at ESPNScrape.Services.SupabaseService.UpdatePlayerAsync(Player player) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Services\SupabaseService.cs:line 425
+2025-10-30 10:21:31.433 -05:00 [ERR] ❌ Failed to update multi-size headshot info for player Joey Blount in database
+2025-10-30 10:21:31.434 -05:00 [WRN] ⚠️ Downloaded headshots for Joey Blount but failed to update database
+2025-10-30 10:21:31.642 -05:00 [INF] 🔍 Processing multi-size headshots for Aaron Brewer (ESPN ID: 15241)
+2025-10-30 10:21:31.751 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/15241.png
+2025-10-30 10:21:31.752 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/15241.png
+2025-10-30 10:21:31.917 -05:00 [INF] Received HTTP response headers after 163.9356ms - 200
+2025-10-30 10:21:31.918 -05:00 [INF] End processing HTTP request after 167.0929ms - 200
+2025-10-30 10:21:32.327 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/15241.png
+2025-10-30 10:21:32.328 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/15241.png
+2025-10-30 10:21:32.627 -05:00 [INF] Received HTTP response headers after 298.8297ms - 404
+2025-10-30 10:21:32.628 -05:00 [INF] End processing HTTP request after 301.5709ms - 404
+2025-10-30 10:21:32.630 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/15241.png
+2025-10-30 10:21:32.732 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/15241.png
+2025-10-30 10:21:32.734 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/15241.png
+2025-10-30 10:21:32.836 -05:00 [INF] Received HTTP response headers after 101.177ms - 404
+2025-10-30 10:21:32.836 -05:00 [INF] End processing HTTP request after 104.0699ms - 404
+2025-10-30 10:21:32.838 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/15241.png
+2025-10-30 10:21:33.053 -05:00 [WRN] ⚠️ Downloaded headshots for Aaron Brewer but failed to update database
+2025-10-30 10:21:33.258 -05:00 [INF] 🔍 Processing multi-size headshots for Jacoby Brissett (ESPN ID: 2578570)
+2025-10-30 10:21:33.367 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/2578570.png
+2025-10-30 10:21:33.368 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/2578570.png
+2025-10-30 10:21:33.411 -05:00 [INF] Received HTTP response headers after 41.7785ms - 200
+2025-10-30 10:21:33.411 -05:00 [INF] End processing HTTP request after 43.9558ms - 200
+2025-10-30 10:21:33.829 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/2578570.png
+2025-10-30 10:21:33.830 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/2578570.png
+2025-10-30 10:21:33.914 -05:00 [INF] Received HTTP response headers after 82.9236ms - 404
+2025-10-30 10:21:33.915 -05:00 [INF] End processing HTTP request after 85.6463ms - 404
+2025-10-30 10:21:33.916 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/2578570.png
+2025-10-30 10:21:34.017 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/2578570.png
+2025-10-30 10:21:34.019 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/2578570.png
+2025-10-30 10:21:34.153 -05:00 [INF] Received HTTP response headers after 133.4153ms - 404
+2025-10-30 10:21:34.154 -05:00 [INF] End processing HTTP request after 136.4479ms - 404
+2025-10-30 10:21:34.154 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/2578570.png
+2025-10-30 10:21:34.497 -05:00 [ERR] Error updating player 10467
+Supabase.Postgrest.Exceptions.PostgrestException: {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'Position' column of 'Players' in the schema cache"}
+   at Supabase.Postgrest.Helpers.MakeRequest(ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, CancellationToken cancellationToken)
+   at Supabase.Postgrest.Helpers.MakeRequest[T](ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, Func`1 getHeaders, CancellationToken cancellationToken)
+   at ESPNScrape.Services.SupabaseService.UpdatePlayerAsync(Player player) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Services\SupabaseService.cs:line 425
+2025-10-30 10:21:34.499 -05:00 [ERR] ❌ Failed to update multi-size headshot info for player Jacoby Brissett in database
+2025-10-30 10:21:34.500 -05:00 [WRN] ⚠️ Downloaded headshots for Jacoby Brissett but failed to update database
+2025-10-30 10:21:34.700 -05:00 [INF] === COMPLETED TEAM: Arizona Cardinals ===
+2025-10-30 10:21:35.709 -05:00 [INF] === PROCESSING TEAM: Atlanta Falcons (ID: 1) ===
+2025-10-30 10:21:35.710 -05:00 [INF] Fetching roster for team 1, year 2025
+2025-10-30 10:21:35.710 -05:00 [INF] Start processing HTTP request GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/1/athletes
+2025-10-30 10:21:35.711 -05:00 [INF] Sending HTTP request GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/1/athletes
+2025-10-30 10:21:35.777 -05:00 [INF] Received HTTP response headers after 65.5482ms - 200
+2025-10-30 10:21:35.778 -05:00 [INF] End processing HTTP request after 67.8187ms - 200
+2025-10-30 10:21:35.779 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/3061612?*
+2025-10-30 10:21:35.780 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/3061612?*
+2025-10-30 10:21:35.837 -05:00 [INF] Received HTTP response headers after 56.7388ms - 200
+2025-10-30 10:21:35.838 -05:00 [INF] End processing HTTP request after 58.8041ms - 200
+2025-10-30 10:21:35.940 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4401823?*
+2025-10-30 10:21:35.941 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4401823?*
+2025-10-30 10:21:36.000 -05:00 [INF] Received HTTP response headers after 58.3157ms - 200
+2025-10-30 10:21:36.001 -05:00 [INF] End processing HTTP request after 60.8499ms - 200
+2025-10-30 10:21:36.109 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4373626?*
+2025-10-30 10:21:36.111 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4373626?*
+2025-10-30 10:21:36.170 -05:00 [INF] Received HTTP response headers after 58.7449ms - 200
+2025-10-30 10:21:36.171 -05:00 [INF] End processing HTTP request after 61.6499ms - 200
+2025-10-30 10:21:36.279 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4247807?*
+2025-10-30 10:21:36.280 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4247807?*
+2025-10-30 10:21:36.340 -05:00 [INF] Received HTTP response headers after 59.545ms - 200
+2025-10-30 10:21:36.341 -05:00 [INF] End processing HTTP request after 61.5364ms - 200
+2025-10-30 10:21:36.452 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/3919512?*
+2025-10-30 10:21:36.453 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/3919512?*
+2025-10-30 10:21:36.515 -05:00 [INF] Received HTTP response headers after 61.4206ms - 200
+2025-10-30 10:21:36.516 -05:00 [INF] End processing HTTP request after 63.6518ms - 200
+2025-10-30 10:21:36.622 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4568510?*
+2025-10-30 10:21:36.623 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4568510?*
+2025-10-30 10:21:36.702 -05:00 [INF] Received HTTP response headers after 78.2539ms - 200
+2025-10-30 10:21:36.703 -05:00 [INF] End processing HTTP request after 80.8197ms - 200
+2025-10-30 10:21:36.808 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4428872?*
+2025-10-30 10:21:36.809 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4428872?*
+2025-10-30 10:21:36.869 -05:00 [INF] Received HTTP response headers after 59.6088ms - 200
+2025-10-30 10:21:36.870 -05:00 [INF] End processing HTTP request after 61.8818ms - 200
+2025-10-30 10:21:36.978 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4369886?*
+2025-10-30 10:21:36.979 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4369886?*
+2025-10-30 10:21:37.055 -05:00 [INF] Received HTTP response headers after 74.8733ms - 200
+2025-10-30 10:21:37.056 -05:00 [INF] End processing HTTP request after 77.2442ms - 200
+2025-10-30 10:21:37.165 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4431194?*
+2025-10-30 10:21:37.166 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4431194?*
+2025-10-30 10:21:37.229 -05:00 [INF] Received HTTP response headers after 62.1282ms - 200
+2025-10-30 10:21:37.229 -05:00 [INF] End processing HTTP request after 64.8656ms - 200
+2025-10-30 10:21:37.335 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4689989?*
+2025-10-30 10:21:37.336 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4689989?*
+2025-10-30 10:21:37.395 -05:00 [INF] Received HTTP response headers after 58.4491ms - 200
+2025-10-30 10:21:37.396 -05:00 [INF] End processing HTTP request after 60.7618ms - 200
+2025-10-30 10:21:37.462 -05:00 [INF] Application is shutting down...
+2025-10-30 10:21:37.465 -05:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED shutting down.
+2025-10-30 10:21:37.466 -05:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED paused.
+2025-10-30 10:21:37.506 -05:00 [INF] Successfully fetched 10 players for team 1
+2025-10-30 10:21:37.507 -05:00 [INF] Found 10 players on Atlanta Falcons roster
+2025-10-30 10:21:37.508 -05:00 [INF] 🔍 Processing multi-size headshots for Jamal Agnew (ESPN ID: 3061612)
+2025-10-30 10:21:37.650 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/3061612.png
+2025-10-30 10:21:37.651 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/3061612.png
+2025-10-30 10:21:37.669 -05:00 [INF] Received HTTP response headers after 17.415ms - 200
+2025-10-30 10:21:37.670 -05:00 [INF] End processing HTTP request after 19.3724ms - 200
+2025-10-30 10:21:38.232 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/3061612.png
+2025-10-30 10:21:38.233 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/3061612.png
+2025-10-30 10:21:38.318 -05:00 [INF] Received HTTP response headers after 84.6332ms - 404
+2025-10-30 10:21:38.319 -05:00 [INF] End processing HTTP request after 86.9837ms - 404
+2025-10-30 10:21:38.320 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/3061612.png
+2025-10-30 10:21:38.435 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3061612.png
+2025-10-30 10:21:38.436 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3061612.png
+2025-10-30 10:21:38.536 -05:00 [INF] Received HTTP response headers after 100.0739ms - 404
+2025-10-30 10:21:38.537 -05:00 [INF] End processing HTTP request after 102.1847ms - 404
+2025-10-30 10:21:38.538 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3061612.png
+2025-10-30 10:21:38.914 -05:00 [ERR] Error updating player 13529
+Supabase.Postgrest.Exceptions.PostgrestException: {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'Position' column of 'Players' in the schema cache"}
+   at Supabase.Postgrest.Helpers.MakeRequest(ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, CancellationToken cancellationToken)
+   at Supabase.Postgrest.Helpers.MakeRequest[T](ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, Func`1 getHeaders, CancellationToken cancellationToken)
+   at ESPNScrape.Services.SupabaseService.UpdatePlayerAsync(Player player) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Services\SupabaseService.cs:line 425
+2025-10-30 10:21:38.916 -05:00 [ERR] ❌ Failed to update multi-size headshot info for player Jamal Agnew in database
+2025-10-30 10:21:38.917 -05:00 [WRN] ⚠️ Downloaded headshots for Jamal Agnew but failed to update database
+2025-10-30 10:21:39.132 -05:00 [INF] 🔍 Processing multi-size headshots for Dee Alford (ESPN ID: 4401823)
+2025-10-30 10:21:39.241 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4401823.png
+2025-10-30 10:21:39.242 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4401823.png
+2025-10-30 10:21:39.266 -05:00 [INF] Received HTTP response headers after 23.0239ms - 200
+2025-10-30 10:21:39.266 -05:00 [INF] End processing HTTP request after 25.0327ms - 200
+2025-10-30 10:21:39.628 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4401823.png
+2025-10-30 10:21:39.629 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4401823.png
+2025-10-30 10:21:39.724 -05:00 [INF] Received HTTP response headers after 94.5106ms - 404
+2025-10-30 10:21:39.725 -05:00 [INF] End processing HTTP request after 96.6708ms - 404
+2025-10-30 10:21:39.726 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4401823.png
+2025-10-30 10:21:39.830 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4401823.png
+2025-10-30 10:21:39.831 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4401823.png
+2025-10-30 10:21:39.890 -05:00 [INF] Received HTTP response headers after 58.2046ms - 404
+2025-10-30 10:21:39.891 -05:00 [INF] End processing HTTP request after 60.9663ms - 404
+2025-10-30 10:21:39.891 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4401823.png
+2025-10-30 10:21:40.235 -05:00 [ERR] Error updating player 13530
+Supabase.Postgrest.Exceptions.PostgrestException: {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'Position' column of 'Players' in the schema cache"}
+   at Supabase.Postgrest.Helpers.MakeRequest(ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, CancellationToken cancellationToken)
+   at Supabase.Postgrest.Helpers.MakeRequest[T](ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, Func`1 getHeaders, CancellationToken cancellationToken)
+   at ESPNScrape.Services.SupabaseService.UpdatePlayerAsync(Player player) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Services\SupabaseService.cs:line 425
+2025-10-30 10:21:40.236 -05:00 [ERR] ❌ Failed to update multi-size headshot info for player Dee Alford in database
+2025-10-30 10:21:40.237 -05:00 [WRN] ⚠️ Downloaded headshots for Dee Alford but failed to update database
+2025-10-30 10:21:40.447 -05:00 [INF] 🔍 Processing multi-size headshots for Tyler Allgeier (ESPN ID: 4373626)
+2025-10-30 10:21:40.569 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4373626.png
+2025-10-30 10:21:40.570 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4373626.png
+2025-10-30 10:21:40.588 -05:00 [INF] Received HTTP response headers after 16.7047ms - 200
+2025-10-30 10:21:40.588 -05:00 [INF] End processing HTTP request after 19.0024ms - 200
+2025-10-30 10:21:41.006 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4373626.png
+2025-10-30 10:21:41.007 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4373626.png
+2025-10-30 10:21:41.099 -05:00 [INF] Received HTTP response headers after 91.9947ms - 404
+2025-10-30 10:21:41.100 -05:00 [INF] End processing HTTP request after 94.2834ms - 404
+2025-10-30 10:21:41.101 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4373626.png
+2025-10-30 10:21:41.206 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4373626.png
+2025-10-30 10:21:41.207 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4373626.png
+2025-10-30 10:21:41.288 -05:00 [INF] Received HTTP response headers after 81.0943ms - 404
+2025-10-30 10:21:41.289 -05:00 [INF] End processing HTTP request after 83.2265ms - 404
+2025-10-30 10:21:41.290 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4373626.png
+2025-10-30 10:21:41.657 -05:00 [ERR] Error updating player 9053
+Supabase.Postgrest.Exceptions.PostgrestException: {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'Position' column of 'Players' in the schema cache"}
+   at Supabase.Postgrest.Helpers.MakeRequest(ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, CancellationToken cancellationToken)
+   at Supabase.Postgrest.Helpers.MakeRequest[T](ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, Func`1 getHeaders, CancellationToken cancellationToken)
+   at ESPNScrape.Services.SupabaseService.UpdatePlayerAsync(Player player) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Services\SupabaseService.cs:line 425
+2025-10-30 10:21:41.659 -05:00 [ERR] ❌ Failed to update multi-size headshot info for player Tyler Allgeier in database
+2025-10-30 10:21:41.659 -05:00 [WRN] ⚠️ Downloaded headshots for Tyler Allgeier but failed to update database
+2025-10-30 10:21:41.873 -05:00 [INF] 🔍 Processing multi-size headshots for Troy Andersen (ESPN ID: 4247807)
+2025-10-30 10:21:42.022 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4247807.png
+2025-10-30 10:21:42.023 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4247807.png
+2025-10-30 10:21:42.051 -05:00 [INF] Received HTTP response headers after 27.2619ms - 200
+2025-10-30 10:21:42.051 -05:00 [INF] End processing HTTP request after 29.4054ms - 200
+2025-10-30 10:21:42.458 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4247807.png
+2025-10-30 10:21:42.459 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4247807.png
+2025-10-30 10:21:42.515 -05:00 [INF] Received HTTP response headers after 55.1592ms - 404
+2025-10-30 10:21:42.516 -05:00 [INF] End processing HTTP request after 57.3542ms - 404
+2025-10-30 10:21:42.516 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4247807.png
+2025-10-30 10:21:42.630 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4247807.png
+2025-10-30 10:21:42.631 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4247807.png
+2025-10-30 10:21:42.701 -05:00 [INF] Received HTTP response headers after 69.5993ms - 404
+2025-10-30 10:21:42.702 -05:00 [INF] End processing HTTP request after 71.6434ms - 404
+2025-10-30 10:21:42.703 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4247807.png
+2025-10-30 10:21:43.052 -05:00 [ERR] Error updating player 13531
+Supabase.Postgrest.Exceptions.PostgrestException: {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'Position' column of 'Players' in the schema cache"}
+   at Supabase.Postgrest.Helpers.MakeRequest(ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, CancellationToken cancellationToken)
+   at Supabase.Postgrest.Helpers.MakeRequest[T](ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, Func`1 getHeaders, CancellationToken cancellationToken)
+   at ESPNScrape.Services.SupabaseService.UpdatePlayerAsync(Player player) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Services\SupabaseService.cs:line 425
+2025-10-30 10:21:43.054 -05:00 [ERR] ❌ Failed to update multi-size headshot info for player Troy Andersen in database
+2025-10-30 10:21:43.055 -05:00 [WRN] ⚠️ Downloaded headshots for Troy Andersen but failed to update database
+2025-10-30 10:21:43.264 -05:00 [INF] 🔍 Processing multi-size headshots for Jessie Bates III (ESPN ID: 3919512)
+2025-10-30 10:21:43.383 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/3919512.png
+2025-10-30 10:21:43.384 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/3919512.png
+2025-10-30 10:21:43.402 -05:00 [INF] Received HTTP response headers after 17.1322ms - 200
+2025-10-30 10:21:43.403 -05:00 [INF] End processing HTTP request after 19.5012ms - 200
+2025-10-30 10:21:43.807 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/3919512.png
+2025-10-30 10:21:43.808 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/3919512.png
+2025-10-30 10:21:43.931 -05:00 [INF] Received HTTP response headers after 122.4986ms - 404
+2025-10-30 10:21:43.932 -05:00 [INF] End processing HTTP request after 125.0349ms - 404
+2025-10-30 10:21:43.932 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/3919512.png
+2025-10-30 10:21:44.041 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3919512.png
+2025-10-30 10:21:44.042 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3919512.png
+2025-10-30 10:21:44.143 -05:00 [INF] Received HTTP response headers after 100.6891ms - 404
+2025-10-30 10:21:44.144 -05:00 [INF] End processing HTTP request after 102.7604ms - 404
+2025-10-30 10:21:44.145 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3919512.png
+2025-10-30 10:21:44.483 -05:00 [ERR] Error updating player 13532
+Supabase.Postgrest.Exceptions.PostgrestException: {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'Position' column of 'Players' in the schema cache"}
+   at Supabase.Postgrest.Helpers.MakeRequest(ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, CancellationToken cancellationToken)
+   at Supabase.Postgrest.Helpers.MakeRequest[T](ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, Func`1 getHeaders, CancellationToken cancellationToken)
+   at ESPNScrape.Services.SupabaseService.UpdatePlayerAsync(Player player) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Services\SupabaseService.cs:line 425
+2025-10-30 10:21:44.485 -05:00 [ERR] ❌ Failed to update multi-size headshot info for player Jessie Bates III in database
+2025-10-30 10:21:44.485 -05:00 [WRN] ⚠️ Downloaded headshots for Jessie Bates III but failed to update database
+2025-10-30 10:21:44.693 -05:00 [INF] 🔍 Processing multi-size headshots for Matthew Bergeron (ESPN ID: 4568510)
+2025-10-30 10:21:44.804 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4568510.png
+2025-10-30 10:21:44.805 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4568510.png
+2025-10-30 10:21:44.816 -05:00 [INF] Received HTTP response headers after 10.4902ms - 200
+2025-10-30 10:21:44.817 -05:00 [INF] End processing HTTP request after 12.501ms - 200
+2025-10-30 10:21:45.232 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4568510.png
+2025-10-30 10:21:45.233 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4568510.png
+2025-10-30 10:21:45.318 -05:00 [INF] Received HTTP response headers after 84.0785ms - 404
+2025-10-30 10:21:45.318 -05:00 [INF] End processing HTTP request after 86.5724ms - 404
+2025-10-30 10:21:45.319 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4568510.png
+2025-10-30 10:21:45.433 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4568510.png
+2025-10-30 10:21:45.434 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4568510.png
+2025-10-30 10:21:45.522 -05:00 [INF] Received HTTP response headers after 86.8664ms - 404
+2025-10-30 10:21:45.522 -05:00 [INF] End processing HTTP request after 89.3584ms - 404
+2025-10-30 10:21:45.523 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4568510.png
+2025-10-30 10:21:45.899 -05:00 [ERR] Error updating player 13533
+Supabase.Postgrest.Exceptions.PostgrestException: {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'Position' column of 'Players' in the schema cache"}
+   at Supabase.Postgrest.Helpers.MakeRequest(ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, CancellationToken cancellationToken)
+   at Supabase.Postgrest.Helpers.MakeRequest[T](ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, Func`1 getHeaders, CancellationToken cancellationToken)
+   at ESPNScrape.Services.SupabaseService.UpdatePlayerAsync(Player player) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Services\SupabaseService.cs:line 425
+2025-10-30 10:21:45.901 -05:00 [ERR] ❌ Failed to update multi-size headshot info for player Matthew Bergeron in database
+2025-10-30 10:21:45.902 -05:00 [WRN] ⚠️ Downloaded headshots for Matthew Bergeron but failed to update database
+2025-10-30 10:21:46.113 -05:00 [INF] 🔍 Processing multi-size headshots for JD Bertrand (ESPN ID: 4428872)
+2025-10-30 10:21:46.232 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4428872.png
+2025-10-30 10:21:46.233 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4428872.png
+2025-10-30 10:21:46.273 -05:00 [INF] Received HTTP response headers after 38.6586ms - 200
+2025-10-30 10:21:46.274 -05:00 [INF] End processing HTTP request after 41.1432ms - 200
+2025-10-30 10:21:46.688 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4428872.png
+2025-10-30 10:21:46.689 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4428872.png
+2025-10-30 10:21:47.005 -05:00 [INF] Received HTTP response headers after 315.4704ms - 404
+2025-10-30 10:21:47.006 -05:00 [INF] End processing HTTP request after 317.7085ms - 404
+2025-10-30 10:21:47.006 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4428872.png
+2025-10-30 10:21:47.122 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4428872.png
+2025-10-30 10:21:47.123 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4428872.png
+2025-10-30 10:21:47.190 -05:00 [INF] Received HTTP response headers after 66.8977ms - 404
+2025-10-30 10:21:47.191 -05:00 [INF] End processing HTTP request after 69.433ms - 404
+2025-10-30 10:21:47.192 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4428872.png
+2025-10-30 10:21:47.521 -05:00 [ERR] Error updating player 13534
+Supabase.Postgrest.Exceptions.PostgrestException: {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'Position' column of 'Players' in the schema cache"}
+   at Supabase.Postgrest.Helpers.MakeRequest(ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, CancellationToken cancellationToken)
+   at Supabase.Postgrest.Helpers.MakeRequest[T](ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, Func`1 getHeaders, CancellationToken cancellationToken)
+   at ESPNScrape.Services.SupabaseService.UpdatePlayerAsync(Player player) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Services\SupabaseService.cs:line 425
+2025-10-30 10:21:47.522 -05:00 [ERR] ❌ Failed to update multi-size headshot info for player JD Bertrand in database
+2025-10-30 10:21:47.522 -05:00 [WRN] ⚠️ Downloaded headshots for JD Bertrand but failed to update database
+2025-10-30 10:21:47.727 -05:00 [INF] 🔍 Processing multi-size headshots for Chris Blair (ESPN ID: 4369886)
+2025-10-30 10:21:47.840 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4369886.png
+2025-10-30 10:21:47.841 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4369886.png
+2025-10-30 10:21:47.866 -05:00 [INF] Received HTTP response headers after 24.5695ms - 200
+2025-10-30 10:21:47.867 -05:00 [INF] End processing HTTP request after 26.8679ms - 200
+2025-10-30 10:21:48.287 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4369886.png
+2025-10-30 10:21:48.288 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4369886.png
+2025-10-30 10:21:48.395 -05:00 [INF] Received HTTP response headers after 106.5222ms - 404
+2025-10-30 10:21:48.396 -05:00 [INF] End processing HTTP request after 108.4667ms - 404
+2025-10-30 10:21:48.396 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4369886.png
+2025-10-30 10:21:48.505 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4369886.png
+2025-10-30 10:21:48.506 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4369886.png
+2025-10-30 10:21:48.563 -05:00 [INF] Received HTTP response headers after 56.1173ms - 404
+2025-10-30 10:21:48.563 -05:00 [INF] End processing HTTP request after 58.2765ms - 404
+2025-10-30 10:21:48.564 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4369886.png
+2025-10-30 10:21:48.910 -05:00 [ERR] Error updating player 9000
+Supabase.Postgrest.Exceptions.PostgrestException: {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'Position' column of 'Players' in the schema cache"}
+   at Supabase.Postgrest.Helpers.MakeRequest(ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, CancellationToken cancellationToken)
+   at Supabase.Postgrest.Helpers.MakeRequest[T](ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, Func`1 getHeaders, CancellationToken cancellationToken)
+   at ESPNScrape.Services.SupabaseService.UpdatePlayerAsync(Player player) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Services\SupabaseService.cs:line 425
+2025-10-30 10:21:48.911 -05:00 [ERR] ❌ Failed to update multi-size headshot info for player Chris Blair in database
+2025-10-30 10:21:48.912 -05:00 [WRN] ⚠️ Downloaded headshots for Chris Blair but failed to update database
+2025-10-30 10:21:49.125 -05:00 [INF] 🔍 Processing multi-size headshots for Billy Bowman Jr. (ESPN ID: 4431194)
+2025-10-30 10:21:49.256 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4431194.png
+2025-10-30 10:21:49.256 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4431194.png
+2025-10-30 10:21:49.274 -05:00 [INF] Received HTTP response headers after 17.1174ms - 200
+2025-10-30 10:21:49.275 -05:00 [INF] End processing HTTP request after 19.1037ms - 200
+2025-10-30 10:21:49.667 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4431194.png
+2025-10-30 10:21:49.668 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4431194.png
+2025-10-30 10:21:49.754 -05:00 [INF] Received HTTP response headers after 85.1622ms - 404
+2025-10-30 10:21:49.755 -05:00 [INF] End processing HTTP request after 87.2527ms - 404
+2025-10-30 10:21:49.755 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4431194.png
+2025-10-30 10:21:49.870 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4431194.png
+2025-10-30 10:21:49.871 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4431194.png
+2025-10-30 10:21:49.978 -05:00 [INF] Received HTTP response headers after 106.7221ms - 404
+2025-10-30 10:21:49.979 -05:00 [INF] End processing HTTP request after 109.2508ms - 404
+2025-10-30 10:21:49.980 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4431194.png
+2025-10-30 10:21:50.323 -05:00 [ERR] Error updating player 13535
+Supabase.Postgrest.Exceptions.PostgrestException: {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'Position' column of 'Players' in the schema cache"}
+   at Supabase.Postgrest.Helpers.MakeRequest(ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, CancellationToken cancellationToken)
+   at Supabase.Postgrest.Helpers.MakeRequest[T](ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, Func`1 getHeaders, CancellationToken cancellationToken)
+   at ESPNScrape.Services.SupabaseService.UpdatePlayerAsync(Player player) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Services\SupabaseService.cs:line 425
+2025-10-30 10:21:50.324 -05:00 [ERR] ❌ Failed to update multi-size headshot info for player Billy Bowman Jr. in database
+2025-10-30 10:21:50.326 -05:00 [WRN] ⚠️ Downloaded headshots for Billy Bowman Jr. but failed to update database
+2025-10-30 10:21:50.539 -05:00 [INF] 🔍 Processing multi-size headshots for Natrone Brooks (ESPN ID: 4689989)
+2025-10-30 10:21:50.662 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4689989.png
+2025-10-30 10:21:50.663 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4689989.png
+2025-10-30 10:21:50.757 -05:00 [INF] Received HTTP response headers after 93.2669ms - 200
+2025-10-30 10:21:50.757 -05:00 [INF] End processing HTTP request after 95.4631ms - 200
+2025-10-30 10:21:51.234 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4689989.png
+2025-10-30 10:21:51.234 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4689989.png
+2025-10-30 10:21:51.318 -05:00 [INF] Received HTTP response headers after 83.2637ms - 404
+2025-10-30 10:21:51.319 -05:00 [INF] End processing HTTP request after 85.588ms - 404
+2025-10-30 10:21:51.320 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4689989.png
+2025-10-30 10:21:51.433 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4689989.png
+2025-10-30 10:21:51.434 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4689989.png
+2025-10-30 10:21:51.529 -05:00 [INF] Received HTTP response headers after 94.601ms - 404
+2025-10-30 10:21:51.530 -05:00 [INF] End processing HTTP request after 96.8427ms - 404
+2025-10-30 10:21:51.531 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4689989.png
+2025-10-30 10:21:51.876 -05:00 [ERR] Error updating player 13536
+Supabase.Postgrest.Exceptions.PostgrestException: {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'Position' column of 'Players' in the schema cache"}
+   at Supabase.Postgrest.Helpers.MakeRequest(ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, CancellationToken cancellationToken)
+   at Supabase.Postgrest.Helpers.MakeRequest[T](ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, Func`1 getHeaders, CancellationToken cancellationToken)
+   at ESPNScrape.Services.SupabaseService.UpdatePlayerAsync(Player player) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Services\SupabaseService.cs:line 425
+2025-10-30 10:21:51.878 -05:00 [ERR] ❌ Failed to update multi-size headshot info for player Natrone Brooks in database
+2025-10-30 10:21:51.878 -05:00 [WRN] ⚠️ Downloaded headshots for Natrone Brooks but failed to update database
+2025-10-30 10:21:52.083 -05:00 [INF] === COMPLETED TEAM: Atlanta Falcons ===
+2025-10-30 10:21:53.096 -05:00 [INF] === PROCESSING TEAM: Baltimore Ravens (ID: 33) ===
+2025-10-30 10:21:53.097 -05:00 [INF] Fetching roster for team 33, year 2025
+2025-10-30 10:21:53.098 -05:00 [INF] Start processing HTTP request GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/33/athletes
+2025-10-30 10:21:53.098 -05:00 [INF] Sending HTTP request GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/33/athletes
+2025-10-30 10:21:53.164 -05:00 [INF] Received HTTP response headers after 64.7944ms - 200
+2025-10-30 10:21:53.165 -05:00 [INF] End processing HTTP request after 67.1724ms - 200
+2025-10-30 10:21:53.165 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/3895429?*
+2025-10-30 10:21:53.166 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/3895429?*
+2025-10-30 10:21:53.223 -05:00 [INF] Received HTTP response headers after 56.1054ms - 200
+2025-10-30 10:21:53.224 -05:00 [INF] End processing HTTP request after 58.5653ms - 200
+2025-10-30 10:21:53.329 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4690013?*
+2025-10-30 10:21:53.330 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4690013?*
+2025-10-30 10:21:53.392 -05:00 [INF] Received HTTP response headers after 61.4985ms - 200
+2025-10-30 10:21:53.392 -05:00 [INF] End processing HTTP request after 63.5527ms - 200
+2025-10-30 10:21:53.500 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/3116365?*
+2025-10-30 10:21:53.500 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/3116365?*
+2025-10-30 10:21:53.554 -05:00 [INF] Received HTTP response headers after 52.6395ms - 200
+2025-10-30 10:21:53.555 -05:00 [INF] End processing HTTP request after 55.03ms - 200
+2025-10-30 10:21:53.671 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/3052101?*
+2025-10-30 10:21:53.672 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/3052101?*
+2025-10-30 10:21:53.731 -05:00 [INF] Received HTTP response headers after 58.6718ms - 200
+2025-10-30 10:21:53.732 -05:00 [INF] End processing HTTP request after 61.1985ms - 200
+2025-10-30 10:21:53.841 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4360939?*
+2025-10-30 10:21:53.842 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4360939?*
+2025-10-30 10:21:53.901 -05:00 [INF] Received HTTP response headers after 57.8167ms - 200
+2025-10-30 10:21:53.901 -05:00 [INF] End processing HTTP request after 60.334ms - 200
+2025-10-30 10:21:54.013 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/3115249?*
+2025-10-30 10:21:54.014 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/3115249?*
+2025-10-30 10:21:54.100 -05:00 [INF] Received HTTP response headers after 85.2337ms - 200
+2025-10-30 10:21:54.100 -05:00 [INF] End processing HTTP request after 87.4042ms - 200
+2025-10-30 10:21:54.215 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4698244?*
+2025-10-30 10:21:54.215 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4698244?*
+2025-10-30 10:21:54.271 -05:00 [INF] Received HTTP response headers after 55.2304ms - 200
+2025-10-30 10:21:54.273 -05:00 [INF] End processing HTTP request after 58.0816ms - 200
+2025-10-30 10:21:54.373 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4576075?*
+2025-10-30 10:21:54.374 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4576075?*
+2025-10-30 10:21:54.443 -05:00 [INF] Received HTTP response headers after 68.2189ms - 200
+2025-10-30 10:21:54.444 -05:00 [INF] End processing HTTP request after 70.4722ms - 200
+2025-10-30 10:21:54.560 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4035002?*
+2025-10-30 10:21:54.561 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4035002?*
+2025-10-30 10:21:54.623 -05:00 [INF] Received HTTP response headers after 61.592ms - 200
+2025-10-30 10:21:54.624 -05:00 [INF] End processing HTTP request after 63.9791ms - 200
+2025-10-30 10:21:54.731 -05:00 [INF] Start processing HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4360964?*
+2025-10-30 10:21:54.731 -05:00 [INF] Sending HTTP request GET http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/4360964?*
+2025-10-30 10:21:54.791 -05:00 [INF] Received HTTP response headers after 59.086ms - 200
+2025-10-30 10:21:54.792 -05:00 [INF] End processing HTTP request after 61.3751ms - 200
+2025-10-30 10:21:54.901 -05:00 [INF] Successfully fetched 10 players for team 33
+2025-10-30 10:21:54.902 -05:00 [INF] Found 10 players on Baltimore Ravens roster
+2025-10-30 10:21:54.903 -05:00 [INF] 🔍 Processing multi-size headshots for Jaire Alexander (ESPN ID: 3895429)
+2025-10-30 10:21:55.031 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/3895429.png
+2025-10-30 10:21:55.031 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/3895429.png
+2025-10-30 10:21:55.047 -05:00 [INF] Received HTTP response headers after 15.2095ms - 200
+2025-10-30 10:21:55.048 -05:00 [INF] End processing HTTP request after 17.1951ms - 200
+2025-10-30 10:21:55.583 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/3895429.png
+2025-10-30 10:21:55.584 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/3895429.png
+2025-10-30 10:21:55.667 -05:00 [INF] Received HTTP response headers after 83.0794ms - 404
+2025-10-30 10:21:55.668 -05:00 [INF] End processing HTTP request after 85.2832ms - 404
+2025-10-30 10:21:55.669 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/3895429.png
+2025-10-30 10:21:55.785 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3895429.png
+2025-10-30 10:21:55.786 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3895429.png
+2025-10-30 10:21:55.890 -05:00 [INF] Received HTTP response headers after 103.3825ms - 404
+2025-10-30 10:21:55.891 -05:00 [INF] End processing HTTP request after 105.548ms - 404
+2025-10-30 10:21:55.892 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3895429.png
+2025-10-30 10:21:56.311 -05:00 [ERR] Error updating player 13550
+Supabase.Postgrest.Exceptions.PostgrestException: {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'Position' column of 'Players' in the schema cache"}
+   at Supabase.Postgrest.Helpers.MakeRequest(ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, CancellationToken cancellationToken)
+   at Supabase.Postgrest.Helpers.MakeRequest[T](ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, Func`1 getHeaders, CancellationToken cancellationToken)
+   at ESPNScrape.Services.SupabaseService.UpdatePlayerAsync(Player player) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Services\SupabaseService.cs:line 425
+2025-10-30 10:21:56.312 -05:00 [ERR] ❌ Failed to update multi-size headshot info for player Jaire Alexander in database
+2025-10-30 10:21:56.312 -05:00 [WRN] ⚠️ Downloaded headshots for Jaire Alexander but failed to update database
+2025-10-30 10:21:56.525 -05:00 [INF] 🔍 Processing multi-size headshots for Rasheen Ali (ESPN ID: 4690013)
+2025-10-30 10:21:56.665 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4690013.png
+2025-10-30 10:21:56.666 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4690013.png
+2025-10-30 10:21:56.689 -05:00 [INF] Received HTTP response headers after 22.4177ms - 200
+2025-10-30 10:21:56.690 -05:00 [INF] End processing HTTP request after 24.498ms - 200
+2025-10-30 10:21:57.124 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4690013.png
+2025-10-30 10:21:57.125 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4690013.png
+2025-10-30 10:21:57.174 -05:00 [INF] Received HTTP response headers after 47.8741ms - 404
+2025-10-30 10:21:57.174 -05:00 [INF] End processing HTTP request after 49.9686ms - 404
+2025-10-30 10:21:57.175 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4690013.png
+2025-10-30 10:21:57.278 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4690013.png
+2025-10-30 10:21:57.278 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4690013.png
+2025-10-30 10:21:57.329 -05:00 [INF] Received HTTP response headers after 49.7853ms - 404
+2025-10-30 10:21:57.330 -05:00 [INF] End processing HTTP request after 52.3763ms - 404
+2025-10-30 10:21:57.331 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4690013.png
+2025-10-30 10:21:57.701 -05:00 [ERR] Error updating player 9890
+Supabase.Postgrest.Exceptions.PostgrestException: {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'Position' column of 'Players' in the schema cache"}
+   at Supabase.Postgrest.Helpers.MakeRequest(ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, CancellationToken cancellationToken)
+   at Supabase.Postgrest.Helpers.MakeRequest[T](ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, Func`1 getHeaders, CancellationToken cancellationToken)
+   at ESPNScrape.Services.SupabaseService.UpdatePlayerAsync(Player player) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Services\SupabaseService.cs:line 425
+2025-10-30 10:21:57.703 -05:00 [ERR] ❌ Failed to update multi-size headshot info for player Rasheen Ali in database
+2025-10-30 10:21:57.703 -05:00 [WRN] ⚠️ Downloaded headshots for Rasheen Ali but failed to update database
+2025-10-30 10:21:57.914 -05:00 [INF] 🔍 Processing multi-size headshots for Mark Andrews (ESPN ID: 3116365)
+2025-10-30 10:21:58.044 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/3116365.png
+2025-10-30 10:21:58.045 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/3116365.png
+2025-10-30 10:21:58.056 -05:00 [INF] Received HTTP response headers after 10.7367ms - 200
+2025-10-30 10:21:58.057 -05:00 [INF] End processing HTTP request after 13.0919ms - 200
+2025-10-30 10:21:58.640 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/3116365.png
+2025-10-30 10:21:58.640 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/3116365.png
+2025-10-30 10:21:58.728 -05:00 [INF] Received HTTP response headers after 87.0857ms - 404
+2025-10-30 10:21:58.729 -05:00 [INF] End processing HTTP request after 89.4265ms - 404
+2025-10-30 10:21:58.730 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/3116365.png
+2025-10-30 10:21:58.841 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3116365.png
+2025-10-30 10:21:58.842 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3116365.png
+2025-10-30 10:21:58.960 -05:00 [INF] Received HTTP response headers after 117.2319ms - 404
+2025-10-30 10:21:58.961 -05:00 [INF] End processing HTTP request after 119.6166ms - 404
+2025-10-30 10:21:58.961 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3116365.png
+2025-10-30 10:21:59.327 -05:00 [ERR] Error updating player 10131
+Supabase.Postgrest.Exceptions.PostgrestException: {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'Position' column of 'Players' in the schema cache"}
+   at Supabase.Postgrest.Helpers.MakeRequest(ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, CancellationToken cancellationToken)
+   at Supabase.Postgrest.Helpers.MakeRequest[T](ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, Func`1 getHeaders, CancellationToken cancellationToken)
+   at ESPNScrape.Services.SupabaseService.UpdatePlayerAsync(Player player) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Services\SupabaseService.cs:line 425
+2025-10-30 10:21:59.328 -05:00 [ERR] ❌ Failed to update multi-size headshot info for player Mark Andrews in database
+2025-10-30 10:21:59.329 -05:00 [WRN] ⚠️ Downloaded headshots for Mark Andrews but failed to update database
+2025-10-30 10:21:59.537 -05:00 [INF] 🔍 Processing multi-size headshots for Chidobe Awuzie (ESPN ID: 3052101)
+2025-10-30 10:21:59.654 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/3052101.png
+2025-10-30 10:21:59.655 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/3052101.png
+2025-10-30 10:21:59.673 -05:00 [INF] Received HTTP response headers after 17.557ms - 200
+2025-10-30 10:21:59.674 -05:00 [INF] End processing HTTP request after 19.7084ms - 200
+2025-10-30 10:22:00.127 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/3052101.png
+2025-10-30 10:22:00.127 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/3052101.png
+2025-10-30 10:22:00.212 -05:00 [INF] Received HTTP response headers after 84.05ms - 404
+2025-10-30 10:22:00.213 -05:00 [INF] End processing HTTP request after 86.353ms - 404
+2025-10-30 10:22:00.214 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/3052101.png
+2025-10-30 10:22:00.327 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3052101.png
+2025-10-30 10:22:00.327 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3052101.png
+2025-10-30 10:22:00.407 -05:00 [INF] Received HTTP response headers after 78.4348ms - 404
+2025-10-30 10:22:00.407 -05:00 [INF] End processing HTTP request after 80.8819ms - 404
+2025-10-30 10:22:00.408 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3052101.png
+2025-10-30 10:22:00.771 -05:00 [ERR] Error updating player 13551
+Supabase.Postgrest.Exceptions.PostgrestException: {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'Position' column of 'Players' in the schema cache"}
+   at Supabase.Postgrest.Helpers.MakeRequest(ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, CancellationToken cancellationToken)
+   at Supabase.Postgrest.Helpers.MakeRequest[T](ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, Func`1 getHeaders, CancellationToken cancellationToken)
+   at ESPNScrape.Services.SupabaseService.UpdatePlayerAsync(Player player) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Services\SupabaseService.cs:line 425
+2025-10-30 10:22:00.773 -05:00 [ERR] ❌ Failed to update multi-size headshot info for player Chidobe Awuzie in database
+2025-10-30 10:22:00.773 -05:00 [WRN] ⚠️ Downloaded headshots for Chidobe Awuzie but failed to update database
+2025-10-30 10:22:00.977 -05:00 [INF] 🔍 Processing multi-size headshots for Rashod Bateman (ESPN ID: 4360939)
+2025-10-30 10:22:01.118 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4360939.png
+2025-10-30 10:22:01.119 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4360939.png
+2025-10-30 10:22:01.141 -05:00 [INF] Received HTTP response headers after 21.2521ms - 200
+2025-10-30 10:22:01.141 -05:00 [INF] End processing HTTP request after 23.4135ms - 200
+2025-10-30 10:22:01.569 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4360939.png
+2025-10-30 10:22:01.570 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4360939.png
+2025-10-30 10:22:01.681 -05:00 [INF] Received HTTP response headers after 110.7764ms - 404
+2025-10-30 10:22:01.682 -05:00 [INF] End processing HTTP request after 112.8416ms - 404
+2025-10-30 10:22:01.683 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4360939.png
+2025-10-30 10:22:01.787 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4360939.png
+2025-10-30 10:22:01.788 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4360939.png
+2025-10-30 10:22:01.839 -05:00 [INF] Received HTTP response headers after 50.5619ms - 404
+2025-10-30 10:22:01.840 -05:00 [INF] End processing HTTP request after 52.7549ms - 404
+2025-10-30 10:22:01.840 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4360939.png
+2025-10-30 10:22:02.190 -05:00 [ERR] Error updating player 9956
+Supabase.Postgrest.Exceptions.PostgrestException: {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'Position' column of 'Players' in the schema cache"}
+   at Supabase.Postgrest.Helpers.MakeRequest(ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, CancellationToken cancellationToken)
+   at Supabase.Postgrest.Helpers.MakeRequest[T](ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, Func`1 getHeaders, CancellationToken cancellationToken)
+   at ESPNScrape.Services.SupabaseService.UpdatePlayerAsync(Player player) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Services\SupabaseService.cs:line 425
+2025-10-30 10:22:02.192 -05:00 [ERR] ❌ Failed to update multi-size headshot info for player Rashod Bateman in database
+2025-10-30 10:22:02.192 -05:00 [WRN] ⚠️ Downloaded headshots for Rashod Bateman but failed to update database
+2025-10-30 10:22:02.405 -05:00 [INF] 🔍 Processing multi-size headshots for Taven Bryan (ESPN ID: 3115249)
+2025-10-30 10:22:02.543 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/3115249.png
+2025-10-30 10:22:02.544 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/3115249.png
+2025-10-30 10:22:02.631 -05:00 [INF] Received HTTP response headers after 85.8819ms - 200
+2025-10-30 10:22:02.632 -05:00 [INF] End processing HTTP request after 88.2486ms - 200
+2025-10-30 10:22:03.227 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/3115249.png
+2025-10-30 10:22:03.228 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/3115249.png
+2025-10-30 10:22:03.367 -05:00 [INF] Received HTTP response headers after 137.8105ms - 404
+2025-10-30 10:22:03.368 -05:00 [INF] End processing HTTP request after 140.5756ms - 404
+2025-10-30 10:22:03.368 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/3115249.png
+2025-10-30 10:22:03.474 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3115249.png
+2025-10-30 10:22:03.475 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3115249.png
+2025-10-30 10:22:03.574 -05:00 [INF] Received HTTP response headers after 97.9916ms - 404
+2025-10-30 10:22:03.575 -05:00 [INF] End processing HTTP request after 100.0851ms - 404
+2025-10-30 10:22:03.575 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/3115249.png
+2025-10-30 10:22:03.911 -05:00 [ERR] Error updating player 14753
+Supabase.Postgrest.Exceptions.PostgrestException: {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'Position' column of 'Players' in the schema cache"}
+   at Supabase.Postgrest.Helpers.MakeRequest(ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, CancellationToken cancellationToken)
+   at Supabase.Postgrest.Helpers.MakeRequest[T](ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, Func`1 getHeaders, CancellationToken cancellationToken)
+   at ESPNScrape.Services.SupabaseService.UpdatePlayerAsync(Player player) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Services\SupabaseService.cs:line 425
+2025-10-30 10:22:03.912 -05:00 [ERR] ❌ Failed to update multi-size headshot info for player Taven Bryan in database
+2025-10-30 10:22:03.912 -05:00 [WRN] ⚠️ Downloaded headshots for Taven Bryan but failed to update database
+2025-10-30 10:22:04.127 -05:00 [INF] 🔍 Processing multi-size headshots for Teddye Buchanan (ESPN ID: 4698244)
+2025-10-30 10:22:04.248 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4698244.png
+2025-10-30 10:22:04.249 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4698244.png
+2025-10-30 10:22:04.260 -05:00 [INF] Received HTTP response headers after 9.7635ms - 200
+2025-10-30 10:22:04.260 -05:00 [INF] End processing HTTP request after 12.0346ms - 200
+2025-10-30 10:22:04.669 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4698244.png
+2025-10-30 10:22:04.670 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4698244.png
+2025-10-30 10:22:04.764 -05:00 [INF] Received HTTP response headers after 93.3722ms - 404
+2025-10-30 10:22:04.765 -05:00 [INF] End processing HTTP request after 95.878ms - 404
+2025-10-30 10:22:04.766 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4698244.png
+2025-10-30 10:22:04.872 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4698244.png
+2025-10-30 10:22:04.873 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4698244.png
+2025-10-30 10:22:04.979 -05:00 [INF] Received HTTP response headers after 105.3325ms - 404
+2025-10-30 10:22:04.980 -05:00 [INF] End processing HTTP request after 107.7472ms - 404
+2025-10-30 10:22:04.981 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4698244.png
+2025-10-30 10:22:05.330 -05:00 [ERR] Error updating player 13552
+Supabase.Postgrest.Exceptions.PostgrestException: {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'Position' column of 'Players' in the schema cache"}
+   at Supabase.Postgrest.Helpers.MakeRequest(ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, CancellationToken cancellationToken)
+   at Supabase.Postgrest.Helpers.MakeRequest[T](ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, Func`1 getHeaders, CancellationToken cancellationToken)
+   at ESPNScrape.Services.SupabaseService.UpdatePlayerAsync(Player player) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Services\SupabaseService.cs:line 425
+2025-10-30 10:22:05.332 -05:00 [ERR] ❌ Failed to update multi-size headshot info for player Teddye Buchanan in database
+2025-10-30 10:22:05.332 -05:00 [WRN] ⚠️ Downloaded headshots for Teddye Buchanan but failed to update database
+2025-10-30 10:22:05.542 -05:00 [INF] 🔍 Processing multi-size headshots for Corey Bullock (ESPN ID: 4576075)
+2025-10-30 10:22:05.653 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4576075.png
+2025-10-30 10:22:05.654 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4576075.png
+2025-10-30 10:22:05.800 -05:00 [INF] Received HTTP response headers after 145.0401ms - 200
+2025-10-30 10:22:05.801 -05:00 [INF] End processing HTTP request after 147.8899ms - 200
+2025-10-30 10:22:06.613 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4576075.png
+2025-10-30 10:22:06.613 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4576075.png
+2025-10-30 10:22:06.761 -05:00 [INF] Received HTTP response headers after 147.2967ms - 404
+2025-10-30 10:22:06.762 -05:00 [INF] End processing HTTP request after 149.528ms - 404
+2025-10-30 10:22:06.763 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4576075.png
+2025-10-30 10:22:06.878 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4576075.png
+2025-10-30 10:22:06.878 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4576075.png
+2025-10-30 10:22:06.993 -05:00 [INF] Received HTTP response headers after 113.3763ms - 404
+2025-10-30 10:22:06.993 -05:00 [INF] End processing HTTP request after 115.6745ms - 404
+2025-10-30 10:22:06.994 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4576075.png
+2025-10-30 10:22:07.410 -05:00 [ERR] Error updating player 13553
+Supabase.Postgrest.Exceptions.PostgrestException: {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'Position' column of 'Players' in the schema cache"}
+   at Supabase.Postgrest.Helpers.MakeRequest(ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, CancellationToken cancellationToken)
+   at Supabase.Postgrest.Helpers.MakeRequest[T](ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, Func`1 getHeaders, CancellationToken cancellationToken)
+   at ESPNScrape.Services.SupabaseService.UpdatePlayerAsync(Player player) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Services\SupabaseService.cs:line 425
+2025-10-30 10:22:07.411 -05:00 [ERR] ❌ Failed to update multi-size headshot info for player Corey Bullock in database
+2025-10-30 10:22:07.412 -05:00 [WRN] ⚠️ Downloaded headshots for Corey Bullock but failed to update database
+2025-10-30 10:22:07.621 -05:00 [INF] 🔍 Processing multi-size headshots for Ben Cleveland (ESPN ID: 4035002)
+2025-10-30 10:22:07.740 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4035002.png
+2025-10-30 10:22:07.741 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4035002.png
+2025-10-30 10:22:07.783 -05:00 [INF] Received HTTP response headers after 41.2616ms - 200
+2025-10-30 10:22:07.784 -05:00 [INF] End processing HTTP request after 43.3632ms - 200
+2025-10-30 10:22:08.210 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4035002.png
+2025-10-30 10:22:08.211 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4035002.png
+2025-10-30 10:22:08.258 -05:00 [INF] Received HTTP response headers after 45.976ms - 404
+2025-10-30 10:22:08.259 -05:00 [INF] End processing HTTP request after 49.3474ms - 404
+2025-10-30 10:22:08.260 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4035002.png
+2025-10-30 10:22:08.365 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4035002.png
+2025-10-30 10:22:08.366 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4035002.png
+2025-10-30 10:22:08.460 -05:00 [INF] Received HTTP response headers after 93.6564ms - 404
+2025-10-30 10:22:08.461 -05:00 [INF] End processing HTTP request after 96.1455ms - 404
+2025-10-30 10:22:08.462 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4035002.png
+2025-10-30 10:22:08.821 -05:00 [ERR] Error updating player 13554
+Supabase.Postgrest.Exceptions.PostgrestException: {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'Position' column of 'Players' in the schema cache"}
+   at Supabase.Postgrest.Helpers.MakeRequest(ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, CancellationToken cancellationToken)
+   at Supabase.Postgrest.Helpers.MakeRequest[T](ClientOptions clientOptions, HttpMethod method, String url, JsonSerializerSettings serializerSettings, Object data, Dictionary`2 headers, Func`1 getHeaders, CancellationToken cancellationToken)
+   at ESPNScrape.Services.SupabaseService.UpdatePlayerAsync(Player player) in C:\Users\jackb\source\repos\doink\good_espn_scrape\Services\SupabaseService.cs:line 425
+2025-10-30 10:22:08.823 -05:00 [ERR] ❌ Failed to update multi-size headshot info for player Ben Cleveland in database
+2025-10-30 10:22:08.823 -05:00 [WRN] ⚠️ Downloaded headshots for Ben Cleveland but failed to update database
+2025-10-30 10:22:09.033 -05:00 [INF] 🔍 Processing multi-size headshots for Daniel Faalele (ESPN ID: 4360964)
+2025-10-30 10:22:09.153 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4360964.png
+2025-10-30 10:22:09.153 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/full/4360964.png
+2025-10-30 10:22:09.183 -05:00 [INF] Received HTTP response headers after 28.2316ms - 200
+2025-10-30 10:22:09.183 -05:00 [INF] End processing HTTP request after 30.7189ms - 200
+2025-10-30 10:22:09.730 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4360964.png
+2025-10-30 10:22:09.732 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/profile/4360964.png
+2025-10-30 10:22:09.848 -05:00 [INF] Received HTTP response headers after 116.1301ms - 404
+2025-10-30 10:22:09.849 -05:00 [INF] End processing HTTP request after 118.8632ms - 404
+2025-10-30 10:22:09.850 -05:00 [WRN] HTTP "NotFound" when downloading image from https://a.espncdn.com/i/headshots/nfl/players/profile/4360964.png
+2025-10-30 10:22:09.962 -05:00 [INF] Start processing HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4360964.png
+2025-10-30 10:22:09.963 -05:00 [INF] Sending HTTP request GET https://a.espncdn.com/i/headshots/nfl/players/thumbnail/4360964.png
