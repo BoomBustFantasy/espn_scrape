@@ -95,7 +95,7 @@ try
     builder.Services.AddHealthChecks()
         // Liveness - is the app alive?
         .AddCheck("self", () => HealthCheckResult.Healthy("Application is running"), tags: ["live"])
-        
+
         // Readiness - Database check
         .AddSupabaseHealthCheck(
             connectionString: supabaseConnectionString ?? "Host=localhost;Database=postgres;Username=postgres;Password=postgres",
@@ -105,7 +105,7 @@ try
             tags: ["db", "supabase", "ready"],
             timeout: TimeSpan.FromSeconds(10)
         )
-        
+
         // Readiness - External API checks
         .AddApiHealthCheck(
             apiUrl: "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl",
@@ -224,7 +224,7 @@ try
         ResponseWriter = async (context, report) =>
         {
             context.Response.ContentType = "application/json";
-            
+
             var response = new
             {
                 status = report.Status.ToString(),
@@ -240,7 +240,7 @@ try
                 }),
                 totalDuration = $"{report.TotalDuration.TotalMilliseconds:F2}ms"
             };
-            
+
             await context.Response.WriteAsJsonAsync(response);
         }
     });
