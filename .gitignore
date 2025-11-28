@@ -20,6 +20,9 @@ logs/
 appsettings.Development.json
 appsettings.Local.json
 
+# NuGet config with credentials (use nuget.config.template)
+nuget.config
+
 # OS files
 .DS_Store
 Thumbs.db

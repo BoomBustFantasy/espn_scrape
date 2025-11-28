@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  espn-scraper:
+    image: jackbruzan/espn_scrape:latest
+    container_name: espn-scraper
+    restart: unless-stopped
+    
+    # Environment variables
+    environment:
+      - DOTNET_ENVIRONMENT=Production
+      - TZ=UTC
+      # BetterStack Logging
+      - BetterStack__SourceToken=
+      - BetterStack__Endpoint=https://in.logs.betterstack.com
+      # Supabase Configuration  
+      - Supabase__Url=https://afxewbjvvrucstbtzglh.supabase.co
+      - Supabase__Key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFmeGV3Ymp2dnJ1Y3N0YnR6Z2xoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzgwMzA3MDAsImV4cCI6MjA1MzYwNjcwMH0.cEqJu4twSy42MI35NNiXdGvbF359-0IWHjOoPcduVKE
+      - Supabase__ServiceRoleKey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFmeGV3Ymp2dnJ1Y3N0YnR6Z2xoIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczODAzMDcwMCwiZXhwIjoyMDUzNjA2NzAwfQ.4pq76UvN3u6H3sGzNlfhKNRy_5pHv_STTOFqoC5g8J8
+      - Supabase__ProjectId=afxewbjvvrucstbtzglh
+    
+    # Command to run specific job (override as needed)
+    # Default runs headshot sync. Options:
+    #   --stats-2025      : Sync player stats for 2025 season
+    #   --sync-players    : Sync ESPN player IDs
+    #   --sync-schedule   : Sync schedule data
+    #   --headshots-only  : Sync player headshots (default)
+    # command: ["--stats-2025"]
+    
+    # Logging configuration
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    
+    # Resource limits
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
+    
+    # Volumes for logs
+    volumes:
+      - espn-scrape-logs:/app/logs
+    
+    # Networks
+    networks:
+      - espn-scrape-network
+
+# Named volumes
+volumes:
+  espn-scrape-logs:
+    driver: local
+
+# Networks
+networks:
+  espn-scrape-network:
+    driver: bridge

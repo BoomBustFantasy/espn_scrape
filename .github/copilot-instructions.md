@@ -1,11 +1,12 @@
 # ESPNScrape Project Instructions
 
-.NET 10 console app using Quartz.NET for scheduled ESPN NFL data scraping to Supabase.
+.NET 9 ASP.NET Core web app using Quartz.NET for scheduled ESPN NFL data scraping to Supabase.
 
 ## Architecture Overview
 
 ```
-Program.cs           → CLI entry with --flags for different jobs
+Program.cs           → WebApplication with Controllers + Quartz cron jobs
+Controllers/         → ESPNController (REST API endpoints)
 Jobs/                → Quartz jobs (NFLWeeklyJob, NFLScheduleSyncJob, NFLPlayerSyncJob, NFLPlayerHeadshotJob)
 Services/            → ESPNDataService (API), SupabaseService (DB), ESPNPlayerMappingService
 Models/              → ESPN API response models
@@ -13,15 +14,27 @@ Models/Supa/         → Supabase table models (use Postgrest attributes)
 Converters/          → ESPNNumericConverter for handling ESPN's inconsistent data types
 ```
 
-## Running Jobs
+## API Endpoints
 
-```powershell
-dotnet run                    # Default: headshot sync job
-dotnet run --stats-2025       # Sync player stats for 2025 season (weeks 1-18)
-dotnet run --sync-players     # Sync ESPN player IDs to database
-dotnet run --sync-schedule    # Sync schedule data (weeks 13-18)
-dotnet run --headshots-only   # Sync player headshots
-```
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/api/espn/teams/{season}` | GET | Get NFL teams from ESPN API |
+| `/api/espn/schedule/{season}/{week}` | GET | Get schedule for a specific week |
+| `/api/espn/status` | GET | Get job status information |
+| `/health` | GET | Detailed health check (JSON) |
+| `/health/live` | GET | Kubernetes liveness probe |
+| `/health/ready` | GET | Kubernetes readiness probe |
+
+## Job Schedules (Cron)
+
+| Job | Schedule | Cron Expression | Description |
+|-----|----------|-----------------|-------------|
+| NFLWeeklyJob | Tue 6 AM | `0 0 6 ? * TUE` | Player stats after Monday Night Football |
+| NFLScheduleSyncJob | Daily 5 AM | `0 0 5 * * ?` | Game schedule updates |
+| NFLPlayerSyncJob | Daily 4 AM | `0 0 4 * * ?` | ESPN player ID mapping |
+| NFLPlayerHeadshotJob | Sun 3 AM | `0 0 3 ? * SUN` | Player headshot images |
+
+Run with: `dotnet run` (starts web server + all scheduled jobs)
 
 ## ESPN API Patterns (Critical)
 
