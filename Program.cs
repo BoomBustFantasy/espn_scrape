@@ -1,5 +1,6 @@
 ﻿using BoomBust.HealthChecks;
 using BoomBust.Logging;
+using ESPNScrape.Configuration;
 using ESPNScrape.Jobs;
 using ESPNScrape.Services;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -23,8 +24,11 @@ try
 
     Log.Information("Starting ESPN Scrape Service");
 
+    // Bind Configuration
+    builder.Services.Configure<SupabaseSettings>(builder.Configuration.GetSection(SupabaseSettings.SectionName));
+
     // Register HttpClient for ESPN API with resilience policies
-    builder.Services.AddHttpClient<ESPNDataService>(client =>
+    builder.Services.AddHttpClient<IESPNDataService, ESPNDataService>(client =>
     {
         client.BaseAddress = new Uri("https://sports.core.api.espn.com/");
         client.Timeout = TimeSpan.FromSeconds(30);
@@ -73,8 +77,7 @@ try
     Log.Information("Resilience policies configured: MaxRetries=3, Timeout=30s, CircuitBreaker enabled");
 
     // Register services
-    builder.Services.AddScoped<ESPNDataService>();
-    builder.Services.AddScoped<SupabaseService>();
+    builder.Services.AddScoped<ISupabaseService, SupabaseService>();
     builder.Services.AddScoped<ESPNPlayerMappingService>();
     builder.Services.AddScoped<ImageProcessingService>();
 

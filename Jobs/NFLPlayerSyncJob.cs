@@ -13,15 +13,15 @@ namespace ESPNScrape.Jobs;
 public class NFLPlayerSyncJob : IJob
 {
     private readonly ILogger<NFLPlayerSyncJob> _logger;
-    private readonly ESPNDataService _espnDataService;
-    private readonly SupabaseService _supabaseService;
-    private readonly ESPNPlayerMappingService _playerMappingService;
+    private readonly IESPNDataService _espnDataService;
+    private readonly ISupabaseService _supabaseService;
+    private readonly IESPNPlayerMappingService _playerMappingService;
 
     public NFLPlayerSyncJob(
         ILogger<NFLPlayerSyncJob> logger,
-        ESPNDataService espnDataService,
-        SupabaseService supabaseService,
-        ESPNPlayerMappingService playerMappingService)
+        IESPNDataService espnDataService,
+        ISupabaseService supabaseService,
+        IESPNPlayerMappingService playerMappingService)
     {
         _logger = logger;
         _espnDataService = espnDataService;

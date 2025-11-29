@@ -18,6 +18,9 @@ logs/
 
 # User-specific files
 appsettings.Development.json
+
+# Environment Variables
+.env
 appsettings.Local.json
 
 # NuGet config with credentials (use nuget.config.template)

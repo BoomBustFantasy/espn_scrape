@@ -7,13 +7,13 @@ namespace ESPNScrape.Controllers;
 [Route("api/[controller]")]
 public class ESPNController : ControllerBase
 {
-    private readonly ESPNDataService _espnService;
-    private readonly SupabaseService _supabaseService;
+    private readonly IESPNDataService _espnService;
+    private readonly ISupabaseService _supabaseService;
     private readonly ILogger<ESPNController> _logger;
 
     public ESPNController(
-        ESPNDataService espnService,
-        SupabaseService supabaseService,
+        IESPNDataService espnService,
+        ISupabaseService supabaseService,
         ILogger<ESPNController> logger)
     {
         _espnService = espnService;

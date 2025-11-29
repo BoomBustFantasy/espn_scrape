@@ -1,5 +1,6 @@
+using ESPNScrape.Configuration;
 using ESPNScrape.Models.Supa;
-using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Logging;
 using Supabase;
 using Supabase.Interfaces;
@@ -10,17 +11,20 @@ namespace ESPNScrape.Services;
 /// Service for interacting with Supabase database
 /// Handles player lookups and player stats upserts for ESPN data integration
 /// </summary>
-public class SupabaseService
+public class SupabaseService : ISupabaseService
 {
     private readonly Client _supabaseClient;
     private readonly ILogger<SupabaseService> _logger;
 
-    public SupabaseService(IConfiguration configuration, ILogger<SupabaseService> logger)
+    public SupabaseService(IOptions<SupabaseSettings> settings, ILogger<SupabaseService> logger)
     {
         _logger = logger;
+        var config = settings.Value;
 
-        var supabaseUrl = configuration["Supabase:Url"] ?? throw new InvalidOperationException("Supabase:Url configuration is missing");
-        var supabaseServiceKey = configuration["Supabase:ServiceRoleKey"] ?? throw new InvalidOperationException("Supabase:ServiceRoleKey configuration is missing");
+        if (string.IsNullOrEmpty(config.Url) || string.IsNullOrEmpty(config.ServiceRoleKey))
+        {
+            throw new InvalidOperationException("Supabase configuration is missing");
+        }
 
         var options = new SupabaseOptions
         {
@@ -28,7 +32,7 @@ public class SupabaseService
             AutoRefreshToken = false     // We're using service operations, not user authentication
         };
 
-        _supabaseClient = new Client(supabaseUrl, supabaseServiceKey, options);
+        _supabaseClient = new Client(config.Url, config.ServiceRoleKey, options);
 
         // Initialize the client
         Task.Run(async () => await _supabaseClient.InitializeAsync());

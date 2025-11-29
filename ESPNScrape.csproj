@@ -4,7 +4,14 @@
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ESPNScrape.Tests\**" />
+    <EmbeddedResource Remove="ESPNScrape.Tests\**" />
+    <None Remove="ESPNScrape.Tests\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="BoomBust.HealthChecks" Version="1.0.0" />

@@ -18,9 +18,9 @@ public interface IESPNPlayerMappingService
 public class ESPNPlayerMappingService : IESPNPlayerMappingService
 {
     private readonly ILogger<ESPNPlayerMappingService> _logger;
-    private readonly SupabaseService _supabaseService;
+    private readonly ISupabaseService _supabaseService;
 
-    public ESPNPlayerMappingService(ILogger<ESPNPlayerMappingService> logger, SupabaseService supabaseService)
+    public ESPNPlayerMappingService(ILogger<ESPNPlayerMappingService> logger, ISupabaseService supabaseService)
     {
         _logger = logger;
         _supabaseService = supabaseService;

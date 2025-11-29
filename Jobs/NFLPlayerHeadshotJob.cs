@@ -11,13 +11,13 @@ namespace ESPNScrape.Jobs;
 public class NFLPlayerHeadshotJob : IJob
 {
     private readonly ILogger<NFLPlayerHeadshotJob> _logger;
-    private readonly ESPNDataService _espnDataService;
-    private readonly SupabaseService _supabaseService;
+    private readonly IESPNDataService _espnDataService;
+    private readonly ISupabaseService _supabaseService;
     private readonly HttpClient _httpClient;
     private readonly ImageProcessingService _imageProcessingService;
 
-    public NFLPlayerHeadshotJob(ILogger<NFLPlayerHeadshotJob> logger, ESPNDataService espnDataService,
-        SupabaseService supabaseService, HttpClient httpClient, ImageProcessingService imageProcessingService)
+    public NFLPlayerHeadshotJob(ILogger<NFLPlayerHeadshotJob> logger, IESPNDataService espnDataService,
+        ISupabaseService supabaseService, HttpClient httpClient, ImageProcessingService imageProcessingService)
     {
         _logger = logger;
         _espnDataService = espnDataService;

@@ -13,13 +13,13 @@ namespace ESPNScrape.Jobs;
 public class NFLScheduleSyncJob : IJob
 {
     private readonly ILogger<NFLScheduleSyncJob> _logger;
-    private readonly ESPNDataService _espnDataService;
-    private readonly SupabaseService _supabaseService;
+    private readonly IESPNDataService _espnDataService;
+    private readonly ISupabaseService _supabaseService;
 
     public NFLScheduleSyncJob(
         ILogger<NFLScheduleSyncJob> logger,
-        ESPNDataService espnDataService,
-        SupabaseService supabaseService)
+        IESPNDataService espnDataService,
+        ISupabaseService supabaseService)
     {
         _logger = logger;
         _espnDataService = espnDataService;
@@ -342,15 +342,16 @@ public class NFLScheduleSyncJob : IJob
             {
                 var overUnder = scheduleRecord.OverUnder.Value;
                 var spread = scheduleRecord.BettingLine.Value;
-                
+
                 // Home Implied Points = (Over/Under - Point Spread) / 2
                 // Away Implied Points = (Over/Under + Point Spread) / 2
                 scheduleRecord.HomeImpliedPoints = Math.Round((overUnder - spread) / 2, 1);
                 scheduleRecord.AwayImpliedPoints = Math.Round((overUnder + spread) / 2, 1);
-                
-                _logger.LogDebug("Calculated implied points for game {GameId}: O/U={OverUnder}, Spread={Spread} → Home={Home}, Away={Away}", 
+
+                _logger.LogDebug("Calculated implied points for game {GameId}: O/U={OverUnder}, Spread={Spread} → Home={Home}, Away={Away}",
                     game.Id, overUnder, spread, scheduleRecord.HomeImpliedPoints, scheduleRecord.AwayImpliedPoints);
-            }            _logger.LogInformation("✅ Extracted betting info for game {GameId}: Line={BettingLine}, O/U={OverUnder}, Home={HomePoints}, Away={AwayPoints}",
+            }
+            _logger.LogInformation("✅ Extracted betting info for game {GameId}: Line={BettingLine}, O/U={OverUnder}, Home={HomePoints}, Away={AwayPoints}",
                 game.Id, scheduleRecord.BettingLine, scheduleRecord.OverUnder,
                 scheduleRecord.HomeImpliedPoints, scheduleRecord.AwayImpliedPoints);
         }
