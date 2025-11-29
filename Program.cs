@@ -78,7 +78,7 @@ try
 
     // Register services
     builder.Services.AddScoped<ISupabaseService, SupabaseService>();
-    builder.Services.AddScoped<ESPNPlayerMappingService>();
+    builder.Services.AddScoped<IESPNPlayerMappingService, ESPNPlayerMappingService>();
     builder.Services.AddScoped<ImageProcessingService>();
 
     // Add ASP.NET Core services
