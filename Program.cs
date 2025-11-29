@@ -124,7 +124,7 @@ try
     {
         // ============================================
         // NFL Weekly Stats Job
-        // Runs every Tuesday at 6 AM (after Monday Night Football)
+        // Runs every 2 hours to capture stats from completed games
         // ============================================
         var weeklyStatsJobKey = new JobKey("NFLWeeklyJob");
         q.AddJob<NFLWeeklyJob>(opts => opts
@@ -135,15 +135,15 @@ try
         q.AddTrigger(opts => opts
             .ForJob(weeklyStatsJobKey)
             .WithIdentity("NFLWeeklyJob-cron-trigger")
-            .WithCronSchedule("0 0 6 ? * TUE") // Every Tuesday at 6:00 AM
+            .WithCronSchedule("0 0 */2 * * ?") // Every 2 hours
             .UsingJobData("season", 2025)
             .UsingJobData("startWeek", 1)
             .UsingJobData("endWeek", 18)
-            .WithDescription("NFL Weekly Stats - Every Tuesday at 6 AM"));
+            .WithDescription("NFL Weekly Stats - Every 2 hours"));
 
         // ============================================
         // NFL Schedule Sync Job
-        // Runs every day at 5 AM to catch schedule updates
+        // Runs every hour to catch schedule updates
         // ============================================
         var scheduleSyncJobKey = new JobKey("NFLScheduleSyncJob");
         q.AddJob<NFLScheduleSyncJob>(opts => opts
@@ -154,12 +154,12 @@ try
         q.AddTrigger(opts => opts
             .ForJob(scheduleSyncJobKey)
             .WithIdentity("NFLScheduleSyncJob-cron-trigger")
-            .WithCronSchedule("0 0 5 * * ?") // Every day at 5:00 AM
+            .WithCronSchedule("0 0 * * * ?") // Every hour
             .UsingJobData("season", 2025)
             .UsingJobData("startWeek", 1)
             .UsingJobData("endWeek", 18)
             .UsingJobData("seasonType", 2) // Regular season
-            .WithDescription("NFL Schedule Sync - Daily at 5 AM"));
+            .WithDescription("NFL Schedule Sync - Every hour"));
 
         // ============================================
         // NFL Player Sync Job
@@ -249,8 +249,8 @@ try
     });
 
     Log.Information("ESPN Scrape Service started with scheduled jobs:");
-    Log.Information("  📊 NFLWeeklyJob: Every Tuesday at 6:00 AM");
-    Log.Information("  🗓️ NFLScheduleSyncJob: Daily at 5:00 AM");
+    Log.Information("  📊 NFLWeeklyJob: Every 2 hours");
+    Log.Information("  🗓️ NFLScheduleSyncJob: Every hour");
     Log.Information("  👤 NFLPlayerSyncJob: Daily at 4:00 AM");
     Log.Information("  📸 NFLPlayerHeadshotJob: Every Sunday at 3:00 AM");
     Log.Information("Health check endpoints: /health, /health/live, /health/ready");
