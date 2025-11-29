@@ -141,6 +141,16 @@ try
             .UsingJobData("endWeek", 18)
             .WithDescription("NFL Weekly Stats - Every 2 hours"));
 
+        // Trigger immediately on startup
+        q.AddTrigger(opts => opts
+            .ForJob(weeklyStatsJobKey)
+            .WithIdentity("NFLWeeklyJob-startup-trigger")
+            .StartNow()
+            .UsingJobData("season", 2025)
+            .UsingJobData("startWeek", 1)
+            .UsingJobData("endWeek", 18)
+            .WithDescription("NFL Weekly Stats - Startup Trigger"));
+
         // ============================================
         // NFL Schedule Sync Job
         // Runs every hour to catch schedule updates
