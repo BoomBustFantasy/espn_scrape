@@ -8,16 +8,13 @@ namespace ESPNScrape.Controllers;
 public class ESPNController : ControllerBase
 {
     private readonly IESPNDataService _espnService;
-    private readonly ISupabaseService _supabaseService;
     private readonly ILogger<ESPNController> _logger;
 
     public ESPNController(
         IESPNDataService espnService,
-        ISupabaseService supabaseService,
         ILogger<ESPNController> logger)
     {
         _espnService = espnService;
-        _supabaseService = supabaseService;
         _logger = logger;
     }
 

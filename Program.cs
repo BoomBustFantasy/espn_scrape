@@ -101,7 +101,6 @@ try
     builder.Services.AddScoped<IImageStore, SupabaseImageStore>();
 
     // Register services
-    builder.Services.AddScoped<ISupabaseService, SupabaseService>();
     builder.Services.AddScoped<ImageProcessingService>();
 
     // Add ASP.NET Core services

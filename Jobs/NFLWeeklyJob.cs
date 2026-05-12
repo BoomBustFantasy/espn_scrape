@@ -12,13 +12,16 @@ public class NFLWeeklyJob : IJob
 {
     private readonly ILogger<NFLWeeklyJob> _logger;
     private readonly IESPNDataService _espnDataService;
-    private readonly ISupabaseService _supabaseService;
+    private readonly IPlayerRepository _playerRepository;
+    private readonly IPlayerStatRepository _playerStatRepository;
 
-    public NFLWeeklyJob(ILogger<NFLWeeklyJob> logger, IESPNDataService espnDataService, ISupabaseService supabaseService)
+    public NFLWeeklyJob(ILogger<NFLWeeklyJob> logger, IESPNDataService espnDataService,
+        IPlayerRepository playerRepository, IPlayerStatRepository playerStatRepository)
     {
         _logger = logger;
         _espnDataService = espnDataService;
-        _supabaseService = supabaseService;
+        _playerRepository = playerRepository;
+        _playerStatRepository = playerStatRepository;
     }
 
     public async Task Execute(IJobExecutionContext context)
@@ -33,7 +36,7 @@ public class NFLWeeklyJob : IJob
         try
         {
             // Load the full player list once for the entire job run
-            var allPlayers = await _supabaseService.GetPlayersAsync();
+            var allPlayers = await _playerRepository.GetPlayersAsync();
 
             _logger.LogInformation("Loaded {PlayerCount} players from database", allPlayers.Count);
 
@@ -213,7 +216,7 @@ public class NFLWeeklyJob : IJob
             var upsertedCount = 0;
             try
             {
-                upsertedCount = await _supabaseService.UpsertPlayerStatsBatchAsync(playerStatsToUpsert);
+                upsertedCount = await _playerStatRepository.UpsertPlayerStatsBatchAsync(playerStatsToUpsert);
             }
             catch (Exception ex)
             {
