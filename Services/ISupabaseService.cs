@@ -7,7 +7,6 @@ public interface ISupabaseService
     Task<List<Player>> GetPlayersAsync(string? espnPlayerId = null);
     Task<List<Player>> GetPlayersByTeamIdAsync(int teamId);
     Task<Player?> GetPlayerByEspnIdAsync(string espnPlayerId);
-    Task<List<Player>> SearchPlayersByNameAsync(string firstName, string lastName, string? teamAbbreviation = null);
     Task<bool> UpsertPlayerStatAsync(PlayerStat playerStat);
     Task<int> UpsertPlayerStatsBatchAsync(IEnumerable<PlayerStat> playerStats);
     Task<List<PlayerStat>> GetPlayerStatsAsync(string playerCode, DateTime? startDate = null, DateTime? endDate = null);
