@@ -126,54 +126,6 @@ public class SupabaseService : ISupabaseService
     }
 
     /// <summary>
-    /// Searches for players by name and team for fuzzy matching
-    /// Used when ESPN player ID is not available or doesn't match
-    /// </summary>
-    /// <param name="firstName">Player's first name</param>
-    /// <param name="lastName">Player's last name</param>
-    /// <param name="teamAbbreviation">Team abbreviation (optional)</param>
-    /// <returns>List of potential player matches</returns>
-    public async Task<List<Player>> SearchPlayersByNameAsync(string firstName, string lastName, string? teamAbbreviation = null)
-    {
-        if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName))
-        {
-            _logger.LogWarning("SearchPlayersByNameAsync called with empty name parameters");
-            return new List<Player>();
-        }
-
-        try
-        {
-            var query = _supabaseClient
-                .From<Player>()
-                .Select("*");
-
-            var response = await query.Get();
-            var allPlayers = response.Models;
-
-            // Filter by name
-            var filteredPlayers = allPlayers
-                .Where(p => p.FirstName.Contains(firstName, StringComparison.OrdinalIgnoreCase) &&
-                           p.LastName.Contains(lastName, StringComparison.OrdinalIgnoreCase))
-                .ToList();
-
-            // Add team filter if provided (client-side filtering for now)
-            if (!string.IsNullOrEmpty(teamAbbreviation))
-            {
-                // This will need team data loaded separately or joined properly
-                return filteredPlayers;
-            }
-
-            return filteredPlayers;
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "Error searching for players by name: {FirstName} {LastName}, Team: {Team}",
-                firstName, lastName, teamAbbreviation);
-            return new List<Player>();
-        }
-    }
-
-    /// <summary>
     /// Upserts player statistics into the PlayerStats table
     /// Uses composite primary key (player_code, game_date) for conflict resolution
     /// </summary>
