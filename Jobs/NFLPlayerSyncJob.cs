@@ -16,18 +16,15 @@ public class NFLPlayerSyncJob : IJob
     private readonly ILogger<NFLPlayerSyncJob> _logger;
     private readonly IESPNDataService _espnDataService;
     private readonly ISupabaseService _supabaseService;
-    private readonly IESPNPlayerMappingService _playerMappingService;
 
     public NFLPlayerSyncJob(
         ILogger<NFLPlayerSyncJob> logger,
         IESPNDataService espnDataService,
-        ISupabaseService supabaseService,
-        IESPNPlayerMappingService playerMappingService)
+        ISupabaseService supabaseService)
     {
         _logger = logger;
         _espnDataService = espnDataService;
         _supabaseService = supabaseService;
-        _playerMappingService = playerMappingService;
     }
 
     public async Task Execute(IJobExecutionContext context)
@@ -99,7 +96,7 @@ public class NFLPlayerSyncJob : IJob
 
                         try
                         {
-                            var result = await ProcessPlayerSync(espnPlayer, espnTeam.DisplayName, supabaseTeamId.Value, dbPlayers);
+                            var result = await ProcessPlayerSync(espnPlayer, espnTeam.DisplayName, espnTeam.Id, supabaseTeamId.Value, dbPlayers);
 
                             if (result.Matched) totalPlayersMatched++;
                             if (result.Updated) totalPlayersUpdated++;
@@ -144,6 +141,7 @@ public class NFLPlayerSyncJob : IJob
     private async Task<(bool Matched, bool Updated, bool NewPlayer)> ProcessPlayerSync(
         Player espnPlayer,
         string teamName,
+        string espnTeamId,
         int supabaseTeamId,
         List<Models.Supa.Player> dbPlayers)
     {
@@ -165,28 +163,33 @@ public class NFLPlayerSyncJob : IJob
             return (true, false, false);
         }
 
-        // Try to find player by name in the database players for this team
-        var matchedPlayer = FindPlayerByName(espnPlayer, dbPlayers);
+        // Try to resolve the player using PlayerResolver
+        var resolvedPlayerId = PlayerResolver.Resolve(dbPlayers, espnPlayerId, espnTeamId, playerName);
 
-        if (matchedPlayer != null)
+        if (resolvedPlayerId != null)
         {
-            // Found a match! Update with ESPN player ID
+            var matchedPlayer = dbPlayers.FirstOrDefault(p => p.Id == resolvedPlayerId);
+
+            // Found a match — update with ESPN player ID
             _logger.LogInformation("🎯 Matched ESPN player {EspnName} (ID: {EspnId}) to database player {DbName} (ID: {DbId})",
                 playerName, espnPlayerId,
-                $"{matchedPlayer.FirstName} {matchedPlayer.LastName}", matchedPlayer.Id);
+                matchedPlayer != null ? $"{matchedPlayer.FirstName} {matchedPlayer.LastName}" : resolvedPlayerId.ToString(),
+                resolvedPlayerId);
 
-            var updateSuccess = await _supabaseService.UpdatePlayerEspnIdAsync(matchedPlayer.Id, espnPlayerId);
+            var updateSuccess = await _supabaseService.UpdatePlayerEspnIdAsync(resolvedPlayerId.Value, espnPlayerId);
 
             if (updateSuccess)
             {
                 _logger.LogInformation("✅ Successfully updated player {PlayerName} with ESPN ID {EspnId}",
-                    $"{matchedPlayer.FirstName} {matchedPlayer.LastName}", espnPlayerId);
+                    matchedPlayer != null ? $"{matchedPlayer.FirstName} {matchedPlayer.LastName}" : resolvedPlayerId.ToString(),
+                    espnPlayerId);
                 return (true, true, false);
             }
             else
             {
                 _logger.LogError("❌ Failed to update player {PlayerName} with ESPN ID {EspnId}",
-                    $"{matchedPlayer.FirstName} {matchedPlayer.LastName}", espnPlayerId);
+                    matchedPlayer != null ? $"{matchedPlayer.FirstName} {matchedPlayer.LastName}" : resolvedPlayerId.ToString(),
+                    espnPlayerId);
                 return (true, false, false);
             }
         }
@@ -197,80 +200,6 @@ public class NFLPlayerSyncJob : IJob
                 playerName, espnPlayerId, teamName);
             return (false, false, false);
         }
-    }
-
-    private Models.Supa.Player? FindPlayerByName(Player espnPlayer, List<Models.Supa.Player> dbPlayers)
-    {
-        if (espnPlayer == null || string.IsNullOrEmpty(espnPlayer.FirstName) || string.IsNullOrEmpty(espnPlayer.LastName))
-            return null;
-
-        var espnFirstName = NormalizeName(espnPlayer.FirstName);
-        var espnLastName = NormalizeName(espnPlayer.LastName);
-
-        // Try exact match first
-        var exactMatch = dbPlayers.FirstOrDefault(p =>
-            NormalizeName(p.FirstName) == espnFirstName &&
-            NormalizeName(p.LastName) == espnLastName);
-
-        if (exactMatch != null)
-        {
-            _logger.LogDebug("Found exact match: '{DbFirst}' '{DbLast}' (ID: {PlayerId})",
-                exactMatch.FirstName, exactMatch.LastName, exactMatch.Id);
-            return exactMatch;
-        }
-
-        // Try fuzzy matching for common name variations
-        var fuzzyMatch = dbPlayers.FirstOrDefault(p =>
-        {
-            var dbFirstName = NormalizeName(p.FirstName);
-            var dbLastName = NormalizeName(p.LastName);
-
-            // Check if last names match exactly and first names are similar
-            if (dbLastName == espnLastName)
-            {
-                // Handle common first name variations
-                // e.g., "Pat" vs "Patrick", "Mike" vs "Michael"
-                if (dbFirstName.StartsWith(espnFirstName) || espnFirstName.StartsWith(dbFirstName))
-                    return true;
-
-                // Handle middle names/initials
-                var dbFirstParts = dbFirstName.Split(' ');
-                var espnFirstParts = espnFirstName.Split(' ');
-
-                if (dbFirstParts.Length > 0 && espnFirstParts.Length > 0)
-                {
-                    if (dbFirstParts[0] == espnFirstParts[0])
-                        return true;
-                }
-            }
-
-            return false;
-        });
-
-        if (fuzzyMatch != null)
-        {
-            _logger.LogDebug("Fuzzy matched ESPN '{EspnFirst} {EspnLast}' to DB '{DbFirst} {DbLast}'",
-                espnPlayer.FirstName, espnPlayer.LastName,
-                fuzzyMatch.FirstName, fuzzyMatch.LastName);
-        }
-
-        return fuzzyMatch;
-    }
-
-    private static string NormalizeName(string name)
-    {
-        if (string.IsNullOrEmpty(name))
-            return "";
-
-        // Convert to uppercase, remove extra spaces, trim
-        // Remove periods (for names like "St. Brown" vs "St Brown")
-        // Remove common suffixes like Jr., Sr., III, etc.
-        var normalized = name.Trim().ToUpperInvariant();
-        normalized = normalized.Replace(".", ""); // Remove periods
-        normalized = System.Text.RegularExpressions.Regex.Replace(normalized, @"\s+", " ");
-        normalized = System.Text.RegularExpressions.Regex.Replace(normalized, @"\s+(JR\.?|SR\.?|III|IV|II)$", "", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
-
-        return normalized.Trim();
     }
 
     private async Task<List<Models.Supa.Player>> GetTeamPlayersFromDatabase(int teamId)
