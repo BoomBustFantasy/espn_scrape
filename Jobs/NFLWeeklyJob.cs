@@ -2,6 +2,7 @@ using System.Text.Json;
 using ESPNScrape.Models;
 using ESPNScrape.Models.Supa;
 using ESPNScrape.Services;
+using ESPNScrape.Utils;
 using Microsoft.Extensions.Logging;
 using Quartz;
 
@@ -55,8 +56,34 @@ public class NFLWeeklyJob : IJob
             else
             {
                 // Determine current NFL season and weeks to check
-                currentSeason = await GetCurrentNFLSeason();
-                weeksToCheck = await GetWeeksToCheck(currentSeason);
+                currentSeason = NFLCalendar.GetCurrentSeason();
+                var candidateWeeks = NFLCalendar.GetWeeksToCheck(currentSeason, DateTime.Now);
+                _logger.LogInformation("Weeks to check for season {Season}: [{Weeks}]", currentSeason, string.Join(", ", candidateWeeks));
+
+                weeksToCheck = new List<int>();
+                foreach (var week in candidateWeeks)
+                {
+                    var games = await _espnDataService.GetNFLWeekGamesAsync(currentSeason, week);
+                    if (games != null && games.Any())
+                    {
+                        weeksToCheck.Add(week);
+                        _logger.LogInformation("Week {Week} has {GameCount} games - added to processing list", week, games.Count());
+                    }
+                    else
+                    {
+                        _logger.LogInformation("Week {Week} has no games - skipping", week);
+                    }
+                    await Task.Delay(100);
+                }
+
+                if (!weeksToCheck.Any())
+                {
+                    var estimatedWeek = NFLCalendar.EstimateCurrentWeek(DateTime.Now);
+                    _logger.LogWarning("No weeks with games found, falling back to estimated week {Week}", estimatedWeek);
+                    weeksToCheck.Add(estimatedWeek);
+                }
+
+                weeksToCheck = weeksToCheck.OrderBy(w => w).ToList();
 
                 _logger.LogInformation("Determined current season: {Season}, checking weeks: [{Weeks}]",
                     currentSeason, string.Join(", ", weeksToCheck));
@@ -107,30 +134,6 @@ public class NFLWeeklyJob : IJob
         }
     }
 
-    private async Task<int> GetCurrentNFLSeason()
-    {
-        try
-        {
-            // For now, use current year but adjust for NFL season timing
-            var currentDate = DateTime.Now;
-            var currentYear = currentDate.Year;
-
-            // NFL season typically runs from September to February of next year
-            // If we're in January-July, the NFL season year is the previous year
-            if (currentDate.Month <= 7)
-            {
-                return currentYear - 1;
-            }
-
-            return currentYear;
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "Error determining current NFL season, defaulting to 2025");
-            return 2025;
-        }
-    }
-
     private async Task<int> GetLastCompletedWeek(int season)
     {
         try
@@ -149,7 +152,7 @@ public class NFLWeeklyJob : IJob
             }
 
             // Check weeks from most recent backwards to find one with games
-            var estimatedWeek = EstimateCurrentWeekFromDate(currentDate);
+        var estimatedWeek = NFLCalendar.EstimateCurrentWeek(currentDate);
 
             for (int week = estimatedWeek; week >= 1; week--)
             {
@@ -174,92 +177,6 @@ public class NFLWeeklyJob : IJob
         {
             _logger.LogError(ex, "Error determining last completed week, defaulting to week 7");
             return 7;
-        }
-    }
-
-    private int EstimateCurrentWeekFromDate(DateTime date)
-    {
-        // NFL season typically starts first Thursday after Labor Day (early September)
-        // Rough estimation: if it's October 20th, we're probably around week 7-8
-        if (date.Month == 9)
-        {
-            return Math.Max(1, (date.Day - 5) / 7); // Weeks 1-4 in September
-        }
-        else if (date.Month == 10)
-        {
-            // Late October 2025 - we're likely in week 8 or 9
-            if (date.Day >= 26) return 9;  // Late October likely week 9
-            if (date.Day >= 19) return 8;  // Mid-late October likely week 8  
-            return Math.Min(8, 4 + (date.Day / 7)); // Earlier October weeks 5-7
-        }
-        else if (date.Month == 11)
-        {
-            return Math.Min(12, 8 + (date.Day / 7)); // Weeks 9-12 in November
-        }
-        else if (date.Month == 12)
-        {
-            return Math.Min(17, 12 + (date.Day / 7)); // Weeks 13-17 in December
-        }
-        else if (date.Month == 1)
-        {
-            return 18; // Week 18 typically in January
-        }
-
-        return 7; // Default fallback
-    }
-
-    private async Task<List<int>> GetWeeksToCheck(int season)
-    {
-        try
-        {
-            var currentDate = DateTime.Now;
-            var estimatedCurrentWeek = EstimateCurrentWeekFromDate(currentDate);
-            var weeksToCheck = new List<int>();
-
-            _logger.LogInformation("Estimated current week based on date ({CurrentDate}): {EstimatedWeek}",
-                currentDate.ToString("yyyy-MM-dd"), estimatedCurrentWeek);
-
-            // Check the estimated current week and the previous week
-            // This ensures we catch:
-            // 1. Games from last week that might have been missed
-            // 2. Games from current week that have already finished
-            var startWeek = Math.Max(1, estimatedCurrentWeek - 1); // Previous week
-            var endWeek = Math.Min(18, estimatedCurrentWeek); // Current week
-
-            for (int week = startWeek; week <= endWeek; week++)
-            {
-                // Check if this week has any games
-                var games = await _espnDataService.GetNFLWeekGamesAsync(season, week);
-
-                if (games != null && games.Any())
-                {
-                    weeksToCheck.Add(week);
-                    _logger.LogInformation("Week {Week} has {GameCount} games - added to processing list",
-                        week, games.Count());
-                }
-                else
-                {
-                    _logger.LogInformation("Week {Week} has no games - skipping", week);
-                }
-
-                // Add small delay to avoid rate limiting
-                await Task.Delay(100);
-            }
-
-            // If no weeks found, fallback to estimated current week
-            if (!weeksToCheck.Any())
-            {
-                _logger.LogWarning("No weeks with games found, falling back to estimated week {Week}", estimatedCurrentWeek);
-                weeksToCheck.Add(estimatedCurrentWeek);
-            }
-
-            return weeksToCheck.OrderBy(w => w).ToList();
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "Error determining weeks to check, falling back to current week estimation");
-            var fallbackWeek = EstimateCurrentWeekFromDate(DateTime.Now);
-            return new List<int> { fallbackWeek };
         }
     }
 

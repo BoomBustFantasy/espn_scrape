@@ -1,6 +1,7 @@
 using ESPNScrape.Models;
 using ESPNScrape.Models.Supa;
 using ESPNScrape.Services;
+using ESPNScrape.Utils;
 using Microsoft.Extensions.Logging;
 using Quartz;
 
@@ -61,7 +62,7 @@ public class NFLScheduleSyncJob : IJob
             else
             {
                 // Default: sync current season regular season and playoffs
-                currentSeason = await GetCurrentNFLSeason();
+                currentSeason = NFLCalendar.GetCurrentSeason();
                 weeksToSync = Enumerable.Range(1, 18).ToList(); // Regular season weeks 1-18
                 seasonTypesToSync = new List<int> { 2, 3 }; // Regular season (2) and Playoffs (3)
 
@@ -373,29 +374,6 @@ public class NFLScheduleSyncJob : IJob
         catch
         {
             return $"Team {teamId}";
-        }
-    }
-
-    private async Task<int> GetCurrentNFLSeason()
-    {
-        try
-        {
-            var currentDate = DateTime.Now;
-            var currentYear = currentDate.Year;
-
-            // NFL season runs from September to February of next year
-            // If we're in January-July, the NFL season year is the previous year
-            if (currentDate.Month <= 7)
-            {
-                return currentYear - 1;
-            }
-
-            return currentYear;
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "Error determining current NFL season, defaulting to 2025");
-            return 2025;
         }
     }
 

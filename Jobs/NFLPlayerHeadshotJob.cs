@@ -2,6 +2,7 @@ using System.Text.Json;
 using ESPNScrape.Models;
 using ESPNScrape.Models.Supa;
 using ESPNScrape.Services;
+using ESPNScrape.Utils;
 using Microsoft.Extensions.Logging;
 using Quartz;
 
@@ -43,7 +44,7 @@ public class NFLPlayerHeadshotJob : IJob
         try
         {
             // Get current NFL season
-            var currentSeason = await GetCurrentNFLSeason();
+            var currentSeason = NFLCalendar.GetCurrentSeason();
             _logger.LogInformation("Processing headshots for NFL {Season} season", currentSeason);
 
             // Get all NFL teams for the current season
@@ -495,29 +496,6 @@ public class NFLPlayerHeadshotJob : IJob
             _logger.LogError(ex, "Error updating headshot info for player {PlayerName} (ESPN ID: {EspnId})",
                 playerName, espnPlayerId);
             return false;
-        }
-    }
-
-    private async Task<int> GetCurrentNFLSeason()
-    {
-        try
-        {
-            var currentDate = DateTime.Now;
-            var currentYear = currentDate.Year;
-
-            // NFL season runs from September to February of next year
-            // If we're in January-July, the NFL season year is the previous year
-            if (currentDate.Month <= 7)
-            {
-                return currentYear - 1;
-            }
-
-            return currentYear;
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "Error determining current NFL season, defaulting to 2025");
-            return 2025;
         }
     }
 
