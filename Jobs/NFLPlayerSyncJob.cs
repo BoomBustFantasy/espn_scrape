@@ -14,16 +14,16 @@ namespace ESPNScrape.Jobs;
 public class NFLPlayerSyncJob : IJob
 {
     private readonly ILogger<NFLPlayerSyncJob> _logger;
-    private readonly IESPNDataService _espnDataService;
+    private readonly IESPNRosterSource _espnRosterSource;
     private readonly IPlayerRepository _playerRepository;
 
     public NFLPlayerSyncJob(
         ILogger<NFLPlayerSyncJob> logger,
-        IESPNDataService espnDataService,
+        IESPNRosterSource espnRosterSource,
         IPlayerRepository playerRepository)
     {
         _logger = logger;
-        _espnDataService = espnDataService;
+        _espnRosterSource = espnRosterSource;
         _playerRepository = playerRepository;
     }
 
@@ -45,7 +45,7 @@ public class NFLPlayerSyncJob : IJob
             _logger.LogInformation("Processing players for NFL {Season} season", currentSeason);
 
             // Get all NFL teams for the current season from ESPN
-            var espnTeams = await _espnDataService.GetNFLTeamsAsync(currentSeason);
+            var espnTeams = await _espnRosterSource.GetNFLTeamsAsync(currentSeason);
 
             if (espnTeams == null || !espnTeams.Any())
             {
@@ -73,7 +73,7 @@ public class NFLPlayerSyncJob : IJob
                     }
 
                     // Get team roster from ESPN
-                    var espnRoster = await _espnDataService.GetTeamRosterAsync(currentSeason, espnTeam.Id);
+                    var espnRoster = await _espnRosterSource.GetTeamRosterAsync(espnTeam.Id, currentSeason);
 
                     if (espnRoster == null || !espnRoster.Any())
                     {

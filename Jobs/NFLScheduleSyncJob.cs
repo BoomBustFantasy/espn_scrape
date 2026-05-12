@@ -14,16 +14,16 @@ namespace ESPNScrape.Jobs;
 public class NFLScheduleSyncJob : IJob
 {
     private readonly ILogger<NFLScheduleSyncJob> _logger;
-    private readonly IESPNDataService _espnDataService;
+    private readonly IESPNGameSource _espnGameSource;
     private readonly IScheduleRepository _scheduleRepository;
 
     public NFLScheduleSyncJob(
         ILogger<NFLScheduleSyncJob> logger,
-        IESPNDataService espnDataService,
+        IESPNGameSource espnGameSource,
         IScheduleRepository scheduleRepository)
     {
         _logger = logger;
-        _espnDataService = espnDataService;
+        _espnGameSource = espnGameSource;
         _scheduleRepository = scheduleRepository;
     }
 
@@ -39,87 +39,60 @@ public class NFLScheduleSyncJob : IJob
 
         try
         {
-            // Check for job data parameters (used for specific season/week ranges)
             var jobDataMap = context.MergedJobDataMap;
             int currentSeason;
             List<int> weeksToSync;
-            List<int> seasonTypesToSync;
 
             if (jobDataMap.ContainsKey("season"))
             {
-                // Use explicit season and week range from job data
                 currentSeason = jobDataMap.GetInt("season");
                 var startWeek = jobDataMap.ContainsKey("startWeek") ? jobDataMap.GetInt("startWeek") : 1;
                 var endWeek = jobDataMap.ContainsKey("endWeek") ? jobDataMap.GetInt("endWeek") : 18;
-                var seasonType = jobDataMap.ContainsKey("seasonType") ? jobDataMap.GetInt("seasonType") : 2; // Default to regular season
-
                 weeksToSync = Enumerable.Range(startWeek, endWeek - startWeek + 1).ToList();
-                seasonTypesToSync = new List<int> { seasonType };
-
-                _logger.LogInformation("Using explicit season {Season}, weeks {StartWeek}-{EndWeek}, season type {SeasonType} from job data",
-                    currentSeason, startWeek, endWeek, seasonType);
+                _logger.LogInformation("Using explicit season {Season}, weeks {StartWeek}-{EndWeek} from job data",
+                    currentSeason, startWeek, endWeek);
             }
             else
             {
-                // Default: sync current season regular season and playoffs
                 currentSeason = NFLCalendar.GetCurrentSeason();
-                weeksToSync = Enumerable.Range(1, 18).ToList(); // Regular season weeks 1-18
-                seasonTypesToSync = new List<int> { 2, 3 }; // Regular season (2) and Playoffs (3)
-
-                _logger.LogInformation("Syncing season {Season} for season types: [{SeasonTypes}], weeks: [{Weeks}]",
-                    currentSeason, string.Join(", ", seasonTypesToSync), string.Join(", ", weeksToSync));
+                weeksToSync = Enumerable.Range(1, 18).ToList();
+                _logger.LogInformation("Syncing season {Season} weeks 1-18", currentSeason);
             }
 
-            // Process each season type (regular season, playoffs, etc.)
-            foreach (var seasonType in seasonTypesToSync)
+            foreach (var week in weeksToSync)
             {
-                var seasonTypeName = GetSeasonTypeName(seasonType);
-                _logger.LogInformation("=== PROCESSING {SeasonTypeName} (Type {SeasonType}) ===", seasonTypeName, seasonType);
+                _logger.LogInformation("Processing Regular Season Week {Week}", week);
 
-                // For playoffs, adjust week range
-                var actualWeeksToSync = seasonType == 3 ? GetPlayoffWeeks() : weeksToSync;
-
-                foreach (var week in actualWeeksToSync)
+                try
                 {
-                    _logger.LogInformation("Processing {SeasonTypeName} Week {Week}", seasonTypeName, week);
+                    var games = await _espnGameSource.GetNFLWeekGamesAsync(currentSeason, week);
 
-                    try
+                    if (games == null || !games.Any())
                     {
-                        // Get games for this season/week/type
-                        var games = await _espnDataService.GetWeeklyGamesAsync(currentSeason, seasonType, week);
-
-                        if (games == null || !games.Any())
-                        {
-                            _logger.LogInformation("No games found for {SeasonTypeName} {Season} Week {Week}",
-                                seasonTypeName, currentSeason, week);
-                            continue;
-                        }
-
-                        _logger.LogInformation("Found {GameCount} games for {SeasonTypeName} {Season} Week {Week}",
-                            games.Count, seasonTypeName, currentSeason, week);
-
-                        // Process each game
-                        foreach (var game in games)
-                        {
-                            var (created, updated, error) = await ProcessGameSchedule(game, currentSeason, seasonType, week);
-
-                            totalGamesProcessed++;
-                            if (created) totalGamesCreated++;
-                            if (updated) totalGamesUpdated++;
-                            if (error) totalErrors++;
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        totalErrors++;
-                        _logger.LogError(ex, "Error processing {SeasonTypeName} Week {Week}", seasonTypeName, week);
+                        _logger.LogInformation("No games found for Regular Season {Season} Week {Week}", currentSeason, week);
+                        continue;
                     }
 
-                    // Delay between weeks to be respectful to ESPN's servers
-                    await Task.Delay(500);
+                    _logger.LogInformation("Found {GameCount} games for Regular Season {Season} Week {Week}",
+                        games.Count, currentSeason, week);
+
+                    foreach (var game in games)
+                    {
+                        var (created, updated, error) = await ProcessGameSchedule(game, currentSeason, 2, week);
+
+                        totalGamesProcessed++;
+                        if (created) totalGamesCreated++;
+                        if (updated) totalGamesUpdated++;
+                        if (error) totalErrors++;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    totalErrors++;
+                    _logger.LogError(ex, "Error processing Regular Season Week {Week}", week);
                 }
 
-                _logger.LogInformation("=== COMPLETED {SeasonTypeName} ===", seasonTypeName);
+                await Task.Delay(500);
             }
 
             // Log overall job summary
@@ -148,7 +121,7 @@ public class NFLScheduleSyncJob : IJob
             var existingSchedule = await _scheduleRepository.GetScheduleByEspnGameIdAsync(game.Id);
 
             // Extract team information
-            var (homeTeamId, awayTeamId) = await ExtractTeamIds(game);
+            var (homeTeamId, awayTeamId) = ExtractTeamIds(game);
 
             if (!homeTeamId.HasValue || !awayTeamId.HasValue)
             {
@@ -236,7 +209,7 @@ public class NFLScheduleSyncJob : IJob
         }
     }
 
-    private async Task<(long? homeTeamId, long? awayTeamId)> ExtractTeamIds(Game game)
+    private (long? homeTeamId, long? awayTeamId) ExtractTeamIds(Game game)
     {
         try
         {
@@ -253,16 +226,16 @@ public class NFLScheduleSyncJob : IJob
             if (homeCompetitor?.Team == null || awayCompetitor?.Team == null)
                 return (null, null);
 
-            // Get team data from ESPN references
-            var homeTeamData = await GetTeamFromReference(homeCompetitor.Team);
-            var awayTeamData = await GetTeamFromReference(awayCompetitor.Team);
+            // Parse ESPN team IDs directly from the $ref URLs (avoids an extra HTTP call per team)
+            var homeEspnId = ParseTeamIdFromUrl(homeCompetitor.Team.GetUrl());
+            var awayEspnId = ParseTeamIdFromUrl(awayCompetitor.Team.GetUrl());
 
-            if (homeTeamData?.Id == null || awayTeamData?.Id == null)
+            if (homeEspnId == null || awayEspnId == null)
                 return (null, null);
 
             // Map ESPN team IDs to Supabase team IDs
-            var homeTeamId = ESPNTeamMapper.MapEspnIdToSupabaseId(homeTeamData.Id);
-            var awayTeamId = ESPNTeamMapper.MapEspnIdToSupabaseId(awayTeamData.Id);
+            var homeTeamId = ESPNTeamMapper.MapEspnIdToSupabaseId(homeEspnId);
+            var awayTeamId = ESPNTeamMapper.MapEspnIdToSupabaseId(awayEspnId);
 
             return (homeTeamId, awayTeamId);
         }
@@ -273,21 +246,13 @@ public class NFLScheduleSyncJob : IJob
         }
     }
 
-    private async Task<Models.Team?> GetTeamFromReference(TeamReference teamReference)
+    private static string? ParseTeamIdFromUrl(string url)
     {
-        try
-        {
-            if (string.IsNullOrEmpty(teamReference.GetUrl()))
-                return null;
-
-            var teamData = await _espnDataService.GetTeamFromUrlAsync(teamReference.GetUrl());
-            return teamData;
-        }
-        catch (Exception ex)
-        {
-            _logger.LogWarning(ex, "Failed to fetch team from reference: {TeamRef}", teamReference.GetUrl());
-            return null;
-        }
+        // ESPN team URLs: .../teams/{id} or .../teams/{id}?...
+        if (string.IsNullOrEmpty(url)) return null;
+        var path = url.Split('?')[0].TrimEnd('/');
+        var lastSegment = path.Split('/')[^1];
+        return string.IsNullOrEmpty(lastSegment) ? null : lastSegment;
     }
 
     private async Task ExtractBettingInfo(Game game, Models.Supa.Schedule scheduleRecord)
@@ -310,7 +275,7 @@ public class NFLScheduleSyncJob : IJob
             }
 
             _logger.LogDebug("Fetching odds data from URL: {OddsUrl} for game {GameId}", oddsUrl, game.Id);
-            var odds = await _espnDataService.GetOddsAsync(oddsUrl);
+            var odds = await _espnGameSource.GetOddsAsync(oddsUrl);
             if (odds == null)
             {
                 _logger.LogDebug("No odds data returned for game {GameId}", game.Id);
@@ -362,18 +327,4 @@ public class NFLScheduleSyncJob : IJob
         }
     }
 
-
-    private static string GetSeasonTypeName(int seasonType) => seasonType switch
-    {
-        1 => "Preseason",
-        2 => "Regular Season",
-        3 => "Playoffs",
-        _ => $"Season Type {seasonType}"
-    };
-
-    private static List<int> GetPlayoffWeeks()
-    {
-        // NFL Playoffs typically have weeks 19-22 (Wild Card, Divisional, Conference, Super Bowl)
-        return new List<int> { 19, 20, 21, 22 };
-    }
 }
