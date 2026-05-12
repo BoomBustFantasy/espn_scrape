@@ -12,7 +12,7 @@ namespace ESPNScrape.Tests.Jobs;
 public class NFLWeeklyJobTests
 {
     private readonly Mock<ILogger<NFLWeeklyJob>> _mockLogger;
-    private readonly Mock<IESPNDataService> _mockEspnService;
+    private readonly Mock<IESPNGameSource> _mockEspnGameSource;
     private readonly Mock<IPlayerRepository> _mockPlayerRepository;
     private readonly Mock<IPlayerStatRepository> _mockPlayerStatRepository;
     private readonly NFLWeeklyJob _job;
@@ -20,7 +20,7 @@ public class NFLWeeklyJobTests
     public NFLWeeklyJobTests()
     {
         _mockLogger = new Mock<ILogger<NFLWeeklyJob>>();
-        _mockEspnService = new Mock<IESPNDataService>();
+        _mockEspnGameSource = new Mock<IESPNGameSource>();
         _mockPlayerRepository = new Mock<IPlayerRepository>();
         _mockPlayerStatRepository = new Mock<IPlayerStatRepository>();
 
@@ -30,7 +30,7 @@ public class NFLWeeklyJobTests
 
         _job = new NFLWeeklyJob(
             _mockLogger.Object,
-            _mockEspnService.Object,
+            _mockEspnGameSource.Object,
             _mockPlayerRepository.Object,
             _mockPlayerStatRepository.Object
         );
@@ -50,7 +50,7 @@ public class NFLWeeklyJobTests
         var mockContext = new Mock<IJobExecutionContext>();
         mockContext.Setup(c => c.MergedJobDataMap).Returns(jobData);
 
-        _mockEspnService
+        _mockEspnGameSource
             .Setup(s => s.GetNFLWeekGamesAsync(2025, 1))
             .ReturnsAsync(new List<Game>()); // Return empty list to stop processing early
 
@@ -58,6 +58,6 @@ public class NFLWeeklyJobTests
         await _job.Execute(mockContext.Object);
 
         // Assert
-        _mockEspnService.Verify(s => s.GetNFLWeekGamesAsync(2025, 1), Times.Once);
+        _mockEspnGameSource.Verify(s => s.GetNFLWeekGamesAsync(2025, 1), Times.Once);
     }
 }
