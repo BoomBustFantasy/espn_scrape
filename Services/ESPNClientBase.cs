@@ -6,7 +6,7 @@ namespace ESPNScrape.Services;
 
 public abstract class ESPNClientBase
 {
-    private readonly HttpClient _httpClient;
+    protected readonly HttpClient _httpClient;
     private readonly ILogger _logger;
 
     protected readonly JsonSerializerOptions JsonOptions = new()
