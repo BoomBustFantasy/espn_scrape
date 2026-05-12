@@ -180,8 +180,8 @@ public class NFLScheduleSyncJob : IJob
                 if (success)
                 {
                     created = true;
-                    _logger.LogInformation("✅ Created schedule record for game {GameId}: {AwayTeam} @ {HomeTeam}",
-                        game.Id, await GetTeamName(awayTeamId.Value), await GetTeamName(homeTeamId.Value));
+                    _logger.LogInformation("✅ Created schedule record for game {GameId}: Team {AwayTeamId} @ Team {HomeTeamId}",
+                        game.Id, awayTeamId.Value, homeTeamId.Value);
                 }
                 else
                 {
@@ -362,20 +362,6 @@ public class NFLScheduleSyncJob : IJob
         }
     }
 
-
-
-    private async Task<string> GetTeamName(long teamId)
-    {
-        try
-        {
-            var team = await _supabaseService.GetTeamByIdAsync(teamId);
-            return team?.Abbreviation ?? $"Team {teamId}";
-        }
-        catch
-        {
-            return $"Team {teamId}";
-        }
-    }
 
     private static string GetSeasonTypeName(int seasonType) => seasonType switch
     {
