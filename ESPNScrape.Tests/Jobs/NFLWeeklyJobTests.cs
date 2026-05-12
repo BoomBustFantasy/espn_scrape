@@ -1,5 +1,6 @@
 using ESPNScrape.Jobs;
 using ESPNScrape.Models;
+using ESPNScrape.Models.Supa;
 using ESPNScrape.Services;
 using Microsoft.Extensions.Logging;
 using Moq;
@@ -12,7 +13,6 @@ public class NFLWeeklyJobTests
 {
     private readonly Mock<ILogger<NFLWeeklyJob>> _mockLogger;
     private readonly Mock<IESPNDataService> _mockEspnService;
-    private readonly Mock<IESPNPlayerMappingService> _mockMappingService;
     private readonly Mock<ISupabaseService> _mockSupabaseService;
     private readonly NFLWeeklyJob _job;
 
@@ -20,13 +20,15 @@ public class NFLWeeklyJobTests
     {
         _mockLogger = new Mock<ILogger<NFLWeeklyJob>>();
         _mockEspnService = new Mock<IESPNDataService>();
-        _mockMappingService = new Mock<IESPNPlayerMappingService>();
         _mockSupabaseService = new Mock<ISupabaseService>();
+
+        _mockSupabaseService
+            .Setup(s => s.GetPlayersAsync(null))
+            .ReturnsAsync(new List<Models.Supa.Player>());
 
         _job = new NFLWeeklyJob(
             _mockLogger.Object,
             _mockEspnService.Object,
-            _mockMappingService.Object,
             _mockSupabaseService.Object
         );
     }
