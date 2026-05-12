@@ -30,53 +30,6 @@ try
     // Bind Configuration
     builder.Services.Configure<SupabaseSettings>(builder.Configuration.GetSection(SupabaseSettings.SectionName));
 
-    // Register HttpClient for ESPN API with resilience policies
-    builder.Services.AddHttpClient<IESPNDataService, ESPNDataService>(client =>
-    {
-        client.BaseAddress = new Uri("https://sports.core.api.espn.com/");
-        client.Timeout = TimeSpan.FromSeconds(30);
-        client.DefaultRequestHeaders.Add("User-Agent", "ESPNScraper/1.0");
-        client.DefaultRequestHeaders.Add("Accept", "application/json");
-    })
-    .AddStandardResilienceHandler(options =>
-    {
-        // Configure retry with exponential backoff
-        options.Retry.MaxRetryAttempts = 3;
-        options.Retry.Delay = TimeSpan.FromSeconds(2);
-        options.Retry.BackoffType = DelayBackoffType.Exponential;
-        options.Retry.UseJitter = true;
-        options.Retry.OnRetry = args =>
-        {
-            Log.Warning("Retry attempt {AttemptNumber} for ESPN API after {Delay}ms delay. Exception: {Exception}",
-                args.AttemptNumber, args.RetryDelay.TotalMilliseconds, args.Outcome.Exception?.Message);
-            return default;
-        };
-
-        // Configure timeout
-        options.TotalRequestTimeout.Timeout = TimeSpan.FromSeconds(30);
-        options.TotalRequestTimeout.OnTimeout = args =>
-        {
-            Log.Error("Request to ESPN API timed out after 30s");
-            return default;
-        };
-
-        // Configure circuit breaker
-        options.CircuitBreaker.SamplingDuration = TimeSpan.FromSeconds(30);
-        options.CircuitBreaker.FailureRatio = 0.5;
-        options.CircuitBreaker.MinimumThroughput = 3;
-        options.CircuitBreaker.BreakDuration = TimeSpan.FromSeconds(30);
-        options.CircuitBreaker.OnOpened = args =>
-        {
-            Log.Error("Circuit breaker opened for ESPN API. Will retry after 30s");
-            return default;
-        };
-        options.CircuitBreaker.OnClosed = args =>
-        {
-            Log.Information("Circuit breaker closed for ESPN API. Service is healthy again");
-            return default;
-        };
-    });
-
     // Register HttpClient for IESPNGameSource
     builder.Services.AddHttpClient<IESPNGameSource, ESPNGameService>(client =>
     {

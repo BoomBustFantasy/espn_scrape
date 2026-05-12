@@ -12,17 +12,17 @@ namespace ESPNScrape.Jobs;
 public class NFLPlayerHeadshotJob : IJob
 {
     private readonly ILogger<NFLPlayerHeadshotJob> _logger;
-    private readonly IESPNDataService _espnDataService;
+    private readonly IESPNRosterSource _espnRosterSource;
     private readonly IPlayerRepository _playerRepository;
     private readonly IImageStore _imageStore;
     private readonly HttpClient _httpClient;
     private readonly ImageProcessingService _imageProcessingService;
 
-    public NFLPlayerHeadshotJob(ILogger<NFLPlayerHeadshotJob> logger, IESPNDataService espnDataService,
+    public NFLPlayerHeadshotJob(ILogger<NFLPlayerHeadshotJob> logger, IESPNRosterSource espnRosterSource,
         IPlayerRepository playerRepository, IImageStore imageStore, HttpClient httpClient, ImageProcessingService imageProcessingService)
     {
         _logger = logger;
-        _espnDataService = espnDataService;
+        _espnRosterSource = espnRosterSource;
         _playerRepository = playerRepository;
         _imageStore = imageStore;
         _httpClient = httpClient;
@@ -50,7 +50,7 @@ public class NFLPlayerHeadshotJob : IJob
             _logger.LogInformation("Processing headshots for NFL {Season} season", currentSeason);
 
             // Get all NFL teams for the current season
-            var teams = await _espnDataService.GetNFLTeamsAsync(currentSeason);
+            var teams = await _espnRosterSource.GetNFLTeamsAsync(currentSeason);
 
             if (teams == null || !teams.Any())
             {
@@ -71,7 +71,7 @@ public class NFLPlayerHeadshotJob : IJob
                 try
                 {
                     // Get team roster from ESPN
-                    var roster = await _espnDataService.GetTeamRosterAsync(currentSeason, team.Id);
+                    var roster = await _espnRosterSource.GetTeamRosterAsync(team.Id, currentSeason);
 
                     if (roster == null || !roster.Any())
                     {

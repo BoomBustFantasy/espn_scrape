@@ -11,15 +11,15 @@ namespace ESPNScrape.Jobs;
 public class NFLWeeklyJob : IJob
 {
     private readonly ILogger<NFLWeeklyJob> _logger;
-    private readonly IESPNDataService _espnDataService;
+    private readonly IESPNGameSource _espnGameSource;
     private readonly IPlayerRepository _playerRepository;
     private readonly IPlayerStatRepository _playerStatRepository;
 
-    public NFLWeeklyJob(ILogger<NFLWeeklyJob> logger, IESPNDataService espnDataService,
+    public NFLWeeklyJob(ILogger<NFLWeeklyJob> logger, IESPNGameSource espnGameSource,
         IPlayerRepository playerRepository, IPlayerStatRepository playerStatRepository)
     {
         _logger = logger;
-        _espnDataService = espnDataService;
+        _espnGameSource = espnGameSource;
         _playerRepository = playerRepository;
         _playerStatRepository = playerStatRepository;
     }
@@ -64,7 +64,7 @@ public class NFLWeeklyJob : IJob
                 weeksToCheck = new List<int>();
                 foreach (var week in candidateWeeks)
                 {
-                    var games = await _espnDataService.GetNFLWeekGamesAsync(currentSeason, week);
+                    var games = await _espnGameSource.GetNFLWeekGamesAsync(currentSeason, week);
                     if (games != null && games.Any())
                     {
                         weeksToCheck.Add(week);
@@ -94,7 +94,7 @@ public class NFLWeeklyJob : IJob
             {
                 _logger.LogInformation("=== PROCESSING WEEK {Week} ===", week);
 
-                var games = await _espnDataService.GetNFLWeekGamesAsync(currentSeason, week);
+                var games = await _espnGameSource.GetNFLWeekGamesAsync(currentSeason, week);
 
                 if (games == null || !games.Any())
                 {
@@ -145,21 +145,7 @@ public class NFLWeeklyJob : IJob
             var homeTeam = competition.Competitors?.FirstOrDefault(c => c.HomeAway?.ToLower() == "home");
             var awayTeam = competition.Competitors?.FirstOrDefault(c => c.HomeAway?.ToLower() == "away");
 
-            if (homeTeam?.Team != null && awayTeam?.Team != null)
-            {
-                var homeTeamData = await GetTeamFromReference(homeTeam.Team);
-                var awayTeamData = await GetTeamFromReference(awayTeam.Team);
-
-                if (homeTeamData != null && awayTeamData != null)
-                {
-                    _logger.LogInformation("NFL Game: {AwayTeam} @ {HomeTeam} - {GameDate}",
-                        awayTeamData.DisplayName,
-                        homeTeamData.DisplayName,
-                        game.Date.ToString("MMM dd, yyyy h:mm tt"));
-                }
-            }
-
-            var gameSummary = await _espnDataService.GetGameSummaryAsync(game.Id);
+            var gameSummary = await _espnGameSource.GetGameSummaryAsync(game.Id);
 
             if (gameSummary == null)
             {
@@ -235,19 +221,4 @@ public class NFLWeeklyJob : IJob
         }
     }
 
-    private async Task<Models.Team?> GetTeamFromReference(TeamReference teamReference)
-    {
-        try
-        {
-            if (string.IsNullOrEmpty(teamReference.GetUrl()))
-                return null;
-
-            return await _espnDataService.GetTeamFromUrlAsync(teamReference.GetUrl());
-        }
-        catch (Exception ex)
-        {
-            _logger.LogWarning(ex, "Failed to fetch team from reference: {TeamRef}", teamReference.GetUrl());
-            return null;
-        }
-    }
 }

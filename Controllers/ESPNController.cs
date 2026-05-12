@@ -7,14 +7,17 @@ namespace ESPNScrape.Controllers;
 [Route("api/[controller]")]
 public class ESPNController : ControllerBase
 {
-    private readonly IESPNDataService _espnService;
+    private readonly IESPNGameSource _gameSource;
+    private readonly IESPNRosterSource _rosterSource;
     private readonly ILogger<ESPNController> _logger;
 
     public ESPNController(
-        IESPNDataService espnService,
+        IESPNGameSource gameSource,
+        IESPNRosterSource rosterSource,
         ILogger<ESPNController> logger)
     {
-        _espnService = espnService;
+        _gameSource = gameSource;
+        _rosterSource = rosterSource;
         _logger = logger;
     }
 
@@ -27,7 +30,7 @@ public class ESPNController : ControllerBase
         try
         {
             _logger.LogInformation("Fetching NFL teams from ESPN API for season {Season}", season);
-            var teams = await _espnService.GetNFLTeamsAsync(season);
+            var teams = await _rosterSource.GetNFLTeamsAsync(season);
             return Ok(new { success = true, count = teams.Count, teams });
         }
         catch (Exception ex)
@@ -41,13 +44,13 @@ public class ESPNController : ControllerBase
     /// Get schedule for a specific week
     /// </summary>
     [HttpGet("schedule/{season}/{week}")]
-    public async Task<ActionResult> GetSchedule(int season, int week, [FromQuery] int seasonType = 2)
+    public async Task<ActionResult> GetSchedule(int season, int week)
     {
         try
         {
-            _logger.LogInformation("Fetching schedule for {Season} week {Week} (type {SeasonType})", season, week, seasonType);
-            var games = await _espnService.GetWeeklyGamesAsync(season, seasonType, week);
-            return Ok(new { success = true, season, week, seasonType, count = games.Count, games });
+            _logger.LogInformation("Fetching schedule for {Season} week {Week}", season, week);
+            var games = await _gameSource.GetNFLWeekGamesAsync(season, week);
+            return Ok(new { success = true, season, week, count = games.Count, games });
         }
         catch (Exception ex)
         {
