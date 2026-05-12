@@ -3,7 +3,10 @@ using BoomBust.Logging;
 using ESPNScrape.Configuration;
 using ESPNScrape.Jobs;
 using ESPNScrape.Services;
+using ESPNScrape.Services.Repositories;
+using Supabase;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Http.Resilience;
 using Polly;
@@ -76,8 +79,28 @@ try
 
     Log.Information("Resilience policies configured: MaxRetries=3, Timeout=30s, CircuitBreaker enabled");
 
+    // Register Supabase.Client as a singleton
+    builder.Services.AddSingleton(sp =>
+    {
+        var settings = sp.GetRequiredService<IOptions<SupabaseSettings>>().Value;
+        if (string.IsNullOrEmpty(settings.Url) || string.IsNullOrEmpty(settings.ServiceRoleKey))
+            throw new InvalidOperationException("Supabase configuration is missing");
+
+        var options = new SupabaseOptions
+        {
+            AutoConnectRealtime = false,
+            AutoRefreshToken = false
+        };
+        return new Client(settings.Url, settings.ServiceRoleKey, options);
+    });
+
+    // Register repository classes
+    builder.Services.AddScoped<IPlayerRepository, PlayerRepository>();
+    builder.Services.AddScoped<IPlayerStatRepository, PlayerStatRepository>();
+    builder.Services.AddScoped<IScheduleRepository, ScheduleRepository>();
+    builder.Services.AddScoped<IImageStore, SupabaseImageStore>();
+
     // Register services
-    builder.Services.AddScoped<ISupabaseService, SupabaseService>();
     builder.Services.AddScoped<ImageProcessingService>();
 
     // Add ASP.NET Core services
@@ -207,6 +230,11 @@ try
     builder.Services.AddQuartzHostedService(q => q.WaitForJobsToComplete = true);
 
     var app = builder.Build();
+
+    // Initialise Supabase client before any job runs
+    var supabaseClient = app.Services.GetRequiredService<Client>();
+    await supabaseClient.InitializeAsync();
+    Log.Information("Supabase client initialised");
 
     // Configure the HTTP request pipeline
     if (app.Environment.IsDevelopment())
