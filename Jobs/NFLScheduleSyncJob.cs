@@ -15,16 +15,16 @@ public class NFLScheduleSyncJob : IJob
 {
     private readonly ILogger<NFLScheduleSyncJob> _logger;
     private readonly IESPNDataService _espnDataService;
-    private readonly ISupabaseService _supabaseService;
+    private readonly IScheduleRepository _scheduleRepository;
 
     public NFLScheduleSyncJob(
         ILogger<NFLScheduleSyncJob> logger,
         IESPNDataService espnDataService,
-        ISupabaseService supabaseService)
+        IScheduleRepository scheduleRepository)
     {
         _logger = logger;
         _espnDataService = espnDataService;
-        _supabaseService = supabaseService;
+        _scheduleRepository = scheduleRepository;
     }
 
     public async Task Execute(IJobExecutionContext context)
@@ -145,7 +145,7 @@ public class NFLScheduleSyncJob : IJob
             }
 
             // Check if game already exists
-            var existingSchedule = await _supabaseService.GetScheduleByEspnGameIdAsync(game.Id);
+            var existingSchedule = await _scheduleRepository.GetScheduleByEspnGameIdAsync(game.Id);
 
             // Extract team information
             var (homeTeamId, awayTeamId) = await ExtractTeamIds(game);
@@ -176,7 +176,7 @@ public class NFLScheduleSyncJob : IJob
             if (existingSchedule == null)
             {
                 // Try to create new record, handle duplicate gracefully
-                var success = await _supabaseService.CreateScheduleAsync(scheduleRecord);
+                var success = await _scheduleRepository.CreateScheduleAsync(scheduleRecord);
                 if (success)
                 {
                     created = true;
@@ -187,12 +187,12 @@ public class NFLScheduleSyncJob : IJob
                 {
                     // If create failed, try to get the existing record and update it
                     _logger.LogDebug("Create failed for game {GameId}, attempting to update existing record", game.Id);
-                    var existingRecord = await _supabaseService.GetScheduleByEspnGameIdAsync(game.Id);
+                    var existingRecord = await _scheduleRepository.GetScheduleByEspnGameIdAsync(game.Id);
                     if (existingRecord != null)
                     {
                         // Copy the ID and update
                         scheduleRecord.Id = existingRecord.Id;
-                        var updateSuccess = await _supabaseService.UpdateScheduleAsync(scheduleRecord);
+                        var updateSuccess = await _scheduleRepository.UpdateScheduleAsync(scheduleRecord);
                         if (updateSuccess)
                         {
                             updated = true;
@@ -214,7 +214,7 @@ public class NFLScheduleSyncJob : IJob
             else
             {
                 // Update existing record
-                var success = await _supabaseService.UpdateScheduleAsync(scheduleRecord);
+                var success = await _scheduleRepository.UpdateScheduleAsync(scheduleRecord);
                 if (success)
                 {
                     updated = true;

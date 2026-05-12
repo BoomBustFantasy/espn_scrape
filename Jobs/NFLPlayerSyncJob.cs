@@ -15,16 +15,16 @@ public class NFLPlayerSyncJob : IJob
 {
     private readonly ILogger<NFLPlayerSyncJob> _logger;
     private readonly IESPNDataService _espnDataService;
-    private readonly ISupabaseService _supabaseService;
+    private readonly IPlayerRepository _playerRepository;
 
     public NFLPlayerSyncJob(
         ILogger<NFLPlayerSyncJob> logger,
         IESPNDataService espnDataService,
-        ISupabaseService supabaseService)
+        IPlayerRepository playerRepository)
     {
         _logger = logger;
         _espnDataService = espnDataService;
-        _supabaseService = supabaseService;
+        _playerRepository = playerRepository;
     }
 
     public async Task Execute(IJobExecutionContext context)
@@ -155,7 +155,7 @@ public class NFLPlayerSyncJob : IJob
         }
 
         // Check if we already have this player by ESPN ID
-        var existingPlayerByEspnId = await _supabaseService.GetPlayerByEspnIdAsync(espnPlayerId);
+        var existingPlayerByEspnId = await _playerRepository.GetPlayerByEspnIdAsync(espnPlayerId);
         if (existingPlayerByEspnId != null)
         {
             _logger.LogDebug("✅ Player {PlayerName} already has ESPN ID {EspnId}",
@@ -176,7 +176,7 @@ public class NFLPlayerSyncJob : IJob
                 matchedPlayer != null ? $"{matchedPlayer.FirstName} {matchedPlayer.LastName}" : resolvedPlayerId.ToString(),
                 resolvedPlayerId);
 
-            var updateSuccess = await _supabaseService.UpdatePlayerEspnIdAsync(resolvedPlayerId.Value, espnPlayerId);
+            var updateSuccess = await _playerRepository.UpdatePlayerEspnIdAsync(resolvedPlayerId.Value, espnPlayerId);
 
             if (updateSuccess)
             {
@@ -208,7 +208,7 @@ public class NFLPlayerSyncJob : IJob
         {
             // Query directly for this team's players instead of fetching all players
             // This is more efficient and avoids pagination issues
-            var teamPlayers = await _supabaseService.GetPlayersByTeamIdAsync(teamId);
+            var teamPlayers = await _playerRepository.GetPlayersByTeamIdAsync(teamId);
 
             return teamPlayers;
         }

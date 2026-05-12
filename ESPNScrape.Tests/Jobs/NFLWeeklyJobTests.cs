@@ -13,23 +13,26 @@ public class NFLWeeklyJobTests
 {
     private readonly Mock<ILogger<NFLWeeklyJob>> _mockLogger;
     private readonly Mock<IESPNDataService> _mockEspnService;
-    private readonly Mock<ISupabaseService> _mockSupabaseService;
+    private readonly Mock<IPlayerRepository> _mockPlayerRepository;
+    private readonly Mock<IPlayerStatRepository> _mockPlayerStatRepository;
     private readonly NFLWeeklyJob _job;
 
     public NFLWeeklyJobTests()
     {
         _mockLogger = new Mock<ILogger<NFLWeeklyJob>>();
         _mockEspnService = new Mock<IESPNDataService>();
-        _mockSupabaseService = new Mock<ISupabaseService>();
+        _mockPlayerRepository = new Mock<IPlayerRepository>();
+        _mockPlayerStatRepository = new Mock<IPlayerStatRepository>();
 
-        _mockSupabaseService
+        _mockPlayerRepository
             .Setup(s => s.GetPlayersAsync(null))
             .ReturnsAsync(new List<Models.Supa.Player>());
 
         _job = new NFLWeeklyJob(
             _mockLogger.Object,
             _mockEspnService.Object,
-            _mockSupabaseService.Object
+            _mockPlayerRepository.Object,
+            _mockPlayerStatRepository.Object
         );
     }
 

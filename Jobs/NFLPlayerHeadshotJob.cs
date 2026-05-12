@@ -13,16 +13,18 @@ public class NFLPlayerHeadshotJob : IJob
 {
     private readonly ILogger<NFLPlayerHeadshotJob> _logger;
     private readonly IESPNDataService _espnDataService;
-    private readonly ISupabaseService _supabaseService;
+    private readonly IPlayerRepository _playerRepository;
+    private readonly IImageStore _imageStore;
     private readonly HttpClient _httpClient;
     private readonly ImageProcessingService _imageProcessingService;
 
     public NFLPlayerHeadshotJob(ILogger<NFLPlayerHeadshotJob> logger, IESPNDataService espnDataService,
-        ISupabaseService supabaseService, HttpClient httpClient, ImageProcessingService imageProcessingService)
+        IPlayerRepository playerRepository, IImageStore imageStore, HttpClient httpClient, ImageProcessingService imageProcessingService)
     {
         _logger = logger;
         _espnDataService = espnDataService;
-        _supabaseService = supabaseService;
+        _playerRepository = playerRepository;
+        _imageStore = imageStore;
         _httpClient = httpClient;
         _imageProcessingService = imageProcessingService;
     }
@@ -167,7 +169,7 @@ public class NFLPlayerHeadshotJob : IJob
             if (!forceRefresh)
             {
                 // Check if we already have recent headshots (avoid re-downloading)
-                var existingPlayer = await _supabaseService.GetPlayerByEspnIdAsync(espnPlayerId);
+                var existingPlayer = await _playerRepository.GetPlayerByEspnIdAsync(espnPlayerId);
 
                 if (existingPlayer != null && !string.IsNullOrEmpty(existingPlayer.HeadshotUrl) &&
                     existingPlayer.HeadshotUpdatedAt.HasValue &&
@@ -254,8 +256,8 @@ public class NFLPlayerHeadshotJob : IJob
         {
             _logger.LogDebug("☁️ Uploading to Supabase Storage: {Path}", storagePath);
 
-            // Use the SupabaseService to upload the image
-            var result = await _supabaseService.UploadImageAsync("images", storagePath, imageData);
+            // Use the IImageStore to upload the image
+            var result = await _imageStore.UploadImageAsync("images", storagePath, imageData);
 
             if (result.Success)
             {
@@ -382,7 +384,7 @@ public class NFLPlayerHeadshotJob : IJob
         try
         {
             // Get or create the player record
-            var player = await _supabaseService.GetPlayerByEspnIdAsync(espnPlayerId);
+            var player = await _playerRepository.GetPlayerByEspnIdAsync(espnPlayerId);
             if (player == null)
             {
                 _logger.LogInformation("⏭️ Player {PlayerName} (ESPN ID: {EspnId}) not found in database, skipping (will be created when they appear in game stats)",
@@ -403,7 +405,7 @@ public class NFLPlayerHeadshotJob : IJob
             player.HeadshotSizes = System.Text.Json.JsonSerializer.Serialize(headshotSizes, new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
             player.UpdatedAt = DateTime.UtcNow;
 
-            var updateResult = await _supabaseService.UpdatePlayerAsync(player);
+            var updateResult = await _playerRepository.UpdatePlayerAsync(player);
             if (updateResult)
             {
                 _logger.LogDebug("✅ Updated player {PlayerName} multi-size headshot info in database", playerName);
@@ -462,7 +464,7 @@ public class NFLPlayerHeadshotJob : IJob
         try
         {
             // Get or create the player record
-            var player = await _supabaseService.GetPlayerByEspnIdAsync(espnPlayerId);
+            var player = await _playerRepository.GetPlayerByEspnIdAsync(espnPlayerId);
             if (player == null)
             {
                 _logger.LogDebug("Player {PlayerName} (ESPN ID: {EspnId}) not found in database, will be created when processing game stats",
@@ -479,7 +481,7 @@ public class NFLPlayerHeadshotJob : IJob
             player.StoragePath = storagePath;
             player.UpdatedAt = DateTime.UtcNow;
 
-            var updateResult = await _supabaseService.UpdatePlayerAsync(player);
+            var updateResult = await _playerRepository.UpdatePlayerAsync(player);
             if (updateResult)
             {
                 _logger.LogDebug("✅ Updated player {PlayerName} headshot info in database", playerName);
