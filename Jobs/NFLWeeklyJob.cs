@@ -152,7 +152,7 @@ public class NFLWeeklyJob : IJob
             }
 
             // Check weeks from most recent backwards to find one with games
-        var estimatedWeek = NFLCalendar.EstimateCurrentWeek(currentDate);
+            var estimatedWeek = NFLCalendar.EstimateCurrentWeek(currentDate);
 
             for (int week = estimatedWeek; week >= 1; week--)
             {
