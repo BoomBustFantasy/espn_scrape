@@ -99,6 +99,7 @@ public class NFLWeeklyJob : IJob
                 if (games == null || !games.Any())
                 {
                     _logger.LogInformation("No games found for NFL {Season} Week {Week}", currentSeason, week);
+                    await Task.Delay(500);
                     continue;
                 }
 
@@ -145,15 +146,7 @@ public class NFLWeeklyJob : IJob
             var homeTeam = competition.Competitors?.FirstOrDefault(c => c.HomeAway?.ToLower() == "home");
             var awayTeam = competition.Competitors?.FirstOrDefault(c => c.HomeAway?.ToLower() == "away");
 
-            var gameSummary = await _espnGameSource.GetGameSummaryAsync(game.Id);
-
-            if (gameSummary == null)
-            {
-                _logger.LogWarning("No summary found for game {GameId}", game.Id);
-                return (0, 0, 0);
-            }
-
-            var parsedStats = BoxScoreParser.Parse(gameSummary, season, week);
+            var parsedStats = await _espnGameSource.GetBoxScoreStatsAsync(competition, season, week);
 
             if (parsedStats.Count == 0)
             {

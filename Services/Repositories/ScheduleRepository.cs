@@ -37,6 +37,7 @@ public class ScheduleRepository : IScheduleRepository
     {
         try
         {
+            schedule.Id = null;
             schedule.CreatedAt = DateTime.UtcNow;
             schedule.UpdatedAt = DateTime.UtcNow;
 

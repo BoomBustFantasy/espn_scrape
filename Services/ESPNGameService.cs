@@ -88,4 +88,100 @@ public class ESPNGameService : ESPNClientBase, IESPNGameSource
             return null;
         }
     }
+
+    public async Task<StatisticsResponse?> GetCompetitorStatisticsAsync(string statsRefUrl)
+    {
+        try
+        {
+            var response = await _httpClient.GetStringAsync(statsRefUrl);
+            return JsonSerializer.Deserialize<StatisticsResponse>(response, JsonOptions);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error fetching competitor statistics from URL: {StatsRefUrl}", statsRefUrl);
+            return null;
+        }
+    }
+
+    public async Task<StatisticsResponse?> GetAthleteStatisticsAsync(string statsRefUrl)
+    {
+        try
+        {
+            var response = await _httpClient.GetStringAsync(statsRefUrl);
+            return JsonSerializer.Deserialize<StatisticsResponse>(response, JsonOptions);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error fetching athlete statistics from URL: {StatsRefUrl}", statsRefUrl);
+            return null;
+        }
+    }
+
+    private async Task<string> GetAthleteNameAsync(string athleteRefUrl)
+    {
+        try
+        {
+            var response = await _httpClient.GetStringAsync(athleteRefUrl);
+            var athlete = JsonSerializer.Deserialize<Player>(response, JsonOptions);
+            return athlete?.DisplayName ?? string.Empty;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogWarning(ex, "Error fetching athlete name from URL: {AthleteRefUrl}", athleteRefUrl);
+            return string.Empty;
+        }
+    }
+
+    public async Task<List<ParsedPlayerStat>> GetBoxScoreStatsAsync(Competition competition, int season, int week)
+    {
+        var results = new List<ParsedPlayerStat>();
+
+        foreach (var competitor in competition.Competitors)
+        {
+            var statsUrl = competitor.Statistics?.GetUrl();
+            if (string.IsNullOrEmpty(statsUrl))
+                continue;
+
+            var teamStats = await GetCompetitorStatisticsAsync(statsUrl);
+            if (teamStats == null)
+                continue;
+
+            var relevantAthletes = CoreApiBoxScoreMapper.ExtractRelevantAthletes(teamStats);
+            var teamDisplayName = ESPNTeamMapper.GetAllTeamMappings().TryGetValue(competitor.Id, out var mapping)
+                ? mapping.FullName
+                : string.Empty;
+
+            foreach (var athleteRef in relevantAthletes)
+            {
+                var athleteStatsUrl = athleteRef.Statistics?.GetUrl();
+                var athleteRefUrl = athleteRef.Athlete?.GetUrl();
+                if (string.IsNullOrEmpty(athleteStatsUrl) || string.IsNullOrEmpty(athleteRefUrl))
+                    continue;
+
+                var espnPlayerId = CoreApiBoxScoreMapper.ExtractAthleteId(athleteRefUrl);
+                if (string.IsNullOrEmpty(espnPlayerId))
+                    continue;
+
+                var athleteStats = await GetAthleteStatisticsAsync(athleteStatsUrl);
+                var athleteName = await GetAthleteNameAsync(athleteRefUrl);
+                if (athleteStats != null)
+                {
+                    results.Add(CoreApiBoxScoreMapper.Map(
+                        athleteStats,
+                        espnPlayerId,
+                        competitor.Id,
+                        teamDisplayName,
+                        athleteName,
+                        competition.Id,
+                        competition.Date,
+                        season,
+                        week));
+                }
+
+                await Task.Delay(150);
+            }
+        }
+
+        return results;
+    }
 }

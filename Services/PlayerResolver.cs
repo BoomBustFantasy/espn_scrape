@@ -5,13 +5,19 @@ namespace ESPNScrape.Services;
 
 public static class PlayerResolver
 {
+    // Supabase Players.team_id used in this database as a placeholder for players not on
+    // an active roster (retired, free agent, or simply not yet assigned to a real team).
+    private const long FreeAgentTeamId = 33;
+
     /// <summary>
     /// Resolves an ESPN player to a Supabase player ID.
     ///
     /// Resolution order:
     ///   1. ESPN ID fast path — find the first player where EspnPlayerId == espnPlayerId.
     ///   2. Team-scoped name match — filter by Supabase team, fuzzy-match on normalised display name.
-    ///   3. Ambiguity guard — if >1 candidate survives name matching, return null.
+    ///   3. Free-agent fallback — retry the same name match against the free-agent bucket, since a
+    ///      player who's since left their historical team won't be found under it any more.
+    ///   4. Ambiguity guard — if >1 candidate survives name matching at any step, return null.
     ///
     /// Never writes to the database. Same inputs always produce the same output.
     /// </summary>
@@ -34,16 +40,7 @@ public static class PlayerResolver
                 return byId.Id;
         }
 
-        // Step 2 — Team-scoped name match
         if (string.IsNullOrEmpty(displayName))
-            return null;
-
-        var supabaseTeamId = ESPNTeamMapper.MapEspnIdToSupabaseId(espnTeamId);
-        if (!supabaseTeamId.HasValue)
-            return null;
-
-        var teamPlayers = allPlayers.Where(p => p.TeamId == supabaseTeamId.Value).ToList();
-        if (teamPlayers.Count == 0)
             return null;
 
         // Normalise the full display name first (strips suffixes, periods, etc.) then split into tokens.
@@ -55,8 +52,28 @@ public static class PlayerResolver
         var espnFirstNorm = tokens[0];
         var espnLastNorm = tokens[^1]; // last token after suffix stripping
 
+        // Step 2 — Team-scoped name match
+        var supabaseTeamId = ESPNTeamMapper.MapEspnIdToSupabaseId(espnTeamId);
+        if (supabaseTeamId.HasValue)
+        {
+            var teamPlayers = allPlayers.Where(p => p.TeamId == supabaseTeamId.Value).ToList();
+            var teamMatch = MatchByName(teamPlayers, espnFirstNorm, espnLastNorm);
+            if (teamMatch.HasValue)
+                return teamMatch;
+        }
+
+        // Step 3 — Free-agent fallback
+        var freeAgents = allPlayers.Where(p => p.TeamId == FreeAgentTeamId).ToList();
+        return MatchByName(freeAgents, espnFirstNorm, espnLastNorm);
+    }
+
+    private static long? MatchByName(List<Player> candidates, string espnFirstNorm, string espnLastNorm)
+    {
+        if (candidates.Count == 0)
+            return null;
+
         // Exact match
-        var exactMatches = teamPlayers
+        var exactMatches = candidates
             .Where(p =>
                 NormalizeName(p.FirstName) == espnFirstNorm &&
                 NormalizeName(p.LastName) == espnLastNorm)
@@ -68,7 +85,7 @@ public static class PlayerResolver
             return null; // ambiguity guard
 
         // Prefix match on first name with exact last name
-        var fuzzyMatches = teamPlayers
+        var fuzzyMatches = candidates
             .Where(p =>
             {
                 var dbFirst = NormalizeName(p.FirstName);
