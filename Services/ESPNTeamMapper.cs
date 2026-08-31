@@ -212,4 +212,26 @@ public static class ESPNTeamMapper
             { "28", (32, "WAS", "Washington Commanders") }
         };
     }
+
+    /// <summary>
+    /// Maps Supabase team abbreviation to the lowercase ESPN CDN abbreviation used in logo URLs
+    /// </summary>
+    private static readonly Dictionary<string, string> SupabaseToEspnAbbreviations = new(StringComparer.OrdinalIgnoreCase)
+    {
+        { "GNB", "gb" },
+        { "KAN", "kc" },
+        { "LVR", "lv" },
+        { "NWE", "ne" },
+        { "NOR", "no" },
+        { "SFO", "sf" },
+        { "TAM", "tb" }
+    };
+
+    /// <summary>
+    /// Converts a Supabase team abbreviation to the lowercase ESPN CDN abbreviation for logo URLs
+    /// </summary>
+    public static string MapSupabaseAbbreviationToEspn(string supabaseAbbreviation)
+    {
+        return SupabaseToEspnAbbreviations.GetValueOrDefault(supabaseAbbreviation.ToUpper(), supabaseAbbreviation.ToLower());
+    }
 }

@@ -28,6 +28,10 @@ public class Team : BaseModel
     [Column("updated_at")]
     public DateTime UpdatedAt { get; set; }
 
+    [JsonPropertyName("logo_url")]
+    [Column("logo_url")]
+    public string? LogoUrl { get; set; }
+
     // Navigation properties
     public List<Player> Players { get; set; } = new();
     public List<Schedule> HomeGames { get; set; } = new();

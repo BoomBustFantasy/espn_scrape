@@ -254,6 +254,22 @@ try
             .WithIdentity("NFLPlayerHeadshotJob-cron-trigger")
             .WithCronSchedule("0 0 3 ? * SUN") // Every Sunday at 3:00 AM
             .WithDescription("NFL Player Headshots - Every Sunday at 3 AM"));
+
+        // ============================================
+        // NFL Team Logo Job
+        // Runs every Sunday at 2 AM, an hour before the headshot job
+        // ============================================
+        var teamLogoJobKey = new JobKey("NFLTeamLogoJob");
+        q.AddJob<NFLTeamLogoJob>(opts => opts
+            .WithIdentity(teamLogoJobKey)
+            .DisallowConcurrentExecution()
+            .StoreDurably());
+
+        q.AddTrigger(opts => opts
+            .ForJob(teamLogoJobKey)
+            .WithIdentity("NFLTeamLogoJob-cron-trigger")
+            .WithCronSchedule("0 0 2 ? * SUN") // Every Sunday at 2:00 AM
+            .WithDescription("NFL Team Logos - Every Sunday at 2 AM"));
     });
 
     // Add Quartz hosted service
