@@ -1,5 +1,6 @@
 using ESPNScrape.Services;
 using Microsoft.AspNetCore.Mvc;
+using Quartz;
 
 namespace ESPNScrape.Controllers;
 
@@ -9,16 +10,78 @@ public class ESPNController : ControllerBase
 {
     private readonly IESPNGameSource _gameSource;
     private readonly IESPNRosterSource _rosterSource;
+    private readonly ISchedulerFactory _schedulerFactory;
     private readonly ILogger<ESPNController> _logger;
 
     public ESPNController(
         IESPNGameSource gameSource,
         IESPNRosterSource rosterSource,
+        ISchedulerFactory schedulerFactory,
         ILogger<ESPNController> logger)
     {
         _gameSource = gameSource;
         _rosterSource = rosterSource;
+        _schedulerFactory = schedulerFactory;
         _logger = logger;
+    }
+
+    /// <summary>
+    /// Manually triggers NFLWeeklyJob for a historical season/week range.
+    /// Runs against the existing job (same box-score parsing and upsert logic as the live cron job).
+    /// </summary>
+    [HttpPost("backfill/{season}")]
+    public async Task<ActionResult> TriggerHistoricalBackfill(int season, [FromQuery] int startWeek = 1, [FromQuery] int endWeek = 18)
+    {
+        _logger.LogInformation("Manually triggering NFLWeeklyJob backfill for season {Season}, weeks {StartWeek}-{EndWeek}",
+            season, startWeek, endWeek);
+
+        var scheduler = await _schedulerFactory.GetScheduler();
+        var jobKey = new JobKey("NFLWeeklyJob");
+
+        var dataMap = new JobDataMap
+        {
+            { "season", season },
+            { "startWeek", startWeek },
+            { "endWeek", endWeek }
+        };
+
+        await scheduler.TriggerJob(jobKey, dataMap);
+
+        return Ok(new
+        {
+            success = true,
+            message = $"Triggered NFLWeeklyJob for season {season}, weeks {startWeek}-{endWeek}. Check logs for progress."
+        });
+    }
+
+    /// <summary>
+    /// Manually triggers NFLScheduleSyncJob for a historical season/week range.
+    /// PlayerStats has a FK constraint on espn_game_id referencing Schedule, so this
+    /// must be run for a season before NFLWeeklyJob's stats will actually insert.
+    /// </summary>
+    [HttpPost("schedule-backfill/{season}")]
+    public async Task<ActionResult> TriggerScheduleBackfill(int season, [FromQuery] int startWeek = 1, [FromQuery] int endWeek = 18)
+    {
+        _logger.LogInformation("Manually triggering NFLScheduleSyncJob backfill for season {Season}, weeks {StartWeek}-{EndWeek}",
+            season, startWeek, endWeek);
+
+        var scheduler = await _schedulerFactory.GetScheduler();
+        var jobKey = new JobKey("NFLScheduleSyncJob");
+
+        var dataMap = new JobDataMap
+        {
+            { "season", season },
+            { "startWeek", startWeek },
+            { "endWeek", endWeek }
+        };
+
+        await scheduler.TriggerJob(jobKey, dataMap);
+
+        return Ok(new
+        {
+            success = true,
+            message = $"Triggered NFLScheduleSyncJob for season {season}, weeks {startWeek}-{endWeek}. Check logs for progress."
+        });
     }
 
     /// <summary>

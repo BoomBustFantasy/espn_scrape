@@ -25,6 +25,8 @@ public class PlayerResolverTests
     private const string AtlEspnTeamId = "1";
     private const long AtlSupabaseTeamId = 2;
 
+    private const long FreeAgentTeamId = 33;
+
     // --------------- ESPN ID fast path ---------------
 
     [Fact]
@@ -114,6 +116,53 @@ public class PlayerResolverTests
         var result = PlayerResolver.Resolve(players, "no-id", KcEspnTeamId, "Patrick Mahomes");
 
         Assert.Equal(600L, result);
+    }
+
+    // --------------- Free-agent fallback ---------------
+
+    [Fact]
+    public void Resolve_NotOnHistoricalTeam_FallsBackToFreeAgentBucket()
+    {
+        // Player retired/moved on since the stat's season, so they're no longer under
+        // their historical (KC) team in the DB — just bucketed as a free agent.
+        var players = new List<Player>
+        {
+            MakePlayer(1300, "Derek", "Carr", FreeAgentTeamId, espnPlayerId: null)
+        };
+
+        var result = PlayerResolver.Resolve(players, "16757", KcEspnTeamId, "Derek Carr");
+
+        Assert.Equal(1300L, result);
+    }
+
+    [Fact]
+    public void Resolve_TeamMatchFound_DoesNotFallThroughToFreeAgentBucket()
+    {
+        // Same name exists in both the correct team and (implausibly) the free-agent bucket —
+        // the team-scoped match should win and the free-agent entry should never be consulted.
+        var players = new List<Player>
+        {
+            MakePlayer(1400, "Travis", "Kelce", KcSupabaseTeamId, espnPlayerId: null),
+            MakePlayer(1401, "Travis", "Kelce", FreeAgentTeamId, espnPlayerId: null)
+        };
+
+        var result = PlayerResolver.Resolve(players, "no-id", KcEspnTeamId, "Travis Kelce");
+
+        Assert.Equal(1400L, result);
+    }
+
+    [Fact]
+    public void Resolve_AmbiguousInFreeAgentBucket_ReturnsNull()
+    {
+        var players = new List<Player>
+        {
+            MakePlayer(1500, "Justin", "Johnson", FreeAgentTeamId, espnPlayerId: null),
+            MakePlayer(1501, "Justin", "Johnson", FreeAgentTeamId, espnPlayerId: null)
+        };
+
+        var result = PlayerResolver.Resolve(players, "no-id", KcEspnTeamId, "Justin Johnson");
+
+        Assert.Null(result);
     }
 
     // --------------- Ambiguity guard ---------------

@@ -68,8 +68,8 @@ public class Competitor
     public object? Score { get; set; } // Can be reference or embedded
     public RecordReference? Record { get; set; } // This is a reference, not a list
     public object? Linescores { get; set; } // Reference
-    public object? Roster { get; set; } // Reference  
-    public object? Statistics { get; set; } // Reference
+    public object? Roster { get; set; } // Reference
+    public StatisticsReference? Statistics { get; set; }
     public object? Leaders { get; set; } // Reference
 }
 

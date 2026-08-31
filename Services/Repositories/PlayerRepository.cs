@@ -15,21 +15,37 @@ public class PlayerRepository : IPlayerRepository
         _logger = logger;
     }
 
+    private const int PageSize = 1000;
+
     public async Task<List<Player>> GetPlayersAsync(string? espnPlayerId = null)
     {
         try
         {
-            var query = _supabaseClient
-                .From<Player>()
-                .Select("*");
+            var allPlayers = new List<Player>();
+            var offset = 0;
 
-            if (!string.IsNullOrEmpty(espnPlayerId))
+            while (true)
             {
-                query = query.Where(p => p.EspnPlayerId == espnPlayerId);
+                var query = _supabaseClient
+                    .From<Player>()
+                    .Select("*")
+                    .Range(offset, offset + PageSize - 1);
+
+                if (!string.IsNullOrEmpty(espnPlayerId))
+                {
+                    query = query.Where(p => p.EspnPlayerId == espnPlayerId);
+                }
+
+                var response = await query.Get();
+                allPlayers.AddRange(response.Models);
+
+                if (response.Models.Count < PageSize)
+                    break;
+
+                offset += PageSize;
             }
 
-            var response = await query.Get();
-            return response.Models;
+            return allPlayers;
         }
         catch (Exception ex)
         {

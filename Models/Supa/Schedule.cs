@@ -10,7 +10,9 @@ public class Schedule : BaseModel
     [PrimaryKey("id")]
     [JsonPropertyName("id")]
     [Column("id")]
-    public long Id { get; set; }
+    public long? Id { get; set; }
+
+    public bool ShouldSerializeId() => Id.HasValue;
 
     [JsonPropertyName("espn_game_id")]
     [Column("espn_game_id")]

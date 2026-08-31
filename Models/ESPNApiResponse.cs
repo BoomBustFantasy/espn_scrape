@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace ESPNScrape.Models;
 
 public class ESPNApiResponse<T>
@@ -23,6 +25,7 @@ public class ESPNReferenceResponse
 
 public class ESPNReference
 {
+    [JsonPropertyName("$ref")]
     public string Ref { get; set; } = string.Empty;
 
     // Helper property to get the actual URL from $ref

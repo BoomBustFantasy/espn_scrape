@@ -51,15 +51,22 @@ public class PlayerStatRepository : IPlayerStatRepository
 
                     if (existing.Models.Any())
                     {
+                        // Postgrest-csharp's Update() (both the instance method and the
+                        // table-level .Where().Update() form) silently no-ops for this table
+                        // in practice — confirmed the same field values reach the client
+                        // correctly but never make it into the request. Delete + re-insert
+                        // instead, using only the Insert/Delete paths that are proven reliable.
                         var existingRecord = existing.Models.First();
-                        existingRecord.Passing = stat.Passing;
-                        existingRecord.Rushing = stat.Rushing;
-                        existingRecord.Receiving = stat.Receiving;
-                        existingRecord.Fumbles = stat.Fumbles;
-                        existingRecord.FumblesLost = stat.FumblesLost;
-                        existingRecord.UpdatedAt = DateTime.UtcNow;
+                        await _supabaseClient
+                            .From<PlayerStat>()
+                            .Where(x => x.EspnPlayerId == stat.EspnPlayerId && x.EspnGameId == stat.EspnGameId)
+                            .Delete();
 
-                        await existingRecord.Update<PlayerStat>();
+                        stat.Id = null;
+                        stat.CreatedAt = existingRecord.CreatedAt;
+                        await _supabaseClient
+                            .From<PlayerStat>()
+                            .Insert(stat);
                         updatedCount++;
                     }
                     else
@@ -74,8 +81,8 @@ public class PlayerStatRepository : IPlayerStatRepository
                 catch (Supabase.Postgrest.Exceptions.PostgrestException pgEx) when (pgEx.Message.Contains("23503"))
                 {
                     failedCount++;
-                    _logger.LogWarning("⚠️ Skipped record due to foreign key constraint: ESPN Player ID {EspnPlayerId} not found in Players table. Game: {EspnGameId}",
-                        stat.EspnPlayerId, stat.EspnGameId);
+                    _logger.LogWarning("⚠️ Skipped record due to foreign key constraint violation for ESPN Player ID {EspnPlayerId}, Game {EspnGameId}: {Detail}",
+                        stat.EspnPlayerId, stat.EspnGameId, pgEx.Message);
                 }
                 catch (Exception individualEx)
                 {
