@@ -35,11 +35,6 @@ public class NFLWeeklyJob : IJob
 
         try
         {
-            // Load the full player list once for the entire job run
-            var allPlayers = await _playerRepository.GetPlayersAsync();
-
-            _logger.LogInformation("Loaded {PlayerCount} players from database", allPlayers.Count);
-
             var jobDataMap = context.MergedJobDataMap;
             int currentSeason;
             List<int> weeksToCheck;
@@ -57,38 +52,44 @@ public class NFLWeeklyJob : IJob
             }
             else
             {
-                currentSeason = NFLCalendar.GetCurrentSeason();
-                var candidateWeeks = NFLCalendar.GetWeeksToCheck(currentSeason, DateTime.Now);
-                _logger.LogInformation("Weeks to check for season {Season}: [{Weeks}]", currentSeason, string.Join(", ", candidateWeeks));
+                var phase = await _espnGameSource.GetCurrentSeasonPhaseAsync();
 
-                weeksToCheck = new List<int>();
-                foreach (var week in candidateWeeks)
+                if (phase == null)
                 {
-                    var games = await _espnGameSource.GetNFLWeekGamesAsync(currentSeason, week);
-                    if (games != null && games.Any())
-                    {
-                        weeksToCheck.Add(week);
-                        _logger.LogInformation("Week {Week} has {GameCount} games - added to processing list", week, games.Count());
-                    }
-                    else
-                    {
-                        _logger.LogInformation("Week {Week} has no games - skipping", week);
-                    }
-                    await Task.Delay(100);
+                    // ESPN unreachable - fall back to the date estimate. That estimate is tuned to
+                    // a past season's calendar and drifts, so treat this as a stopgap, not a substitute.
+                    currentSeason = NFLCalendar.GetCurrentSeason();
+                    weeksToCheck = NFLCalendar.GetWeeksToCheck(currentSeason, DateTime.UtcNow);
+                    _logger.LogWarning("Could not read season phase from ESPN - falling back to estimated season {Season}, weeks [{Weeks}]",
+                        currentSeason, string.Join(", ", weeksToCheck));
                 }
-
-                if (!weeksToCheck.Any())
+                else if (phase.IsRegularSeason)
                 {
-                    var estimatedWeek = NFLCalendar.EstimateCurrentWeek(DateTime.Now);
-                    _logger.LogWarning("No weeks with games found, falling back to estimated week {Week}", estimatedWeek);
-                    weeksToCheck.Add(estimatedWeek);
+                    currentSeason = phase.Season;
+                    weeksToCheck = NFLCalendar.WeekWindow(phase.Week);
+                    _logger.LogInformation("ESPN reports regular season {Season} week {Week} - checking weeks [{Weeks}]",
+                        currentSeason, phase.Week, string.Join(", ", weeksToCheck));
                 }
-
-                weeksToCheck = weeksToCheck.OrderBy(w => w).ToList();
-
-                _logger.LogInformation("Determined current season: {Season}, checking weeks: [{Weeks}]",
-                    currentSeason, string.Join(", ", weeksToCheck));
+                else if (phase.IsPostseason)
+                {
+                    // Playoff games aren't scraped - GetNFLWeekGamesAsync only covers season type 2 -
+                    // but week 18 stats can still be corrected after the postseason begins.
+                    currentSeason = phase.Season;
+                    weeksToCheck = [18];
+                    _logger.LogInformation("ESPN reports postseason for {Season} - re-checking regular season week 18 only",
+                        currentSeason);
+                }
+                else
+                {
+                    _logger.LogInformation("ESPN reports season type {SeasonType} for {Season} - not the regular season, nothing to scrape",
+                        phase.SeasonType, phase.Season);
+                    return;
+                }
             }
+
+            // Load the full player list once for the entire job run
+            var allPlayers = await _playerRepository.GetPlayersAsync();
+            _logger.LogInformation("Loaded {PlayerCount} players from database", allPlayers.Count);
 
             foreach (var week in weeksToCheck)
             {

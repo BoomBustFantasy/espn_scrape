@@ -72,4 +72,25 @@ public class NFLScheduleSyncJobTests
             s => s.GetNFLWeekGamesAsync(It.IsAny<int>(), It.IsAny<int>()),
             Times.Exactly(18));
     }
+
+    [Fact]
+    public async Task Execute_WithNoExplicitData_SyncsSeasonReportedByEspn()
+    {
+        // Arrange — preseason. The schedule must still be built out for the regular season,
+        // otherwise week 1 stats have no Schedule row to satisfy their foreign key.
+        _mockEspnGameSource
+            .Setup(s => s.GetCurrentSeasonPhaseAsync())
+            .ReturnsAsync(new SeasonPhase(2026, SeasonPhase.Preseason, 4));
+
+        var mockContext = new Mock<IJobExecutionContext>();
+        mockContext.Setup(c => c.MergedJobDataMap).Returns(new JobDataMap());
+
+        // Act
+        await _job.Execute(mockContext.Object);
+
+        // Assert — all 18 regular-season weeks, for the season ESPN reported
+        _mockEspnGameSource.Verify(
+            s => s.GetNFLWeekGamesAsync(2026, It.IsAny<int>()),
+            Times.Exactly(18));
+    }
 }

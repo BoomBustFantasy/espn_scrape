@@ -60,4 +60,68 @@ public class NFLWeeklyJobTests
         // Assert
         _mockEspnGameSource.Verify(s => s.GetNFLWeekGamesAsync(2025, 1), Times.Once);
     }
+
+    [Fact]
+    public async Task Execute_WithNoJobData_ScansWeekWindowReportedByEspn()
+    {
+        // Arrange - no job data, so the job must ask ESPN where the season is
+        _mockEspnGameSource
+            .Setup(s => s.GetCurrentSeasonPhaseAsync())
+            .ReturnsAsync(new SeasonPhase(2026, SeasonPhase.RegularSeason, 5));
+        _mockEspnGameSource
+            .Setup(s => s.GetNFLWeekGamesAsync(It.IsAny<int>(), It.IsAny<int>()))
+            .ReturnsAsync(new List<Game>());
+
+        var mockContext = new Mock<IJobExecutionContext>();
+        mockContext.Setup(c => c.MergedJobDataMap).Returns(new JobDataMap());
+
+        // Act
+        await _job.Execute(mockContext.Object);
+
+        // Assert - current week plus the one before it, for the season ESPN reported
+        _mockEspnGameSource.Verify(s => s.GetNFLWeekGamesAsync(2026, 4), Times.Once);
+        _mockEspnGameSource.Verify(s => s.GetNFLWeekGamesAsync(2026, 5), Times.Once);
+        _mockEspnGameSource.Verify(s => s.GetNFLWeekGamesAsync(It.IsAny<int>(), It.IsAny<int>()), Times.Exactly(2));
+    }
+
+    [Fact]
+    public async Task Execute_WhenEspnReportsPreseason_ScrapesNothing()
+    {
+        // Arrange - preseason week numbers must not be read as regular season weeks
+        _mockEspnGameSource
+            .Setup(s => s.GetCurrentSeasonPhaseAsync())
+            .ReturnsAsync(new SeasonPhase(2026, SeasonPhase.Preseason, 4));
+
+        var mockContext = new Mock<IJobExecutionContext>();
+        mockContext.Setup(c => c.MergedJobDataMap).Returns(new JobDataMap());
+
+        // Act
+        await _job.Execute(mockContext.Object);
+
+        // Assert - no games fetched, and no pointless full player load either
+        _mockEspnGameSource.Verify(s => s.GetNFLWeekGamesAsync(It.IsAny<int>(), It.IsAny<int>()), Times.Never);
+        _mockPlayerRepository.Verify(s => s.GetPlayersAsync(null), Times.Never);
+    }
+
+    [Fact]
+    public async Task Execute_WhenEspnReportsPostseason_RechecksWeek18Only()
+    {
+        // Arrange - week 18 stats can still be corrected once the playoffs begin
+        _mockEspnGameSource
+            .Setup(s => s.GetCurrentSeasonPhaseAsync())
+            .ReturnsAsync(new SeasonPhase(2026, SeasonPhase.Postseason, 1));
+        _mockEspnGameSource
+            .Setup(s => s.GetNFLWeekGamesAsync(It.IsAny<int>(), It.IsAny<int>()))
+            .ReturnsAsync(new List<Game>());
+
+        var mockContext = new Mock<IJobExecutionContext>();
+        mockContext.Setup(c => c.MergedJobDataMap).Returns(new JobDataMap());
+
+        // Act
+        await _job.Execute(mockContext.Object);
+
+        // Assert
+        _mockEspnGameSource.Verify(s => s.GetNFLWeekGamesAsync(2026, 18), Times.Once);
+        _mockEspnGameSource.Verify(s => s.GetNFLWeekGamesAsync(It.IsAny<int>(), It.IsAny<int>()), Times.Once);
+    }
 }
