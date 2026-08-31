@@ -40,11 +40,20 @@ public static class NFLCalendar
         return 7; // Default fallback
     }
 
+    /// <summary>
+    /// The given week plus the one before it, clamped to the regular season. Scanning a
+    /// two-week window means games that finalise late — Monday night, or a stat correction
+    /// a few days on — still get a second pass.
+    /// </summary>
+    public static List<int> WeekWindow(int week)
+    {
+        var endWeek = Math.Clamp(week, 1, 18);
+        var startWeek = Math.Max(1, endWeek - 1);
+        return Enumerable.Range(startWeek, endWeek - startWeek + 1).ToList();
+    }
+
     public static List<int> GetWeeksToCheck(int season, DateTime date)
     {
-        var estimatedWeek = EstimateCurrentWeek(date);
-        var startWeek = Math.Max(1, estimatedWeek - 1);
-        var endWeek = Math.Min(18, estimatedWeek);
-        return Enumerable.Range(startWeek, endWeek - startWeek + 1).ToList();
+        return WeekWindow(EstimateCurrentWeek(date));
     }
 }

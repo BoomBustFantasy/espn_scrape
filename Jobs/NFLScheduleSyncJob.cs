@@ -54,7 +54,17 @@ public class NFLScheduleSyncJob : IJob
             }
             else
             {
-                currentSeason = NFLCalendar.GetCurrentSeason();
+                // Deliberately not gated on season type: the schedule has to be populated during
+                // the preseason so that week 1 stats have a Schedule row to hang their FK on.
+                var phase = await _espnGameSource.GetCurrentSeasonPhaseAsync();
+                currentSeason = phase?.Season ?? NFLCalendar.GetCurrentSeason();
+
+                if (phase == null)
+                {
+                    _logger.LogWarning("Could not read season phase from ESPN - falling back to estimated season {Season}",
+                        currentSeason);
+                }
+
                 weeksToSync = Enumerable.Range(1, 18).ToList();
                 _logger.LogInformation("Syncing season {Season} weeks 1-18", currentSeason);
             }

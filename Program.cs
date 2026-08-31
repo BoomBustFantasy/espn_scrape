@@ -195,9 +195,8 @@ try
             .ForJob(weeklyStatsJobKey)
             .WithIdentity("NFLWeeklyJob-cron-trigger")
             .WithCronSchedule("0 0 */2 * * ?") // Every 2 hours
-            .UsingJobData("season", 2025)
-            .UsingJobData("startWeek", 1)
-            .UsingJobData("endWeek", 18)
+            // No season/week job data on purpose: that makes the job ask ESPN which season
+            // and week the league is actually in. Pinning it here silently disables that.
             .WithDescription("NFL Weekly Stats - Every 2 hours"));
 
         // Trigger immediately on startup
@@ -205,9 +204,6 @@ try
             .ForJob(weeklyStatsJobKey)
             .WithIdentity("NFLWeeklyJob-startup-trigger")
             .StartNow()
-            .UsingJobData("season", 2025)
-            .UsingJobData("startWeek", 1)
-            .UsingJobData("endWeek", 18)
             .WithDescription("NFL Weekly Stats - Startup Trigger"));
 
         // ============================================
@@ -224,10 +220,7 @@ try
             .ForJob(scheduleSyncJobKey)
             .WithIdentity("NFLScheduleSyncJob-cron-trigger")
             .WithCronSchedule("0 0 * * * ?") // Every hour
-            .UsingJobData("season", 2025)
-            .UsingJobData("startWeek", 1)
-            .UsingJobData("endWeek", 18)
-            .UsingJobData("seasonType", 2) // Regular season
+            // Unpinned for the same reason as above; the job resolves the current season itself.
             .WithDescription("NFL Schedule Sync - Every hour"));
 
         // ============================================

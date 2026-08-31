@@ -26,6 +26,40 @@ public class ESPNGameService : ESPNClientBase, IESPNGameSource
         return games;
     }
 
+    /// <summary>
+    /// Asks ESPN which season, season type and week the league is currently in, instead of
+    /// inferring it from the date. Returns null if the call fails, so callers can fall back.
+    /// </summary>
+    public async Task<SeasonPhase?> GetCurrentSeasonPhaseAsync()
+    {
+        try
+        {
+            var response = await _httpClient.GetStringAsync(BaseApiUrl);
+            var root = JsonSerializer.Deserialize<LeagueRootResponse>(response, JsonOptions);
+
+            var season = root?.Season;
+            var seasonType = season?.Type;
+            var week = seasonType?.Week;
+
+            if (season == null || seasonType == null || week == null
+                || season.Year == 0 || seasonType.Type == 0 || week.Number == 0)
+            {
+                _logger.LogWarning("ESPN league endpoint returned no usable season phase");
+                return null;
+            }
+
+            var phase = new SeasonPhase(season.Year, seasonType.Type, week.Number);
+            _logger.LogInformation("ESPN reports season {Season}, season type {SeasonType}, week {Week}",
+                phase.Season, phase.SeasonType, phase.Week);
+            return phase;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error fetching current season phase from ESPN");
+            return null;
+        }
+    }
+
     public async Task<GameSummary?> GetGameSummaryAsync(string gameId)
     {
         try
