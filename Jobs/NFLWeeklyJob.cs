@@ -189,7 +189,10 @@ public class NFLWeeklyJob : IJob
                     Rushing = stat.Rushing,
                     Receiving = stat.Receiving,
                     Fumbles = stat.Fumbles,
-                    FumblesLost = stat.FumblesLost
+                    FumblesLost = stat.FumblesLost,
+                    TwoPtPass = stat.TwoPtPass,
+                    TwoPtRush = stat.TwoPtRush,
+                    TwoPtReception = stat.TwoPtReception
                 });
             }
 

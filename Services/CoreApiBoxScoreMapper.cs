@@ -77,6 +77,12 @@ public static class CoreApiBoxScoreMapper
             result.FumblesLost = (int?)FindStatValue(general, "fumblesLost") ?? 0;
         }
 
+        // Two-point conversions live on the scoring category of each discipline
+        // rather than under general, so they are read per-category.
+        result.TwoPtPass = ReadTwoPointStat(byName, "passing", "twoPtPass");
+        result.TwoPtRush = ReadTwoPointStat(byName, "rushing", "twoPtRush");
+        result.TwoPtReception = ReadTwoPointStat(byName, "receiving", "twoPtReception");
+
         return result;
     }
 
@@ -128,6 +134,12 @@ public static class CoreApiBoxScoreMapper
             return null;
 
         return System.Text.Json.JsonSerializer.Serialize(result);
+    }
+
+    private static int ReadTwoPointStat(Dictionary<string, StatCategory> byName, string categoryName, string statName)
+    {
+        var category = byName.GetValueOrDefault(categoryName);
+        return category == null ? 0 : (int?)FindStatValue(category, statName) ?? 0;
     }
 
     private static double? FindStatValue(StatCategory category, string statName)
