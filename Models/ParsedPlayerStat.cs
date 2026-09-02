@@ -15,4 +15,7 @@ public record ParsedPlayerStat
     public object? Receiving { get; set; }
     public int Fumbles { get; set; }
     public int FumblesLost { get; set; }
+    public int TwoPtPass { get; set; }
+    public int TwoPtRush { get; set; }
+    public int TwoPtReception { get; set; }
 }

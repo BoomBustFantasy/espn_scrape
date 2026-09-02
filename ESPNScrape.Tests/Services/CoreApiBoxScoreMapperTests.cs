@@ -134,6 +134,35 @@ public class CoreApiBoxScoreMapperTests
     }
 
     [Fact]
+    public void Map_TwoPointConversions_ReadFromEachDisciplineCategory()
+    {
+        var stats = BuildStats(
+            BuildCategory("passing", ("passingYards", 240), ("twoPtPass", 1)),
+            BuildCategory("rushing", ("rushingYards", 55), ("twoPtRush", 2)),
+            BuildCategory("receiving", ("receivingYards", 30), ("twoPtReception", 1)));
+
+        var result = CoreApiBoxScoreMapper.Map(stats, "flex-1", "phi-1", "Philadelphia Eagles", "Jalen Hurts", "game-9",
+            new DateTime(2024, 11, 3, 17, 0, 0, DateTimeKind.Utc), 2024, 9);
+
+        Assert.Equal(1, result.TwoPtPass);
+        Assert.Equal(2, result.TwoPtRush);
+        Assert.Equal(1, result.TwoPtReception);
+    }
+
+    [Fact]
+    public void Map_NoTwoPointStats_DefaultsToZero()
+    {
+        var stats = BuildStats(BuildCategory("rushing", ("rushingAttempts", 12), ("rushingYards", 48)));
+
+        var result = CoreApiBoxScoreMapper.Map(stats, "rb-9", "nyg-1", "New York Giants", "Tyrone Tracy Jr.", "game-10",
+            new DateTime(2024, 11, 10, 17, 0, 0, DateTimeKind.Utc), 2024, 10);
+
+        Assert.Equal(0, result.TwoPtPass);
+        Assert.Equal(0, result.TwoPtRush);
+        Assert.Equal(0, result.TwoPtReception);
+    }
+
+    [Fact]
     public void Map_NoGeneralCategory_DefaultsFumblesToZero()
     {
         var stats = BuildStats(BuildCategory("receiving", ("receptions", 4), ("receivingYards", 45)));

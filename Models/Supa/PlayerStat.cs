@@ -84,6 +84,18 @@ public class PlayerStat : BaseModel
     [Column("fumbles_lost")]
     public int? FumblesLost { get; set; }
 
+    [JsonPropertyName("two_pt_pass")]
+    [Column("two_pt_pass")]
+    public int? TwoPtPass { get; set; }
+
+    [JsonPropertyName("two_pt_rush")]
+    [Column("two_pt_rush")]
+    public int? TwoPtRush { get; set; }
+
+    [JsonPropertyName("two_pt_reception")]
+    [Column("two_pt_reception")]
+    public int? TwoPtReception { get; set; }
+
     // Helper methods to deserialize JSONB stats with proper typing
     public PassingStats? GetPassingStats()
     {
